@@ -1,0 +1,13 @@
+syntax enable           " enable syntax processing                                                                                                                                                               
+set number              " Line numbers
+set cursorline          " Highlight the cursor line.
+set wildmenu            " visual autocomplete for command men
+set showmatch           " highlight matching [{()}]
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+set foldenable          " enable foldin
+set ignorecase		    " Ignore case when searching
+set magic		        " For regular expressions turn magic on
+
+set background=dark	"theming of VIM background
+colorscheme solarized   "setting the colorscheme
