@@ -1,5 +1,5 @@
 Configuration scripts for:
 
 * bashrc
-* zshrc
+* zshrc (uses/requires: https://github.com/robbyrussell/oh-my-zsh)
 * vim
