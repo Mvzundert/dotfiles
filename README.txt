@@ -1,3 +1,5 @@
-Marius van Zundert
+Configuration scripts for:
 
-Random usefull scripts
+* bashrc
+* zshrc
+* vim
