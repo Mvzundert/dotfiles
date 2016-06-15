@@ -1,3 +1,4 @@
+set nocompatible        " Necesary for lots of cool vim things
 syntax enable           " enable syntax processing                                                                                                                                                               
 set number              " Line numbers
 set cursorline          " Highlight the cursor line.
@@ -6,8 +7,8 @@ set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set foldenable          " enable foldin
-set ignorecase		    " Ignore case when searching
-set magic		        " For regular expressions turn magic on
+set ignorecase		" Ignore case when searching
+set magic		" For regular expressions turn magic on
+set backspace=2		" backspace over everything in insert mode
 
 set background=dark	"theming of VIM background
-colorscheme solarized   "setting the colorscheme
