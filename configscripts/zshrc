@@ -45,14 +45,25 @@ ZSH_THEME="agnoster"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# -------------------------------------------------------------------
+# Plugins
+# -------------------------------------------------------------------  
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git copydir copyfile extract web-search)
+plugins=(git mercurial copydir copyfile extract web-search composer history)
 
-
-# User configuration
+# -------------------------------------------------------------------
+# Paths
+# -------------------------------------------------------------------
+ 
+#Composer path
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+ 
+#Drush path
+PATH=$PATH:/home/marius/.drush
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -84,34 +95,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# aliases
+# -------------------------------------------------------------------
+# Aliases
+# -------------------------------------------------------------------
+
+# Browsing the shell
 alias ll="ls -lash --color=none"
-alias cmpd="curl -s http://getcomposer.org/installer | php"
-alias gl="git log --graph --decorate --oneline"
- 
-alias cmpi="composer install"
-alias cmpu="composer update"
-alias cmpo="composer self-update"
-alias cmps="composer status"
-alias h='history'
-alias sug="sudo apt-get install -y"
- 
-#Mercurial aliases
-alias hgadd="hg add"
-alias hgcl="hg clone"
-alias hgl="hg log"
-alias hgs="hg status"
-alias hgup="hg update"
-alias hgpu="hg push"
- 
-#Composer path
-export PATH="$PATH:$HOME/.composer/vendor/bin"
- 
-#Drush path
-PATH=$PATH:/home/marius/.drush
+alias myip='wget http://ipinfo.io/ip -qO -'
 
+# -------------------------------------------------------------------
+# FUNCTIONS
+# -------------------------------------------------------------------
 
-#functions
+#Jot function allows you to quickly write
+#notes to a file from shell.
 function jot {
  if [ $1 ]
   then
