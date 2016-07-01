@@ -9,18 +9,25 @@ authorize: ~/.ssh/id_rsa.pub
 keys:
     - ~/.ssh/id_rsa
 
+# Map the shared folders between your local environment and the homestead box.
 folders:
-    - map: <folder to your projects>
+    - map: <folder where your projects are>
       to: /home/vagrant/Code
 
+# Map all projects with to a folder. (accessible by using <projectname>.app in your browser.
+# Keep in mind that when using this you have to set ip: <homestead IP> = *.app in your hosts file
 sites:
     - map: '~^(?<project>.+)\.app$'
       to: /home/vagrant/Code/\$project/public
 
-      hhvm: true
+# Set hhvm: true if you want to use hhvm
+#      hhvm: true
+
+# If you add the databases to the Homestead.yaml file 
+# then they will be destroyed/recreated when you run homestead provision!
+# whereas if you don't define them here, and you just create them manually they won't be destroyed.
 
 databases:
-    - homestead
 
 variables:
     - key: APP_ENV
