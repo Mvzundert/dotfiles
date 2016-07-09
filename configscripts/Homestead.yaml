@@ -27,7 +27,7 @@ sites:
 # then they will be destroyed/recreated when you run homestead provision!
 # whereas if you don't define them here, and you just create them manually they won't be destroyed.
 
-databases:
+# databases:
 
 variables:
     - key: APP_ENV
