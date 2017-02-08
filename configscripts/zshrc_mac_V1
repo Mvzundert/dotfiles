@@ -95,6 +95,7 @@ alias homem="php vendor/bin/homestead make"
 alias artisan="php artisan"
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/F$' ### Hide hidden files ###
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Fi$' ### GIT None Xcode ###
+alias dockers='open -a Docker'
 
 # -------------------------------------------------------------------
 # FUNCTIONS
