@@ -38,7 +38,7 @@ ZSH_THEME="agnoster"
 
 # -------------------------------------------------------------------
 # Plugins
-# ------------------------------------------------------------------- 
+# -------------------------------------------------------------------
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -88,11 +88,10 @@ alias ll="ls -lash"
 alias myip='wget http://ipinfo.io/ip -qO -'
 alias artisan='php artisan'
 alias rlzsh='source ~/.zshrc'
-alias zshconfig="vim ~/.zshrc" 
+alias zshconfig="vim ~/.zshrc"
 alias composer="php /usr/local/bin/composer.phar"
 alias homer="composer require laravel/homestead --dev"
 alias homem="php vendor/bin/homestead make"
-alias artisan="php artisan"
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/F$' ### Hide hidden files ###
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Fi$' ### GIT None Xcode ###
 alias dockers='open -a Docker'
@@ -109,5 +108,5 @@ alias dockers='open -a Docker'
 # zsh-syntax-highlighting.zsh wraps ZLE widgets.
 # It must be sourced after all custom widgets have been created (i.e., after all zle -N calls and after running compinit).
 # Widgets created later will work, but will not update the syntax highlighting.
-# ------------------------------------------------------------------- 
-#source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+# -------------------------------------------------------------------
+#source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
