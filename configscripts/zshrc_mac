@@ -102,6 +102,13 @@ alias ag='alias | grep'
 # FUNCTIONS
 # -------------------------------------------------------------------
 
+#Fix displaying of ugly user.
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+  fi
+}
+
 # -------------------------------------------------------------------
 # Include Z, yo (https://github.com/rupa/z/blob/master/z.sh)
 # Z isn’t part of Oh-My-ZSH, but it’s the perfect companion for anyone who heavily uses the command line.

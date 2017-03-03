@@ -122,6 +122,13 @@ function jot {
   fi
 }
 
+#Fix displaying of ugly user.
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+  fi
+}
+
 # -------------------------------------------------------------------
 # Custom .zshrc source highlighting
 # see: https://github.com/zsh-users/zsh-syntax-highlighting
