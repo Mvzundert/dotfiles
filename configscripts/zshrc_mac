@@ -97,6 +97,8 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias dockers='open -a Docker'
 alias hg='history | grep'
 alias ag='alias | grep'
+alias gcfm='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
+alias gcs='git checkout staging'
 
 # -------------------------------------------------------------------
 # FUNCTIONS
