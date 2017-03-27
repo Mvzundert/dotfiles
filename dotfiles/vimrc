@@ -1,14 +1,28 @@
 set nocompatible        " Necesary for lots of cool vim things
-syntax enable           " enable syntax processing                                                                                                                                                               
+syntax enable           " enable syntax processing
+set showcmd             " show command in bottom bar
+set wildmenu            " visual autocomplete for command menu
+
+set tabstop=4      	    " number of visual spaces per TAB
+set softtabstop=4   	" number of spaces in tab when editing
+set expandtab       	" tabs are spaces
+
 set number              " Line numbers
 set cursorline          " Highlight the cursor line.
 set wildmenu            " visual autocomplete for command men
+
 set showmatch           " highlight matching [{()}]
+set magic               " For regular expressions turn magic on
+set backspace=2         " backspace over everything in insert mode
+
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+set foldmethod=indent   " fold based on indent level
+
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
-set foldenable          " enable foldin
-set ignorecase		" Ignore case when searching
-set magic		" For regular expressions turn magic on
-set backspace=2		" backspace over everything in insert mode
+set ignorecase		    " Ignore case when searching
 
-set background=dark	"theming of VIM background
+set background=dark	    " theming of VIM background
+colorscheme badwolf     " awesome colorscheme
