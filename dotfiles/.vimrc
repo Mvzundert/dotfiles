@@ -2,10 +2,7 @@
 call pathogen#infect()
 
 " ============= Usefull plugins =============
-" https://github.com/m2mdas/phpcomplete-extended#phpcomplete-extended
-" autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-" https://github.com/m2mdas/phpcomplete-extended-symfony#phpcomplete-extended-symfony
-" https://github.com/m2mdas/phpcomplete-extended-laravel#phpcomplete-extended-laravel
+" https://valloric.github.io/YouCompleteMe/
 
 " Nerd Tree stuff
 autocmd vimenter * NERDTree " Start nerdTree on startup
