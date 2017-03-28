@@ -1,5 +1,6 @@
 set nocompatible        " Necesary for lots of cool vim things
 syntax enable           " enable syntax processing
+
 set showcmd             " show command in bottom bar
 set wildmenu            " visual autocomplete for command menu
 
@@ -25,4 +26,5 @@ set hlsearch            " highlight matches
 set ignorecase		    " Ignore case when searching
 
 set background=dark	    " theming of VIM background
+" https://github.com/sjl/badwolf/
 colorscheme badwolf     " awesome colorscheme
