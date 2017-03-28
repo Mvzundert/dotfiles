@@ -25,6 +25,9 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set ignorecase		    " Ignore case when searching
 
+set nobackup
+set nowb
+set noswapfile
+
 set background=dark	    " theming of VIM background
-" https://github.com/sjl/badwolf/
 colorscheme badwolf     " awesome colorscheme
