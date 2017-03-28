@@ -1,6 +1,11 @@
 " Pathogen makes plugins easy https://github.com/tpope/vim-pathogen
 call pathogen#infect()
 
+" ============= Usefull plugins =============
+" https://github.com/m2mdas/phpcomplete-extended#phpcomplete-extended
+" https://github.com/m2mdas/phpcomplete-extended-symfony#phpcomplete-extended-symfony
+" https://github.com/m2mdas/phpcomplete-extended-laravel#phpcomplete-extended-laravel
+
 " Nerd Tree stuff
 autocmd vimenter * NERDTree " Start nerdTree on startup
 autocmd StdinReadPre * let s:std_in=1 "  
