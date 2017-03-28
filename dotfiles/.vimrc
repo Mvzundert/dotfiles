@@ -3,6 +3,7 @@ call pathogen#infect()
 
 " ============= Usefull plugins =============
 " https://github.com/m2mdas/phpcomplete-extended#phpcomplete-extended
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 " https://github.com/m2mdas/phpcomplete-extended-symfony#phpcomplete-extended-symfony
 " https://github.com/m2mdas/phpcomplete-extended-laravel#phpcomplete-extended-laravel
 
@@ -11,6 +12,7 @@ autocmd vimenter * NERDTree " Start nerdTree on startup
 autocmd StdinReadPre * let s:std_in=1 "  
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif "Always open NerdTree
 let NERDTreeShowHidden=1 " Show hidden files by default
+
 " Mapping ctrl+n to open nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
