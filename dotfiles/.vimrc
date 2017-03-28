@@ -2,9 +2,15 @@
 call pathogen#infect()
 
 " Nerd Tree stuff
-autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd vimenter * NERDTree " Start nerdTree on startup
+autocmd StdinReadPre * let s:std_in=1 "  
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif "Always open NerdTree
+let NERDTreeShowHidden=1 " Show hidden files by default
+" Mapping ctrl+n to open nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+" Close vim if nerdtree is the only thing open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ============= Config =============
 set nocompatible        " Necesary for lots of cool vim things
