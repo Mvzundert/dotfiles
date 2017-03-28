@@ -3,7 +3,7 @@ call pathogen#infect()
 
 " ============= Usefull plugins =============
 " https://github.com/m2mdas/phpcomplete-extended#phpcomplete-extended
-autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+" autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 " https://github.com/m2mdas/phpcomplete-extended-symfony#phpcomplete-extended-symfony
 " https://github.com/m2mdas/phpcomplete-extended-laravel#phpcomplete-extended-laravel
 
@@ -61,4 +61,5 @@ set noswapfile
 set background=dark	    " theming of VIM background
 colorscheme badwolf     " awesome colorscheme https://github.com/sjl/badwolf
 
+" ============= Functions ============= 
 
