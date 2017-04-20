@@ -16,3 +16,19 @@ alias gcfm='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
 alias gcs='git checkout staging'
 alias vim="stty stop '' -ixoff; vim"
 
+####
+#Functions should be split up as well (future feature)
+####
+#
+# Jot function allows you to quickly write
+# notes to a file from shell.
+function jot {
+- if [ $1 ]
+-  then
+-   cat <<< $1 > /home/<yourusename>/Documents/temp
+-   cat  /home/<yourusename>/Documents/jot >> /home/<yourusename>/Documents/temp
+-   mv /home/<yourusename>/Documents/temp /home/<yourusename>/Documents/jot
+-  else
+-   gedit /home/<yourusename>/Documents/jot &
+-  fi
+-}
