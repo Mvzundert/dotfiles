@@ -18,3 +18,9 @@ alias gcfm='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
 alias gcs='git checkout staging'
 alias vim="stty stop '' -ixoff; vim"
 
+############################
+#Drupal development aliasses
+############################
+alias drush_ulist="drush pm-list --status='Not installed'"
+alias drush_list="drush pm-list"
+alias drush_ellist="drush pm-list --status='Enabled'"
