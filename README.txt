@@ -1,5 +1,6 @@
-Configuration scripts for:
+# Configuration scripts
 
-* bashrc
-* zshrc (uses/requires: https://github.com/robbyrussell/oh-my-zsh)
-* vim
+# DotFiles
+* Bashrc (almost never used anymore but hey.)
+* Zshconfig (Alias, Config options, Function, Paths, Widgets)
+* Zshrc (uses/requires: https://github.com/robbyrussell/oh-my-zsh)
