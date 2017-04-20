@@ -16,11 +16,17 @@ fi
 # -------------------------------------------------------------------
 # Plugins
 # -------------------------------------------------------------------
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git extract web-search composer history sudo)
+# -------------------------------------------------------------------
+# Load Oh-My-ZSH
+# -------------------------------------------------------------------
+# Source oh-my-zsh after we've done the config and plugins.
+source $ZSH/oh-my-zsh.sh
 # -------------------------------------------------------------------
 # Paths
 # -------------------------------------------------------------------
@@ -65,7 +71,3 @@ if [ -f ~/.zsh_config/zshwidgets ]; then
 else
   print "404: ~/.zsh_config/zshwidgets not found."
 fi
-# -------------------------------------------------------------------
-# Load Oh-My-ZSH
-# -------------------------------------------------------------------
-source $ZSH/oh-my-zsh.sh
