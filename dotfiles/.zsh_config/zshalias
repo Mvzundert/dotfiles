@@ -22,9 +22,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # Custom Linux Aliases
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   # Custom MAC OSX Aliases
-  ### Hide hidden files ###
   alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/F$'
-  ### GIT None Xcode ###
   alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Fi$'
 fi
 
