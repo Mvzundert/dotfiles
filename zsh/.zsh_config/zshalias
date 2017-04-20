@@ -29,6 +29,6 @@ fi
 ############################
 #Drupal development aliasses
 ############################
-alias drush_ulist="drush pm-list --status='Not installed'"
+alias drush_ulist="drush pm-list --status='Not installed' --no-core"
 alias drush_list="drush pm-list"
-alias drush_enlist="drush pm-list --status='Enabled'"
+alias drush_enlist="drush pm-list --status='Enabled' --no-core"
