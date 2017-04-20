@@ -1,0 +1,19 @@
+
+# -------------------------------------------------------------------
+# Include Z, yo
+# Z isn’t part of Oh-My-ZSH, but it’s the perfect companion for anyone who heavily uses the command line.
+# The idea behind Z is that it builds a list of your most frequent and recent — “Frecent” — folders
+# and allows you to jump to them quickly in one command,
+# rather than having to tab through a nested folder structure
+# -------------------------------------------------------------------
+source ~/.oh-my-zsh/custom/z.sh
+
+# -------------------------------------------------------------------
+# Custom .zshrc source highlighting
+# see: https://github.com/zsh-users/zsh-syntax-highlighting
+# Why must zsh-syntax-highlighting.zsh be sourced at the end of the .zshrc file?
+# zsh-syntax-highlighting.zsh wraps ZLE widgets.
+# It must be sourced after all custom widgets have been created (i.e., after all zle -N calls and after running compinit).
+# Widgets created later will work, but will not update the syntax highlighting.
+# -------------------------------------------------------------------
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
