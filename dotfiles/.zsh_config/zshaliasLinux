@@ -1,0 +1,18 @@
+alias ll="ls -lash"
+alias myip='wget http://ipinfo.io/ip -qO -'
+alias artisan='php artisan'
+alias rlzsh='source ~/.zshrc'
+alias zshconfig="vim ~/.zshrc"
+alias composer="php /usr/local/bin/composer.phar"
+alias homer="composer require laravel/homestead --dev"
+alias homem="php vendor/bin/homestead make"
+alias dockers='open -a Docker'
+alias mailcatcho=' mailcatcher --http-ip=127.0.0.1'
+alias dcrm='docker rm $(docker ps -a -q)'
+alias dcirm='docker rmi $(docker images -q)'
+alias hg='history | grep'
+alias ag='alias | grep'
+alias gcfm='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
+alias gcs='git checkout staging'
+alias vim="stty stop '' -ixoff; vim"
+
