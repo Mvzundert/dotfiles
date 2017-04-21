@@ -47,7 +47,7 @@ fi
 if [ -f ~/.zsh_config/zshalias ]; then
   source ~/.zsh_config/zshalias
 else
-  print "404: ~/.zsh_config/zshaliasLinux not found."
+  print "404: ~/.zsh_config/zshalias not found."
 fi
 # -------------------------------------------------------------------
 # FUNCTIONS
