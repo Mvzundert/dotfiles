@@ -85,6 +85,21 @@ fi
 
 echo " "
 echo "======================================="
+echo "========= ZSH iterm Switch +==========="
+echo "======================================="
+echo " "
+FILE="$HOME/.oh-my-zsh/custom/iTerm-ssh.zsh"
+
+if [ -f $FILE ]; then
+   echo "File $FILE exists."
+else
+   echo "$FILE File created"
+   # Symlink the iTerm switcher for hosts
+   ln -s $HOME/dotfiles/configscripts/iTerm-ssh.zsh $HOME/.oh-my-zsh/custom/
+fi
+
+echo " "
+echo "======================================="
 echo "========= oh-my-vim ==================="
 echo "======================================="
 echo " "
