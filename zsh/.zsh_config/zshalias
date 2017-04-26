@@ -1,21 +1,51 @@
+############################
+# System alias
+############################
 alias ll="ls -lash"
 alias myip='wget http://ipinfo.io/ip -qO -'
-alias artisan='php artisan'
+alias vim="stty stop '' -ixoff; vim"
+alias composer="php /usr/local/bin/composer.phar"
+alias mailcatcho=' mailcatcher --http-ip=127.0.0.1'
+
+############################
+# ZSH alias stuff
+############################
 alias rlzsh='source ~/.zshrc'
 alias zshconfig="vim ~/dotfiles/zsh/.zshrc"
-alias composer="php /usr/local/bin/composer.phar"
-alias homer="composer require laravel/homestead --dev"
-alias homem="php vendor/bin/homestead make"
-alias dockers='open -a Docker'
-alias mailcatcho=' mailcatcher --http-ip=127.0.0.1'
-alias dcrm='docker rm $(docker ps -a -q)'
-alias dcirm='docker rmi $(docker images -q)'
 alias hg='history | grep'
 alias ag='alias | grep'
+
+############################
+# Laravel alias
+############################
+alias artisan='php artisan'
+alias homer="composer require laravel/homestead --dev"
+alias homem="php vendor/bin/homestead make"
+
+############################
+# Docker alias
+############################
+alias dockers='open -a Docker'
+alias dcrm='docker rm $(docker ps -a -q)'
+alias dcirm='docker rmi $(docker images -q)'
+
+############################
+# git alias
+############################
 alias gcfm='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
 alias gcs='git checkout staging'
-alias vim="stty stop '' -ixoff; vim"
 
+############################
+# Drupal development alias
+############################
+alias drush_ulist="drush pm-list --status='Not installed' --no-core"
+alias drush_list="drush pm-list"
+alias drush_enlist="drush pm-list --status='Enabled' --no-core"
+alias drush_dis="drush pm-uninstall"
+
+############################
+# Custom OS alias
+############################
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # Custom Linux Aliases
 elif [[ "$OSTYPE" == "darwin"* ]]; then
@@ -23,11 +53,3 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/F$'
   alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Fi$'
 fi
-
-############################
-#Drupal development aliasses
-############################
-alias drush_ulist="drush pm-list --status='Not installed' --no-core"
-alias drush_list="drush pm-list"
-alias drush_enlist="drush pm-list --status='Enabled' --no-core"
-alias drush_dis="drush pm-uninstall"
