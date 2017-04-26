@@ -70,6 +70,21 @@ fi
 
 echo " "
 echo "======================================="
+echo "========= ZSH Theme ==================="
+echo "======================================="
+echo " "
+FILE="$HOME/.oh-my-zsh/custom/adjusted.zsh-theme"
+
+if [ -f $FILE ]; then
+   echo "File $FILE exists."
+else
+   echo "$FILE File created"
+   # Symlink the .custom theme.
+   ln -s $HOME/dotfiles/zsh/.theme/adjusted.zsh-theme $HOME/.oh-my-zsh/custom/
+fi
+
+echo " "
+echo "======================================="
 echo "========= oh-my-vim ==================="
 echo "======================================="
 echo " "
