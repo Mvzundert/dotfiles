@@ -111,7 +111,7 @@ then
 else
     echo "$DIR directory created"
     # Get oh-my-vim framework
-    git clone https://github.com/Mvzundert/oh-my-vim.git HOME/.oh-my-vim
+    git clone https://github.com/Mvzundert/oh-my-vim.git $HOME/.oh-my-vim
 fi
 
 echo " "
