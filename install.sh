@@ -106,7 +106,7 @@ echo " "
 DIR="$HOME/.oh-my-vim"
 
 if [ -d $DIR ]
-then
+thencd
 	echo "$DIR directory exists!"
 else
     echo "$DIR directory created"
@@ -126,7 +126,7 @@ then
 	echo "$DIR directory exists!"
 else
    echo "$DIR directory created"
-   # Symlink .oh-my-vim framework to .vim folder. 
+   # Symlink .oh-my-vim framework to .vim folder.
    ln -s $HOME/.oh-my-vim/ $HOME/.vim
 fi
 
@@ -155,7 +155,7 @@ DIR="$HOME/.vim/bundle/Vundle.vim"
 # Check if the Vundle dir is emtpy (it should be)
 if [ "$(ls -A $DIR)" ]; then
         # We install all plugins that are specified in
-        # .oh-my-vim/config/plugins.vim just to make sure.       
+        # .oh-my-vim/config/plugins.vim just to make sure.
         echo "$DIR directory not empty"
         # Make sure we install all plugins
         vim +PluginInstall +qall
