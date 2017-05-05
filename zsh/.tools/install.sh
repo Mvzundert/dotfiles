@@ -1,10 +1,10 @@
 #! /bin/bash
 
-echo " "
-echo "+++++++++++++++++++++++++++++++++++++++"
-echo "++++++++++ Starting installer.... +++++"
-echo "+++++++++++++++++++++++++++++++++++++++"
-echo " "
+# echo " "
+# echo "+++++++++++++++++++++++++++++++++++++++"
+# echo "++++++++++ Starting installer.... +++++"
+# echo "+++++++++++++++++++++++++++++++++++++++"
+# echo " "
 
 # Check if Git is installed, if not we
 # cannot proceed.
@@ -14,10 +14,10 @@ hash git >/dev/null 2>&1 || {
 	exit 1
 }
 
-echo " "
-echo "======================================="
-echo "========= oh-my-zsh   ================="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= oh-my-zsh   ================="
+# echo "======================================="
 echo " "
 DIR="$HOME/.oh-my-zsh"
 
@@ -32,10 +32,10 @@ else
     git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 fi
 
-echo " "
-echo "======================================="
-echo "========= Syntax Highlight zsh  ======="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= Syntax Highlight zsh  ======="
+# echo "======================================="
 echo " "
 DIR="$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 
@@ -50,10 +50,10 @@ else
     git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
-echo " "
-echo "======================================="
-echo "========= ZSH config =================="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= ZSH config =================="
+# echo "======================================="
 echo " "
 DIR="$HOME/.zsh_config"
 
@@ -68,10 +68,10 @@ else
    ln -s $HOME/dotfiles/zsh/.zsh_config $HOME
 fi
 
-echo " "
-echo "======================================="
-echo "========= ZSHRC ======================="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= ZSHRC ======================="
+# echo "======================================="
 echo " "
 FILE="$HOME/.zshrc"
 
@@ -85,10 +85,10 @@ else
    ln -s $HOME/dotfiles/zsh/.zshrc $HOME
 fi
 
-echo " "
-echo "======================================="
-echo "========= ZSH Theme ==================="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= ZSH Theme ==================="
+# echo "======================================="
 echo " "
 FILE="$HOME/.oh-my-zsh/custom/adjusted.zsh-theme"
 
@@ -102,10 +102,10 @@ else
    ln -s $HOME/dotfiles/zsh/.theme/adjusted.zsh-theme $HOME/.oh-my-zsh/custom/
 fi
 
-echo " "
-echo "======================================="
-echo "========= ZSH iterm Switch +==========="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= ZSH iterm Switch +==========="
+# echo "======================================="
 echo " "
 FILE="$HOME/.oh-my-zsh/custom/iTerm-ssh.zsh"
 
@@ -119,10 +119,10 @@ else
    ln -s $HOME/dotfiles/configscripts/iTerm-ssh.zsh $HOME/.oh-my-zsh/custom/
 fi
 
-echo " "
-echo "======================================="
-echo "========= oh-my-vim ==================="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= oh-my-vim ==================="
+# echo "======================================="
 echo " "
 DIR="$HOME/.oh-my-vim"
 
@@ -135,10 +135,10 @@ else
   git clone https://github.com/Mvzundert/oh-my-vim.git $HOME/.oh-my-vim
 fi
 
-echo " "
-echo "======================================="
-echo "========= VIM config =================="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= VIM config =================="
+# echo "======================================="
 echo " "
 DIR="$HOME/.vim"
 
@@ -153,26 +153,27 @@ else
    ln -s $HOME/.oh-my-vim/ $HOME/.vim
 fi
 
-echo " "
-echo "======================================="
-echo "========= VIMRC ======================="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= VIMRC ======================="
+# echo "======================================="
 echo " "
 FILE="$HOME/.vimrc"
 
 if [ -f $FILE ]; then
   #  echo "File $FILE exists."
-	 echo "Vimrc has been installed."
+	 echo "Vimrc was already installed."
 else
-   echo "$FILE File created"
+  #  echo "$FILE File created"
+	 echo "Vimrc has been installed."
    # Symlink the .vimrc file that makes sure the config works
    ln -s $HOME/.oh-my-vim/.vimrc $HOME
 fi
 
-echo " "
-echo "======================================="
-echo "========= Vim Vundle =================="
-echo "======================================="
+# echo " "
+# echo "======================================="
+# echo "========= Vim Vundle =================="
+# echo "======================================="
 echo " "
 DIR="$HOME/.vim/bundle/Vundle.vim"
 
@@ -194,9 +195,9 @@ if [ "$(ls -A $DIR)" ]; then
 fi
 
 echo " "
-echo "+++++++++++++++++++++++++++++++++++++++"
-echo "++++++++++ Finished +++++++++++++++++++"
-echo "+++++++++++++++++++++++++++++++++++++++"
+# echo "+++++++++++++++++++++++++++++++++++++++"
+# echo "++++++++++ Finished +++++++++++++++++++"
+# echo "+++++++++++++++++++++++++++++++++++++++"
 echo " "
 
 echo '________          __    _____.__.__                 '
