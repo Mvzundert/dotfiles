@@ -1,8 +1,8 @@
 # remap prefix to Control + a which is just 
 # more sensible then Control + b.
-set -g prefix C-z
+set -g prefix C-a
 unbind C-b
-bind C-z send-prefix
+bind C-a send-prefix
 
 
 # smart pane switching with awareness of vim splits
