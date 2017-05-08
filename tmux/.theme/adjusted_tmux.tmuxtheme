@@ -52,7 +52,6 @@ setw -g mode-bg colour238
 
 # }
 # The panes {
-
 set -g pane-border-bg colour235
 set -g pane-border-fg colour238
 set -g pane-active-border-bg colour236
@@ -60,13 +59,12 @@ set -g pane-active-border-fg colour51
 
 # }
 # The statusbar {
-
 set -g status-position bottom
 set -g status-bg colour234
 set -g status-fg colour137
 set -g status-attr dim
 set -g status-left ''
-set -g status-right '#[fg=colour233,bg=colour241,bold] %d/%m #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+set -g status-right '#[fg=colour233,bg=colour241,bold] %d/%m #[fg=colour233,bg=colour245,bold] %H:%M:%S #{battery_status_bg} #{battery_icon} #{battery_percentage} #{battery_remain} | %a %h-%d %H:%M '
 set -g status-right-length 50
 set -g status-left-length 20
 
