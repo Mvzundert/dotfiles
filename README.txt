@@ -7,6 +7,6 @@
 # To setup everything like i have it currently:
 * cd ~/
 * git clone git@github.com:Mvzundert/dotfiles.git
-* cd ~/dotfiles/zsh/.tools
+* cd ~/dotfiles/tools
 * ./install.sh
 * Grab a coffee and enjoy.
