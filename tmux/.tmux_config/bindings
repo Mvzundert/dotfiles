@@ -17,7 +17,6 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq v
 # kill current pane/window
 bind-key q confirm-before kill-pane
 bind-key Q confirm-before kill-window
-bind-key C-q confirm-before kill-pane
 
 # force a reload of the config file
 unbind r
