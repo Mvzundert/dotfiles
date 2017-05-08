@@ -3,7 +3,7 @@
 
 * Homestead.yml (for laravel homestead)
 
-*iterm SSH switcher script
+* iterm SSH switcher script
 
 # ZSH
 
