@@ -14,6 +14,11 @@ hash git >/dev/null 2>&1 || {
 	exit 1
 }
 
+if [ "$(uname)" == "Darwin" ]; then
+        echo -e "\n\nRunning on OSX"
+        source brew.sh
+fi
+
 # echo " "
 # echo "======================================="
 # echo "========= oh-my-zsh   ================="
@@ -24,7 +29,7 @@ DIR="$HOME/.oh-my-zsh"
 if [ -d $DIR ]
 then
 	# echo "$DIR directory exists!"
-	echo "oh-my-zsh was already installed"
+	echo "oh-my-zsh was already installed...skipping"
 else
   #  echo "$DIR directory created"
 	echo "oh-my-zsh framework has been installed"
@@ -42,7 +47,7 @@ DIR="$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 if [ -d $DIR ]
 then
 	# echo "$DIR directory exists!"
-	echo "ZSH syntax highlighting was already installed"
+	echo "ZSH syntax highlighting was already installed...skipping"
 else
   #  echo "$DIR directory created"
 	 echo "ZSH syntax highlighting has been installed"
@@ -60,7 +65,7 @@ DIR="$HOME/.zsh_config"
 if [ -L $DIR ]
 then
 	# echo "$DIR directory exists!"
-	echo "zsh_config folder was already created"
+	echo "zsh_config folder was already created...skipping"
 else
   #  echo "$DIR directory created"
 	 echo "zsh_config folder has been created"
@@ -77,7 +82,7 @@ FILE="$HOME/.zshrc"
 
 if [ -f $FILE ]; then
   #  echo "File $FILE exists."
-	 echo "zshrc file was already installed"
+	 echo "zshrc file was already installed...skipping"
 else
   #  echo "$FILE File created"
 	 echo "zshrc file has been installed"
@@ -94,7 +99,7 @@ FILE="$HOME/.oh-my-zsh/custom/adjusted.zsh-theme"
 
 if [ -f $FILE ]; then
   #  echo "File $FILE exists."
-	 echo "Adjusted zsh theme was already installed"
+	 echo "Adjusted zsh theme was already installed...skipping"
 else
   #  echo "$FILE File created"
 	 echo "Adjusted zsh theme has been installed"
@@ -111,7 +116,7 @@ FILE="$HOME/.oh-my-zsh/custom/iTerm-ssh.zsh"
 
 if [ -f $FILE ]; then
   #  echo "File $FILE exists."
-	 echo "iTerm ssh Switch was already installed"
+	 echo "iTerm ssh Switch was already installed...skipping"
 else
   #  echo "$FILE File created"
 	 echo "iTerm ssh Switch has been installed"
@@ -128,7 +133,7 @@ DIR="$HOME/.oh-my-vim"
 
 if [ -d $DIR ]
 then
-	echo ".oh-my-vim framework was already retrieved"
+	echo ".oh-my-vim framework was already retrieved...skipping"
 else
   echo ".oh-my-vim framework has been retrieved"
   # Get oh-my-vim framework
@@ -145,7 +150,7 @@ DIR="$HOME/.vim"
 if [ -L $DIR ]
 then
 	# echo "$DIR directory exists!"
-	echo ".oh-my-vim framework has been installed"
+	echo ".oh-my-vim framework has been installed...skipping"
 else
   #  echo "$DIR directory created"
 	 echo ".oh-my-vim framework has been installed"
@@ -162,7 +167,7 @@ FILE="$HOME/.vimrc"
 
 if [ -f $FILE ]; then
   #  echo "File $FILE exists."
-	 echo "Vimrc was already installed."
+	 echo "Vimrc was already installed....skipping"
 else
   #  echo "$FILE File created"
 	 echo "Vimrc has been installed."
@@ -182,7 +187,7 @@ if [ "$(ls -A $DIR)" ]; then
         # We install all plugins that are specified in
         # .oh-my-vim/config/plugins.vim just to make sure.
         # echo "$DIR directory not empty"
-				echo "All Vundle plugins have been installed"
+				echo "All Vundle plugins have been installed...skipping"
         # Make sure we install all plugins
         vim +PluginInstall +qall
  else
