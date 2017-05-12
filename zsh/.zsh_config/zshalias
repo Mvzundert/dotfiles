@@ -28,6 +28,7 @@ alias homem="php vendor/bin/homestead make"
 alias dockers='open -a Docker'
 alias dcrm='docker rm $(docker ps -a -q)'
 alias dcirm='docker rmi $(docker images -q)'
+alias dcw='docker-compose exec workspace bash'
 
 ############################
 # git alias
