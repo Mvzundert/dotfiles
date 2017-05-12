@@ -33,9 +33,18 @@ Current installer doesn't setup Tmux, you're going to have to manage that manual
 
 # Usefull tmux commands
 
-`prefix + z`: current pane full-screen
-`prefix + ,`: rename current window
-`prefix + R`: source tmux.conf
-`prefix + 1`: go to first window
-`prefix + q`: close pane
-`prefix + Q`: close window (confirmation)
+`prefix + z`: current pane full-screen.
+
+`prefix + ,`: rename current window.
+
+`prefix + R`: Reload tmux configuration.
+
+`prefix + 1`: go to first window.
+
+`prefix + n`: go to next window.
+
+`prefix + p`: go to previous window.
+
+`prefix + q`: close pane.
+
+`prefix + Q`: close window (confirmation).
