@@ -16,7 +16,7 @@ hash git >/dev/null 2>&1 || {
 
 if [ "$(uname)" == "Darwin" ]; then
         echo -e "\n\nRunning on OSX"
-        source brew.sh
+        source brew.sh        
 fi
 
 # echo " "
@@ -187,7 +187,7 @@ if [ "$(ls -A $DIR)" ]; then
         # We install all plugins that are specified in
         # .oh-my-vim/config/plugins.vim just to make sure.
         # echo "$DIR directory not empty"
-				echo "All Vundle plugins have been installed...skipping"
+		echo "All Vundle plugins have been installed...skipping"
         # Make sure we install all plugins
         vim +PluginInstall +qall
  else
@@ -197,6 +197,23 @@ if [ "$(ls -A $DIR)" ]; then
         # We install all plugins that are specified in
         # .oh-my-vim/config/plugins.vim
         vim +PluginInstall +qall
+fi
+
+# echo " "
+# echo "======================================="
+# echo "========= TMUX  TPM ==================="
+# echo "======================================="
+echo " "
+DIR="$HOME/.tmux/plugins/tpm"
+
+# Check if the tmux dir is emtpy (it should be)
+if [ "$(ls -A $DIR)" ]; then
+        # if we have TPM already we skip it.
+		echo "TPM has been installed...skipping"
+else
+        # if we don't have TPM we install it.
+		echo "TPM has been installed"
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 echo " "

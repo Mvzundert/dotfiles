@@ -1,0 +1,21 @@
+# Enable mouse control (clickable windows, panes, resizable panes)
+set -g mouse on
+
+# don't rename windows automatically
+set-option -g allow-rename off
+
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Center the window list
+set -g status-justify centre
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Move the status bar to top (or bottom)
+set-option -g status-position top
+
+
