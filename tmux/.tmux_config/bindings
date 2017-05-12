@@ -17,10 +17,6 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq v
 bind-key q kill-pane
 bind-key Q confirm-before kill-window
 
-# force a reload of the config file
-unbind r
-bind r source-file ~/.tmux.conf
-
 # split panes using | and -
 bind | split-window -h
 bind - split-window -v
