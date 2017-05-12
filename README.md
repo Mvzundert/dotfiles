@@ -30,3 +30,12 @@
 
 # PS
 Current installer doesn't setup Tmux, you're going to have to manage that manually. =)
+
+# Usefull tmux commands
+
+`prefix + z`: current pane full-screen
+`prefix + ,`: rename current window
+`prefix + R`: source tmux.conf
+`prefix + 1`: go to first window
+`prefix + q`: close pane
+`prefix + Q`: close window (confirmation)
