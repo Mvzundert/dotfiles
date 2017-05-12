@@ -4,6 +4,9 @@ set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 
+# force a reload of the config file
+unbind r
+bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
 # smart pane switching with awareness of vim splits
 # need to pair this with Plugin 'christoomey/vim-tmux-navigator' for vim
