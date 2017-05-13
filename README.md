@@ -28,9 +28,6 @@
 
 * Grab a coffee and enjoy.
 
-# PS
-Current installer doesn't setup Tmux, you're going to have to manage that manually. =)
-
 # Usefull tmux commands
 
 `prefix + z`: current pane full-screen.
