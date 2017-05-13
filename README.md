@@ -27,7 +27,7 @@ For more info on what's in there see the repository.
 # To setup everything like i have it currently:
 * cd ~/
 
-* git clone git@github.com:Mvzundert/dotfiles.git
+* `git clone git@github.com:Mvzundert/dotfiles.git`
 
 * cd ~/dotfiles/tools
 
