@@ -8,10 +8,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Function to check if custom path exist
 # If not we display an error (comment this or the error if you don't
 # want to use it.
-if [ -f ~/.zsh_config/zshconfig ]; then
-  source ~/.zsh_config/zshconfig
+if [ -f ~/dotfiles/zsh/.zsh_config/zshconfig ]; then
+  source ~/dotfiles/zsh/.zsh_config/zshconfig
 else
-  print "404: ~/.zsh_config/zshconfig not found."
+  print "404: ~/dotfiles/zsh/.zsh_config/zshconfig not found."
 fi
 # -------------------------------------------------------------------
 # Plugins
@@ -33,10 +33,10 @@ source $ZSH/oh-my-zsh.sh
 # Function to check if custom path exist
 # If not we display an error (comment this or the error if you don't
 # want to use it.
-if [ -f ~/.zsh_config/zshpaths ]; then
-  source ~/.zsh_config/zshpaths
+if [ -f ~/dotfiles/zsh/.zsh_config/zshpaths ]; then
+  source ~/dotfiles/zsh/.zsh_config/zshpaths
 else
-  print "404: ~/.zsh_config/zshpaths not found."
+  print "404: ~/dotfiles/zsh/.zsh_config/zshpaths not found."
 fi
 # -------------------------------------------------------------------
 #  Custom Aliases
@@ -44,10 +44,10 @@ fi
 # Function to check if custom alias exist
 # If not we display an error (comment this or the error if you don't
 # want to use it.
-if [ -f ~/.zsh_config/zshalias ]; then
-  source ~/.zsh_config/zshalias
+if [ -f ~/dotfiles/zsh/.zsh_config/zshalias ]; then
+  source ~/dotfiles/zsh/.zsh_config/zshalias
 else
-  print "404: ~/.zsh_config/zshalias not found."
+  print "404: ~/dotfiles/zsh/.zsh_config/zshalias not found."
 fi
 # -------------------------------------------------------------------
 # FUNCTIONS
@@ -55,10 +55,10 @@ fi
 # Function to check if custom functions exist
 # If not we display an error (comment this or the error if you don't
 # want to use it.
-if [ -f ~/.zsh_config/zshfunctions ]; then
-  source ~/.zsh_config/zshfunctions
+if [ -f ~/dotfiles/zsh/.zsh_config/zshfunctions ]; then
+  source ~/dotfiles/zsh/.zsh_config/zshfunctions
 else
-  print "404: ~/.zsh_config/zshfunctions not found."
+  print "404: ~/dotfiles/zsh/.zsh_config/zshfunctions not found."
 fi
 # -------------------------------------------------------------------
 # Custom Widgets
@@ -66,8 +66,8 @@ fi
 # Function to check if custom functions exist
 # If not we display an error (comment this or the error if you don't
 # want to use it.
-if [ -f ~/.zsh_config/zshwidgets ]; then
-  source ~/.zsh_config/zshwidgets
+if [ -f ~/dotfiles/zsh/.zsh_config/zshwidgets ]; then
+  source ~/dotfiles/zsh/.zsh_config/zshwidgets
 else
-  print "404: ~/.zsh_config/zshwidgets not found."
+  print "404: ~/dotfiles/zsh/.zsh_config/zshwidgets not found."
 fi

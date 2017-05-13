@@ -57,24 +57,6 @@ fi
 
 # echo " "
 # echo "======================================="
-# echo "========= ZSH config =================="
-# echo "======================================="
-# echo " "
-DIR="$HOME/.zsh_config"
-
-if [ -L $DIR ]
-then
-	# echo "$DIR directory exists!"
-	echo "zsh_config folder was already created...skipping"
-else
-  #  echo "$DIR directory created"
-	 echo "zsh_config folder has been created"
-   # Symlink the zsh_config folder that hosts most stuff
-   ln -s $HOME/dotfiles/zsh/.zsh_config $HOME
-fi
-
-# echo " "
-# echo "======================================="
 # echo "========= ZSHRC ======================="
 # echo "======================================="
 # echo " "
