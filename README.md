@@ -11,7 +11,7 @@
 
 * Zshrc (Bundles all the config files)
 
-# tmux:
+# Tmux:
 
 * tmux_config (Bindings, Config options)
 
@@ -19,8 +19,10 @@
 
 # Oh-my-vim
 Vim gets installed when on OSX using brew after that we also grab 
-https://github.com/Mvzundert/oh-my-vim the framework and install it..
+the framework and install it..
+
 For more info on what's in there see the repository.
+ (https://github.com/Mvzundert/oh-my-vim)
 
 # To setup everything like i have it currently:
 * cd ~/
