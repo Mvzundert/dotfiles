@@ -23,7 +23,7 @@ fi
 # echo "======================================="
 # echo "========= oh-my-zsh   ================="
 # echo "======================================="
-echo " "
+# echo " "
 DIR="$HOME/.oh-my-zsh"
 
 if [ -d $DIR ]
@@ -41,7 +41,7 @@ fi
 # echo "======================================="
 # echo "========= Syntax Highlight zsh  ======="
 # echo "======================================="
-echo " "
+# echo " "
 DIR="$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 
 if [ -d $DIR ]
@@ -59,7 +59,7 @@ fi
 # echo "======================================="
 # echo "========= ZSH config =================="
 # echo "======================================="
-echo " "
+# echo " "
 DIR="$HOME/.zsh_config"
 
 if [ -L $DIR ]
@@ -77,7 +77,7 @@ fi
 # echo "======================================="
 # echo "========= ZSHRC ======================="
 # echo "======================================="
-echo " "
+# echo " "
 FILE="$HOME/.zshrc"
 
 if [ -f $FILE ]; then
@@ -94,7 +94,7 @@ fi
 # echo "======================================="
 # echo "========= ZSH Theme ==================="
 # echo "======================================="
-echo " "
+# echo " "
 FILE="$HOME/.oh-my-zsh/custom/adjusted.zsh-theme"
 
 if [ -f $FILE ]; then
@@ -111,7 +111,7 @@ fi
 # echo "======================================="
 # echo "========= ZSH iterm Switch +==========="
 # echo "======================================="
-echo " "
+# echo " "
 FILE="$HOME/.oh-my-zsh/custom/iTerm-ssh.zsh"
 
 if [ -f $FILE ]; then
@@ -128,7 +128,7 @@ fi
 # echo "======================================="
 # echo "========= oh-my-vim ==================="
 # echo "======================================="
-echo " "
+# echo " "
 DIR="$HOME/.oh-my-vim"
 
 if [ -d $DIR ]
@@ -144,7 +144,7 @@ fi
 # echo "======================================="
 # echo "========= VIM config =================="
 # echo "======================================="
-echo " "
+# echo " "
 DIR="$HOME/.vim"
 
 if [ -L $DIR ]
@@ -162,7 +162,7 @@ fi
 # echo "======================================="
 # echo "========= VIMRC ======================="
 # echo "======================================="
-echo " "
+# echo " "
 FILE="$HOME/.vimrc"
 
 if [ -f $FILE ]; then
@@ -179,7 +179,7 @@ fi
 # echo "======================================="
 # echo "========= Vim Vundle =================="
 # echo "======================================="
-echo " "
+# echo " "
 DIR="$HOME/.vim/bundle/Vundle.vim"
 
 # Check if the Vundle dir is emtpy (it should be)
@@ -203,7 +203,7 @@ fi
 # echo "======================================="
 # echo "========= TMUX  TPM ==================="
 # echo "======================================="
-echo " "
+# echo " "
 DIR="$HOME/.tmux/plugins/tpm"
 
 # Check if the tmux dir is emtpy (it should be)
@@ -216,11 +216,28 @@ else
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-echo " "
+# echo " "
+# echo "======================================="
+# echo "========= TMUX Conf ==================="
+# echo "======================================="
+# echo " "
+FILE="$HOME/.tmux.conf"
+
+if [ -f $FILE ]; then
+  #  echo "File $FILE exists."
+	 echo "Tmux.conf was already installed....skipping"
+else
+  #  echo "$FILE File created"
+	 echo "Tmux.conf has been installed."
+   # Symlink the .tmux.conf file that makes sure the config works
+   ln -s $HOME/dotfiles/tmux/.tmux.conf $HOME
+fi
+
+# echo " "
 # echo "+++++++++++++++++++++++++++++++++++++++"
 # echo "++++++++++ Finished +++++++++++++++++++"
 # echo "+++++++++++++++++++++++++++++++++++++++"
-echo " "
+# echo " "
 
 echo '________          __    _____.__.__                 '
 echo '\______ \   _____/  |__/ ____\__|  |   ____   ______'
@@ -230,4 +247,4 @@ echo '/_______  /\____/|__|  |__|  |__|____/\___  >____  >'
 echo '        \/                                \/     \/  .... have been installed!'
 echo ''
 echo ''
-echo 'Please look over the ~/.zsh_config and ~/.vim folders to select plugins, themes, and options.'
+echo 'Please look over the ~/.zsh_config, tmux.conf  and ~/.vim folders to select plugins, themes, and options.'
