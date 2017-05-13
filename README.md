@@ -1,5 +1,5 @@
 # DotFiles contains:
-My most recent setup of the dotfiles I actively use. Since more and more people are actively using 
+My most recent setup of the dotfiles I use. Since more people are actively using 
 the same setup and because I want to be able to recreate it on new machines I've created an installer.
 
 Feel free to use this as you see fit, install the entire thing or just grab stuff from all  the seperate configs
@@ -9,7 +9,7 @@ Most of the stuff I use makes use of powerline fonts, I'm assuming you either ar
 or are able to switch to non-powerline themes. Both tmux (tmux/.theme/adjusted) and oh-my-vim frameworks have theme's
 included that work without powerline fonts to get you started.
 
-(https://github.com/powerline/fonts)
+Link to powerline font repo:(https://github.com/powerline/fonts)
 
 # Configscripts
 
