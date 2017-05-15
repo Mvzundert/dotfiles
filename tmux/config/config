@@ -17,5 +17,3 @@ setw -g pane-base-index 1
 
 # Move the status bar to top (or bottom)
 set-option -g status-position top
-
-
