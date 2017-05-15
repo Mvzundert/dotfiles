@@ -23,3 +23,6 @@ bind - split-window -v
 unbind '"'
 unbind %
 
+# Synchonize panes on/off
+bind e setw synchronize-panes on
+bind E setw synchronize-panes off
