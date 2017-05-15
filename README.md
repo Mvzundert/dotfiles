@@ -1,5 +1,5 @@
 # DotFiles contains:
-My most recent setup of the dotfiles I use. Since more people are actively using 
+My most recent setup of the dotfiles I use. Since more people are actively using
 the same setup and because I want to be able to recreate it on new machines I've created an installer.
 
 Feel free to use this as you see fit, install the entire thing or just grab stuff from all  the seperate configs
@@ -30,37 +30,28 @@ Link to powerline font repo:(https://github.com/powerline/fonts)
 * tmux.conf (Bundles all the config files)
 
 # Oh-my-vim
-Vim gets installed when on OSX using brew after that we also grab 
+Vim gets installed when on OSX using brew after that we also grab
 the framework and install it..
 
 For more info on what's in there see the repository.
  (https://github.com/Mvzundert/oh-my-vim)
 
 # To setup everything like i have it currently:
-* cd ~/
-
+* `cd ~/`
 * `git clone https://github.com/Mvzundert/dotfiles.git`
-
-* cd ~/dotfiles/tools
-
-* ./install.sh
-
+* `cd ~/dotfiles/tools`
+* `./install.sh`
 * Grab a coffee and enjoy.
 
+# Overwrite tmux configuration
+* Copy `tmux/custom/config.local.example` to `tmux/custom/config.local`
+
 # Usefull tmux commands
-
-`prefix + z`: current pane full-screen.
-
-`prefix + ,`: rename current window.
-
-`prefix + R`: Reload tmux configuration.
-
-`prefix + 1`: go to first window.
-
-`prefix + n`: go to next window.
-
-`prefix + p`: go to previous window.
-
-`prefix + q`: close pane.
-
-`prefix + Q`: close window (confirmation).
+* `prefix + z`: current pane full-screen.
+* `prefix + ,`: rename current window.
+* `prefix + R`: Reload tmux configuration.
+* `prefix + 1`: go to first window.
+* `prefix + n`: go to next window.
+* `prefix + p`: go to previous window.
+* `prefix + q`: close pane.
+* `prefix + Q`: close window (confirmation).
