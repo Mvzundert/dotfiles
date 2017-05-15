@@ -14,3 +14,6 @@ set -g status-justify centre
 # Start windows and panes at 1, not 0
 set -g base-index 1
 setw -g pane-base-index 1
+
+# Move the status bar to top (or bottom)
+set-option -g status-position top
