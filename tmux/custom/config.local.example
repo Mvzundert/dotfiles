@@ -1,4 +1,5 @@
- # DO NOT EDIT CONFIG.LOCAL.EXAMPLE
+
+# DO NOT EDIT CONFIG.LOCAL.EXAMPLE
 # duplicate this file and remove the '.example' suffix
 # enable/add your own custom tmux configuration
 
@@ -17,3 +18,10 @@
 
 # Move the status bar to top (or bottom)
 # set-option -g status-position bottom
+
+###############################################
+# Ubuntu specific tmux fixes for copy/pasting
+###############################################
+#bind -t vi-copy y copy-pipe "xclip -sel clip -i"
+#setw -g mode-mouse on
+#set -g mouse-select-window on
