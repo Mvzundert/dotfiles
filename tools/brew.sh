@@ -49,6 +49,7 @@ formulas=(
     gettext
     lnav
     readline
+    ctags
 )
 
 for formula in "${formulas[@]}"; do
