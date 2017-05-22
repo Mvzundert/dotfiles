@@ -47,7 +47,7 @@ For more info on what's in there see the repository.
 * Copy `tmux/custom/config.local.example` to `tmux/custom/config.local`
 
 # Usefull tmux commands
-* `prefix + z`: current pane full-screen.
+* `prefix + z`: zoom in on current pane (again to switch back).
 * `prefix + ,`: rename current window.
 * `prefix + R`: Reload tmux configuration.
 * `prefix + 1`: go to first window.
