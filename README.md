@@ -41,7 +41,6 @@ For more info on what's in there see the repository.
 * `git clone https://github.com/Mvzundert/dotfiles.git`
 * `cd ~/dotfiles/tools`
 * `./install.sh`
-* Grab a coffee and enjoy.
 
 # Overwrite tmux configuration
 * Copy `tmux/custom/config.local.example` to `tmux/custom/config.local`
