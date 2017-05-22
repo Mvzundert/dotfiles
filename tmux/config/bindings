@@ -1,4 +1,4 @@
-# remap prefix to Control + a which is just 
+# remap prefix to Control + a which is just
 # more sensible then Control + b.
 set -g prefix C-a
 unbind C-b
@@ -18,18 +18,11 @@ bind-key q kill-pane
 bind-key Q confirm-before kill-window
 
 # split panes using | and -
-bind | split-window -h
-bind - split-window -v
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 unbind '"'
 unbind %
 
 # Synchonize panes on/off
 bind e setw synchronize-panes on
 bind E setw synchronize-panes off
-
-unbind [
-bind Escape copy-mode
-unbind p
-bind p paste-buffer
-bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'y' copy-selection
