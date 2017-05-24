@@ -95,7 +95,7 @@ else
     #  echo "$FILE File created"
     echo "Adjusted zsh theme has been installed"
     # Symlink the .custom theme.
-    ln -s $HOME/dotfiles/zsh/.theme/adjusted.zsh-theme $HOME/.oh-my-zsh/custom/
+    ln -s $HOME/dotfiles/zsh/theme/adjusted.zsh-theme $HOME/.oh-my-zsh/custom/
 fi
 
 # echo " "
