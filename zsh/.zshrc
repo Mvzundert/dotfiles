@@ -83,8 +83,6 @@ fi
 
 if [ -f ~/dotfiles/zsh/custom/zshalias ]; then
   source ~/dotfiles/zsh/custom/zshalias
-else
-  print "404: ~/dotfiles/zsh/custom/zshalias not found."
 fi
 
 # -------------------------------------------------------------------
