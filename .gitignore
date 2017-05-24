@@ -1,1 +1,3 @@
 tmux/custom/*.local
+zsh/custom/
+!zsh/custom/.gitkeep
