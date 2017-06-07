@@ -21,7 +21,7 @@ alias ag='alias | grep'
 alias artisan='php artisan'
 alias homer="composer require laravel/homestead --dev"
 alias homem="php vendor/bin/homestead make"
-
+alias cda="composer dump-autoload"
 ############################
 # Docker alias
 ############################
