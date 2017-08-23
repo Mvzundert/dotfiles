@@ -41,6 +41,8 @@ alias dcu='docker-compose up -d'
 ############################
 alias gcfm='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
 alias gcs='git checkout staging'
+alias grbd='git rebase develop'
+alias grbs='git rebase staging'
 
 ############################
 # Drupal development alias
