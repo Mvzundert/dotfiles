@@ -14,6 +14,7 @@ alias rlzsh='source ~/.zshrc'
 alias zshconfig="vim ~/dotfiles/zsh/.zshrc"
 alias hg='history | grep'
 alias ag='alias | grep'
+alias cda="composer dump-autoload"
 
 ############################
 # Laravel alias
@@ -21,11 +22,11 @@ alias ag='alias | grep'
 alias art='php artisan'
 alias homer="composer require laravel/homestead --dev"
 alias homem="php vendor/bin/homestead make"
-alias cda="composer dump-autoload"
 alias artg="php artisan list | grep"
 alias artr="php artisan route:list"
 alias artrg="php artisan route:list | grep"
-alias artmr="php artisan migrate:refresh --seed"
+alias artmr="php artisan migrate:refresh"
+alias artmrs="php artisan migrate:refresh --seed"
 
 ############################
 # Docker alias
