@@ -25,6 +25,7 @@ alias cda="composer dump-autoload"
 alias artg="php artisan list | grep"
 alias artr="php artisan route:list"
 alias artrg="php artisan route:list | grep"
+alias artmr="php artisan migrate:refresh --seed"
 
 ############################
 # Docker alias
@@ -43,6 +44,8 @@ alias gcfm='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
 alias gcs='git checkout staging'
 alias grbd='git rebase develop'
 alias grbs='git rebase staging'
+alias gbi='git branch --remote --merged origin/develop | grep -v 'develop' | grep -v 'staging' | grep -v 'master' | cut -b 10- | xargs'
+alias gbic='git branch --remote --merged origin/develop | grep -v 'develop' | grep -v 'staging' | grep -v 'master' |  cut -b 10- | xargs git push --delete origin'
 
 ############################
 # Drupal development alias
