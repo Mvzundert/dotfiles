@@ -3,7 +3,6 @@
 if test ! $(which brew); then
     echo "Installing homebrew"
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"gs should pass through the the `brew list check`
-
 fi
 
 echo -e "\n\nInstalling homebrew packages..."
@@ -18,6 +17,7 @@ formulas=(
     jpeg
     node
     ruby
+    dnsmasq
     automake
     libevent
     openssl
