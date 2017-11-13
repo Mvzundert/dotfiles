@@ -50,6 +50,7 @@ formulas=(
     lnav
     readline
     ctags
+    php-cs-fixer
 )
 
 for formula in "${formulas[@]}"; do
