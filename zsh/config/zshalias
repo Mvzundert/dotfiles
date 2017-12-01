@@ -15,7 +15,7 @@ alias zshconfig="vim ~/dotfiles/zsh/.zshrc"
 alias hg='history | grep'
 alias ag='alias | grep'
 alias cda="composer dump-autoload"
-
+alias brlg="brew list | grep"
 ############################
 # Laravel alias
 ############################
