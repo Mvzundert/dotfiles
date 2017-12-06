@@ -66,9 +66,9 @@ alias drush_dis="drush pm-uninstall"
 ############################
 # Custom OS alias
 ############################
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [[ $OSTYPE == "linux-gnu" ]]; then
   # Custom Linux Aliases
-elif [[ "$OSTYPE" == "darwin"* ]]; then
+elif [[ $OSTYPE == "darwin"* ]]; then
   # Custom MAC OSX Aliases
   alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/F$'
   alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Fi$'
