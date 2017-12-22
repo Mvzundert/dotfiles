@@ -7,6 +7,7 @@ alias vim="stty stop '' -ixoff; vim"
 alias composer="php /usr/local/bin/composer.phar"
 alias mailcatcho=' mailcatcher --http-ip=127.0.0.1'
 alias ytmp3="youtube-dl -x --audio-format mp3 $1"
+alias update_dotfiles="~/dotfiles/tools/upgrade.sh"
 
 ############################
 # ZSH alias stuff
