@@ -1,0 +1,59 @@
+#!/bin/sh
+
+PROJECT=`php -r "echo dirname(dirname(dirname(realpath('$0'))));"`
+STAGED_FILES_CMD=`git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.php`
+
+# Determine if a file list is passed
+if [ "$#" -eq 1 ]
+then
+	oIFS=$IFS
+	IFS='
+	'
+	SFILES="$1"
+	IFS=$oIFS
+fi
+SFILES=${SFILES:-$STAGED_FILES_CMD}
+
+echo "Checking PHP Lint..."
+for FILE in $SFILES
+do
+	php -l -d display_errors=0 $PROJECT/$FILE
+	if [ $? != 0 ]
+	then
+		echo "Fix the PHPLINT error(s) before committing."
+		exit 1
+	fi
+	FILES="$FILES $PROJECT/$FILE"
+done
+
+if [ "$FILES" != "" ]
+then
+
+	if [ -d $PROJECT/coverage ]
+	then
+	    # echo "$DIR directory exists!"
+	    echo "coverage folder for PHPMD already exists...skipping"
+	else
+	    #  echo "$DIR directory created"
+	    echo "setting up coverage folder for PHPMD"
+	    # Symlink git-templates  to .git-templates folder.
+	    mkdir $PROJECT/coverage
+	fi
+
+	echo "Running Mess Detector..."
+	/usr/local/bin/phpmd $FILES html cleancode,codesize,controversial,design,naming,unusedcode --reportfile coverage/phpmd.html
+
+	echo "Running Code Sniffer..."
+	/usr/local/bin/phpcs --ignore=*/tests/*,*/database/* --standard=PSR2 --encoding=utf-8 -n -p $FILES
+
+	if [ $? != 0 ]
+	then
+		echo "Running Code Beautifier..."
+		echo "Trying to fix the error(s) before commit."
+
+		/usr/local/bin/phpcbf --standard=PSR2 $FILES
+		exit 1
+	fi
+fi
+
+exit $?
