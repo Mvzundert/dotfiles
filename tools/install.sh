@@ -1,21 +1,15 @@
 #! /bin/bash
 
-# echo " "
-# echo "+++++++++++++++++++++++++++++++++++++++"
-# echo "++++++++++ Starting installer.... +++++"
-# echo "+++++++++++++++++++++++++++++++++++++++"
-# echo " "
-# Check if Git is installed, if not we
-# cannot proceed.
-hash git >/dev/null 2>&1 || {
-    echo "Error: git is not installed"
-    echo "Please install it and run this setup again."
-exit 1
-}
+echo " "
+echo "+++++++++++++++++++++++++++++++++++++++"
+echo "++++++++++ Starting installer.... +++++"
+echo "+++++++++++++++++++++++++++++++++++++++"
+echo " "
+
 
 # echo " "
 # echo "======================================="
-# echo "========= OS dependenciesh ============"
+# echo "========= OS dependencies ============"
 # echo "======================================="
 # echo " "
 if [ "$(uname)" == "linux-gnu" ]; then

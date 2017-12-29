@@ -9,9 +9,9 @@ echo -e "\n\nInstalling homebrew packages..."
 echo "=============================="
 
 formulas=(
+    git
     ack
     icu4c
-    mysql
     reattach-to-user-namespace
     autoconf
     jpeg
@@ -26,6 +26,7 @@ formulas=(
     libgpg-error
     openssl@1.1
     tmux
+    tmate
     ctop
     libksba
     pcre
@@ -36,21 +37,26 @@ formulas=(
     vim
     freetype
     libtool
-    php70
     wget
     fswatch
     libxml2
     pkg-config
     zsh
+    zsh-completions
     gdbm
     libyaml
     python
-    zsh-completions
     gettext
     lnav
     readline
     ctags
+    youtube-dl
+    ffmpeg
+    php71
+    php71-xdebug
     php-cs-fixer
+    phplint
+    mysql
 )
 
 for formula in "${formulas[@]}"; do
