@@ -54,4 +54,8 @@ else
     echo "git-templates have been installed"
     # Symlink git-templates  to .git-templates folder.
     ln -s $HOME/dotfiles/tools/git-templates $HOME/.git-templates
+    # make sure git recognizes the template dir.
+    git config --global init.templatedir '~/.git-templates'
+    # make sure the script is executable.
+    chmod a+x ~/.git-templates/hooks/pre-commit
 fi
