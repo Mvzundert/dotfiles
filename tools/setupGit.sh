@@ -23,6 +23,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
     formulas=(
         git
+        phplint
         php-code-sniffer
         phpmd
     )
