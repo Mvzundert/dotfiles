@@ -11,10 +11,10 @@ export ZSH=$HOME/.oh-my-zsh
 # If not we display an error (comment this or the error if you don't
 # want to use it.
 #
-if [ -f ~/dotfiles/zsh/config/zshconfig ]; then
-  source ~/dotfiles/zsh/config/zshconfig
+if [ -f ~/dotfiles/zsh/custom/zshconfig ]; then
+  source ~/dotfiles/zsh/custom/zshconfig
 else
-  print "404: ~/dotfiles/zsh/config/zshconfig not found."
+  source ~/dotfiles/zsh/config/zshconfig
 fi
 
 # -------------------------------------------------------------------
@@ -42,10 +42,10 @@ source $ZSH/oh-my-zsh.sh
 # If not we display an error (comment this or the error if you don't
 # want to use it.
 
-if [ -f ~/dotfiles/zsh/config/zshpaths ]; then
-  source ~/dotfiles/zsh/config/zshpaths
+if [ -f ~/dotfiles/zsh/custom/zshpaths ]; then
+  source ~/dotfiles/zsh/custom/zshpaths
 else
-  print "404: ~/dotfiles/zsh/config/zshpaths not found."
+  source ~/dotfiles/zsh/config/zshpaths
 fi
 
 # -------------------------------------------------------------------
@@ -55,10 +55,10 @@ fi
 # If not we display an error (comment this or the error if you don't
 # want to use it.
 
-if [ -f ~/dotfiles/zsh/config/zshalias ]; then
-  source ~/dotfiles/zsh/config/zshalias
+if [ -f ~/dotfiles/zsh/custom/zshalias ]; then
+  source ~/dotfiles/zsh/custom/zshalias
 else
-  print "404: ~/dotfiles/zsh/config/zshalias not found."
+  source ~/dotfiles/zsh/config/zshalias
 fi
 
 # -------------------------------------------------------------------
@@ -68,21 +68,10 @@ fi
 # If not we display an error (comment this or the error if you don't
 # want to use it.
 
-if [ -f ~/dotfiles/zsh/config/zshfunctions ]; then
-  source ~/dotfiles/zsh/config/zshfunctions
+if [ -f ~/dotfiles/zsh/custom/zshfunctions ]; then
+  source ~/dotfiles/zsh/custom/zshfunctions
 else
-  print "404: ~/dotfiles/zsh/config/zshfunctions not found."
-fi
-
-# -------------------------------------------------------------------
-# User Custom Aliases
-# -------------------------------------------------------------------
-# Function to check if user custom alias exist
-# If not we display an error (comment this or the error if you don't
-# want to use it.
-
-if [ -f ~/dotfiles/zsh/custom/zshalias ]; then
-  source ~/dotfiles/zsh/custom/zshalias
+  source ~/dotfiles/zsh/config/zshfunctions
 fi
 
 # -------------------------------------------------------------------
@@ -91,8 +80,8 @@ fi
 # Function to check if custom functions exist
 # If not we display an error (comment this or the error if you don't
 # want to use it.
-if [ -f ~/dotfiles/zsh/config/zshwidgets ]; then
-  source ~/dotfiles/zsh/config/zshwidgets
+if [ -f ~/dotfiles/zsh/custom/zshwidgets ]; then
+  source ~/dotfiles/zsh/custom/zshwidgets
 else
-  print "404: ~/dotfiles/zsh/config/zshwidgets not found."
+  source ~/dotfiles/zsh/config/zshwidgets
 fi
