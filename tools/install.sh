@@ -13,7 +13,7 @@ echo " "
 # echo "======================================="
 # echo " "
 if [ "$(uname)" == "linux-gnu" ]; then
-    echo -e "\n\nRunning on Linux"
+    echo "\n\nRunning on Linux"
     source apt.sh
 fi
 
