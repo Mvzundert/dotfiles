@@ -5,7 +5,26 @@ if test ! $(which brew); then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"gs should pass through the the `brew list check`
 fi
 
-echo -e "\n\nInstalling homebrew packages..."
+echo "\n\nInstalling homebrew taps..."
+echo "=============================="
+
+taps=(
+    homebrew/core
+    homebrew/php
+    homebrew/bundle
+    homebrew/services
+    caskroom/cask
+)
+
+for tap in "${taps[@]}"; do
+    if brew tap "$tap" > /dev/null 2>&1; then
+        echo "$tap already installed... skipping."
+    else
+        brew tap $tap
+    fi
+done
+
+echo "\n\nBrewing formulas..."
 echo "=============================="
 
 formulas=(
