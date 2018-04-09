@@ -21,10 +21,22 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Custom MAC OSX functions
+
     #Fix displaying of ugly user.
     prompt_context() {
         if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
             prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+        fi
+    }
+
+    # Checks if phpunit is installed in vendor folder or if we should use global one.
+    function get_phpunit_install() {
+        if [ -f vendor/bin/paratest ]; then
+            echo './vendor/bin/paratest'
+        elif [ -f vendor/bin/phpunit ]; then
+            echo './vendor/bin/phpunit'
+        else
+            echo 'phpunit'
         fi
     }
 fi

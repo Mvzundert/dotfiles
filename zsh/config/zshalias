@@ -13,6 +13,9 @@ alias mailcatcho=' mailcatcher --http-ip=127.0.0.1'
 alias ytmp3="youtube-dl -x --audio-format mp3 $1"
 alias update_dotfiles="~/dotfiles/tools/upgrade.sh"
 
+### PHP Unit ###
+alias phpunit='$(get_phpunit_install)'
+
 ############################
 # ZSH alias stuff
 ############################
