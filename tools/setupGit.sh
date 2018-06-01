@@ -6,12 +6,12 @@
 # echo "======================================="
 # echo " "
 if [ "$(uname)" == "linux-gnu" ]; then
-    echo -e "\n\nRunning on Linux"
-    echo -e "\n\nCannot setup git (yet)"
+    echo "\n\nRunning on Linux"
+    echo "\n\nCannot setup git (yet)"
 fi
 
 if [ "$(uname)" == "Darwin" ]; then
-    echo -e "\n\nRunning on OSX"
+    echo "\n\nRunning on OSX"
 
     if test ! $(which brew); then
         echo "Installing homebrew"
@@ -58,5 +58,5 @@ else
     # make sure git recognizes the template dir.
     git config --global init.templatedir '~/.git-templates'
     # make sure the script is executable.
-    chmod a+x ~/.git-templates/hooks/pre-commit
+    chmod a+x ~/.git-templates/hooks/*
 fi
