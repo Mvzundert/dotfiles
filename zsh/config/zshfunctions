@@ -16,6 +16,37 @@
         fi
     }
 
+# Looks for the custom PHP Code Sniffer ruleset otherwise return PSR-2 as standard
+#function get_phpcs_ruleset() {
+#    if [ -f ruleset.xml ]; then
+#      echo 'ruleset.xml'
+#    elif [ -f ~/.phpcs/ruleset.xml ]; then
+#      echo '~/.phpcs/ruleset.xml'
+#    else
+#      echo 'PSR2'
+#    fi
+#}
+
+# List all ignored folders for PHP Code Sniffer
+#function get_phpcs_ignore_list() {
+#    echo *\/tests\/*,*\/database\/*
+#}
+
+# Checks if phpunit is installed in vendor folder or if we should use global one.
+function get_phpunit_install() {
+    if [ -f vendor/bin/paratest ]; then
+        echo './vendor/bin/paratest'
+    elif [ -f vendor/bin/phpunit ]; then
+        echo './vendor/bin/phpunit'
+    else
+        echo 'phpunit'
+    fi
+}
+
+####################################
+# OS specific functions
+####################################
+
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Jot function allows you to quickly write
     # notes to a file from shell.
