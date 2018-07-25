@@ -51,7 +51,7 @@ then
 		echo "Running Code Beautifier..."
 		echo "Trying to fix the error(s) before commit."
 
-		$HOME/.composer/vendor/bin/phpcs  --standard=YAD-PSR2 $FILES
+		$HOME/.composer/vendor/bin/phpcbf  --standard=YAD-PSR2 $FILES
 		exit 1
 	fi
 fi
