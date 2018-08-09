@@ -18,6 +18,7 @@ alias phpunit='$(get_phpunit_install)'
 
 ### PHP Code Sniffer ###
 # alias phpcs='phpcs --ignore=$(get_phpcs_ignore_list) --standard=$(get_phpcs_ruleset) --encoding=utf-8 -n -p app/'
+# alias psniff='phpcs --ignore=$(get_phpcs_ignore_list) --standard=$(get_phpcs_ruleset) --encoding=utf-8 -n -p app/'
 
 ############################
 # ZSH alias stuff

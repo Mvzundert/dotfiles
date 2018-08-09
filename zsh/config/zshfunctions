@@ -2,14 +2,12 @@
 # duplicate this file in zsh/config/zshfunctions
 # to enable/add your own custom configuration
 
-# Looks for the custom PHP Code Sniffer ruleset otherwise return PSR-2 as standard
+# Looks for the custom PHP Code Sniffer ruleset otherwise return YAD-PSR-2 as standard
 #function get_phpcs_ruleset() {
 #    if [ -f ruleset.xml ]; then
 #      echo 'ruleset.xml'
-#    elif [ -f ~/.phpcs/ruleset.xml ]; then
-#      echo '~/.phpcs/ruleset.xml'
 #    else
-#      echo 'PSR2'
+#      echo 'YAD-PSR2'
 #    fi
 #}
 
