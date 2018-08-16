@@ -42,10 +42,10 @@ source $ZSH/oh-my-zsh.sh
 # If not we display an error (comment this or the error if you don't
 # want to use it.
 
+source ~/dotfiles/zsh/config/zshpaths
+
 if [ -f ~/dotfiles/zsh/custom/zshpaths ]; then
   source ~/dotfiles/zsh/custom/zshpaths
-else
-  source ~/dotfiles/zsh/config/zshpaths
 fi
 
 # -------------------------------------------------------------------
@@ -55,10 +55,10 @@ fi
 # If not we display an error (comment this or the error if you don't
 # want to use it.
 
+source ~/dotfiles/zsh/config/zshalias
+
 if [ -f ~/dotfiles/zsh/custom/zshalias ]; then
   source ~/dotfiles/zsh/custom/zshalias
-else
-  source ~/dotfiles/zsh/config/zshalias
 fi
 
 # -------------------------------------------------------------------
@@ -68,10 +68,11 @@ fi
 # If not we display an error (comment this or the error if you don't
 # want to use it.
 
+
+source ~/dotfiles/zsh/config/zshfunctions
+
 if [ -f ~/dotfiles/zsh/custom/zshfunctions ]; then
   source ~/dotfiles/zsh/custom/zshfunctions
-else
-  source ~/dotfiles/zsh/config/zshfunctions
 fi
 
 # -------------------------------------------------------------------
@@ -80,8 +81,9 @@ fi
 # Function to check if custom functions exist
 # If not we display an error (comment this or the error if you don't
 # want to use it.
+
+source ~/dotfiles/zsh/config/zshwidgets
+
 if [ -f ~/dotfiles/zsh/custom/zshwidgets ]; then
   source ~/dotfiles/zsh/custom/zshwidgets
-else
-  source ~/dotfiles/zsh/config/zshwidgets
 fi
