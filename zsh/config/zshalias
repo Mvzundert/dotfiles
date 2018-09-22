@@ -26,15 +26,16 @@ alias phpunit='$(get_phpunit_install)'
 alias rlzsh='source ~/.zshrc'
 alias zshconfig="vim ~/dotfiles/zsh/.zshrc"
 alias cda="composer dump-autoload"
+alias cat="bat"
 
 ############################
 # Searching all the things
 ############################
-alias brlg="brew list | grep"
-alias cigr="composer info | grep"
-alias ciggr="composer global info | grep"
-alias hg='history | grep'
-alias ag='alias | grep'
+alias brlg="brew list | ack"
+alias cigr="composer info | ack"
+alias ciggr="composer global info | ack"
+alias hg='history | ack'
+alias ag='alias | ack'
 
 ############################
 # Laravel alias
