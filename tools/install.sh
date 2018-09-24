@@ -7,26 +7,22 @@ echo "+++++++++++++++++++++++++++++++++++++++"
 echo " "
 
 
-# echo " "
-# echo "======================================="
-# echo "========= OS dependencies ============"
-# echo "======================================="
-# echo " "
+# =======================================
+# ========= OS dependencies =============
+# =======================================
 if [ "$(uname)" == "linux-gnu" ]; then
     echo "\n\nRunning on Linux"
     source apt.sh
 fi
 
 if [ "$(uname)" == "Darwin" ]; then
-    echo -e "\n\nRunning on OSX"
+    echo "\n\nRunning on OSX"
     source brew.sh
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= oh-my-zsh   ================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= oh-my-zsh   =================
+#=======================================
 DIR="$HOME/.oh-my-zsh"
 
 if [ -d $DIR ]
@@ -40,11 +36,9 @@ else
     git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= Syntax Highlight zsh  ======="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= Syntax Highlight zsh  =======
+#=======================================
 DIR="$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 
 if [ -d $DIR ]
@@ -58,11 +52,9 @@ else
     git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= ZSHRC ======================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= ZSHRC =======================
+#=======================================
 FILE="$HOME/.zshrc"
 
 if [ -f $FILE ]; then
@@ -75,11 +67,9 @@ else
     ln -s $HOME/dotfiles/zsh/.zshrc $HOME
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= ZSH Theme ==================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= ZSH Theme ===================
+#=======================================
 FILE="$HOME/.oh-my-zsh/custom/adjusted.zsh-theme"
 
 if [ -f $FILE ]; then
@@ -92,11 +82,9 @@ else
     ln -s $HOME/dotfiles/zsh/theme/adjusted.zsh-theme $HOME/.oh-my-zsh/custom/
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= ZSH iterm Switch +==========="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= ZSH iterm Switch ============
+#=======================================
 FILE="$HOME/.oh-my-zsh/custom/iTerm-ssh.zsh"
 
 if [ -f $FILE ]; then
@@ -109,11 +97,9 @@ else
     ln -s $HOME/dotfiles/configscripts/iTerm-ssh.zsh $HOME/.oh-my-zsh/custom/
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= oh-my-vim ==================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= oh-my-vim ===================
+#=======================================
 DIR="$HOME/.oh-my-vim"
 
 if [ -d $DIR ]
@@ -125,11 +111,9 @@ else
     git clone https://github.com/Mvzundert/oh-my-vim.git $HOME/.oh-my-vim
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= VIM config =================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= VIM config ==================
+#=======================================
 DIR="$HOME/.vim"
 
 if [ -L $DIR ]
@@ -143,11 +127,9 @@ else
     ln -s $HOME/.oh-my-vim/ $HOME/.vim
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= VIMRC ======================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= VIMRC =======================
+#=======================================
 FILE="$HOME/.vimrc"
 
 if [ -f $FILE ]; then
@@ -160,11 +142,9 @@ else
     ln -s $HOME/.oh-my-vim/.vimrc $HOME
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= Vim Vundle =================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= Vim Vundle ==================
+#=======================================
 DIR="$HOME/.vim/bundle/Vundle.vim"
 
 # Check if the Vundle dir is emtpy (it should be)
@@ -184,11 +164,9 @@ else
     vim +PluginInstall +qall
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= TMUX  TPM ==================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= TMUX  TPM ===================
+#=======================================
 DIR="$HOME/.tmux/plugins/tpm"
 
 # Check if the tmux dir is emtpy (it should be)
@@ -201,11 +179,9 @@ else
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= TMUX Conf ==================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= TMUX Conf ===================
+#=======================================
 FILE="$HOME/.tmux.conf"
 
 if [ -f $FILE ]; then
@@ -217,12 +193,6 @@ else
     # Symlink the .tmux.conf file that makes sure the config works
     ln -s $HOME/dotfiles/tmux/.tmux.conf $HOME
 fi
-
-# echo " "
-# echo "+++++++++++++++++++++++++++++++++++++++"
-# echo "++++++++++ Finished +++++++++++++++++++"
-# echo "+++++++++++++++++++++++++++++++++++++++"
-# echo " "
 
 echo '________          __    _____.__.__                 '
 echo '\______ \   _____/  |__/ ____\__|  |   ____   ______'
