@@ -1,10 +1,8 @@
 #! /bin/bash
 
-# echo " "
-# echo "======================================="
-# echo "========= OS dependencies ============"
-# echo "======================================="
-# echo " "
+#=======================================
+#========= OS dependencies =============
+#=======================================
 if [ "$(uname)" == "linux-gnu" ]; then
     echo "\n\nRunning on Linux"
     echo "\n\nCannot setup git (yet)"
@@ -18,7 +16,7 @@ if [ "$(uname)" == "Darwin" ]; then
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"gs should pass through the the `brew list check`
     fi
 
-    echo -e "\n\nInstalling homebrew packages..."
+    echo "\n\nInstalling homebrew packages..."
     echo "=============================="
 
     formulas=(
@@ -38,11 +36,9 @@ if [ "$(uname)" == "Darwin" ]; then
 
 fi
 
-# echo " "
-# echo "======================================="
-# echo "========= githooks ===================="
-# echo "======================================="
-# echo " "
+#=======================================
+#========= githooks ====================
+#=======================================
 DIR="$HOME/.git-templates"
 
 
