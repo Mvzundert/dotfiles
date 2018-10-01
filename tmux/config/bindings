@@ -26,3 +26,6 @@ unbind %
 # Synchonize panes on/off
 bind e setw synchronize-panes on
 bind E setw synchronize-panes off
+
+# Make tmux not shit itself when clearing
+bind C-k send-keys -R \; clear-history
