@@ -27,6 +27,7 @@ alias rlzsh='source ~/.zshrc'
 alias zshconfig="vim ~/dotfiles/zsh/.zshrc"
 alias cda="composer dump-autoload"
 alias cat="bat"
+alias size='du -sh * | sort -r -n | grep "[0-9][G|M]"'
 
 ############################
 # Searching all the things
