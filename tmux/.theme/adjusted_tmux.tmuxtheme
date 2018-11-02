@@ -1,4 +1,3 @@
-
 # Status update interval
 set -g status-interval 1
 
@@ -10,13 +9,13 @@ set -g status-fg colour210
 set -g status-left-bg black
 set -g status-left-fg colour210
 set -g status-left-length 50
-set -g status-left "#[fg=colour192]#S #[fg=white]» #[fg=red]#I #[fg=colour210]#P #[fg=colour45] ♥ #{battery_level} #[fg=colour210]%|| %h-%d %H:%M"
+set -g status-left "#[fg=colour192]#S #[fg=white] » #[fg=red]#I #[fg=colour210]#P #[fg=colour45] ♥ #{battery_level} #[fg=colour210]% $SEGMENT_SEPERATOR %h-%d %H:%M"
 
 # Right side of status bar
 set -g status-right-bg black
 set -g status-right-fg colour210
 set -g status-right-length 60 
-set -g status-right "#[fg=colour210]|| ♫ #{spotify_artist}: #{spotify_track} || %a %h-%d %H:%M "
+set -g status-right "#[fg=colour210] ♫ #{spotify_artist}: #{spotify_track} %a %h-%d %H:%M "
 
 # Window status
 set -g window-status-format " #I:#W#F "
@@ -31,7 +30,7 @@ set -g window-status-activity-bg colour196 # fg and bg are flipped here due to a
 set -g window-status-activity-fg black  # bug in tmux
 
 # Window separator
-set -g window-status-separator "||"
+set -g window-status-separator ""
 
 # Window status alignment
 set -g status-justify centre
