@@ -8,7 +8,7 @@ set -g status-fg colour210
 # Left side of status bar
 set -g status-left-bg black
 set -g status-left-fg colour210
-set -g status-left-length 150
+set -g status-left-length 70
 set -g status-left "#[fg=colour192]#S #[fg=white] » #[fg=red]#I #[fg=colour210]#P #[fg=colour45] ♥ #{battery_level} #[fg=colour210] #[fg=colour210] ♫ #{spotify_artist}: #{spotify_track}"
 
 # Right side of status bar
