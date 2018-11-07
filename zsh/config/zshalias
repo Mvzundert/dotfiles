@@ -70,6 +70,8 @@ alias grbsk='git rebase --skip'
 alias gbi='git branch --remote --merged origin/develop | grep -v 'develop' | grep -v 'staging' | grep -v 'master' | cut -b 10- | xargs'
 alias gbic='git branch --remote --merged origin/develop | grep -v 'develop' | grep -v 'staging' | grep -v 'master' |  cut -b 10- | xargs git push --delete origin'
 alias gstash='git stash'
+alias gbdl='git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d'
+
 
 ############################
 # Drupal development alias
