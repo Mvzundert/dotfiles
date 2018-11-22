@@ -6,6 +6,7 @@
 
 # Enable mouse control (clickable windows, panes, resizable panes)
 set -g mouse on
+# set -g mouse-select-window on
 
 # don't rename windows automatically
 set-option -g allow-rename off
@@ -23,3 +24,11 @@ setw -g pane-base-index 1
 
 # Move the status bar to top (or bottom)
 set-option -g status-position bottom
+
+# Make continuum not save every second.
+set -g @continuum-restore 'off'
+
+# Set term for 256 colors
+# # Can't do xterm-256colors b/c tmux really
+# # really really wants "screen"
+set -g default-terminal "screen-256color"
