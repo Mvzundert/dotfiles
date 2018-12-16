@@ -3,6 +3,14 @@
 # to enable/add your own custom configuration
 
 # -------------------------------------------------------------------
+# Include Z
+# see: https://github.com/rupa/z/blob/master/z.sh
+# -------------------------------------------------------------------
+#if [[ -f ~/.oh-my-zsh/custom/plugins/z/z.sh ]]; then
+ #   source ~/.oh-my-zsh/custom/plugins/z/z.sh
+#fi
+
+# -------------------------------------------------------------------
 # Custom .zshrc source highlighting
 # see: https://github.com/zsh-users/zsh-syntax-highlighting
 # Why must zsh-syntax-highlighting.zsh be sourced at the end of the .zshrc file?
