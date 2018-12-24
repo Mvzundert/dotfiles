@@ -30,6 +30,15 @@ alias cda="composer dump-autoload"
 alias size='du -sh * | sort -r -n | grep "[0-9][G|M]"'
 
 ############################
+# TMUX alias stuff
+############################
+# tmux aliases
+alias ta='tmux attach'
+alias tls='tmux ls'
+alias tat='tmux attach -t'
+alias tns='tmux new-session -s'
+
+############################
 # Searching all the things
 ############################
 alias brlg="brew list | ack"
