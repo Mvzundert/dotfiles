@@ -26,7 +26,7 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #
-plugins=(git extract web-search composer history sudo)
+plugins=(git extract composer history )
 
 # -------------------------------------------------------------------
 # Load Oh-My-ZSH
