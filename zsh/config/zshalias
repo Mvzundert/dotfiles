@@ -109,6 +109,7 @@ alias gup="git pull --rebase"
 alias gfa="git fetch --all --prune" 
 alias gcmsg="git commit -m"
 alias gp="git push"
+alias gd="git diff"
 
 # Checkout branches
 alias gcs='git checkout staging'
