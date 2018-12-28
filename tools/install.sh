@@ -20,6 +20,8 @@ if [ "$(uname)" == "Darwin" ]; then
     source osx.sh
 fi
 
+echo "Initializing submodule(s)"
+git submodule update --init --recursive
 
 #=======================================
 #========= ZSHRC =======================
@@ -39,46 +41,12 @@ fi
 #=======================================
 #========= oh-my-vim ===================
 #=======================================
-DIR="$HOME/.oh-my-vim"
+DIR="$DOTFILES/oh-my-vim"
 
 if [ -d $DIR ]
 then
     echo ".oh-my-vim framework was already retrieved...skipping"
-else
-    echo ".oh-my-vim framework has been retrieved"
-    # Get oh-my-vim framework
-    git clone https://github.com/Mvzundert/oh-my-vim.git $HOME/.oh-my-vim
-fi
-
-#=======================================
-#========= VIM config ==================
-#=======================================
-DIR="$HOME/.vim"
-
-if [ -L $DIR ]
-then
-    # echo "$DIR directory exists!"
-    echo ".oh-my-vim framework has been installed...skipping"
-else
-    #  echo "$DIR directory created"
-    echo ".oh-my-vim framework has been installed"
-    # Symlink .oh-my-vim framework to .vim folder.
-    ln -s $HOME/.oh-my-vim/ $HOME/.vim
-fi
-
-#=======================================
-#========= VIMRC =======================
-#=======================================
-FILE="$HOME/.vimrc"
-
-if [ -f $FILE ]; then
-    #  echo "File $FILE exists."
-    echo "Vimrc was already installed....skipping"
-else
-    #  echo "$FILE File created"
-    echo "Vimrc has been installed."
-    # Symlink the .vimrc file that makes sure the config works
-    ln -s $HOME/.oh-my-vim/.vimrc $HOME
+    ln -s $DOTFILES/oh-my-vim/ $HOME/.vim
 fi
 
 #=======================================
@@ -101,6 +69,22 @@ else
     # We install all plugins that are specified in
     # .oh-my-vim/config/plugins.vim
     vim +PluginInstall +qall
+fi
+
+
+#=======================================
+#========= VIMRC =======================
+#=======================================
+FILE="$HOME/.vimrc"
+
+if [ -f $FILE ]; then
+    #  echo "File $FILE exists."
+    echo "Vimrc was already installed....skipping"
+else
+    #  echo "$FILE File created"
+    echo "Vimrc has been installed."
+    # Symlink the .vimrc file that makes sure the config works
+    ln -s $DOTFILES/oh-my-vim/.vimrc $HOME
 fi
 
 #=======================================
