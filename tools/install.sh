@@ -6,6 +6,13 @@ echo "++++++++++ Starting installer.... +++++"
 echo "+++++++++++++++++++++++++++++++++++++++"
 echo " "
 
+export DOTFILES=$HOME/.dotfiles
+
+if [[ -d ~/code ]]; then
+    export CODE_DIR=~/code
+fi
+
+
 # =======================================
 # ========= OS dependencies =============
 # =======================================
@@ -24,6 +31,17 @@ echo "Initializing submodule(s)"
 git submodule update --init --recursive
 
 #=======================================
+#========= Dotfiles +===================
+#=======================================
+DIR="$HOME/.dotfiles"
+
+if [ ! -d $DIR ]
+then
+    echo "set symlink for dotfiles"
+    ln -s $CODE_DIR/dotfiles $HOME/.dotfiles
+fi
+
+#=======================================
 #========= ZSHRC =======================
 #=======================================
 FILE="$HOME/.zshrc"
@@ -35,7 +53,7 @@ else
     #  echo "$FILE File created"
     echo "zshrc file has been installed"
     # Symlink the .zshrc file that makes sure the config works
-    ln -s $HOME/dotfiles/zsh/.zshrc $HOME
+    ln -s $DOTFILES/zsh/.zshrc $HOME
 fi
 
 #=======================================
@@ -45,7 +63,7 @@ DIR="$DOTFILES/oh-my-vim"
 
 if [ -d $DIR ]
 then
-    echo ".oh-my-vim framework was already retrieved...skipping"
+    echo "Vim symlinked"
     ln -s $DOTFILES/oh-my-vim/ $HOME/.vim
 fi
 
@@ -70,7 +88,6 @@ else
     # .oh-my-vim/config/plugins.vim
     vim +PluginInstall +qall
 fi
-
 
 #=======================================
 #========= VIMRC =======================
@@ -114,7 +131,7 @@ else
     #  echo "$FILE File created"
     echo "Tmux.conf has been installed."
     # Symlink the .tmux.conf file that makes sure the config works
-    ln -s $HOME/dotfiles/tmux/.tmux.conf $HOME
+    ln -s $DOTFILES/tmux/.tmux.conf $HOME
 fi
 
 echo '________          __    _____.__.__                 '
