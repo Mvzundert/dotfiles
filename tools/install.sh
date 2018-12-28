@@ -20,37 +20,6 @@ if [ "$(uname)" == "Darwin" ]; then
     source brew.sh
 fi
 
-#=======================================
-#========= oh-my-zsh   =================
-#=======================================
-DIR="$HOME/.oh-my-zsh"
-
-if [ -d $DIR ]
-then
-    # echo "$DIR directory exists!"
-    echo "oh-my-zsh was already installed...skipping"
-else
-    #  echo "$DIR directory created"
-    echo "oh-my-zsh framework has been installed"
-    # Get oh-my-zsh framework
-    git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
-fi
-
-#=======================================
-#========= Syntax Highlight zsh  =======
-#=======================================
-DIR="$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-
-if [ -d $DIR ]
-then
-    # echo "$DIR directory exists!"
-    echo "ZSH syntax highlighting was already installed...skipping"
-else
-    #  echo "$DIR directory created"
-    echo "ZSH syntax highlighting has been installed"
-    # Get Syntax highlighting
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-fi
 
 #=======================================
 #========= ZSHRC =======================
@@ -65,36 +34,6 @@ else
     echo "zshrc file has been installed"
     # Symlink the .zshrc file that makes sure the config works
     ln -s $HOME/dotfiles/zsh/.zshrc $HOME
-fi
-
-#=======================================
-#========= ZSH Theme ===================
-#=======================================
-FILE="$HOME/.oh-my-zsh/custom/adjusted.zsh-theme"
-
-if [ -f $FILE ]; then
-    #  echo "File $FILE exists."
-    echo "Adjusted zsh theme was already installed...skipping"
-else
-    #  echo "$FILE File created"
-    echo "Adjusted zsh theme has been installed"
-    # Symlink the .custom theme.
-    ln -s $HOME/dotfiles/zsh/theme/adjusted.zsh-theme $HOME/.oh-my-zsh/custom/
-fi
-
-#=======================================
-#========= ZSH iterm Switch ============
-#=======================================
-FILE="$HOME/.oh-my-zsh/custom/iTerm-ssh.zsh"
-
-if [ -f $FILE ]; then
-    #  echo "File $FILE exists."
-    echo "iTerm ssh Switch was already installed...skipping"
-else
-    #  echo "$FILE File created"
-    echo "iTerm ssh Switch has been installed"
-    # Symlink the iTerm switcher for hosts
-    ln -s $HOME/dotfiles/configscripts/iTerm-ssh.zsh $HOME/.oh-my-zsh/custom/
 fi
 
 #=======================================
