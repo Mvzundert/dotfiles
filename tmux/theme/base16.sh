@@ -28,12 +28,14 @@ set-option -g status-attr default
 
 set-window-option -g window-status-fg $base08
 set-window-option -g window-status-bg $base00
-set -g window-status-format " #I #W"
+
+# Window status
+set -g window-status-format " #I:#W#F "
+set -g window-status-current-format " #I:#W#F "
 
 # active window title colors
 set-window-option -g window-status-current-fg $base0E
 set-window-option -g window-status-current-bg $base00
-set-window-option -g  window-status-current-format " #[bold]#W "
 
 # pane border colors
 set-window-option -g pane-border-fg $base07
