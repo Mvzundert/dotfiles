@@ -10,7 +10,6 @@ alias vim="stty stop '' -ixoff; vim"
 # alias composer="php /usr/local/bin/composer.phar"
 alias mailcatcho=' mailcatcher --http-ip=127.0.0.1'
 alias ytmp3="youtube-dl -x --audio-format mp3 $1"
-alias update_dotfiles="~/dotfiles/tools/upgrade.sh"
 
 # Make searching through previous commands more sane
 # We bind up and down arrow keys to search the history
@@ -37,6 +36,7 @@ alias ta='tmux attach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
+alias tmx='sh $ZSH/plugins/tm.sh'
 
 ############################
 # Searching all the things
