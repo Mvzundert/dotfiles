@@ -22,9 +22,9 @@ set -g status-right-length 150
 set -g status-interval 1 
 
 # default statusbar colors
-set-option -g status-fg $base02
+set-option -g status-fg $base08
 set-option -g status-bg $base00
-set-option -g status-attr default
+set-option -g status-attr $base00 
 
 set-window-option -g window-status-fg $base08
 set-window-option -g window-status-bg $base00
@@ -42,12 +42,12 @@ set-window-option -g pane-border-fg $base07
 set-window-option -g pane-active-border-fg $base0E
 
 # message text
-set-option -g message-bg $base00
 set-option -g message-fg $base0C
+set-option -g message-bg $base00
 
 # pane number display
-set-option -g display-panes-active-colour $base0C
-set-option -g display-panes-colour $base01
+set-option -g display-panes-active-colour $base0E
+set-option -g display-panes-colour $base00
 
 # clock
 set-window-option -g clock-mode-colour $base0C
