@@ -64,32 +64,6 @@ alias build="build_project_assets"
 # Do watching magic of project with actual dependency checks
 alias watch="watch_project_assets"
 
-############################
-# Directory alias
-############################
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-    colorflag="--color"
-else # macOS `ls`
-    colorflag="-G"
-fi
-
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
-alias l="ls -lah ${colorflag}"
-alias la="ls -AF ${colorflag}"
-alias ll="ls -lah ${colorflag}"
-alias lld="ls -l | grep ^d"
-alias rmf="rm -rf"
-
-# Helpers
-alias grep='ack--color=auto' # We always use ACK no matter what
-alias df='df -h' # disk free, in Gigabytes, not bytes
-alias du='du -h -c' # calculate disk usage for a folder
-
 ###########################
 # Docker alias
 ############################
@@ -128,7 +102,7 @@ alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
 alias gstash='git stash'
 
-# for funi and games
+# for fun and games
 alias luke='gp --force'
 alias yolo='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
 

@@ -11,7 +11,7 @@ add-zsh-hook precmd async_trigger
 source "$DOTFILES/zsh/config/zshgitprompt"
 source "$DOTFILES/zsh/config/zshjobsprompt"
 
-PROMPT_SYMBOL='❯'
+PROMPT_SYMBOL='❯ '
 
 ASYNC_PROC=0
 function async() {
