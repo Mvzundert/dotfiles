@@ -113,11 +113,16 @@ alias gfa="git fetch --all --prune"
 alias gcmsg="git commit -m"
 alias gp="git push"
 alias gd="git diff"
+alias glgp="git log --stat --color -p"
+alias glol="git log --graph --abbrev-commit --decorate --date=relative --all"
+alias glog="git log --all --decorate --oneline --graph"
 
 # Checkout branches
+alias gcd='git checkout develop'
 alias gcs='git checkout staging'
-alias grbd='git rebase develop'
+alias gcm='git checkout master'
 
+alias grbd='git rebase develop'
 alias grbs='git rebase --skip'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
