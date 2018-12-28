@@ -2,13 +2,10 @@
 # duplicate this file in zsh/config/zshwidgets
 # to enable/add your own custom configuration
 
-# -------------------------------------------------------------------
-# Include Z
-# see: https://github.com/rupa/z/blob/master/z.sh
-# -------------------------------------------------------------------
-#if [[ -f ~/.oh-my-zsh/custom/plugins/z/z.sh ]]; then
- #   source ~/.oh-my-zsh/custom/plugins/z/z.sh
-#fi
+source $ZSH/plugins/clipboard.zsh
+source $ZSH/plugins/completion.zsh
+source $ZSH/plugins/history.zsh
+source $ZSH/plugins/gitcompletion.zsh
 
 # -------------------------------------------------------------------
 # Custom .zshrc source highlighting
@@ -18,4 +15,4 @@
 # It must be sourced after all custom widgets have been created (i.e., after all zle -N calls and after running compinit).
 # Widgets created later will work, but will not update the syntax highlighting.
 # -------------------------------------------------------------------
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
