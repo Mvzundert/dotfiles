@@ -61,7 +61,7 @@ fi
 #=======================================
 DIR="$DOTFILES/oh-my-vim"
 
-if [ -d $DIR ]
+if [ ! -d $DIR ]
 then
     echo "Vim symlinked"
     ln -s $DOTFILES/oh-my-vim/ $HOME/.vim
