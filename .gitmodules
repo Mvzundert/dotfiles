@@ -1,7 +1,6 @@
-[submodule "base16-shell"]
-	path = zsh/plugins/base16-shell
-	url = git@github.com:chriskempson/base16-shell.git
-	branch = master
-[submodule "zsh-syntax-highlighting"]
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/plugins/base16-shell"]
+	path = zsh/plugins/base16-shell
+	url = git@github.com:chriskempson/base16.git
