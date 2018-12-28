@@ -39,12 +39,6 @@ included that work without powerline fonts to get you started.
 
 Link to powerline font repo:(https://github.com/powerline/fonts)
 
-# Configscripts
-
-* Homestead.yml (for laravel homestead)
-
-* iterm SSH switcher script
-
 # ZSH
 
 * Zshconfig (Alias, Config options, Function, Paths, Widgets)
