@@ -6,7 +6,6 @@ echo "++++++++++ Starting installer.... +++++"
 echo "+++++++++++++++++++++++++++++++++++++++"
 echo " "
 
-
 # =======================================
 # ========= OS dependencies =============
 # =======================================
@@ -18,6 +17,7 @@ fi
 if [ "$(uname)" == "Darwin" ]; then
     echo "\n\nRunning on OSX"
     source brew.sh
+    source osx.sh
 fi
 
 
