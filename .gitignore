@@ -3,3 +3,4 @@ zsh/custom/
 !zsh/custom/.gitkeep
 .idea
 zsh/config/base16-shell/
+zsh/plugins/zsh-syntax-highlighting/
