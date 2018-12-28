@@ -1,7 +1,7 @@
 # -------------------------------------------------------------------
 # Set dotfile paths for easier editing.
 # -------------------------------------------------------------------
-export DOTFILES=$HOME/dotfiles
+export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
 
 # -------------------------------------------------------------------
