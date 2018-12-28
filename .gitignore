@@ -1,7 +1,5 @@
 tmux/custom/*.local
 zsh/custom/
-zsh/plugins/zsh-syntax-highlighting/
-zsh/plugins/base16-shell/
 
 !zsh/custom/.gitkeep
 !zsh/custom/custom_example
