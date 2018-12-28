@@ -1,0 +1,26 @@
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+
+############################
+# Directory alias
+############################
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # macOS `ls`
+    colorflag="-G"
+fi
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+alias l="ls -lah ${colorflag}"
+alias la="ls -AF ${colorflag}"
+alias ll="ls -lah ${colorflag}"
+alias lld="ls -l | grep ^d"
+alias rmf="rm -rf"
+
+
