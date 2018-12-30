@@ -32,3 +32,12 @@ for file in $ZSH/custom/custom_*; do
     source "$file"
 done
 
+# -------------------------------------------------------------------
+# Custom .zshrc source highlighting
+# see: https://github.com/zsh-users/zsh-syntax-highlighting
+# Why must zsh-syntax-highlighting.zsh be sourced at the end of the .zshrc file?
+# zsh-syntax-highlighting.zsh wraps ZLE widgets.
+# It must be sourced after all custom widgets have been created (i.e., after all zle -N calls and after running compinit).
+# Widgets created later will work, but will not update the syntax highlighting.
+# -------------------------------------------------------------------
+source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
