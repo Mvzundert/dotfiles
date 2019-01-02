@@ -79,19 +79,37 @@ if [[ "$(declare -f build_project_assets > /dev/null; echo $?)" = 1 ]]; then
     }
 fi
 
-####################################
-# OS specific functions
-####################################
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    # Linux functions can go here.
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # Custom MAC OSX functions
+# Check current directory assets building dependencies, install and watch them
+function watch_project_assets() {
+    # Check for NPM lock file else use YARN
+    if [[ -f package-lock.json ]]; then
+        # Install dependencies
+        npm run dev
 
-    #Fix displaying of ugly user.
-    prompt_context() {
-        if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-            prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
-        fi
-    }
-fi
+        # Run watch task
+        npm run watch
+    elif [[ -f package.json ]]; then
+        # Install dependencies
+        yarn run dev
+
+        # Run watch task
+        yarn run watch
+    fi
+}
+    ####################################
+    # OS specific functions
+    ####################################
+
+    if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        # Linux functions can go here.
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        # Custom MAC OSX functions
+
+        #Fix displaying of ugly user.
+        prompt_context() {
+            if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+                prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+            fi
+        }
+    fi
