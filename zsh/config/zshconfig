@@ -3,8 +3,20 @@
 # to enable/add your own custom configuration
 #
 # initialize autocomplete
-autoload -U compinit add-zsh-hook
-compinit
+autoload -Uz compinit add-zsh-hook
+
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+
+rbenv() {
+  eval "$(command rbenv init -)"
+  rbenv "$@"
+}
 
 # Base16 shell setup
  BASE16_SHELL=$ZSH/plugins/base16_shell/
@@ -17,14 +29,3 @@ else
     export EDITOR='vim'
 fi
 
-# add color to man pages
-export MANROFFOPT='-c'
-export LESS_TERMCAP_mb=$(tput bold; tput setaf 2)
-export LESS_TERMCAP_md=$(tput bold; tput setaf 6)
-export LESS_TERMCAP_me=$(tput sgr0)
-export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4)
-export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
-export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7)
-export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
-export LESS_TERMCAP_mr=$(tput rev)
-export LESS_TERMCAP_mh=$(tput dim)
