@@ -58,6 +58,10 @@ fi
 
 #=======================================
 #========= oh-my-vim ===================
+# 
+# when switching to neovim
+# curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+#       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 #=======================================
 DIR="$DOTFILES/oh-my-vim"
 
