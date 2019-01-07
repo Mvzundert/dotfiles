@@ -1,3 +1,5 @@
+alias extract='extract'
+
 # extract any time of compressed file
 function extract {
     echo Extracting $1 ...
