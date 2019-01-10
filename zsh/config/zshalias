@@ -94,6 +94,7 @@ alias gd="git diff"
 alias glgp="git log --stat --color -p"
 alias glol="git log --graph --abbrev-commit --decorate --date=relative --all"
 alias glog="git log --all --decorate --oneline --graph"
+alias gcount="git shortlog -s"
 
 # Checkout branches
 alias gcd='git checkout develop'
