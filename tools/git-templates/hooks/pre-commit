@@ -16,6 +16,7 @@ SFILES=${SFILES:-$STAGED_FILES_CMD}
 
 echo "Checking PHP Lint..."
 for FILE in $SFILES
+
 do
 	php -l -d display_errors=0 $PROJECT/$FILE
 	if [ $? != 0 ]
@@ -24,6 +25,13 @@ do
 		exit 1
 	fi
 	FILES="$FILES $PROJECT/$FILE"
+
+    phpunit
+    if [$? != 0]
+    then
+        echo 'Please Fix Tests before committing'
+        exit 1
+    fi
 done
 
 if [ "$FILES" != "" ]
@@ -43,7 +51,6 @@ then
 
 #	 echo "Running Mess Detector..."
 #	 /usr/local/bin/phpmd $FILES html cleancode,codesize,controversial,design,naming,unusedcode --reportfile coverage/phpmd.html
-
 	echo "Running Code Sniffer..."
     $HOME/.composer/vendor/bin/phpcs --ignore=*/database/*,*/resources/lang/* --standard=SPRD-PSR2 --encoding=utf-8 -n -p $FILES
 
@@ -56,5 +63,6 @@ then
 		exit 1
 	fi
 fi
+
 
 exit $?
