@@ -17,8 +17,8 @@ base0D='#6A9FB5' # - Functions, Methods, Attribute IDs, Headings
 base0E='#AA759F' # - Keywords, Storage, Selector, Markup Italic, Diff Changed
 base0F='#8F5536' # - Deprecated, Opening/Closing Embedded Language Tags, e.g. <? php ?>
 
-set -g status-left-length 32
-set -g status-right-length 150
+set -g status-left-length 150
+set -g status-right-length 32
 set -g status-interval 1 
 
 # default statusbar colors
@@ -53,11 +53,11 @@ set-option -g display-panes-colour $base00
 set-window-option -g clock-mode-colour $base0C
 
 tm_session_name="#[default,bg=$base00,fg=$base0E] #S "
-set -g status-left "$tm_session_name"
+set -g status-right "$tm_session_name $tm_date"
 
 tm_tunes="#[fg=$base00,bg=$base00] ♫ #{spotify_artist}: #{spotify_track}"
 tm_battery="#[fg=$base00,bg=$base00] ♥ #{battery_level}"
 tm_date="#[default,bg=$base00,fg=$base0C] %R"
 tm_host="#[fg=$base0E,bg=$base00] #h "
 
-set -g status-right "$tm_tunes $tm_battery $tm_date"
+set -g status-left "$tm_tunes $tm_battery"
