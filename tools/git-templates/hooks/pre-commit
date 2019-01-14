@@ -25,13 +25,6 @@ do
 		exit 1
 	fi
 	FILES="$FILES $PROJECT/$FILE"
-
-    phpunit
-    if [$? != 0]
-    then
-        echo 'Please Fix Tests before committing'
-        exit 1
-    fi
 done
 
 if [ "$FILES" != "" ]
