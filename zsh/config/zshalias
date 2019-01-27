@@ -21,7 +21,7 @@ bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
 ### PHP Unit ###
-alias phpunit="$(get_phpunit_install)"
+alias phpunit='$(get_phpunit_install)'
 alias ci='composer install'
 alias cu='composer update'
 alias cda='composer dump-autoload'
