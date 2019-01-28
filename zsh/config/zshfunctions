@@ -9,7 +9,7 @@ function take() {
 
 # Which commands do you use the most
 function zsh_stats() {
-  fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n20
+    fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n20
 }
 
 function open_command() {
@@ -103,19 +103,57 @@ function watch_project_assets() {
         yarn run watch
     fi
 }
-    ####################################
-    # OS specific functions
-    ####################################
 
-    if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        # Linux functions can go here.
-    elif [[ "$OSTYPE" == "darwin"* ]]; then
-        # Custom MAC OSX functions
+# Remove a file from gits history entirely
+function git_history_remove() {
+    if ! [[ -d "$(pwd)/.git" ]]; then
+        echo "Halt: .git folder not found"
 
-        #Fix displaying of ugly user.
-        prompt_context() {
-            if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-                prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
-            fi
-        }
+        return 0
     fi
+
+    if [[ $# -eq 0 ]]; then
+        echo "Halt: no target given"
+
+        return 0
+    else
+        TARGET=$1
+    fi
+
+    read "?Are you sure you want to remove '$TARGET' from the git history? "
+
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo # Whitespace
+
+        git stash
+
+        echo -e "\nRemoving '$TARGET' from history"
+        git filter-branch --tree-filter 'rm -rf $FOLDER' --prune-empty HEAD
+
+        echo -e "\nRemoving '$TARGET' references"
+        git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+
+        echo -e "\nStarting garbage collection"
+        git gc --prune=all --aggressive
+
+        echo # Whitespace
+
+        git stash pop
+    fi
+}
+####################################
+# OS specific functions
+####################################
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    # Linux functions can go here.
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # Custom MAC OSX functions
+
+    #Fix displaying of ugly user.
+    prompt_context() {
+        if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+            prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+        fi
+    }
+fi
