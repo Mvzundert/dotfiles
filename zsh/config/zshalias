@@ -91,6 +91,7 @@ alias gcmsg="git commit -m"
 alias gp="git push"
 alias gpt="git push --tags"
 alias gsum="git submodule update --remote --merge"
+alias gprs="git pull --recursive-submodules"
 
 # Diff and graph's
 alias gd="git diff"
