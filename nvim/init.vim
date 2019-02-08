@@ -269,7 +269,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     nmap <leader>l :set list!<cr>
 
-    " Textmate style indentation
+        " Textmate style indentation
     vmap <leader>[ <gv
     vmap <leader>] >gv
     nmap <leader>[ <<
@@ -580,6 +580,7 @@ call plug#begin('~/.config/nvim/plugged')
         nmap <leader>ge :Gedit<cr>
         nmap <silent><leader>gr :Gread<cr>
         nmap <silent><leader>gb :Gblame<cr>
+        nmap <silent><leader>gd :Gdiff<cr>
 
         Plug 'tpope/vim-rhubarb' " hub extension for fugitive
         Plug 'junegunn/gv.vim'
