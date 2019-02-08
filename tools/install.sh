@@ -57,55 +57,14 @@ else
 fi
 
 #=======================================
-#========= oh-my-vim ===================
-# 
-# when switching to neovim
-# curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-#       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#========= neovim ======================
 #=======================================
-DIR="$DOTFILES/oh-my-vim"
+DIR="$DOTFILES/nvim"
 
 if [ ! -d $DIR ]
 then
-    echo "Vim symlinked"
-    ln -s $DOTFILES/oh-my-vim/ $HOME/.vim
-fi
-
-#=======================================
-#========= Vim Vundle ==================
-#=======================================
-DIR="$HOME/.vim/bundle/Vundle.vim"
-
-# Check if the Vundle dir is emtpy (it should be)
-if [ "$(ls -A $DIR)" ]; then
-    # We install all plugins that are specified in
-    # .oh-my-vim/config/plugins.vim just to make sure.
-    # echo "$DIR directory not empty"
-    echo "All Vundle plugins have been installed...skipping"
-    # Make sure we install all plugins
-    vim +PluginInstall +qall
-else
-    # If the dir is empty (as it should be)
-    # Get Vundle.
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    # We install all plugins that are specified in
-    # .oh-my-vim/config/plugins.vim
-    vim +PluginInstall +qall
-fi
-
-#=======================================
-#========= VIMRC =======================
-#=======================================
-FILE="$HOME/.vimrc"
-
-if [ -f $FILE ]; then
-    #  echo "File $FILE exists."
-    echo "Vimrc was already installed....skipping"
-else
-    #  echo "$FILE File created"
-    echo "Vimrc has been installed."
-    # Symlink the .vimrc file that makes sure the config works
-    ln -s $DOTFILES/oh-my-vim/.vimrc $HOME
+    echo "NeoVim symlinked"
+    ln -s $DOTFILES/nvim/ $HOME/.config
 fi
 
 #=======================================
