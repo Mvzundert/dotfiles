@@ -660,8 +660,6 @@ call plug#end()
         colorscheme onedark
     endif
 
-    highlight Normal ctermbg=none
-
     syntax on
     filetype plugin indent on
     " make the highlighting of tabs and other non-text less annoying

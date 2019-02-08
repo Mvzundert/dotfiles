@@ -9,7 +9,6 @@
 # # client connected to *that window*. Much more reasonable.
 setw -g aggressive-resize on
 
-
 # set vi mode for copy mode
  setw -g mode-keys vi
 # # more settings to make copy-mode more vim-like
@@ -52,3 +51,5 @@ set -g @continuum-restore 'off'
 # # Can't do xterm-256colors b/c tmux really
 # # really really wants "screen"
 set -g default-terminal "screen-256color"
+# Enable 24 bit true colors
+set -ga terminal-overrides ',xterm-256color:Tc'
