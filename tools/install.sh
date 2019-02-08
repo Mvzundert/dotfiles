@@ -59,12 +59,13 @@ fi
 #=======================================
 #========= neovim ======================
 #=======================================
-DIR="$DOTFILES/nvim"
+DIR="$HOME/.config"
 
 if [ ! -d $DIR ]
+    echo "NeoVim has been installed...skipping"
 then
     echo "NeoVim symlinked"
-    ln -s $DOTFILES/nvim/ $HOME/.config
+    ln -s $DOTFILES/nvim/ $HOME/.config/
 fi
 
 #=======================================
