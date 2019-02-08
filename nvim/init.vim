@@ -20,8 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
     set history=1000 " change history to 1000
     set textwidth=120
 
-
-    " I don't think VIM should be storing any backups when
+        " I don't think VIM should be storing any backups when
     " we have buffers we can use, feel free to disable this
     " if you prefer to have swap files etc.
     set nobackup
@@ -660,6 +659,9 @@ call plug#end()
         let g:onedark_terminal_italics=1
         colorscheme onedark
     endif
+
+    highlight Normal ctermbg=none
+
     syntax on
     filetype plugin indent on
     " make the highlighting of tabs and other non-text less annoying

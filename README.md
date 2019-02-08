@@ -51,12 +51,9 @@ Link to powerline font repo:(https://github.com/powerline/fonts)
 
 * tmux.conf (Bundles all the config files)
 
-# Oh-my-vim
-Vim gets installed when on OSX using brew after that we also grab
-the framework and install it..
-
-For more info on what's in there see the repository.
- (https://github.com/Mvzundert/oh-my-vim)
+# Neovim
+NeoVim gets installed when on OSX using brew after that we set the config in
+~/.config/nvim
 
 # To setup everything like i have it currently:
 * `cd ~/`
