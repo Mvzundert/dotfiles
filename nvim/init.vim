@@ -20,7 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
     set history=1000 " change history to 1000
     set textwidth=120
 
-        " I don't think VIM should be storing any backups when
+    " I don't think VIM should be storing any backups when
     " we have buffers we can use, feel free to disable this
     " if you prefer to have swap files etc.
     set nobackup
