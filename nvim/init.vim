@@ -74,6 +74,7 @@ call plug#begin('~/.config/nvim/plugged')
     set showmatch " show matching braces
     set mat=2 " how many tenths of a second to blink
     set colorcolumn=180 " set column for line length.
+    set splitright " Make splitting always start right
 
     " Tab control
     set expandtab " tabs are spaces    
