@@ -323,6 +323,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " toggle cursor line
     nnoremap <leader>i :set cursorline!<cr>
+    nnoremap <leader>cl :ColorToggle<cr>
 
     " scroll the viewport faster
     nnoremap <C-e> 3<C-e>
@@ -613,7 +614,10 @@ call plug#begin('~/.config/nvim/plugged')
 
     " UltiSnips {{{
         Plug 'SirVer/ultisnips' " Snippets plugin
-        let g:UltiSnipsExpandTrigger="<tab>"
+        " let g:UltiSnipsExpandTrigger="<tab>"
+        let g:UltiSnipsExpandTrigger="<c-j>"
+        " If you want :UltiSnipsEdit to split your window.
+        let g:UltiSnipsEditSplit="vertical"
     " }}}
 
     " Completion {{{

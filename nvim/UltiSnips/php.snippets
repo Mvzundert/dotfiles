@@ -1,0 +1,353 @@
+extends html
+
+################
+#  PHP Blocks  #
+################
+
+snippet phpp "PHP block"
+<?php ${VISUAL}$0 ?>
+endsnippet
+
+snippet php "Opening PHP block"
+<?php 
+endsnippet
+
+snippet p= "PHP echo block"
+<?=${VISUAL}$0 ?>
+endsnippet
+
+snippet ? "PHP shorthand block"
+<? ${VISUAL}$0 ?>
+endsnippet
+
+
+##########################
+#  Variables/Assignment  #
+##########################
+snippet $ "PHP variable"
+\$${1:var} ${2:= ${3:value}};
+endsnippet
+
+snippet this "PHP $this"
+\$this->$1;
+endsnippet
+
+snippet this= "PHP class property assign"
+\$this->${1:varName} = \$$1;
+endsnippet
+
+snippet ar "array" i
+array($1)
+endsnippet
+
+snippet ar= "array"
+$${1:arrayName} = array('${2}' => ${3});${4}
+endsnippet
+
+snippet def "def"
+define('${1}', ${2});
+endsnippet
+
+
+############
+#  Blocks  #
+############
+
+snippet /** "comment block"
+/**
+ * $1
+ */
+endsnippet
+
+snippet do "do"
+do {
+    ${VISUAL}$2
+} while (${1:/* condition */});"
+endsnippet
+
+snippet if "if"
+if (${1:/* condition */}) {
+	${VISUAL}$2
+}
+endsnippet
+
+snippet ife "if else"
+if (${1:/* condition */}) {
+    ${2:// code...}
+} else {
+    ${3:// code...}
+}
+$0
+endsnippet
+
+snippet else "else"
+else {
+	${VISUAL}$1
+}
+endsnippet
+
+snippet for "for"
+for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	${VISUAL}$4
+}
+endsnippet
+
+snippet fore "Foreach loop"
+foreach ($${1:variable} as $${3:value}){
+    ${VISUAL}$4
+}
+$0
+endsnippet
+
+snippet forek "foreachk"
+foreach ($${1:variable} as $${2:key} => $${3:value}){
+	${VISUAL}${4:// code...}
+}
+endsnippet
+
+snippet try "try/catch"
+try {
+    ${VISUAL}$1
+} catch (${2:Exception} $e) {
+    $2
+}
+endsnippet
+
+snippet catch "catch"
+catch (${1:Exception} $e) {
+    $0
+}
+endsnippet
+
+snippet ?: "ternary" i
+$1 ? $2 : $3
+endsnippet
+
+snippet fu "closure" i
+function($1) ${2:use ($3) }{
+    $0
+}
+endsnippet
+
+
+##################
+#  Superglobals  #
+##################
+
+snippet GET "get" i
+$_GET['$1']
+endsnippet
+
+snippet POST "post" i
+$_POST['$1']
+endsnippet
+
+snippet SESS "session" i
+$_SESSION['$1']
+endsnippet
+
+snippet SERV "server" i
+$_SERVER['$1']
+endsnippet
+
+snippet ENV "env" i
+$_ENV['$1']
+endsnippet
+
+
+###############
+#  Functions  #
+###############
+
+snippet inc "inc"
+include "${1:filepath}";
+endsnippet
+
+snippet inc1 "include once"
+include_once "${1:filepath}";
+endsnippet
+
+snippet req "req"
+require_once "${1:filepath}";
+endsnippet
+
+snippet req1 "require once"
+require_once "${1:filepath}";
+endsnippet
+
+snippet log "log"
+error_log(var_export(${1}, true));${2}
+endsnippet
+
+snippet var "var"
+var_export(${1});${2}
+endsnippet
+
+snippet ec "echo"
+echo $0;
+endsnippet
+
+
+###############
+#  Datatypes  #
+###############
+
+snippet i "int" i
+int 
+endsnippet
+
+snippet f "float" i
+float
+endsnippet
+
+snippet a "array" i
+array
+endsnippet
+
+#######################
+#  Functions/Classes  #
+#######################
+
+# Methods
+snippet get "PHP Class Getter" !b
+public function get${1/\w+\s*/\u$0/}() {
+    return $this->$1;$2
+}$4
+endsnippet
+
+snippet set "PHP Class Setter" !b
+public function set${1/\w+\s*/\u$0/}($$1) {
+    $this->$1 = $$1;$3
+    ${4:return $this;}
+}$0
+endsnippet
+
+snippet gs "PHP Class Getter Setter" !b
+public function get${1/\w+\s*/\u$0/}() {
+    return $this->$1;$2
+}
+
+public function set${1/\w+\s*/\u$0/}($$1) {
+    $this->$1 = $$1;$3
+    ${4:return $this;}
+}$0
+endsnippet
+
+snippet pub "Public function" !b
+public function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}$0
+endsnippet
+
+snippet pro "Protected function" !b
+protected function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}$0
+endsnippet
+
+snippet pri "Private function" !b
+private function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}$0
+endsnippet${3}
+
+snippet pubs "Public static function" !b
+public static function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}$0
+endsnippet
+
+snippet pros "Protected static function" !b
+protected static function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}$0
+endsnippet
+
+snippet pris "Private static function" !b
+private static function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}$0
+endsnippet
+
+snippet fun "Function snip" !b
+function ${1:name}(${2:$param}) {
+    ${VISUAL}${3:return null;}
+}$0
+endsnippet
+
+# Scopes
+snippet st "static"
+static $0
+endsnippet
+
+snippet pu "public"
+public $0
+endsnippet
+
+snippet pr "protected"
+protected $0
+endsnippet
+
+snippet pv "private"
+private $0
+endsnippet
+
+# Keywords
+snippet ab "abstract" i
+abstract $0
+endsnippet
+
+
+##########
+#  Code  #
+##########
+
+snippet new "New class instance" !b
+\$$1 = new $1($2);
+endsnippet
+
+snippet cl "Class declaration template" !b
+class $1 ${2:extends ${3:parentClass}}${4: implements ${5:interfaceClass}} 
+{
+
+    $0
+
+}
+endsnippet
+
+snippet in "Interface delcaration template" !b
+interface $1 
+{
+
+    $0
+
+}
+endsnippet
+
+snippet pr "Dumb debug helper in HTML"
+echo '<pre>' . var_export($1, 1) . '</pre>';$0
+endsnippet
+
+snippet pc "Dumb debug helper in cli"
+var_export($1);$0
+endsnippet
+
+snippet __ "__constructor" b
+function __construct($1) {
+    ${2:// code here}
+}
+endsnippet
+
+snippet __get "__get" b
+function __get($name) {
+    ${2:return $this->$name;}
+}
+endsnippet
+
+snippet __set "__set" b
+function __set($name, $value) {
+    ${2:$this->$name = $value;}
+}
+endsnippet
+
+# :vim:ft=snippets:
