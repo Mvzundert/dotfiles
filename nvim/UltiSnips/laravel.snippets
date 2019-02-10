@@ -1,0 +1,76 @@
+snippet Asset "Laravel: Asset::*()"
+Asset::$1($2);
+endsnippet
+
+
+##########
+#  AUTH  #
+##########
+
+snippet Auth "Laravel: Auth::*()"
+Auth::$1($2);
+endsnippet
+
+snippet autha
+Auth::attempt(${1:$username}, ${2:$password}, ${3:$remember});
+endsnippet
+
+snippet authc
+Auth::check();
+endsnippet
+
+snippet authg
+Auth::guest();
+endsnippet
+
+snippet authlogin "Laravel: Auth::login()"
+Auth::login(${1:$user}, ${2:$remember});
+endsnippet
+
+snippet authlogout "Laravel: Auth::logout()"
+Auth::logout();
+endsnippet
+
+snippet authu "Laravel: Auth::user()" i
+Auth::user()
+endsnippet
+
+
+##########
+#  VIEW  #
+##########
+
+snippet View "Laravel: View::*()"
+View::$1($2);
+endsnippet
+
+snippet viewc "Laravel: View::composer()"
+View::composer(${1:$view}, ${2:$composer});
+endsnippet
+
+snippet viewm "Laravel: View::make()"
+View::make(${1:$view}, ${2:$data});
+endsnippet
+
+snippet viewn "Laravel: View::name()"
+View::name(${1:$view}, ${2:$name});
+endsnippet
+
+snippet viewo "Laravel: View::of()"
+View::of(${1:$name}, ${2:$data});
+endsnippet
+
+snippet views "Laravel: View::share()"
+View::share(${1:$key}, ${2:$value});
+endsnippet
+
+#################
+#  Controllers  #
+#################
+
+snippet action "Laravel: Controller action"
+public function action_${1:index}()
+{
+${2:// Code}
+}
+endsnippet
