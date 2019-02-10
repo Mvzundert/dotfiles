@@ -164,8 +164,6 @@ call plug#begin('~/.config/nvim/plugged')
         \   'separator': { 'left': '', 'right': '' },
         \   'subseparator': { 'left': '', 'right': '' }
         \ }
-        " \   'separator': { 'left': '▓▒░', 'right': '░▒▓' },
-        " \   'subseparator': { 'left': '▒', 'right': '░' }
 
         function! LightlineFileName() abort
             let filename = winwidth(0) > 70 ? expand('%') : expand('%:t')
@@ -279,6 +277,11 @@ call plug#begin('~/.config/nvim/plugged')
 
     " enable . command in visual mode
     vnoremap . :normal .<cr>
+    " Disable the arrow keys...
+    noremap <Up> <NOP>
+    noremap <Down> <NOP>
+    noremap <Left> <NOP>
+    noremap <Right> <NOP>
 
     " Mapping ctrl+j/k/h/l to enable
     " to switch splits easier.
@@ -288,17 +291,10 @@ call plug#begin('~/.config/nvim/plugged')
     map <C-l> <C-W>l
 
     " Move Windows around
-    map <silent> <leader> <h> :call functions#WinMove('h')<cr>
-    map <silent> <leader> <j> :call functions#WinMove('j')<cr>
-    map <silent> <leader> <k> :call functions#WinMove('k')<cr>
-    map <silent> <leader> <l> :call functions#WinMove('l')<cr>
-
-    " Run The Nearest Test
-    nmap <silent><leader>tm yiw:!clear && phpunit --filter <C-R>"<CR>
-    " Run All The tests in the current file
-    nmap <silent> <leader>tf :!clear && phpunit % <CR>
-    " Run All The Tests
-    nmap <silent> <leader>ta :!clear && phpunit<CR>
+    " map <silent> <leader> <h> :call functions#WinMove('h')<cr>
+    " map <silent> <leader> <j> :call functions#WinMove('j')<cr>
+    " map <silent> <leader> <k> :call functions#WinMove('k')<cr>
+    " map <silent> <leader> <l> :call functions#WinMove('l')<cr>
 
     nnoremap <silent> <leader>z :call functions#zoom()<cr>
 
@@ -406,6 +402,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " detect indent style (tabs vs. spaces)
     Plug 'tpope/vim-sleuth'
+
+    "add colorizer for working with CSS
+    Plug 'chrisbra/Colorizer'
 
     " add the ctrlp plugin
     Plug 'ctrlpvim/ctrlp.vim'
