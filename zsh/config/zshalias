@@ -72,6 +72,8 @@ alias arttg="art translations:find && art translations:import"
 alias arttc="art translations:clean"
 # Export translations
 alias artte="art translations:export"
+# Start the queue worker once
+alias artqw="art queue:work --once"
 
 ###########################
 # Docker alias
