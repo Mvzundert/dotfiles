@@ -66,6 +66,12 @@ alias artmrs="php artisan migrate:refresh --seed"
 alias build="build_project_assets"
 # Do watching magic of project with actual dependency checks
 alias watch="watch_project_assets"
+# Get all translations from app and resourses
+alias arttg="art translations:find && art translations:import"
+# Clean all translations
+alias arttc="art translations:clean"
+# Export translations
+alias artte="art translations:export"
 
 ###########################
 # Docker alias
