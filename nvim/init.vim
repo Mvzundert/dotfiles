@@ -613,11 +613,11 @@ call plug#begin('~/.config/nvim/plugged')
     " }}}
 
     " UltiSnips {{{
-        Plug 'SirVer/ultisnips' " Snippets plugin
+        ""Plug 'SirVer/ultisnips' " Snippets plugin
         " let g:UltiSnipsExpandTrigger="<tab>"
-        let g:UltiSnipsExpandTrigger="<c-j>"
+        ""let g:UltiSnipsExpandTrigger="<c-j>"
         " If you want :UltiSnipsEdit to split your window.
-        let g:UltiSnipsEditSplit="vertical"
+        ""let g:UltiSnipsEditSplit="vertical"
     " }}}
 
     " Completion {{{
