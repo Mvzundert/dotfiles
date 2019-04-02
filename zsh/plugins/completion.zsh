@@ -63,3 +63,16 @@ zstyle '*' single-ignored show
   }
   zle -N expand-or-complete-with-dots
   bindkey "^I" expand-or-complete-with-dots
+
+# Load SSH completion from ssh config
+hosts_completion=()
+
+# Get hosts from ssh config file
+if [[ -r ~/.ssh/config ]]; then
+    hosts_completion=(${hosts_completion} ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+
+# If hosts are found, add them to the completions
+if [[ $#hosts_completion -gt 0 ]]; then
+    zstyle ':completion:*:(ssh|scp|rsync|slogin):*' hosts ${hosts_completion}
+fi
