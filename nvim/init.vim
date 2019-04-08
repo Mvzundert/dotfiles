@@ -267,7 +267,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     nmap <leader>l :set list!<cr>
 
-        " Textmate style indentation
+    " Textmate style indentation
     vmap <leader>[ <gv
     vmap <leader>] >gv
     nmap <leader>[ <<
@@ -301,8 +301,8 @@ call plug#begin('~/.config/nvim/plugged')
 
     map <leader>wc :wincmd q<cr>
 
-    inoremap <tab> <c-r>=functions#Smart_TabComplete()<CR>
-
+    " inoremap <tab> <c-r>=functions#Smart_TabComplete()<CR>
+    
     " move line mappings
     " ∆ is <A-j> on macOS
     " ˚ is <A-k> on macOS
