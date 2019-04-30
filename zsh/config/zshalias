@@ -121,8 +121,8 @@ alias grba='git rebase --abort'
 alias gstash='git stash'
 
 # for fun and games
-alias luke='gp --force'
-alias yolo='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
+alias darth='gp --force'
+alias yolo='gaa && git commit -m "$(curl -s http://whatthecommit.com/index.txt)" &$ darth'
 
 ############################
 # Drupal development alias
