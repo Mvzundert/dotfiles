@@ -2224,7 +2224,7 @@ function! s:upgrade()
   let new = tmp . '/plug.vim'
 
   try
-    let out = s:system(printf('git clone --depth 1 %s %s', s:shellesc(s:plug_src), s:shellesc(tmp)))
+    let out = s:system(printf('git clone --depth 1 %s %s', s:plug_src, tmp))
     if v:shell_error
       return s:err('Error upgrading vim-plug: '. out)
     endif
