@@ -29,6 +29,8 @@ set -g mouse on
 
 # don't rename windows automatically
 set-option -g allow-rename off
+# auto renumber windows
+set-option -g renumber-windows on
 
 # enable activity alerts
 setw -g monitor-activity on
