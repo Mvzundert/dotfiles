@@ -10,12 +10,13 @@ add-zsh-hook precmd async_trigger
 
 source "$DOTFILES/zsh/config/zshgitprompt"
 source "$DOTFILES/zsh/config/zshjobsprompt"
+source "$DOTFILES/zsh/config/zshnodeprompt"
 
 PROMPT_SYMBOL='❯'
 
 ASYNC_PROC=0
 function async() {
-    printf "%s" "$(git_status) $(suspended_jobs)" > "/tmp/zsh_prompt_$$"
+    printf "%s" "$(git_status) $(node_prompt) $(suspended_jobs)" > "/tmp/zsh_prompt_$$"
 
     kill -s USR1 $$
 
