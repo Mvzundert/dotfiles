@@ -75,6 +75,12 @@ alias artte="art translations:export"
 # Start the queue worker once
 alias artqw="art queue:work --once"
 
+############################
+# Yii alias
+############################
+alias yii='run_yiic' # Do Yii magic
+alias yiim='yii migrate' # Migrate Yii Framework database
+
 ###########################
 # Docker alias
 ############################
