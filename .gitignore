@@ -4,3 +4,4 @@ zsh/custom/
 nvim/plugged
 !zsh/custom/.gitkeep
 !zsh/custom/custom_example
+.idea
