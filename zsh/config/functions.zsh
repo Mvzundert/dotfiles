@@ -85,7 +85,6 @@ if [[ "$(declare -f build_project_assets > /dev/null; echo $?)" = 1 ]]; then
     }
 fi
 
-
 # Check current directory assets building dependencies, install and watch them
 function watch_project_assets() {
     # Check for NPM lock file else use YARN

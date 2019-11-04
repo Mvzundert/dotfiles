@@ -65,10 +65,10 @@ echo "Show Status bar in Finder"
 defaults write com.apple.finder ShowStatusBar -bool true
 
 # echo "Expand print panel by default"
-# defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 #echo "Disable the “Are you sure you want to open this application?” dialog"
-#defaults write com.apple.LaunchServices LSQuarantine -bool false
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 #echo "Disable shadow in screenshots"
 #defaults write com.apple.screencapture disable-shadow -bool true
