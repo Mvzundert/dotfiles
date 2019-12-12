@@ -9,8 +9,42 @@ function take() {
 
 #Switch PHP versions using Homebrew.
 function switchphp() {
-    brew unlink php && brew link --force --overwrite php@$1
+    # Get 2nd and 3th character from current Node version and remove the '.' if found
+    CURRENT=$(php -v | grep ^PHP | cut -d' ' -f2 | cut -c1-3)
+    TARGET=false
+
+    # Process chosen options
+    while getopts ':hv:' option; do
+        case "$option" in
+            v)
+                TARGET=${OPTARG}
+                ;;
+        esac
+    done
+
+    # Remove chosen option from $@
+    shift $((OPTIND - 1))
+
+    # Skip if already on target version
+    if [[ ${TARGET} == "${CURRENT}" ]]; then
+        echo "Current version is: $CURRENT"
+
+        return 0
+    fi
+
+    # Remove old and create new symlinks based on target and current version
+    if ! [[ ${TARGET} == false ]]; then
+        # Unlink current version
+        brew unlink php@"${CURRENT}"
+
+        # Unlink target version
+        brew unlink php@"${TARGET}"
+
+        # Link target version
+        brew link php@"${TARGET}" --force --overwrite
+    fi
 }
+
 
 # Which commands do you use the most
 function zsh_stats() {
