@@ -1,3 +1,6 @@
+let g:python2_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " .vimrc / init.vim
 " The following vim/neovim configuration works for both Vim and NeoVim
 
