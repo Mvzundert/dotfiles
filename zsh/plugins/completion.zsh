@@ -15,7 +15,7 @@ setopt always_to_end
 bindkey -M menuselect '^o' accept-and-infer-next-history
 zstyle ':completion:*:*:*:*:*' menu select
 
-# case insensitive (all), partial-word and substring completion  
+# case insensitive (all), partial-word and substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 unset CASE_SENSITIVE HYPHEN_INSENSITIVE
 

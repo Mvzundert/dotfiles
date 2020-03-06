@@ -70,7 +70,7 @@ call plug#begin('~/.config/nvim/plugged')
     set wildmode=longest:full,full " complete files like a shell
     set hidden " current buffer can be put into background
     set showcmd " show incomplete commands
-    set noshowmode " don't show which mode disabled for PowerLine    
+    set noshowmode " don't show which mode disabled for PowerLine
     set shell=$SHELL
     set cmdheight=1 " command bar height
     set title " set terminal title
@@ -80,8 +80,8 @@ call plug#begin('~/.config/nvim/plugged')
     set splitright " Make splitting always start right
 
     " Tab control
-    set expandtab " tabs are spaces    
-    set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'        
+    set expandtab " tabs are spaces
+    set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
     set tabstop=4 " the visible width of tabs
     set softtabstop=4 " edit as if the tabs are 4 characters wide
     set shiftwidth=4 " number of spaces to use for indent and unindent
@@ -305,7 +305,7 @@ call plug#begin('~/.config/nvim/plugged')
     map <leader>wc :wincmd q<cr>
 
     " inoremap <tab> <c-r>=functions#Smart_TabComplete()<CR>
-    
+
     " move line mappings
     " ∆ is <A-j> on macOS
     " ˚ is <A-k> on macOS
@@ -526,7 +526,7 @@ call plug#begin('~/.config/nvim/plugged')
         let g:DevIconsEnableFolderExtensionPatternMatching = 1
         let NERDTreeDirArrowExpandable = "\u00a0" " make arrows invisible
         let NERDTreeDirArrowCollapsible = "\u00a0" " make arrows invisible
-        let NERDTreeNodeDelimiter = "\u263a" " smiley face        
+        let NERDTreeNodeDelimiter = "\u263a" " smiley face
 
         augroup nerdtree
             autocmd!
@@ -607,7 +607,7 @@ call plug#begin('~/.config/nvim/plugged')
         let g:ale_fixers = {'php': ['phpcbf']}
 
         let g:ale_fixers = {}
-        let g:ale_fixers['javascript'] = ['prettier']    
+        let g:ale_fixers['javascript'] = ['prettier']
         let g:ale_fixers['json'] = ['prettier']
         let g:ale_fixers['css'] = ['prettier']
         let g:ale_javascript_prettier_use_local_config = 1
@@ -676,7 +676,7 @@ call plug#end()
     " make comments and HTML attributes italic
     highlight Comment cterm=italic term=italic gui=italic
     highlight htmlArg cterm=italic term=italic gui=italic
-    highlight xmlAttrib cterm=italic term=italic gui=italic    
+    highlight xmlAttrib cterm=italic term=italic gui=italic
     highlight Normal ctermbg=none
 
 " }}}

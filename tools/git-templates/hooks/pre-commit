@@ -1,47 +1,41 @@
 #!/bin/sh
 
-PROJECT=`php -r "echo dirname(dirname(dirname(realpath('$0'))));"`
-STAGED_FILES_CMD=`git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\\\.php`
+PROJECT=$(php -r "echo dirname(dirname(dirname(realpath('$0'))));")
+STAGED_FILES_CMD=$(git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\.php)
 
 # Determine if a file list is passed
-if [ "$#" -eq 1 ]
-then
-	oIFS=$IFS
-	IFS='
+if [ "$#" -eq 1 ]; then
+  oIFS=$IFS
+  IFS='
 	'
-	SFILES="$1"
-	IFS=$oIFS
+  SFILES="$1"
+  IFS=$oIFS
 fi
 SFILES=${SFILES:-$STAGED_FILES_CMD}
 
-echo "Checking PHP Lint..."
-for FILE in $SFILES
+echo "Checking for DD..."
+for FILE in $SFILES; do
+  FILES="$FILES $PROJECT/$FILE"
 
-do
-	php -l -d display_errors=0 $PROJECT/$FILE
-	if [ $? != 0 ]
-	then
-		echo "Fix the PHPLINT error(s) before committing."
-		exit 1
-	fi
-	FILES="$FILES $PROJECT/$FILE"
+  RESULT=$(grep "dd(" "$FILE")
+
+  if [ ! -z $RESULT ]; then
+    echo "Warning, the commit contains a call to dd(). Commit was aborted!" >&2
+    exit 1
+  fi
 done
 
-if [ "$FILES" != "" ]
-then
+if [ "$FILES" != "" ]; then
+  echo "Running Code Sniffer..."
+  $HOME/.composer/vendor/bin/phpcs --ignore=*/database/*,*/resources/lang/* --standard=CRB-PSR2 --encoding=utf-8 -n -p $FILES
 
-	echo "Running Code Sniffer..."
-    $HOME/.composer/vendor/bin/phpcs --ignore=*/database/*,*/resources/lang/* --standard=CRB-PSR2 --encoding=utf-8 -n -p $FILES
+  if [ $? != 0 ]; then
+    echo "Running Code Beautifier..."
+    echo "Trying to fix the error(s) before commit."
 
-	if [ $? != 0 ]
-	then
-		echo "Running Code Beautifier..."
-		echo "Trying to fix the error(s) before commit."
-
-		$HOME/.composer/vendor/bin/phpcbf  --standard=CRB-PSR2 $FILES
-		exit 1
-	fi
+    $HOME/.composer/vendor/bin/phpcbf --standard=CRB-PSR2 $FILES
+    exit 1
+  fi
 fi
-
 
 exit $?

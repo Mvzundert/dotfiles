@@ -44,3 +44,5 @@ done
 # Widgets created later will work, but will not update the syntax highlighting.
 # -------------------------------------------------------------------
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

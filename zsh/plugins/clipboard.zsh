@@ -39,7 +39,7 @@ function clipcopy() {
       fi
     elif (( $+commands[xsel] )); then
       if [[ -z $file ]]; then
-        xsel --clipboard --input 
+        xsel --clipboard --input
       else
         cat "$file" | xsel --clipboard --input
       fi
