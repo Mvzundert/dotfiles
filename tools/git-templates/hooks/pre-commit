@@ -1,41 +1,87 @@
-#!/bin/sh
+#!/usr/bin/env bash
+function run_eslint() {
+  LINT_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep ".jsx\{0,1\}$")
+  ESLINT_BINARY="$(git rev-parse --show-toplevel)/node_modules/.bin/eslint"
 
-PROJECT=$(php -r "echo dirname(dirname(dirname(realpath('$0'))));")
-STAGED_FILES_CMD=$(git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\.php)
-
-# Determine if a file list is passed
-if [ "$#" -eq 1 ]; then
-  oIFS=$IFS
-  IFS='
-	'
-  SFILES="$1"
-  IFS=$oIFS
-fi
-SFILES=${SFILES:-$STAGED_FILES_CMD}
-
-echo "Checking for DD..."
-for FILE in $SFILES; do
-  FILES="$FILES $PROJECT/$FILE"
-
-  RESULT=$(grep "dd(" "$FILE")
-
-  if [ ! -z $RESULT ]; then
-    echo "Warning, the commit contains a call to dd(). Commit was aborted!" >&2
-    exit 1
+  if [[ "$LINT_FILES" == "" ]]; then
+    return 0
   fi
-done
 
-if [ "$FILES" != "" ]; then
-  echo "Running Code Sniffer..."
-  $HOME/.composer/vendor/bin/phpcs --ignore=*/database/*,*/resources/lang/* --standard=CRB-PSR2 --encoding=utf-8 -n -p $FILES
+  PASS=true
 
-  if [ $? != 0 ]; then
-    echo "Running Code Beautifier..."
-    echo "Trying to fix the error(s) before commit."
+  echo "Running ESLint..."
 
-    $HOME/.composer/vendor/bin/phpcbf --standard=CRB-PSR2 $FILES
-    exit 1
+  if [[ ! -x "$ESLINT_BINARY" ]]; then
+    echo "ESlint not found skipping..."
+
+    return 0
   fi
-fi
+
+  for FILE in $LINT_FILES; do
+    "$ESLINT_BINARY" "$FILE"
+
+    if [[ "$?" == 1 ]]; then
+      PASS=false
+    fi
+  done
+
+  if ! $PASS; then
+    echo "Please fix the ESLint error(s)!"
+
+    return 1
+  fi
+}
+
+function run_phpcs() {
+  PROJECT=$(php -r "echo dirname(dirname(dirname(realpath('$0'))));")
+  LINT_FILES=$(git diff --cached --name-only --diff-filter=ACMR HEAD | grep \\.php)
+
+  if [[ "$LINT_FILES" != "" ]]; then
+    echo "Running PHP Lint..."
+
+    for FILE in ${LINT_FILES}; do
+      php -l -d \
+        display_errors=0 \
+        "${PROJECT}/${FILE}" \
+        1>/dev/null
+
+      if [[ $? != 0 ]]; then
+        echo "Fix the PHP Lint error(s) before committing."
+
+        return 1
+      fi
+
+      CS_FILES="$CS_FILES $PROJECT/$FILE"
+    done
+  else
+    return 0
+  fi
+
+  if [[ "$CS_FILES" != "" ]]; then
+    echo "Running PHP Code Sniffer..."
+
+    phpcs -s -n \
+      --standard="CRB-PSR2" \
+      --encoding=utf-8 \
+      --extensions=php \
+      ${CS_FILES}
+
+    if [[ $? != 0 ]]; then
+      echo "Running Code Beautifier..."
+
+      phpcbf -n \
+        --standard="CRB-PSR2" \
+        ${CS_FILES}
+
+      echo "Fix the PHP Code Sniffer error(s)!"
+
+      return 1
+    fi
+  fi
+
+  return $?
+}
+
+run_phpcs && run_eslint
 
 exit $?
