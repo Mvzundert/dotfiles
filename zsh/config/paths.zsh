@@ -6,6 +6,7 @@
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Local bin
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 export NVM_DIR="$(brew --prefix nvm)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

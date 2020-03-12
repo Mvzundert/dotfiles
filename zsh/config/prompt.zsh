@@ -8,10 +8,6 @@ zstyle ':vcs_info:git*' formats ' %b'
 add-zsh-hook precmd vcs_info
 add-zsh-hook precmd async_trigger
 
-source "$DOTFILES/zsh/config/gitprompt.zsh"
-source "$DOTFILES/zsh/config/jobsprompt.zsh"
-source "$DOTFILES/zsh/config/nodeprompt.zsh"
-
 PROMPT_SYMBOL='❯'
 
 ASYNC_PROC=0
