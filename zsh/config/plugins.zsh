@@ -5,6 +5,5 @@
 source $ZSH/plugins/clipboard.zsh
 source $ZSH/plugins/completion.zsh
 source $ZSH/plugins/history.zsh
-source $ZSH/plugins/gitcompletion.zsh
 source $ZSH/plugins/z.sh
 source $ZSH/plugins/extract.zsh
