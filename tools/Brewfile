@@ -41,7 +41,6 @@ brew "neovim"
 brew "nvm"
 brew "php", link: false
 brew "php-cs-fixer"
-brew "php@7.1", link: true
 brew "php@7.2", link: true
 brew "phplint"
 brew "pkg-config"
