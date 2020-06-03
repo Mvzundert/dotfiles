@@ -92,7 +92,7 @@ function art() {
     return $_artisan_exit_status
 }
 
-compdef _artisan_add_completion artisan
+compdef _artisan_add_completion art
 
 function _artisan_find() {
     # Look for artisan up the file tree until the root directory
@@ -116,5 +116,5 @@ function _artisan_add_completion() {
 }
 
 function _artisan_get_command_list() {
-    artisan --raw --no-ansi list | sed "s/[[:space:]].*//g"
+    art --raw --no-ansi list | sed "s/[[:space:]].*//g"
 }
