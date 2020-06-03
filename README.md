@@ -39,6 +39,10 @@ included that work without powerline fonts to get you started.
 
 Link to powerline font repo:(https://github.com/powerline/fonts)
 
+# How it looks
+
+![Screenshot 2020-06-03 at 12 12 55](https://user-images.githubusercontent.com/6066795/83624961-919d4480-a593-11ea-8864-a6a27fda2df6.png)
+
 # ZSH
 
 * Zshconfig (Alias, Config options, Function, Paths, Widgets)
