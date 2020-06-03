@@ -6,3 +6,4 @@ nvim/plugged
 !zsh/custom/custom_example
 .idea
 .netrwhist
+nvim/.netrwhist
