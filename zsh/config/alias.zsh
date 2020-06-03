@@ -56,7 +56,7 @@ alias ag='alias | ack'
 ############################
 # Laravel alias
 ############################
-alias art='php artisan'
+#alias art='php artisan' Disabled because auto-complete.
 alias artg="php artisan list | grep"
 alias artr="php artisan route:list"
 alias artrg="php artisan route:list | grep"
