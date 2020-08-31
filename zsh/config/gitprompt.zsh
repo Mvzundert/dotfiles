@@ -10,9 +10,9 @@ git_status() {
     local INDEX git_status=""
 
     GIT_SYMBOL="\ue725"
-    GIT_STATUS_ADDED=$(dotfiles::print '011' '☣')
-    GIT_STATUS_MODIFIED=$(dotfiles::print '016' '✂')
-    GIT_STATUS_UNTRACKED=$(dotfiles::print '014' '☠')
+    GIT_STATUS_ADDED=$(dotfiles::print '011' '+')
+    GIT_STATUS_MODIFIED=$(dotfiles::print '016' '-')
+    GIT_STATUS_UNTRACKED=$(dotfiles::print '014' '~')
     GIT_STATUS_RENAMED=$(dotfiles::print '208' '»')
     GIT_STATUS_DELETED=$(dotfiles::print '006' '✘')
     GIT_STATUS_AHEAD=$(dotfiles::print '012' '⇡')
