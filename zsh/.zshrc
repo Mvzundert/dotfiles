@@ -28,6 +28,14 @@ for file in $ZSH/config/*; do
 done
 
 # -------------------------------------------------------------------
+# ZSH prompt
+# -------------------------------------------------------------------
+# Function to load all ZSH config
+for file in $ZSH/prompt/*; do
+    source "$file"
+done
+
+# -------------------------------------------------------------------
 # Source all custom files
 # -------------------------------------------------------------------
 # Function to load all custom files, if you break it, it's on you.
@@ -45,4 +53,4 @@ done
 # -------------------------------------------------------------------
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
