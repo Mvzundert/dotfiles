@@ -8,6 +8,7 @@
 alias myip='wget http://ipinfo.io/ip -qO -'
 # use nvim, but don't make me think about it
 alias vim="stty stop '' -ixoff; nvim"
+alias python="python3"
 #alias vim="stty stop '' -ixoff; vim"
 
 # alias composer="php /usr/local/bin/composer.phar"

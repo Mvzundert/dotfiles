@@ -7,6 +7,8 @@ function take() {
     mkdir -p $@ && cd ${@:$#}
 }
 
+# @TODO: create a function to deal with: git diff --numstat | awk '{ added += $1; removed += $2 } END { print "+" added " -" removed }'
+
 #Switch PHP versions using Homebrew.
 function switchphp() {
     # Get 2nd and 3th character from current Node version and remove the '.' if found
