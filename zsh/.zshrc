@@ -30,7 +30,7 @@ done
 # -------------------------------------------------------------------
 # ZSH prompt
 # -------------------------------------------------------------------
-# Function to load all ZSH config
+# Function to load all ZSH prompt
 for file in $ZSH/prompt/*; do
     source "$file"
 done
