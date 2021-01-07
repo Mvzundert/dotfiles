@@ -3,7 +3,7 @@ git_status() {
 
     local git_branch="$vcs_info_msg_0_"
     git_branch="${git_branch#heads/}"
-    git_branch="${git_branch/.../}"
+    git_branch="${git_branch:0:20}...$(git_commit_hash)"
 
     [[ -z "$git_branch" ]] && return
 
@@ -81,7 +81,7 @@ git_status() {
         is_behind=true
     fi
 
-    # Check wheather branch has diverged
+    # Check whether branch has diverged
     if [[ "$is_ahead" == true && "$is_behind" == true ]]; then
         git_status="$GIT_STATUS_DIVERGED$git_status"
     else
@@ -93,5 +93,11 @@ git_status() {
 
     dotfiles::bold "$git_status"
     dotfiles::print '005' "$git_branch"
+}
+
+git_commit_hash() {
+  if [ -d .git ]; then
+    git log -1 --pretty=oneline | cut -c -8
+  fi
 }
 

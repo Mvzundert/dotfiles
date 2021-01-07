@@ -34,6 +34,5 @@ function TRAPUSR1() {
     zle && zle reset-prompt
 }
 
-# export PROMPT='%(?.%F{003}.%F{009})%~ $PROMPT_SYMBOL%f '
 export PROMPT=$'%F{%(#.red.red)}┌──${debian_chroot:+($debian_chroot)──}(%B%F{%(#.red.red)}%n%(#.$PROMPT_SYMBOL.$PROMPT_SYMBOL)%b%F{%(#.red.red})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.red.red)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
 export RPROMPT=''

@@ -9,9 +9,8 @@ alias myip='wget http://ipinfo.io/ip -qO -'
 # use nvim, but don't make me think about it
 alias vim="stty stop '' -ixoff; nvim"
 alias python="python3"
-#alias vim="stty stop '' -ixoff; vim"
+alias sbl="sublime ."
 
-# alias composer="php /usr/local/bin/composer.phar"
 alias mailcatcho=' mailcatcher --http-ip=127.0.0.1'
 alias ytmp3="youtube-dl -x --audio-format mp3 $1"
 
@@ -76,12 +75,6 @@ alias artte="art translations:export"
 # Start the queue worker once
 alias artqw="art queue:work --once"
 
-############################
-# Yii alias
-############################
-alias yii='run_yiic' # Do Yii magic
-alias yiim='yii migrate' # Migrate Yii Framework database
-
 ###########################
 # Docker alias
 ############################
@@ -92,6 +85,7 @@ alias dcw='docker-compose exec workspace bash'
 alias dcs='docker-compose stop'
 alias dcu='docker-compose up -d'
 alias kali='docker-compose exec crb_kali /bin/bash'
+alias kaliz='docker-compose exec crb_kali /bin/zsh'
 
 ############################
 # Git alias
