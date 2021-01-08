@@ -40,3 +40,6 @@ function scp_wrap {
   esac; done
   command scp "${(@)args}"
 }
+
+# Remove composer memory limit
+export COMPOSER_MEMORY_LIMIT=-1
