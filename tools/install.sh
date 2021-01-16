@@ -59,13 +59,25 @@ fi
 #=======================================
 #========= neovim ======================
 #=======================================
-DIR="$HOME/.config"
+DIR="$HOME/.config/nvim"
 
 if [ ! -d $DIR ]
     echo "NeoVim has been installed...skipping"
 then
     echo "NeoVim symlinked"
     ln -s $DOTFILES/nvim/ $HOME/.config/
+fi
+
+#=======================================
+#========= Alacritty ===================
+#=======================================
+DIR="$HOME/.config/Alacritty"
+
+if [ ! -d $DIR ]
+    echo "Alacritty has been installed...skipping"
+then
+    echo "Alacritty symlinked"
+    ln -s $DOTFILES/terminal/Alacritty $HOME/.config/
 fi
 
 #=======================================
