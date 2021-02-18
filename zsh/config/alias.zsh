@@ -56,12 +56,12 @@ alias ag='alias | ack'
 ############################
 # Laravel alias
 ############################
-#alias art='php artisan' Disabled because auto-complete.
-alias artg="php artisan list | grep"
-alias artr="php artisan route:list"
-alias artrg="php artisan route:list | grep"
-alias artmr="php artisan migrate:refresh"
-alias artmrs="php artisan migrate:refresh --seed"
+alias art='run_laravel_artisan'   
+alias artg="art list | grep"
+alias artr="art route:list"
+alias artrg="art route:list | grep"
+alias artmr="art migrate:refresh"
+alias artmrs="art migrate:refresh --seed"
 # Do building magic of project with actual dependency checks
 alias build="build_project_assets"
 # Do watching magic of project with actual dependency checks
