@@ -2,8 +2,25 @@
 # duplicate this file in zsh/config/zshwidgets
 # to enable/add your own custom configuration
 
+#############################
+# Alias
+############################
+source $ZSH/plugins/alias/docker.zsh
+source $ZSH/plugins/alias/drupal.zsh
+source $ZSH/plugins/alias/editors.zsh
+source $ZSH/plugins/alias/git.zsh
+source $ZSH/plugins/alias/laravel.zsh
+source $ZSH/plugins/alias/php.zsh
+source $ZSH/plugins/alias/search.zsh
+source $ZSH/plugins/alias/system.zsh
+source $ZSH/plugins/alias/tmux.zsh
+
+#############################
+# System plugins
+############################
 source $ZSH/plugins/clipboard.zsh
 source $ZSH/plugins/completion.zsh
 source $ZSH/plugins/history.zsh
 source $ZSH/plugins/z.sh
 source $ZSH/plugins/extract.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
