@@ -31,8 +31,8 @@ bindkey -e
 # [Esc-w] - Kill from the cursor to the mark
 bindkey '\ew' kill-region
 
-# [Esc-l] - run command: ls
-bindkey -s '\el' 'ls\n'
+# [Esc-l] - run command: ll
+bindkey -s '\el' 'll\n'
 
 # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
 bindkey '^r' history-incremental-search-backward
@@ -97,22 +97,3 @@ bindkey '\C-x\C-e' edit-command-line
 
 # file rename magick
 bindkey "^[m" copy-prev-shell-word
-
-# consider emacs keybindings:
-
-#bindkey -e  ## emacs key bindings
-#
-#bindkey '^[[A' up-line-or-search
-#bindkey '^[[B' down-line-or-search
-#bindkey '^[^[[C' emacs-forward-word
-#bindkey '^[^[[D' emacs-backward-word
-#
-#bindkey -s '^X^Z' '%-^M'
-#bindkey '^[e' expand-cmd-path
-#bindkey '^[^I' reverse-menu-complete
-#bindkey '^X^N' accept-and-infer-next-history
-#bindkey '^W' kill-region
-#bindkey '^I' complete-word
-## Fix weird sequence that rxvt produces
-#bindkey -s '^[[Z' '\t'
-#
