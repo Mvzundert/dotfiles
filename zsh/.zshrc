@@ -1,3 +1,6 @@
+# Enable zsh profiling for debugging
+# zmodload zsh/zprof
+
 # Set encoding
 export LC_ALL=en_US.UTF-8
 
@@ -53,4 +56,5 @@ done
 # -------------------------------------------------------------------
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-
+# Enable zsh profiling for debugging
+# zprof
