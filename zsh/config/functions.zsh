@@ -7,52 +7,17 @@ function take() {
     mkdir -p $@ && cd ${@:$#}
 }
 
-# @TODO: create a function to deal with: git diff --numstat | awk '{ added += $1; removed += $2 } END { print "+" added " -" removed }'
-
-#Switch PHP versions using Homebrew.
+# Switch php and unlink the "default" version.
 function switchphp() {
-    # Get 2nd and 3th character from current Node version and remove the '.' if found
-    CURRENT=$(php -v | grep ^PHP | cut -d' ' -f2 | cut -c1-3)
-    TARGET=false
-
-    # Process chosen options
-    while getopts ':hv:' option; do
-        case "$option" in
-            v)
-                TARGET=${OPTARG}
-                ;;
-        esac
-    done
-
-    # Remove chosen option from $@
-    shift $((OPTIND - 1))
-
-    # Skip if already on target version
-    if [[ ${TARGET} == "${CURRENT}" ]]; then
-        echo "Current version is: $CURRENT"
-
-        return 0
-    fi
-
-    # Remove old and create new symlinks based on target and current version
-    if ! [[ ${TARGET} == false ]]; then
-        # Unlink current version
-        brew unlink php@"${CURRENT}"
-
-        # Unlink target version
-        brew unlink php@"${TARGET}"
-
-        # Link target version
-        brew link php@"${TARGET}" --force --overwrite
-    fi
+    brew unlink php && brew link --force --overwrite php@$1
 }
-
 
 # Which commands do you use the most
 function zsh_stats() {
     fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n20
 }
 
+# Open files.
 function open_command() {
     local open_cmd
 
