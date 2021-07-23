@@ -16,6 +16,8 @@ alias gfa="git fetch --all --prune"
 alias gcmsg="git commit -m"
 alias gp="git push"
 alias gpt="git push && git push --tags"
+
+# Submodule 
 alias gsum="git submodule update --remote --merge"
 alias gprs="git pull --recurse-submodules"
 alias gsur="git submodule update --recursive --remote"
@@ -34,10 +36,13 @@ alias gcd='git checkout develop'
 alias gcs='git checkout staging'
 alias gcm='git checkout master'
 
+# Rebase all the things
 alias grbd='git rebase develop'
 alias grbs='git rebase --skip'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
+
+# Stash all the things
 alias gstash='git stash'
 
 # for fun and games
