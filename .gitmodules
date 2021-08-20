@@ -3,4 +3,4 @@
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
 [submodule "zsh/plugins/base16_shell"]
 	path = zsh/plugins/base16_shell
-	url = git@github.com:chriskempson/base16-shell.git
+	url = git@github.com:martinlindhe/base16-iterm2.git
