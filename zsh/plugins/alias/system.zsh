@@ -6,6 +6,7 @@ alias zshconfig="subl ~/dotfiles/zsh/.zshrc"
 alias sshconfig="subl ~/.ssh/config"
 alias light='base16_github'
 alias dark='base16_dracula'
+alias monokai='base16_monokai'
 
 ############################
 # Random stuff that's usefull
