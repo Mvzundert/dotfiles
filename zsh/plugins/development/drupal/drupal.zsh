@@ -10,3 +10,12 @@ alias drush_list="drush pm-list"
 alias drush_enlist="drush pm-list --status='Enabled' --no-core"
 alias drush_dis="drush pm-uninstall"
 alias drush='$(get_drush_install)'
+
+# Checks if drush is installed in vendor folder or if we should use global one.
+function get_drush_install() {
+    if [ -f  vendor/drush/drush/drush ]; then
+        echo './vendor/drush/drush/drush'
+    else
+        echo 'drush'
+    fi
+}
