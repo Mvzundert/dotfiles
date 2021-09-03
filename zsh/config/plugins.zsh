@@ -19,6 +19,7 @@ source $ZSH/plugins/alias/laravel.zsh
 source $ZSH/plugins/alias/python.zsh
 source $ZSH/plugins/alias/php.zsh
 source $ZSH/plugins/alias/drupal.zsh
+source $ZSH/plugins/alias/wp-cli.zsh
 
 #############################
 # System plugins
