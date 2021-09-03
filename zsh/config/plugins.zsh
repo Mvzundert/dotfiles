@@ -4,26 +4,33 @@
 
 #############################
 # System Alias
-############################
-source $ZSH/plugins/alias/docker.zsh
-source $ZSH/plugins/alias/editors.zsh
-source $ZSH/plugins/alias/git.zsh
-source $ZSH/plugins/alias/search.zsh
-source $ZSH/plugins/alias/system.zsh
-source $ZSH/plugins/alias/tmux.zsh
+#############################
+source $ZSH/plugins/docker.zsh
+source $ZSH/plugins/editors.zsh
+source $ZSH/plugins/search.zsh
+source $ZSH/plugins/system.zsh
+source $ZSH/plugins/tmux.zsh
 
 #############################
-# Coding Alias
-############################
-source $ZSH/plugins/alias/laravel.zsh
-source $ZSH/plugins/alias/python.zsh
-source $ZSH/plugins/alias/php.zsh
-source $ZSH/plugins/alias/drupal.zsh
-source $ZSH/plugins/alias/wp-cli.zsh
+# Coding plugins
+#############################
+
+# Source control
+source $ZSH/plugins/development/git.zsh
+source $ZSH/plugins/development/development.zsh
+
+# Languages
+source $ZSH/plugins/development/python/python.zsh
+source $ZSH/plugins/development/php/php.zsh
+
+# Frameworks
+source $ZSH/plugins/development/laravel/laravel.zsh
+source $ZSH/plugins/development/drupal/drupal.zsh
+source $ZSH/plugins/development/wordpress/wp-cli.zsh
 
 #############################
 # System plugins
-############################
+#############################
 source $ZSH/plugins/clipboard.zsh
 source $ZSH/plugins/completion.zsh
 source $ZSH/plugins/history.zsh

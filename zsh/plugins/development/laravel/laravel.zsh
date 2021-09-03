@@ -25,10 +25,73 @@ alias artte="art translations:export"
 # Start the queue worker once
 alias artqw="art queue:work --once"
 
-
 ############################
 # Artisan functions
 ############################
+
+# First get location of current folders Artisan file and run it with given arguments
+function run_laravel_artisan() {
+    # Set default artisan location to current dir
+    export ARTISAN_APP=./artisan
+
+    # If default isn't found, go look for it
+    if [[ ! -f ${ARTISAN_APP} ]]; then
+        find_laravel_artisan
+    fi
+
+    LOCATION='\033[33martisan not found\033[0m'
+
+    if [[ "$ARTISAN_APP" != "" ]] && [[ -f ${ARTISAN_APP} ]]; then
+        LOCATION="\033[33m$ARTISAN_APP\033[0m"
+    fi
+
+    USAGE="\033[33mUsage:\033[0m art [-h]
+
+Run artisan command from anywhere in your projects.
+
+Currently using: $LOCATION
+
+\033[33mOptions:\033[0m
+    \033[92m-h\033[0m  Show this help text.
+    "
+
+    while getopts ':h' option; do
+        case "$option" in
+            h)
+                echo -e "$USAGE"
+                return 1
+                ;;
+        esac
+    done
+
+    if [[ "$ARTISAN_APP" != "" ]] && [[ -f ${ARTISAN_APP} ]]; then
+        php -d memory_limit=512M $ARTISAN_APP $@
+    else
+        echo -e "$USAGE"
+    fi
+}
+
+# Do magic to find current projects artisan file
+function find_laravel_artisan() {
+    # Check current folder for artisan, then parent, then parents parent, etc., etc.
+    DIRECTORY=..
+    until [[ -e ${DIRECTORY}/artisan || ${DIRECTORY} -ef / ]]; do DIRECTORY+=/..; done
+
+    # Convert path to absolute path
+    DIRECTORY=$(
+        cd "$DIRECTORY"
+        pwd
+    )
+
+    # Add artisan to path
+    APP=${DIRECTORY}/artisan
+
+    # Update global variable
+    if [[ "$APP" != "" ]]; then
+        ARTISAN_APP=$APP
+    fi
+}
+
 function art() {
     _artisan=`_artisan_find`
 
