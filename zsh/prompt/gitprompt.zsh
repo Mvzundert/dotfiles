@@ -1,103 +1,71 @@
-git_status() {
-    dotfiles::is_git || return
+# Set GIT info
+git_prompt_prefix=" ("
+git_prompt_suffix=")"
+git_prompt_dirty="✗"
+git_prompt_clean="✔"
 
-    local git_branch="$vcs_info_msg_0_"
-    git_branch="${git_branch#heads/}"
-    git_branch="${git_branch:0:20}...$(git_commit_hash)"
-
-    [[ -z "$git_branch" ]] && return
-
-    local INDEX git_status=""
-
-    GIT_SYMBOL="\ue725"
-    GIT_STATUS_ADDED=$(dotfiles::print '011' '+')
-    GIT_STATUS_MODIFIED=$(dotfiles::print '016' '-')
-    GIT_STATUS_UNTRACKED=$(dotfiles::print '014' '~')
-    GIT_STATUS_RENAMED=$(dotfiles::print '208' '»')
-    GIT_STATUS_DELETED=$(dotfiles::print '006' '✘')
-    GIT_STATUS_AHEAD=$(dotfiles::print '012' '⇡')
-    GIT_STATUS_BEHIND=$(dotfiles::print '011' '⇣')
-    GIT_STATUS_DIVERGED=$(dotfiles::print '013' '⇕')
-    GIT_STATUS_CLEAN=$(dotfiles::print '002' '✔')
-
-    INDEX=$(command git status --porcelain -b 2>/dev/null)
-
-    # Check for untracked files
-    if $(echo "$INDEX" | command grep -E '^\?\? ' &> /dev/null); then
-        git_status="$GIT_STATUS_UNTRACKED$git_status"
+# Outputs current branch info in prompt format
+function git_prompt_info() {
+    # Check if the current directory contains a Git repository
+    if ! [[ $(command git rev-parse --git-dir 2> /dev/null) ]]; then
+        return 0
     fi
 
-    # Check for staged files
-    if $(echo "$INDEX" | command grep '^A[ MDAU] ' &> /dev/null); then
-        git_status="$GIT_STATUS_ADDED$git_status"
-    elif $(echo "$INDEX" | command grep '^M[ MD] ' &> /dev/null); then
-        git_status="$GIT_STATUS_ADDED$git_status"
-    elif $(echo "$INDEX" | command grep '^UA' &> /dev/null); then
-        git_status="$GIT_STATUS_ADDED$git_status"
-    fi
+    dotfiles::print '004' "$git_prompt_prefix$(git_repository_has_changes) $(git_current_branch_short) $(git_last_commit_hash)$git_prompt_suffix"
+}
 
-    # Check for modified files
-    if $(echo "$INDEX" | command grep '^[ MARC ]M ' &> /dev/null); then
-        git_status="$GIT_STATUS_MODIFIED$git_status"
-    fi
+# Checks if working tree is dirty
+function git_repository_has_changes() {
+    git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
 
-    # Check for renamed files
-    if $(echo "$INDEX" | command grep '^R[ MD] ' &> /dev/null); then
-        git_status="$GIT_STATUS_RENAMED$git_status"
-    fi
-
-    # Check for deleted files
-    if $(echo "$INDEX" | command grep '^[MARCDU ]D ' &> /dev/null); then
-        git_status="$GIT_STATUS_DELETED$git_status"
-    elif $(echo "$INDEX" | command grep '^D[ UM] ' &> /dev/null); then
-        git_status="$GIT_STATUS_DELETED$git_status"
-    fi
-
-    # Check for stashes
-    if $(command git rev-parse --verify refs/stash >/dev/null 2>&1); then
-        git_status="$GIT_STATUS_STASHED$git_status"
-    fi
-
-    # Check for unmerged files
-    if $(echo "$INDEX" | command grep '^U[UDA] ' &> /dev/null); then
-        git_status="$GIT_STATUS_UNMERGED$git_status"
-    elif $(echo "$INDEX" | command grep '^AA ' &> /dev/null); then
-        git_status="$GIT_STATUS_UNMERGED$git_status"
-    elif $(echo "$INDEX" | command grep '^DD ' &> /dev/null); then
-        git_status="$GIT_STATUS_UNMERGED$git_status"
-    elif $(echo "$INDEX" | command grep '^[DA]U ' &> /dev/null); then
-        git_status="$GIT_STATUS_UNMERGED$git_status"
-    fi
-
-    # Check whether branch is ahead
-    local is_ahead=false
-    if $(echo "$INDEX" | command grep '^## [^ ]\+ .*ahead' &> /dev/null); then
-        is_ahead=true
-    fi
-
-    # Check whether branch is behind
-    local is_behind=false
-    if $(echo "$INDEX" | command grep '^## [^ ]\+ .*behind' &> /dev/null); then
-        is_behind=true
-    fi
-
-    # Check whether branch has diverged
-    if [[ "$is_ahead" == true && "$is_behind" == true ]]; then
-        git_status="$GIT_STATUS_DIVERGED$git_status"
+    if [[ -n $git_status ]]; then
+        dotfiles::print '004' "$git_prompt_dirty"
     else
-        [[ "$is_ahead" == true ]] && git_status="$GIT_STATUS_AHEAD$git_status"
-        [[ "$is_behind" == true ]] && git_status="$GIT_STATUS_BEHIND$git_status"
+        dotfiles::print '004' "$git_prompt_clean"
+    fi
+}
+
+# Get current git repository branch checked out
+function git_current_branch_short() {
+    local ref
+
+    ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+
+    local ret=$?
+
+    if [[ $ret != 0 ]]; then
+        [[ $ret == 128 ]] && return
+
+        ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
     fi
 
-    [[ -n "$git_status" ]] || git_status="$GIT_STATUS_CLEAN"
+    branch_name=${ref#refs/heads/}
 
-    dotfiles::bold "$git_status"
-    dotfiles::print '005' "$git_branch"
+    dotfiles::print '004' "${branch_name%%-*}"
 }
 
-git_commit_hash() {
-  if [ -d .git ]; then
-    git log -1 --pretty=oneline | cut -c -8
-  fi
+# Get current git repository branch checked out
+function git_current_branch() {
+    local ref
+
+    ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+
+    local ret=$?
+
+    if [[ $ret != 0 ]]; then
+        [[ $ret == 128 ]] && return
+
+        ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+    fi
+
+    dotfiles::print '004' "${ref#refs/heads/}"
 }
 
+# Get the latest commit has from git log
+function git_last_commit_hash() {
+    local hash
+
+    hash=$(command git log -1 --pretty=oneline | cut -c -7)
+
+    dotfiles::print '004' "$hash"
+}
