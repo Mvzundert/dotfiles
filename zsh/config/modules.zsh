@@ -1,4 +1,3 @@
-source $ZSH/plugins/system.zsh
 source $ZSH/plugins/tmux.zsh
 
 # Search Module
