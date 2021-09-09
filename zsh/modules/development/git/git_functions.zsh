@@ -1,44 +1,37 @@
-# Default alias
-alias gst="git status"
-alias gaa="git add --all"
-alias ga="git add"
-alias gcb="git checkout -b"
-alias gco="git checkout"
-alias gup="git pull --rebase"
-alias gpl="git pull"
-alias gfa="git fetch --all --prune"
-alias gcmsg="git commit -m"
-alias gp="git push"
-alias gpt="git push && git push --tags"
+# Remove a file from gits history entirely
+function git_history_remove() {
+    if ! [[ -d "$(pwd)/.git" ]]; then
+        echo "Halt: .git folder not found"
 
-# Submodule 
-alias gsum="git submodule update --remote --merge"
-alias gprs="git pull --recurse-submodules"
-alias gsur="git submodule update --recursive --remote"
+        return 0
+    fi
 
-# Diff and graph's
-alias gd="git diff"
-alias gdch="git -c core.fileMode=false diff"
-alias glgp="git log --stat --color -p"
-alias glol="git log --graph --abbrev-commit --decorate --date=relative --all"
-alias glog="git log --all --decorate --oneline --graph"
-alias glc="git log --decorate --oneline --graph"
-alias gcount="git shortlog -s"
+    if [[ $# -eq 0 ]]; then
+        echo "Halt: no target given"
 
-# Checkout branches
-alias gcd='git checkout develop'
-alias gcs='git checkout staging'
-alias gcm='git checkout master'
+        return 0
+    else
+        TARGET=$1
+    fi
 
-# Rebase all the things
-alias grbd='git rebase develop'
-alias grbs='git rebase --skip'
-alias grbc='git rebase --continue'
-alias grba='git rebase --abort'
+    read "?Are you sure you want to remove '$TARGET' from the git history? "
 
-# Stash all the things
-alias gstash='git stash'
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo # Whitespace
 
-# for fun and games
-alias darth='gp --force'
-alias yolo='gaa && git commit -m "$(curl -s http://whatthecommit.com/index.txt)" && darth'
+        git stash
+
+        echo -e "\nRemoving '$TARGET' from history"
+        git filter-branch --tree-filter 'rm -rf $FOLDER' --prune-empty HEAD
+
+        echo -e "\nRemoving '$TARGET' references"
+        git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+
+        echo -e "\nStarting garbage collection"
+        git gc --prune=all --aggressive
+
+        echo # Whitespace
+
+        git stash pop
+    fi
+}
