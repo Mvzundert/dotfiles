@@ -1,7 +1,10 @@
-
-source $ZSH/plugins/search.zsh
 source $ZSH/plugins/system.zsh
 source $ZSH/plugins/tmux.zsh
+
+# Search Module
+for file in $MODULES/search/*; do
+    source "$file"
+done
 
 # Editor Module
 for file in $MODULES/editors/*; do
