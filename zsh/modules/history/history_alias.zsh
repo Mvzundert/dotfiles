@@ -1,0 +1,1 @@
+alias hg='history | ack'
