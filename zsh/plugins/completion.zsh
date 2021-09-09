@@ -64,3 +64,9 @@ fi
 if [[ $#hosts_completion -gt 0 ]]; then
     zstyle ':completion:*:(ssh|scp|rsync|slogin):*' hosts ${hosts_completion}
 fi
+
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*' group-name ''
