@@ -1,5 +1,6 @@
-source $ZSH/plugins/tmux.zsh
-
+#############################
+# System Modules
+#############################
 # Search Module
 for file in $MODULES/search/*; do
     source "$file"
@@ -7,6 +8,11 @@ done
 
 # Editor Module
 for file in $MODULES/editors/*; do
+    source "$file"
+done
+
+# Tmux Module
+for file in $MODULES/tmux/*; do
     source "$file"
 done
 
@@ -59,9 +65,6 @@ for file in $MODULES/development/wordpress/*; do
     source "$file"
 done
 
-#############################
-# System plugins
-#############################
 source $ZSH/plugins/clipboard.zsh
 source $ZSH/plugins/completion.zsh
 source $ZSH/plugins/history.zsh
