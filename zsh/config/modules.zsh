@@ -1,12 +1,16 @@
-source $ZSH/plugins/editors.zsh
+
 source $ZSH/plugins/search.zsh
 source $ZSH/plugins/system.zsh
 source $ZSH/plugins/tmux.zsh
 
+# Editor Module
+for file in $MODULES/editors/*; do
+    source "$file"
+done
+
 #############################
 # Coding plugins
 #############################
-
 # Git Module
 for file in $MODULES/development/git/*; do
     source "$file"
@@ -25,7 +29,6 @@ done
 #############################
 # Languages
 #############################
-
 # Python modules
 for file in $MODULES/development/python/*; do
     source "$file"
