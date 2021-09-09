@@ -1,6 +1,6 @@
 .DS_Store
 tmux/custom/*.local
-load.zsh
+zsh/load.zsh
 zsh/custom/
 nvim/plugged
 !zsh/custom/.gitkeep
