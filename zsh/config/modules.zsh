@@ -16,6 +16,11 @@ for file in $MODULES/tmux/*; do
     source "$file"
 done
 
+# Clipboard Module
+for file in $MODULES/clipboard/*; do
+    source "$file"
+done
+
 #############################
 # Coding plugins
 #############################
@@ -65,7 +70,6 @@ for file in $MODULES/development/wordpress/*; do
     source "$file"
 done
 
-source $ZSH/plugins/clipboard.zsh
 source $ZSH/plugins/completion.zsh
 source $ZSH/plugins/history.zsh
 source $ZSH/plugins/z.sh
