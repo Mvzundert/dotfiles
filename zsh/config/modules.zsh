@@ -21,6 +21,16 @@ for file in $MODULES/clipboard/*; do
     source "$file"
 done
 
+# Completion Module
+for file in $MODULES/completion/*; do
+    source "$file"
+done
+
+# Completion Module
+for file in $MODULES/history/*; do
+    source "$file"
+done
+
 #############################
 # Coding plugins
 #############################
@@ -70,8 +80,8 @@ for file in $MODULES/development/wordpress/*; do
     source "$file"
 done
 
-source $ZSH/plugins/completion.zsh
-source $ZSH/plugins/history.zsh
+
+
 source $ZSH/plugins/z.sh
 source $ZSH/plugins/extract.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
