@@ -31,6 +31,11 @@ for file in $MODULES/history/*; do
     source "$file"
 done
 
+# Extract Module
+for file in $MODULES/extract/*; do
+    source "$file"
+done
+
 #############################
 # Coding plugins
 #############################
@@ -80,8 +85,5 @@ for file in $MODULES/development/wordpress/*; do
     source "$file"
 done
 
-
-
 source $ZSH/plugins/z.sh
-source $ZSH/plugins/extract.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
