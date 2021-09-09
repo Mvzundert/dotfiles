@@ -1,14 +1,3 @@
-alias cigr="composer info | ack"
-alias ciggr="composer global info | ack"
-
-### PHP Unit
-alias phpunit='$(get_phpunit_install)'
-
-### Composer
-alias ci='composer install'
-alias cu='composer update'
-alias cda="composer dump-autoload"
-
 # Switch php and unlink the "default" version.
 function switchphp() {
     brew unlink php && brew link --force --overwrite php@$1
