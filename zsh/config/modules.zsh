@@ -1,7 +1,3 @@
-#############################
-# System Alias
-#############################
-source $ZSH/plugins/docker.zsh
 source $ZSH/plugins/editors.zsh
 source $ZSH/plugins/search.zsh
 source $ZSH/plugins/system.zsh
@@ -18,6 +14,11 @@ done
 
 # Build modules
 for file in $MODULES/development/build/*; do
+    source "$file"
+done
+
+# Build modules
+for file in $MODULES/docker/*; do
     source "$file"
 done
 
