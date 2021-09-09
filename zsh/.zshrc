@@ -24,7 +24,17 @@ if [[ -d ~/code ]]; then
 fi
 
 # -------------------------------------------------------------------
-# ZSH config
+# Load utils file to activate helpers
+# -------------------------------------------------------------------
+source $ZSH/utils.zsh
+
+# -------------------------------------------------------------------
+# Load file to determine which modules are active
+# -------------------------------------------------------------------
+source $ZSH/load.zsh
+
+# -------------------------------------------------------------------
+# Load config
 # -------------------------------------------------------------------
 # Function to load all ZSH config
 for file in $ZSH/config/*; do
@@ -32,7 +42,7 @@ for file in $ZSH/config/*; do
 done
 
 # -------------------------------------------------------------------
-# ZSH prompt
+# Load prompt
 # -------------------------------------------------------------------
 # Function to load all ZSH prompt
 for file in $ZSH/prompt/*; do
@@ -40,7 +50,7 @@ for file in $ZSH/prompt/*; do
 done
 
 # -------------------------------------------------------------------
-# Source all custom files
+# Load all custom files
 # -------------------------------------------------------------------
 # Function to load all custom files, if you break it, it's on you.
 for file in $ZSH/custom/custom_*; do
