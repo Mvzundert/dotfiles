@@ -72,7 +72,6 @@ fi
 #############################
 # Languages
 #############################
-
 if dotfiles::check "${PHP}"; then
   # PHP modules
   for file in $MODULES/development/php/*; do
@@ -97,7 +96,7 @@ if dotfiles::check "${LARAVEL}"; then
   done
 fi
 
-if dotfiles::check "${DRUPAL}}"; then
+if dotfiles::check "${DRUPAL}"; then
   # Drupal
   for file in $MODULES/development/drupal/*; do
       source "$file"
