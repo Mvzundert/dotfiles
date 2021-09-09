@@ -3,10 +3,10 @@ PHP=true
 PYTHON=true
 
 LARAVEL=true
-DRUPAL=true
+DRUPAL=
 WORDPRESS=true
 
 DOCKER=true
 BUILD=true
 GIT=true
-TMUX=true
+TMUX=
