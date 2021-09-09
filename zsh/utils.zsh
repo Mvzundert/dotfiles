@@ -10,7 +10,7 @@ dotfiles::is_git() {
 
 # Checks if value is true
 dotfiles::check() {
-  [[ -v "$1" ]]
+    [[ -n "$1" ]]
 }
 
 # Prints in bold
