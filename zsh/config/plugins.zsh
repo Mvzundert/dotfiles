@@ -16,17 +16,17 @@ source $ZSH/plugins/tmux.zsh
 #############################
 
 # Source control
-source $ZSH/plugins/development/git.zsh
-source $ZSH/plugins/development/development.zsh
+source $ZSH/config/development/git.zsh
+source $ZSH/config/development/development.zsh
 
 # Languages
-source $ZSH/plugins/development/python/python.zsh
-source $ZSH/plugins/development/php/php.zsh
+source $ZSH/config/development/python/python.zsh
+source $ZSH/config/development/php/php.zsh
 
 # Frameworks
-source $ZSH/plugins/development/laravel/laravel.zsh
-source $ZSH/plugins/development/drupal/drupal.zsh
-source $ZSH/plugins/development/wordpress/wp-cli.zsh
+source $ZSH/config/development/laravel/laravel.zsh
+source $ZSH/config/development/drupal/drupal.zsh
+source $ZSH/config/development/wordpress/wp-cli.zsh
 
 #############################
 # System plugins
