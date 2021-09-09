@@ -9,6 +9,7 @@ export LC_ALL=en_US.UTF-8
 # -------------------------------------------------------------------
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
+export MODULES=$ZSH/modules
 
 # -------------------------------------------------------------------
 # Report time and code stuff.
