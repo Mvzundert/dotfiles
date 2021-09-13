@@ -11,3 +11,6 @@ function update_prompt() {
 
     zle && zle reset-prompt
 }
+
+# Add update_prompt function to precmd function list
+precmd_functions+=update_prompt
