@@ -5,6 +5,7 @@ alias light='base16_github'
 alias dark='base16_dracula'
 alias monokai='base16_monokai'
 alias outrun='base16_outrun-dark'
+alias synth='base16_synth-midnight-dark'
 alias ytmp3="youtube-dl -x --audio-format mp3 $1"
 alias myip='wget http://ipinfo.io/ip -qO -'
 alias size='du -sh * | sort -r -n | grep "[0-9][G|M]"'
