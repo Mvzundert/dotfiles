@@ -16,3 +16,29 @@ alias arttc="art translations:clean"
 alias artte="art translations:export"
 # Start the queue worker once
 alias artqw="art queue:work --once"
+
+# -------------------------------------------------------------------
+# Artisan when using Sail
+# -------------------------------------------------------------------
+alias sail="[ -f sail ] && bash sail || bash vendor/bin/sail"
+alias sart="sail artisan"
+alias sdcu="sail up -d"
+alias sdcs="sail stop"
+alias sdcd="sail up"
+
+# -------------------------------------------------------------------
+# Artisan shortcuts when using Sail
+# -------------------------------------------------------------------
+alias sartg="sart list | grep"
+alias sartr="sart route:list"
+alias sartrg="sart route:list | grep"
+alias sartmr="sart migrate:refresh"
+alias sartmrs="sart migrate:refresh --seed"
+alias sartqw="sart queue:work --once"
+
+# -------------------------------------------------------------------
+# Composer when using sail
+# -------------------------------------------------------------------
+alias sci="sail composer install"
+alias scu="sail composer update"
+alias scr="sail composer require"
