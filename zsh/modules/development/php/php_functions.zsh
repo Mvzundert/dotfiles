@@ -6,7 +6,7 @@ function switchphp() {
 # Checks if phpunit is installed in vendor folder or if we should use global one.
 function get_phpunit_install() {
     if [ -f vendor/bin/paratest ]; then
-        echo './vendor/bin/paratest'
+        echo './vendor/bin/paratest'    
     elif [ -f vendor/bin/phpunit ]; then
         echo './vendor/bin/phpunit'
     else
