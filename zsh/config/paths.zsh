@@ -12,5 +12,11 @@ export NPM_DIR="$HOME/.npm"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# Add ruby bin folder to PATH
+RUBY_BIN="/usr/local/opt/ruby/bin"
+
+if [[ -d $RUBY_BIN ]]; then
+    if ! [[ :$PATH: == *:$RUBY_BIN:* ]]; then
+        export PATH="$RUBY_BIN:$PATH"
+    fi
+fi
