@@ -1,4 +1,6 @@
+# -------------------------------------------------------------------
 # Remove a file from gits history entirely
+# -------------------------------------------------------------------
 function git_history_remove() {
     if ! [[ -d "$(pwd)/.git" ]]; then
         echo "Halt: .git folder not found"

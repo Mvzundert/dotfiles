@@ -1,4 +1,6 @@
+# -------------------------------------------------------------------
 # First get location of current folders Artisan file and run it with given arguments
+# -------------------------------------------------------------------
 function run_laravel_artisan() {
     # Set default artisan location to current dir
     export ARTISAN_APP=./artisan
@@ -25,6 +27,7 @@ Currently using: $LOCATION
     "
 
     while getopts ':h' option; do
+      # shellcheck disable=SC2220
         case "$option" in
             h)
                 echo -e "$USAGE"
@@ -40,7 +43,9 @@ Currently using: $LOCATION
     fi
 }
 
+# -------------------------------------------------------------------
 # Do magic to find current projects artisan file
+# -------------------------------------------------------------------
 function find_laravel_artisan() {
     # Check current folder for artisan, then parent, then parents parent, etc., etc.
     DIRECTORY=..
@@ -61,6 +66,9 @@ function find_laravel_artisan() {
     fi
 }
 
+# -------------------------------------------------------------------
+# Alias Artisan to Art
+# -------------------------------------------------------------------
 function art() {
     _artisan=`_artisan_find`
 
@@ -90,8 +98,10 @@ function art() {
 
 compdef _artisan_add_completion art
 
+# -------------------------------------------------------------------
+# Look for artisan up the file tree until the root directory
+# -------------------------------------------------------------------
 function _artisan_find() {
-    # Look for artisan up the file tree until the root directory
     dir=.
     until [ $dir -ef / ]; do
         if [ -f "$dir/artisan" ]; then
@@ -105,12 +115,19 @@ function _artisan_find() {
     return 1
 }
 
+# -------------------------------------------------------------------
+# Add Artisan complation to ZSH
+# -------------------------------------------------------------------
 function _artisan_add_completion() {
     if [ "`_artisan_find`" != "" ]; then
+        # shellcheck disable=SC2046
         compadd `_artisan_get_command_list`
     fi
 }
 
+# -------------------------------------------------------------------
+# Get the artisan command list
+# -------------------------------------------------------------------
 function _artisan_get_command_list() {
     art --raw --no-ansi list | sed "s/[[:space:]].*//g"
 }

@@ -57,6 +57,8 @@ for file in $ZSH/custom/custom_*; do
     source "$file"
 done
 
+export ALTERNATE_EDITOR=""
+
 # -------------------------------------------------------------------
 # Custom .zshrc source highlighting
 # see: https://github.com/zsh-users/zsh-syntax-highlighting

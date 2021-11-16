@@ -1,5 +1,6 @@
-
-# Check current directory asset building dependencies, install and build them
+# -------------------------------------------------------------------
+# Check current directory asset building dependencies, install and build them# Compressed
+# -------------------------------------------------------------------
 function build_project_assets() {
     USAGE="\033[33mUsage:\033[0m build [-h] [-f] [-i] [-c] [-a]
 
@@ -18,6 +19,7 @@ function build_project_assets() {
     PACKAGE_UPDATE=false
 
     while getopts ':hfica' option; do
+      # shellcheck disable=SC2220
         case "$option" in
             h)
                 echo -e "$USAGE"
@@ -116,7 +118,9 @@ function build_project_assets() {
     fi
 }
 
+# -------------------------------------------------------------------
 # Check current directory assets building dependencies, install and watch them
+# -------------------------------------------------------------------
 function watch_project_assets() {
     # Check for NPM lock file else use YARN
     if [[ -f package-lock.json ]]; then
