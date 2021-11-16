@@ -28,11 +28,6 @@ for file in $MODULES/history/*; do
     source "$file"
 done
 
-# Completion Module
-for file in $MODULES/hack/*; do
-    source "$file"
-done
-
 # Extract Module
 for file in $MODULES/extract/*; do
     source "$file"
@@ -71,6 +66,14 @@ if dotfiles::check "${TMUX}"; then
   # Tmux Module
   for file in $MODULES/tmux/*; do
       source "$file"
+  done
+fi
+
+
+if dotfiles::check "${HACK}"; then
+  # Hacking module
+  for file in $MODULES/hack/*; do
+    source "$file"
   done
 fi
 
