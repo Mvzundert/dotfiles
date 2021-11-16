@@ -28,6 +28,11 @@ for file in $MODULES/history/*; do
     source "$file"
 done
 
+# Completion Module
+for file in $MODULES/hack/*; do
+    source "$file"
+done
+
 # Extract Module
 for file in $MODULES/extract/*; do
     source "$file"
