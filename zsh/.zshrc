@@ -57,7 +57,7 @@ for file in $ZSH/custom/custom_*; do
     source "$file"
 done
 
-export ALTERNATE_EDITOR=""
+export ALTERNATE_EDITOR="nano"
 
 # -------------------------------------------------------------------
 # Custom .zshrc source highlighting
