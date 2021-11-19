@@ -7,7 +7,7 @@ alias reload='source ~/.zshrc'
 # Config 
 # -------------------------------------------------------------------
 alias dotc="vim ~/.dotfiles/"
-alias sshc="vim ~/.ssh/"
+alias sshc="vim ~/.ssh/config"
 alias emacs='emacsclient --tty'
 
 # -------------------------------------------------------------------
