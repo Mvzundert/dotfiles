@@ -21,7 +21,6 @@ alias .....="cd ../../../.."
 alias l="ls -lah ${colorflag}"
 alias la="ls -AF ${colorflag}"
 alias ll="ls -lah ${colorflag}"
-alias lld="ls -l | grep ^d"
 alias rmf="rm -rf"
 
 alias d='dirs -v | head -10'
