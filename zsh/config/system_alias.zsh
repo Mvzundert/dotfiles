@@ -23,10 +23,10 @@ alias synth='base16_synth-midnight-dark'
 # System
 # -------------------------------------------------------------------
 alias myip='wget http://ipinfo.io/ip -qO -'
-alias size='du -sh * | sort -r -n | grep "[0-9][G|M]"'
+alias size='du -sh * | sort -r -n | ack "[0-9][G|M]"'
 alias ifa="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 alias ifi="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: inactive'"
-alias ifip="ifconfig | grep 'inet.*broadcast'"
+alias ifip="ifconfig | ack 'inet.*broadcast'"
 
 # -------------------------------------------------------------------
 # Misc alias
