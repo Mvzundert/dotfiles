@@ -11,10 +11,15 @@ export PATH="/usr/local/sbin:$PATH"
 
 # -------------------------------------------------------------------
 # NVM and NPM
+# Defer initialization of nvm until nvm, node or a node-dependent command is
+# run. Ensure this block is only run once if this gets sourced multiple times
+# by checking whether __init_nvm is a function.
 # -------------------------------------------------------------------
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"                                       # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+NVM_HOMEBREW="/usr/local/opt/nvm"
+[ -s "$NVM_HOMEBREW/nvm.sh" ] && \. "$NVM_HOMEBREW/nvm.sh" --no-use
+[ -s "$NVM_HOMEBREW/etc/bash_completion.d/nvm" ] && . "$NVM_HOMEBREW/etc/bash_completion.d/nvm"
 
 export NPM_DIR="$HOME/.npm"
 
