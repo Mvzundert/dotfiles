@@ -8,5 +8,5 @@ alias pip="pip3"
 # -------------------------------------------------------------------
 # Some default commands
 # -------------------------------------------------------------------
-alias pserve="python -m http.server 80" # Start a webserver with the current Dir as root.
+alias pserve="python -m http.server 80"   # Start a webserver with the current Dir as root.
 alias pup="pip3 install --user --upgrade" # to upgrade installed packages.

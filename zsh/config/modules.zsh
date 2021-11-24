@@ -42,78 +42,77 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # These can enabled using the load file.
 
 if dotfiles::check "${GIT}"; then
-  # Git Module
-  for file in $MODULES/development/git/*; do
-      source "$file"
-  done
+    # Git Module
+    for file in $MODULES/development/git/*; do
+        source "$file"
+    done
 fi
 
 if dotfiles::check "${BUILD}"; then
-  # Build modules
-  for file in $MODULES/development/build/*; do
-      source "$file"
-  done
+    # Build modules
+    for file in $MODULES/development/build/*; do
+        source "$file"
+    done
 fi
 
 if dotfiles::check "${DOCKER}"; then
-  # Build modules
-  for file in $MODULES/docker/*; do
-      source "$file"
-  done
+    # Build modules
+    for file in $MODULES/docker/*; do
+        source "$file"
+    done
 fi
 
 if dotfiles::check "${TMUX}"; then
-  # Tmux Module
-  for file in $MODULES/tmux/*; do
-      source "$file"
-  done
+    # Tmux Module
+    for file in $MODULES/tmux/*; do
+        source "$file"
+    done
 fi
 
-
 if dotfiles::check "${HACK}"; then
-  # Hacking module
-  for file in $MODULES/hack/*; do
-    source "$file"
-  done
+    # Hacking module
+    for file in $MODULES/hack/*; do
+        source "$file"
+    done
 fi
 
 #############################
 # Languages
 #############################
 if dotfiles::check "${PHP}"; then
-  # PHP modules
-  for file in $MODULES/development/php/*; do
-      source "$file"
-  done
+    # PHP modules
+    for file in $MODULES/development/php/*; do
+        source "$file"
+    done
 fi
 
 if dotfiles::check "${PYTHON}"; then
-  # Python modules
-  for file in $MODULES/development/python/*; do
-      source "$file"
-  done
+    # Python modules
+    for file in $MODULES/development/python/*; do
+        source "$file"
+    done
 fi
 
 #############################
 # Frameworks
 #############################
 if dotfiles::check "${LARAVEL}"; then
-  # Laravel Modules
-  for file in $MODULES/development/laravel/*; do
-      source "$file"
-  done
+    # Laravel Modules
+    for file in $MODULES/development/laravel/*; do
+        source "$file"
+    done
 fi
 
 if dotfiles::check "${DRUPAL}"; then
-  # Drupal
-  for file in $MODULES/development/drupal/*; do
-      source "$file"
-  done
+    # Drupal
+    for file in $MODULES/development/drupal/*; do
+        source "$file"
+    done
 fi
 
 if dotfiles::check "${WORDPRESS}"; then
-  # Wordpress
-  for file in $MODULES/development/wordpress/*; do
-      source "$file"
-  done
+    # Wordpress
+    for file in $MODULES/development/wordpress/*; do
+        source "$file"
+    done
 fi
