@@ -17,24 +17,24 @@ function crack() {
     WORDLIST=false
 
     while getopts ':hdrzw:' option; do
-      # shellcheck disable=SC2220
+        # shellcheck disable=SC2220
         case "$option" in
-            h)
-                echo -e "$USAGE"
-                return 1
-                ;;
-            d)
-                DMG=true
-                ;;
-            r)
-                RAR=true
-                ;;
-            z)
-                ZIP=true
-                ;;
-            w)
-                WORDLIST=${OPTARG}
-                ;;
+        h)
+            echo -e "$USAGE"
+            return 1
+            ;;
+        d)
+            DMG=true
+            ;;
+        r)
+            RAR=true
+            ;;
+        z)
+            ZIP=true
+            ;;
+        w)
+            WORDLIST=${OPTARG}
+            ;;
         esac
     done
 
@@ -69,14 +69,14 @@ function generate_hash() {
     echo "Generating HASH"
 
     if ! [[ ${DMG} == false ]]; then
-        dmg2john "${TARGET}" > "${TARGET}.hash" 2> /dev/null
+        dmg2john "${TARGET}" >"${TARGET}.hash" 2>/dev/null
     fi
 
     if ! [[ ${RAR} == false ]]; then
-        rar2john "${TARGET}" > "${TARGET}.hash" 2> /dev/null
+        rar2john "${TARGET}" >"${TARGET}.hash" 2>/dev/null
     fi
 
     if ! [[ ${ZIP} == false ]]; then
-        zip2john "${TARGET}" > "${TARGET}.hash" 2> /dev/null
+        zip2john "${TARGET}" >"${TARGET}.hash" 2>/dev/null
     fi
 }

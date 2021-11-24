@@ -7,7 +7,7 @@ git_prompt_clean="✔"
 # Outputs current branch info in prompt format
 function git_prompt_info() {
     # Check if the current directory contains a Git repository
-    if ! [[ $(command git rev-parse --git-dir 2> /dev/null) ]]; then
+    if ! [[ $(command git rev-parse --git-dir 2>/dev/null) ]]; then
         return 0
     fi
 
@@ -16,7 +16,7 @@ function git_prompt_info() {
 
 # Checks if working tree is dirty
 function git_repository_has_changes() {
-    git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
+    git_status=$(command git status --porcelain 2>/dev/null | tail -n1)
 
     if [[ -n $git_status ]]; then
         dotfiles::print '004' "$git_prompt_dirty"
@@ -29,14 +29,14 @@ function git_repository_has_changes() {
 function git_current_branch_short() {
     local ref
 
-    ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+    ref=$(command git symbolic-ref --quiet HEAD 2>/dev/null)
 
     local ret=$?
 
     if [[ $ret != 0 ]]; then
         [[ $ret == 128 ]] && return
 
-        ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+        ref=$(command git rev-parse --short HEAD 2>/dev/null) || return
     fi
 
     branch_name=${ref#refs/heads/}
@@ -48,14 +48,14 @@ function git_current_branch_short() {
 function git_current_branch() {
     local ref
 
-    ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+    ref=$(command git symbolic-ref --quiet HEAD 2>/dev/null)
 
     local ret=$?
 
     if [[ $ret != 0 ]]; then
         [[ $ret == 128 ]] && return
 
-        ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+        ref=$(command git rev-parse --short HEAD 2>/dev/null) || return
     fi
 
     dotfiles::print '004' "${ref#refs/heads/}"

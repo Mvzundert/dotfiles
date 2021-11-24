@@ -4,7 +4,7 @@
 alias reload='source ~/.zshrc'
 
 # -------------------------------------------------------------------
-# Config 
+# Config
 # -------------------------------------------------------------------
 alias dotc="vim ~/.dotfiles/"
 alias sshc="vim ~/.ssh/config"
