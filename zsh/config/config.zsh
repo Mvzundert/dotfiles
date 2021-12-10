@@ -9,10 +9,20 @@ promptinit
 
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
 
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
-  compinit
-else
+if [[ "$(uname)" == 'Linux' || "$(uname)" == 'linux-gnu'  ]]; then
+  setopt extendedglob
+
+  for dump in ~/.zcompdump(N.mh+24); do
+    compinit
+  done
+
   compinit -C
+elif [[ "$(uname)" == 'Darwin' ]]; then
+    if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+       compinit
+      else
+        compinit -C
+      fi
 fi
 
 rbenv() {
