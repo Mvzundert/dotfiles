@@ -14,4 +14,4 @@ requests-futures==1.0.0
 soupsieve==2.0.1
 stem==1.8.0
 torrequest==0.1.0
-urllib3==1.25.11
+urllib3==1.26.5
