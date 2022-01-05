@@ -6,7 +6,7 @@ colorama==0.4.4
 dnspython==1.16.0
 greenlet==1.0.0
 idna==2.10
-lxml==4.6.1
+lxml==4.6.5
 protobuf==3.19.1
 PySocks==1.7.1
 requests==2.25.1
