@@ -1,0 +1,27 @@
+[init]
+	templatedir = /Users/mariusvanzundert/.crbcs/git
+	defaultBranch = develop
+[user]
+	name = Marius van Zundert
+	email = marius.vanzundert@cerberos.dev
+	signingkey = marius.vanzundert@cerberos.dev
+[core]
+	editor = vim
+	pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[color]
+	ui = true
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[commit]
+	gpgsign = true
+[tag]
+    gpgsign = true
+[gpg]
+	program = gpg
