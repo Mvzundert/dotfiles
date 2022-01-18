@@ -29,7 +29,7 @@ alias glgp="git log --stat --color -p"
 alias glol="git log --graph --abbrev-commit --decorate --date=relative --all"
 alias glog="git log --all --decorate --oneline --graph"
 alias glc="git log --decorate --oneline --graph"
-alias gcount="git shortlog -s"
+alias gcount=" git shortlog -n -s -e"
 
 # -------------------------------------------------------------------
 # Checkout branches
