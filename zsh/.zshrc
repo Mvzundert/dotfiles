@@ -71,3 +71,4 @@ source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Enable zsh profiling for debugging
 # zprof
+
