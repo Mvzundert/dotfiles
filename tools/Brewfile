@@ -17,6 +17,7 @@ brew "aircrack-ng"
 brew "jpeg"
 brew "autoconf"
 brew "automake"
+brew "bash"
 brew "icu4c"
 brew "node"
 brew "bower"
@@ -29,7 +30,7 @@ brew "cmake"
 brew "cmatrix"
 brew "curl"
 brew "pcre2"
-brew "php", restart_service: true, link: false
+brew "php", link: false
 brew "composer"
 brew "ctags"
 brew "dnsmasq", restart_service: true
@@ -58,14 +59,14 @@ brew "grunt-cli"
 brew "gulp-cli"
 brew "hashcat"
 brew "htop"
-brew "httpd", restart_service: true
+brew "httpd"
 brew "hydra"
 brew "inetutils"
 brew "john-jumbo"
 brew "libiconv"
 brew "libyaml"
 brew "lnav"
-brew "mysql", restart_service: true
+brew "mysql"
 brew "neofetch"
 brew "neovim"
 brew "netcat"
@@ -77,18 +78,19 @@ brew "pandoc"
 brew "perl"
 brew "php-cs-fixer"
 brew "php@7.2", restart_service: true
-brew "php@7.3", restart_service: true
-brew "php@7.4", restart_service: true, link: true
-brew "php@8.0", restart_service: true
+brew "php@7.3"
+brew "php@7.4"
+brew "php@8.0", link: true
 brew "phplint"
 brew "phpmd"
+brew "phpstan"
 brew "pinentry-mac"
 brew "proxychains-ng"
 brew "qt"
 brew "sqlmap"
 brew "tmate"
 brew "tmux"
-brew "tor", restart_service: true
+brew "tor"
 brew "watchman"
 brew "wget"
 brew "wp-cli"
