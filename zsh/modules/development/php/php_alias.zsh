@@ -1,6 +1,6 @@
 alias cigr="composer info | ack"
 alias ciggr="composer global info | ack"
-alias phpunit='$(get_phpunit_install)'
+alias test='$(get_test_install)'
 alias pest='./vendor/bin/pest'
 alias ci='composer install'
 alias cu='composer update'
