@@ -8,7 +8,7 @@ function switchphp() {
 # -------------------------------------------------------------------
 # Checks if phpunit is installed in vendor folder or if we should use global one.
 # -------------------------------------------------------------------
-function get_test_install() {
+function get_phpunit_install() {
     if [[ -f vendor/bin/pest ]]; then
         echo './vendor/bin/pest'
     elif [[ -f vendor/bin/paratest ]]; then
@@ -17,5 +17,16 @@ function get_test_install() {
         echo './vendor/bin/phpunit'
     else
         echo 'phpunit'
+    fi
+}
+
+# -------------------------------------------------------------------
+# Checks if phpstan is installed in vendor folder or if we should use global one.
+# -------------------------------------------------------------------
+function get_stan_install() {
+    if [[ -f vendor/bin/phpstan ]]; then
+        echo './vendor/bin/phpstan'    
+    else
+        echo 'phpstan'
     fi
 }
