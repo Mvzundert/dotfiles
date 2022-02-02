@@ -30,7 +30,7 @@ bind e setw synchronize-panes on
 bind E setw synchronize-panes off
 
 # Make tmux not shit itself when clearing
-# bind C-k send-keys -R \; clear-history
+# bind -n C-k send-keys -R \; clear-history
 
 # Use CTRL+Shift+direction to resize tmux panes a certain with / height
 bind-key -n C-S-Up resize-pane -U 5
