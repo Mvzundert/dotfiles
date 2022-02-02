@@ -37,3 +37,47 @@ function git_history_remove() {
         git stash pop
     fi
 }
+
+# -------------------------------------------------------------------
+# Update Git committer by mailmap
+# -------------------------------------------------------------------
+function git_update_committer_by_mailmap() {
+    if ! [[ -d "$(pwd)/.git" ]]; then
+        echo "Halt: .git folder not found"
+        return 0
+    fi
+
+    if [[ $# -eq 0 ]]; then
+        echo "Halt: no mail map given"
+        return 0
+    fi
+
+    read "?Are you sure you want to update all committer info with mail map content? "
+
+    mail_map=$1
+    origin=$(git remote get-url origin)
+    branch=$(git_current_branch)
+
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo # Whitespace
+        git stash
+
+        echo -e "\nList of current committers"
+        git shortlog -s -n -c -e
+
+        echo -e "\nUpdating committers with mailmap: $mail_map"
+        git filter-repo --mailmap "$mail_map" --force
+
+        echo -e "\nAdding origin: $origin"
+        git remote add origin "$origin"
+
+        echo -e "\nPushing to branch: $branch"
+        git push -u origin "$branch" --force
+
+        echo -e "\nList of current committers"
+        git shortlog -s -n -c -e
+
+        echo # Whitespace
+        git stash pop
+    fi
+}
