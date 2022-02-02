@@ -12,16 +12,6 @@ alias emacs='emacsclient --tty'
 alias buuc='brew update && brew upgrade && brew cleanup'
 
 # -------------------------------------------------------------------
-# Theme
-# -------------------------------------------------------------------
-alias light='base16_classic-light'
-alias dark='base16_classic-dark'
-alias darcula='base16_dracula'
-alias monokai='base16_monokai'
-alias outrun='base16_outrun-dark'
-alias synth='base16_synth-midnight-dark'
-
-# -------------------------------------------------------------------
 # System
 # -------------------------------------------------------------------
 alias myip='wget http://ipinfo.io/ip -qO -'
