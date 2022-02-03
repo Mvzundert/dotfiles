@@ -9,7 +9,7 @@
 	editor = vim
 	pager = delta
 [interactive]
-    diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [color]
 	ui = true
 [credential]
@@ -22,6 +22,8 @@
 [commit]
 	gpgsign = true
 [tag]
-    gpgsign = true
+	gpgsign = true
 [gpg]
 	program = gpg
+[advice]
+	skippedCherryPicks = false
