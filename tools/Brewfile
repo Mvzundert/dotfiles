@@ -79,7 +79,6 @@ brew "pandoc"
 brew "perl"
 brew "php-cs-fixer"
 brew "php@7.2", restart_service: true
-brew "php@7.3"
 brew "php@7.4", link: true
 brew "php@8.0"
 brew "phplint"
