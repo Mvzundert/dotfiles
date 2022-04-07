@@ -58,6 +58,7 @@ for file in $ZSH/custom/custom_*; do
 done
 
 export ALTERNATE_EDITOR="nano"
+export GPG_TTY=$(tty)
 
 # -------------------------------------------------------------------
 # Custom .zshrc source highlighting
@@ -71,4 +72,3 @@ source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Enable zsh profiling for debugging
 # zprof
-

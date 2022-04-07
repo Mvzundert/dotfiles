@@ -51,7 +51,3 @@ function scp_wrap {
 
 # Remove composer memory limit
 export COMPOSER_MEMORY_LIMIT=-1
-
-# Make sure GPG is always set correct.
-GPG_TTY=$(tty)
-export GPG_TTY
