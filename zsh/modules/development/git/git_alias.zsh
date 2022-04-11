@@ -27,7 +27,7 @@ alias gd="git diff"
 alias gdch="git -c core.fileMode=false diff"
 alias glgp="git log --stat --color -p"
 alias glol="git log --graph --abbrev-commit --decorate --date=relative --all --show-signature"
-alias glog="git log --all --decorate --oneline --graph --show-signature"
+alias glog="git log --all --decorate --oneline --graph"
 alias glc="git log --decorate --oneline --graph --show-signature"
 alias gcount=" git shortlog -n -s -e"
 
