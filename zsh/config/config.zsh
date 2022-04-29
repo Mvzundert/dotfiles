@@ -12,6 +12,7 @@ typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' 
 if [[ "$(uname)" == 'Linux' || "$(uname)" == 'linux-gnu'  ]]; then
   setopt extendedglob
 
+  # shellcheck disable=SC1073
   for dump in ~/.zcompdump(N.mh+24); do
     compinit
   done
