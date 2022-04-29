@@ -2,24 +2,26 @@
 # Check current directory asset building dependencies, install and build them# Compressed
 # -------------------------------------------------------------------
 function build_project_assets() {
-    USAGE="\033[33mUsage:\033[0m build [-h] [-f] [-i] [-c] [-a]
-
+    USAGE="\033[33mUsage:\033[0m build [-h] [-f] [-i] [-p] [-c] [-a]
 \033[33mOptions:\033[0m
     \033[92m-h\033[0m  Show this help text.
-    \033[92m-f\033[0m  Force, Remove vendor/node_modules and install everything.
+    \033[92m-f\033[0m  Fresh install, Remove vendor/node_modules and install everything.
     \033[92m-i\033[0m  Install everything.
-    \033[92m-c\033[0m  Install only composer packages.
+    \033[92m-p\033[0m  Install everything as on production.
+    \033[92m-c\033[0m  Install only composer dependencies.
     \033[92m-a\033[0m  Install only npm/yarn packages.
     "
 
-    REFRESH=false
-    COMPOSER_INSTALL=false
-    COMPOSER_UPDATE=false
-    PACKAGE_INSTALL=false
-    PACKAGE_UPDATE=false
+    unset COMPOSER_ARGUMENTS
 
-    while getopts ':hfica' option; do
-      # shellcheck disable=SC2220
+    COMPOSER_INSTALL=true
+    PACKAGE_INSTALL=true
+    PACKAGE_BUILD=true
+
+    PRODUCTION=false
+    REFRESH=false
+
+    while getopts ':hfipca' option; do
         case "$option" in
             h)
                 echo -e "$USAGE"
@@ -27,113 +29,93 @@ function build_project_assets() {
                 ;;
             f)
                 REFRESH=true
-                PACKAGE_INSTALL=true
-                COMPOSER_INSTALL=true
                 ;;
             i)
-                PACKAGE_INSTALL=true
-                COMPOSER_INSTALL=true
+                PACKAGE_BUILD=false
+                ;;
+            p)
+                REFRESH=true
+                PRODUCTION=true
                 ;;
             c)
-                COMPOSER_INSTALL=true
+                PACKAGE_INSTALL=false
+                PACKAGE_BUILD=false
                 ;;
             a)
-                PACKAGE_INSTALL=true
+                COMPOSER_INSTALL=false
+                PACKAGE_INSTALL=false
+                ;;
+            *)
+                echo -e "$USAGE"
+                return 1
                 ;;
         esac
     done
 
-    # Remove chosen option from $@
-    shift $((OPTIND - 1))
+    # Default build for development
+    PACKAGE_ARGUMENTS="dev"
+
+    if [[ ${PRODUCTION} == true ]]; then
+        COMPOSER_ARGUMENTS="--no-dev"
+        PACKAGE_ARGUMENTS="prod"
+
+        echo "Running as on production"
+    fi
 
     if [[ ${REFRESH} == true ]]; then
         # Check for composer install
-        if [[ -d "$(pwd)/vendor" ]]; then
-            echo "Removing 'vendor' Folder"
-
-            rm -rf "$(pwd)/vendor"
+        if [[ -d "$(pwd)/vendor" ]] && [[ ${COMPOSER_INSTALL} == true ]]; then
+            rm -rf "$(pwd)/vendor" && echo "Removed 'vendor' directory"
         fi
 
         # Check for composer install
-        if [[ -d "$(pwd)/node_modules" ]]; then
-            echo "Removing 'node_modules' Folder"
-
-            rm -rf "$(pwd)/node_modules"
+        if [[ -d "$(pwd)/node_modules" ]] && [[ ${PACKAGE_INSTALL} == true ]]; then
+            rm -rf "$(pwd)/node_modules" && echo "Removed 'node_modules' directory"
         fi
     fi
 
-    # Check for composer install
+    # Check for composer install file
     if [[ -f composer.json ]]; then
         if [[ ${COMPOSER_INSTALL} == true ]]; then
-            # Install dependencies
-            composer install
-        fi
-
-        if [[ ${COMPOSER_UPDATE} == true ]]; then
-            # Install dependencies
-            composer update
+            composer install $COMPOSER_ARGUMENTS
         fi
     fi
 
-    # Check for NPM lock file else use YARN
-    if [[ -f package-lock.json ]]; then
-        if [[ ${PACKAGE_INSTALL} == true ]]; then
-            # Install packages
-            npm install
-        fi
+    # Check for npm/yarn install file
+    if [[ -f package.json ]]; then
+        if [[ ${PACKAGE_BUILD} == true ]]; then
+            # Default to NPM
+            PACKAGE_MANAGER="npm"
 
-        if [[ ${PACKAGE_UPDATE} == true ]]; then
-            # Install dependencies
-            npm update
-        fi
+            # Check for Yarn lock file
+            if [[ -f yarn.lock ]]; then
+                PACKAGE_MANAGER="yarn"
+            fi
 
-        # Compile assets
-        npm run dev
-    elif [[ -f yarn.lock ]]; then
-        if [[ ${PACKAGE_INSTALL} == true ]]; then
-            # Install packages
-            yarn install
-        fi
+            if [[ ${PACKAGE_INSTALL} == true ]]; then
+                # Install packages
+                eval $PACKAGE_MANAGER install
+            fi
 
-        if [[ ${PACKAGE_UPDATE} == true ]]; then
-            # Update packages
-            yarn update
+            eval $PACKAGE_MANAGER run $PACKAGE_ARGUMENTS
         fi
-
-        # Compile assets
-        yarn run dev
-    elif [[ -f package.json ]]; then
-        if [[ ${PACKAGE_INSTALL} == true ]]; then
-            # Install packages
-            yarn install
-        fi
-
-        if [[ ${PACKAGE_UPDATE} == true ]]; then
-            # Update packages
-            yarn update
-        fi
-
-        # Compile assets
-        yarn run dev
     fi
 }
-
 # -------------------------------------------------------------------
 # Check current directory assets building dependencies, install and watch them
 # -------------------------------------------------------------------
 function watch_project_assets() {
-    # Check for NPM lock file else use YARN
-    if [[ -f package-lock.json ]]; then
-        # Install dependencies
-        npm run dev
+    # Check for npm/yarn install file
+    if [[ -f package.json ]]; then
+        PACKAGE_MANAGER="yarn"
 
-        # Run watch task
-        npm run watch
-    elif [[ -f package.json ]]; then
-        # Install dependencies
-        yarn run dev
+        # Check for NPM lock file else use YARN
+        if [[ -f package-lock.json ]]; then
+            PACKAGE_MANAGER="npm"
+        fi
 
-        # Run watch task
-        yarn run watch
+        eval $PACKAGE_MANAGER run dev
+
+        eval $PACKAGE_MANAGER run watch
     fi
 }
