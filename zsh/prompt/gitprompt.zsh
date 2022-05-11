@@ -11,7 +11,7 @@ function git_prompt_info() {
         return 0
     fi
 
-    dotfiles::print '004' "$git_prompt_prefix$(git_repository_has_changes) $(git_current_branch) $(git_last_commit_hash)$git_prompt_suffix"
+    dotfiles::print '004' "$git_prompt_prefix$(git_repository_has_changes) $(git_current_branch_short) $(git_last_commit_hash)$git_prompt_suffix"
 }
 
 # Checks if working tree is dirty
