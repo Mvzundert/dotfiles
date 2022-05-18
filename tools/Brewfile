@@ -12,113 +12,222 @@ tap "neovim/neovim"
 tap "nickolasburr/pfa"
 tap "romkatv/powerlevel10k"
 tap "wpscanteam/tap"
+# Search tool like grep, but optimized for programmers
 brew "ack"
+# Next-generation aircrack with lots of new features
 brew "aircrack-ng"
+# Image manipulation library
 brew "jpeg"
+# Automatic configure script builder
 brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# C/C++ and Java libraries for Unicode and globalization
 brew "icu4c"
+# Platform built on V8 to build network applications
 brew "node"
+# Package manager for the web
 brew "bower"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# Manage compile and link flags for libraries
 brew "pkg-config"
+# Cross-platform make
 brew "cmake"
+# Console Matrix
 brew "cmatrix"
+# Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Generic library support script
 brew "libtool"
+# Perl compatible regular expressions library with a new API
 brew "pcre2"
+# General-purpose scripting language
 brew "php", link: false
+# Dependency Manager for PHP
 brew "composer"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Reimplementation of ctags(1)
 brew "ctags"
+# Lightweight DNS forwarder and DHCP server
 brew "dnsmasq", restart_service: true
+# Isolated development environments using Docker
 brew "docker-compose", link: false
+# Text mode web browser
 brew "elinks"
+# Perl lib for reading and writing EXIF metadata
 brew "exiftool"
+# Database of public exploits and corresponding vulnerable software
 brew "exploitdb"
+# Compression/decompression library aiming for high speed
 brew "snappy"
+# Generate introspection data for GObject libraries
 brew "gobject-introspection"
+# OpenType text shaping engine
 brew "harfbuzz"
+# VP8/VP9 video codec
 brew "libvpx"
+# Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Monitor a directory for changes and run a shell command
 brew "fswatch"
+# GNU compiler collection
 brew "gcc"
+# GitHub command-line tool
 brew "gh"
+# Interpreter for PostScript and PDF
 brew "ghostscript"
+# Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Git extension for versioning large files
 brew "git-lfs"
+# Git extension to generate reports for standup meetings
 brew "git-standup"
+# Command-line option parsing utility
 brew "gnu-getopt"
+# X.509 and CMS library
 brew "libksba"
+# GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Directory/file & DNS busting tool written in Go
 brew "gobuster"
+# JavaScript Task Runner
 brew "grunt-cli"
+# Command-line utility for Gulp
 brew "gulp-cli"
+# World's fastest and most advanced password recovery utility
 brew "hashcat"
+# Improved top (interactive process viewer)
 brew "htop"
+# Apache HTTP server
 brew "httpd"
+# Network logon cracker which supports many services
 brew "hydra"
+# GNU utilities for networking
 brew "inetutils"
+# Enhanced version of john, a UNIX password cracker
 brew "john-jumbo"
+# Conversion library
 brew "libiconv"
+# YAML Parser
 brew "libyaml"
+# Curses-based tool for viewing and analyzing log files
 brew "lnav"
+# Open source relational database management system
 brew "mysql"
+# NCurses Disk Usage
 brew "ncdu"
+# Fast, highly customisable system info script
 brew "neofetch"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Utility for managing network connections
 brew "netcat"
+# Web server scanner
 brew "nikto"
+# Port scanning utility for large networks
 brew "nmap"
+# Manage multiple Node.js versions
 brew "nvm"
+# Git repository summary on your terminal
 brew "onefetch"
+# Development kit for the Java programming language
 brew "openjdk"
+# Swiss-army knife of markup format conversion
 brew "pandoc"
+# Highly capable, feature-rich programming language
 brew "perl"
+# Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
+# General-purpose scripting language
 brew "php@7.4"
+# General-purpose scripting language
 brew "php@8.0", link: true
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
+# Validator and documentator for PHP 5 and 7 programs
 brew "phplint"
+# PHP Mess Detector
 brew "phpmd"
+# PHP Static Analysis Tool
 brew "phpstan"
+# Pinentry for GPG on Mac
 brew "pinentry-mac"
+# Hook preloader
 brew "proxychains-ng"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Cross-platform application and UI framework
 brew "qt"
+# Penetration testing for SQL injection and database servers
 brew "sqlmap"
+# Instant terminal sharing
 brew "tmate"
+# Terminal multiplexer
 brew "tmux"
+# Anonymizing overlay network for TCP
 brew "tor"
+# Watch files and take action when they change
 brew "watchman"
+# Internet file retriever
 brew "wget"
+# Command-line interface for WordPress
 brew "wp-cli"
+# Bash completion for Wpcli
 brew "wp-cli-completion"
+# JavaScript package manager
 brew "yarn"
+# Download YouTube videos from the command-line
 brew "youtube-dl"
+# UNIX shell (command interpreter)
 brew "zsh"
+# Black box WordPress vulnerability scanner
 brew "wpscanteam/tap/wpscan"
+# AdoptOpenJDK OpenJDK (Java) Development Kit
 cask "adoptopenjdk12"
+# Manage team projects and tasks
 cask "asana"
+# Web security testing toolkit
 cask "burp-suite"
+# Server and cloud storage browser
 cask "cyberduck"
+# App to build and share containerized applications and microservices
 cask "docker"
+# Launcher for *Epic Games* games
 cask "epic-games"
 cask "font-hack-nerd-font"
+# HTTP and GraphQL Client
 cask "insomnia"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Support for Logitech G gear
 cask "logitech-g-hub"
+# Penetration testing framework
 cask "metasploit"
+# Open source implementation of Microsoft's .NET Framework
 cask "mono-mdk-for-visual-studio"
+# Open-source software for live streaming and screen recording
 cask "obs"
+# Free and open-source productivity suite
 cask "openoffice"
+# Client program for the OpenVPN Access Server
 cask "openvpn-connect"
+# Imaging utility to install operating systems to a microSD card
 cask "raspberry-pi-imager"
+# MySQL/MariaDB database management
 cask "sequel-ace"
+# Messaging app with a focus on speed and security
 cask "telegram"
+# Web browser focusing on security
 cask "tor-browser"
+# Integrated development environment
 cask "visual-studio"
+# Open-source code editor
 cask "visual-studio-code"
+# Network protocol analyzer
 cask "wireshark"
