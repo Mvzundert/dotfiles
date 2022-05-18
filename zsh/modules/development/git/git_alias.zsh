@@ -24,6 +24,7 @@ alias gsur="git submodule update --recursive --remote"
 # Diff and graph's
 # -------------------------------------------------------------------
 alias gd="git diff"
+alias gds="git diff --staged"
 alias gdch="git -c core.fileMode=false diff"
 alias glgp="git log --stat --color -p"
 alias glol="git log --graph --abbrev-commit --decorate --date=relative --all"
