@@ -27,3 +27,6 @@
 	program = gpg
 [advice]
 	skippedCherryPicks = false
+[delta]
+    side-by-side = true
+	line-numbers = true
