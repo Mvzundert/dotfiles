@@ -118,8 +118,6 @@ brew "libiconv"
 brew "libyaml"
 # Curses-based tool for viewing and analyzing log files
 brew "lnav"
-# Open source relational database management system
-brew "mysql"
 # NCurses Disk Usage
 brew "ncdu"
 # Fast, highly customisable system info script
