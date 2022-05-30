@@ -219,8 +219,6 @@ cask "openvpn-connect"
 cask "raspberry-pi-imager"
 # MySQL/MariaDB database management
 cask "sequel-ace"
-# Messaging app with a focus on speed and security
-cask "telegram"
 # Web browser focusing on security
 cask "tor-browser"
 # Integrated development environment
