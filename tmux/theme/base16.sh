@@ -24,11 +24,11 @@ set -g status-interval 5
 # default statusbar colors
 set-option -g status-style fg=$base02,bg=$base00,default
 
-set-window-option -g window-status-style fg=$base03,bg=$base00
+set-window-option -g window-status-style fg=$base0D,bg=$base00
 set-window-option -g window-status-format " #I #W"
 
 # active window title colors
-set-window-option -g window-status-current-style fg=$base08,bg=$base00
+set-window-option -g window-status-current-style fg=$base0D,bg=$base00
 set-window-option -g window-status-current-format "#[bold]#W"
 
 # pane border colors
@@ -39,11 +39,11 @@ set-window-option -g pane-border-style fg=$base0E
 set-option -g message-style bg=$base00,fg=$base0C
 
 # pane number display
-set-option -g display-panes-active-colour $base08
-set-option -g display-panes-colour $base08
+set-option -g display-panes-active-colour $base0D
+set-option -g display-panes-colour $base0D
 
-tm_tunes="#[fg=$base08,bg=$base00] ♫ #{spotify_artist}: #{spotify_track}"
-tm_battery="#[fg=$base08,bg=$base00] ♥ #{battery_level}"
+tm_tunes="#[fg=$base0D,bg=$base00] ♫ #{spotify_artist}: #{spotify_track}"
+tm_battery="#[fg=$base0D,bg=$base00] ♥ #{battery_level}"
 
 set -g status-left "$tm_tunes $tm_battery"
 set -g status-right ""
