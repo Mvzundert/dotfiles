@@ -42,14 +42,6 @@ for file in $ZSH/config/*; do
 done
 
 # -------------------------------------------------------------------
-# Load prompt
-# -------------------------------------------------------------------
-# Function to load all ZSH prompt
-for file in $ZSH/prompt/*; do
-    source "$file"
-done
-
-# -------------------------------------------------------------------
 # Load all custom files
 # -------------------------------------------------------------------
 # Function to load all custom files, if you break it, it's on you.

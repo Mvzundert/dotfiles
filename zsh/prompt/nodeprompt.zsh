@@ -14,6 +14,7 @@ function node_prompt() {
         version=$(node -v 2>/dev/null)
     fi
 
+    # shellcheck disable=SC2157
     [[ -n version ]] || return
 
     dotfiles::print '004' "$node_prompt_prefix$(echo " ${version}" | cut -c2-4 | tr -d .)$node_prompt_suffix"
