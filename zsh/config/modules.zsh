@@ -63,8 +63,7 @@ if dotfiles::check "${PROMPT}"; then
 else
     # shellcheck disable=SC2231
     source "$ZSH"/prompt/minimal_prompt.zsh;
-    source "$ZSH"/prompt/gitprompt.zsh;
-    source "$ZSH"/prompt/nodeprompt.zsh;
+    source "$ZSH"/prompt/gitprompt.zsh;    
 fi
 
 if dotfiles::check "${GIT}"; then
