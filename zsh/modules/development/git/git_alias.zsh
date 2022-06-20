@@ -43,6 +43,8 @@ alias gcm='git checkout master'
 # Rebase all the things
 # -------------------------------------------------------------------
 alias grbd='git rebase develop'
+alias grbs='git rebase staging'
+alias grbm='git rebase master'
 alias grbs='git rebase --skip'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
