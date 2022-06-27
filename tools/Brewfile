@@ -54,6 +54,8 @@ brew "coreutils"
 brew "ctags"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq", restart_service: true
+# Pack, ship and run any application as a lightweight container
+brew "docker", link: false
 # Isolated development environments using Docker
 brew "docker-compose", link: false
 # Text mode web browser
@@ -211,8 +213,6 @@ cask "metasploit"
 cask "mono-mdk-for-visual-studio"
 # Open-source software for live streaming and screen recording
 cask "obs"
-# Free and open-source productivity suite
-cask "openoffice"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
 # Imaging utility to install operating systems to a microSD card
