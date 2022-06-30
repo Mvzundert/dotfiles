@@ -223,7 +223,7 @@ cask "sequel-ace"
 cask "tor-browser"
 # Integrated development environment
 cask "visual-studio"
-# Open-source code editor
-cask "visual-studio-code"
+# Remote desktop application focusing on security
+cask "vnc-viewer"
 # Network protocol analyzer
 cask "wireshark"
