@@ -102,8 +102,6 @@ brew "gobuster"
 brew "grunt-cli"
 # Command-line utility for Gulp
 brew "gulp-cli"
-# World's fastest and most advanced password recovery utility
-brew "hashcat"
 # Improved top (interactive process viewer)
 brew "htop"
 # Apache HTTP server
