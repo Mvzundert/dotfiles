@@ -11,6 +11,11 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # -------------------------------------------------------------------
+# Python paths
+# -------------------------------------------------------------------
+export PATH=/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin:$PATH
+
+# -------------------------------------------------------------------
 # NVM and NPM
 # Defer initialization of nvm until nvm, node or a node-dependent command is
 # run. Ensure this block is only run once if this gets sourced multiple times

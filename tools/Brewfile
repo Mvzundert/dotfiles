@@ -18,6 +18,8 @@ brew "ack"
 brew "aircrack-ng"
 # Image manipulation library
 brew "jpeg"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -30,8 +32,6 @@ brew "icu4c"
 brew "node"
 # Package manager for the web
 brew "bower"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # Cross-platform make
@@ -203,6 +203,10 @@ cask "font-hack-nerd-font"
 cask "insomnia"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
+# Office suite
+cask "libreoffice"
 # Support for Logitech G gear
 cask "logitech-g-hub"
 # Penetration testing framework
