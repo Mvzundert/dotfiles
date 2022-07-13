@@ -1,6 +1,6 @@
 [init]
 	templatedir = /Users/mariusvanzundert/.crbcs/git
-	defaultBranch = develop
+	defaultBranch = master
 [user]
 	name = Marius van Zundert
 	email = marius.vanzundert@cerberos.dev
@@ -30,3 +30,5 @@
 [delta]
     side-by-side = true
 	line-numbers = true
+[push]
+	autoSetupRemote = true
