@@ -7,7 +7,7 @@ PROMPT_SYMBOL='💀'
 function update_prompt() {
     # Custom prompt with timestamp and git branch name
     export PROMPT=$'%F{002}┌──[%B%F{010}%(6~.%-1~/…/%4~.%5~)%b%F{002}]-%(#.$PROMPT_SYMBOL.$PROMPT_SYMBOL)-%F{013}%*$(git_prompt_info)$(node_prompt)%B%F{002}%b%F{002}\n└─%B%(#.%F{002}#.%F{002}$)%b%F{002} '
-    export RPROMPT=''
+    export RPROMPT='%(1V.(%1v).)'
 
     zle && zle reset-prompt
 }
