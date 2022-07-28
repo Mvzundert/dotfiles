@@ -225,6 +225,8 @@ cask "openvpn-connect"
 cask "raspberry-pi-imager"
 # MySQL/MariaDB database management
 cask "sequel-ace"
+# Instant messaging application focusing on security
+cask "signal"
 # Web browser focusing on security
 cask "tor-browser"
 # Remote desktop application focusing on security
