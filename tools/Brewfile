@@ -19,7 +19,7 @@ brew "readline"
 # Next-generation aircrack with lots of new features
 brew "aircrack-ng"
 # Image manipulation library
-brew "jpeg"
+brew "jpeg", link: true
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Automatic configure script builder
@@ -68,10 +68,12 @@ brew "exiftool"
 brew "exploitdb"
 # Compression/decompression library aiming for high speed
 brew "snappy"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # VP8/VP9 video codec
 brew "libvpx"
 # Play, record, convert, and stream audio and video
@@ -162,8 +164,6 @@ brew "phpstan"
 brew "pinentry-mac"
 # Hook preloader
 brew "proxychains-ng"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Cross-platform application and UI framework
 brew "qt"
 # Penetration testing for SQL injection and database servers
@@ -176,6 +176,8 @@ brew "tmux"
 brew "tor"
 # Watch files and take action when they change
 brew "watchman"
+# Extensible IRC client
+brew "weechat"
 # Internet file retriever
 brew "wget"
 # Command-line interface for WordPress
