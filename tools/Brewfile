@@ -11,6 +11,7 @@ tap "kevwil/patches"
 tap "neovim/neovim"
 tap "nickolasburr/pfa"
 tap "romkatv/powerlevel10k"
+tap "stripe/stripe-cli"
 tap "wpscanteam/tap"
 # Search tool like grep, but optimized for programmers
 brew "ack"
@@ -192,6 +193,8 @@ brew "youtube-dl"
 brew "zmap"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Stripe CLI utility
+brew "stripe/stripe-cli/stripe"
 # Black box WordPress vulnerability scanner
 brew "wpscanteam/tap/wpscan"
 # JDK from the Java User Group (JUG)
@@ -206,6 +209,7 @@ cask "cyberduck"
 cask "docker"
 # Launcher for *Epic Games* games
 cask "epic-games"
+# Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
 # HTTP and GraphQL Client
 cask "insomnia"
