@@ -19,8 +19,8 @@ brew "ack"
 brew "readline"
 # Next-generation aircrack with lots of new features
 brew "aircrack-ng"
-# Image manipulation library
-brew "jpeg", link: true
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Automatic configure script builder
@@ -45,10 +45,8 @@ brew "cmatrix"
 brew "curl"
 # Generic library support script
 brew "libtool"
-# Perl compatible regular expressions library with a new API
-brew "pcre2"
 # General-purpose scripting language
-brew "php", link: false
+brew "php"
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
@@ -61,16 +59,18 @@ brew "dnsmasq", restart_service: true
 brew "docker", link: false
 # Isolated development environments using Docker
 brew "docker-compose", link: false
+# Compression/decompression library aiming for high speed
+brew "snappy"
 # Text mode web browser
 brew "elinks"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Database of public exploits and corresponding vulnerable software
 brew "exploitdb"
-# Compression/decompression library aiming for high speed
-brew "snappy"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Image manipulation library
+brew "jpeg", link: true
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
 # Generate introspection data for GObject libraries
@@ -139,7 +139,7 @@ brew "nikto"
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
-# Git repository summary on your terminal
+# Command-line Git information tool
 brew "onefetch"
 # Development kit for the Java programming language
 brew "openjdk"
@@ -152,7 +152,7 @@ brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@7.4"
 # General-purpose scripting language
-brew "php@8.0", link: true
+brew "php@8.0"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Validator and documentator for PHP 5 and 7 programs
@@ -201,6 +201,8 @@ brew "wpscanteam/tap/wpscan"
 cask "adoptopenjdk"
 # Manage team projects and tasks
 cask "asana"
+# Tool to flash OS images to SD cards & USB drives
+cask "balenaetcher"
 # Web security testing toolkit
 cask "burp-suite"
 # Server and cloud storage browser
@@ -225,6 +227,8 @@ cask "logitech-g-hub"
 cask "metasploit"
 # Open-source software for live streaming and screen recording
 cask "obs"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
 # Imaging utility to install operating systems to a microSD card
@@ -235,6 +239,8 @@ cask "sequel-ace"
 cask "signal"
 # Web browser focusing on security
 cask "tor-browser"
+# Virtualizer for x86 hardware
+cask "virtualbox"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
 # Network protocol analyzer
