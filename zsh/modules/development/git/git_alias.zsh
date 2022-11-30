@@ -58,4 +58,4 @@ alias gstash='git stash'
 # for fun and games
 # -------------------------------------------------------------------
 alias darth='gp --force'
-alias yolo='gaa && git commit -m "$(curl -s http://whatthecommit.com/index.txt)" && darth'
+alias yolo='gaa && git commit -m "$(curl -s https://whatthecommit.com/index.txt)" && darth'
