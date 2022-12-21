@@ -53,12 +53,10 @@ brew "composer"
 brew "coreutils"
 # Reimplementation of ctags(1)
 brew "ctags"
-# Lightweight DNS forwarder and DHCP server
-brew "dnsmasq", restart_service: true
 # Pack, ship and run any application as a lightweight container
 brew "docker", link: false
 # Isolated development environments using Docker
-brew "docker-compose", link: false
+brew "docker-compose"
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Text mode web browser
@@ -71,10 +69,6 @@ brew "exploitdb"
 brew "harfbuzz"
 # Image manipulation library
 brew "jpeg", link: true
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
 # VP8/VP9 video codec
 brew "libvpx"
 # Play, record, convert, and stream audio and video
@@ -101,6 +95,10 @@ brew "gnu-getopt"
 brew "libksba"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # Directory/file & DNS busting tool written in Go
 brew "gobuster"
 # JavaScript Task Runner
@@ -181,6 +179,8 @@ brew "watchman"
 brew "weechat"
 # Internet file retriever
 brew "wget"
+# Graphical network analyzer and capture tool
+brew "wireshark"
 # Command-line interface for WordPress
 brew "wp-cli"
 # Bash completion for Wpcli
@@ -243,5 +243,3 @@ cask "tor-browser"
 cask "virtualbox"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
-# Network protocol analyzer
-cask "wireshark"
