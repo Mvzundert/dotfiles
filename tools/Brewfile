@@ -11,6 +11,7 @@ tap "kevwil/patches"
 tap "neovim/neovim"
 tap "nickolasburr/pfa"
 tap "romkatv/powerlevel10k"
+tap "shivammathur/php"
 tap "stripe/stripe-cli"
 tap "wpscanteam/tap"
 # Search tool like grep, but optimized for programmers
@@ -45,8 +46,6 @@ brew "cmatrix"
 brew "curl"
 # Generic library support script
 brew "libtool"
-# General-purpose scripting language
-brew "php", link: false
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
@@ -56,7 +55,7 @@ brew "ctags"
 # Pack, ship and run any application as a lightweight container
 brew "docker", link: false
 # Isolated development environments using Docker
-brew "docker-compose"
+brew "docker-compose", link: false
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Text mode web browser
@@ -147,14 +146,6 @@ brew "pandoc"
 brew "perl"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
-# General-purpose scripting language
-brew "php@7.4"
-# General-purpose scripting language
-brew "php@8.0", link: true
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
-# Validator and documentator for PHP 5 and 7 programs
-brew "phplint"
 # PHP Mess Detector
 brew "phpmd"
 # PHP Static Analysis Tool
@@ -163,6 +154,8 @@ brew "phpstan"
 brew "pinentry-mac"
 # Hook preloader
 brew "proxychains-ng"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Cross-platform application and UI framework
 brew "qt"
 # Penetration testing for SQL injection and database servers
@@ -193,6 +186,8 @@ brew "youtube-dl"
 brew "zmap"
 # UNIX shell (command interpreter)
 brew "zsh"
+# General-purpose scripting language
+brew "shivammathur/php/php@8.0"
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Black box WordPress vulnerability scanner
@@ -221,8 +216,6 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 # Office suite
 cask "libreoffice"
-# Support for Logitech G gear
-cask "logitech-g-hub"
 # Penetration testing framework
 cask "metasploit"
 # Open-source software for live streaming and screen recording
