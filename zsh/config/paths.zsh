@@ -87,6 +87,28 @@ if [[ -d $PYTHON_BIN ]]; then
 fi
 
 # -------------------------------------------------------------------
+# Add php8.0 bin folder to PATH
+# -------------------------------------------------------------------
+PHP_8_0_BIN="/usr/local/opt/php@8.0/bin"
+
+if [[ -d PHP_8_0_BIN ]]; then
+    if ! [[ :$PATH: == *:PHP_8_0_BIN:* ]]; then
+        export PATH="PHP_8_0_BIN:$PATH"
+    fi
+fi
+
+# -------------------------------------------------------------------
+# Add php8.0 sbin folder to PATH
+# -------------------------------------------------------------------
+PHP_8_0_SBIN="/usr/local/opt/php@8.0/sbin"
+
+if [[ -d PHP_8_0_SBIN ]]; then
+    if ! [[ :$PATH: == *:PHP_8_0_SBIN:* ]]; then
+        export PATH="PHP_8_0_SBIN:$PATH"
+    fi
+fi
+
+# -------------------------------------------------------------------
 # Yarn
 # -------------------------------------------------------------------
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
