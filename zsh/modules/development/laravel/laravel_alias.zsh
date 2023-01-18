@@ -2,7 +2,7 @@ alias art='run_laravel_artisan'
 alias artg="art list | ack"
 alias artr="art route:list"
 alias artrg="art route:list | ack"
-alias artmr="art migrate:refresh"
+alias artmr="art migrate:fresh"
 alias artmrs="art migrate:refresh --seed"
 # Do building magic of project with actual dependency checks
 alias build="build_project_assets"
