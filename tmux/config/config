@@ -11,6 +11,7 @@ setw -g aggressive-resize on
 
 # set vi mode for copy mode
  setw -g mode-keys vi
+
 # # more settings to make copy-mode more vim-like
 unbind [
 bind Escape copy-mode
@@ -29,6 +30,7 @@ set -g mouse on
 
 # don't rename windows automatically
 set-option -g allow-rename off
+
 # auto renumber windows
 set-option -g renumber-windows on
 
