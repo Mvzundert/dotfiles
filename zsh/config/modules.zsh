@@ -60,6 +60,8 @@ if dotfiles::check "${PROMPT}"; then
     source "$ZSH"/prompt/prompt.zsh;
     source "$ZSH"/prompt/gitprompt.zsh;
     source "$ZSH"/prompt/nodeprompt.zsh;
+elif dotfiles::check "${POWERLEVEL}"; then
+    source "$ZSH"/plugins/powerlevel10k/powerlevel10k.zsh-theme
 else
     # shellcheck disable=SC2231
     source "$ZSH"/prompt/minimal_prompt.zsh;
