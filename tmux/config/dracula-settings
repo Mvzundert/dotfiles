@@ -1,0 +1,26 @@
+# Dracula theme config
+# available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, network, network-bandwidth, network-ping, weather, time
+set -g @dracula-plugins "git network weather battery"
+
+# Set left icon to smiley
+set -g @dracula-show-left-icon smiley
+
+# Set git options
+set -g @dracula-git-no-repo-message "!git"
+set -g @dracula-git-show-current-symbol ✓
+
+# Show location
+set -g @dracula-show-location true
+
+# Set fahrenheit vs Celsius
+set -g @dracula-show-fahrenheit false
+
+# Set powerline displaying
+set -g @dracula-show-powerline true
+
+# Set the refresh rate
+set -g @dracula-refresh-rate 5
+
+# Set time options
+set -g @dracula-military-time true
+set -g @dracula-day-month true

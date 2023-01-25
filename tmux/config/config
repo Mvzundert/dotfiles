@@ -46,7 +46,7 @@ set -g base-index 1
 setw -g pane-base-index 1
 
 # Move the status bar to top (or bottom)
-set-option -g status-position bottom
+set-option -g status-position top
 
 # Make continuum not save every second.
 set -g @continuum-restore 'off'
