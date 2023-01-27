@@ -1,5 +1,4 @@
 tap "adoptopenjdk/openjdk"
-tap "exolnet/deprecated"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -55,7 +54,7 @@ brew "ctags"
 # Pack, ship and run any application as a lightweight container
 brew "docker", link: false
 # Isolated development environments using Docker
-brew "docker-compose", link: false
+brew "docker-compose"
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Text mode web browser
@@ -146,6 +145,8 @@ brew "pandoc"
 brew "perl"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
+# General-purpose scripting language
+brew "php@8.0", restart_service: true, link: true
 # PHP Mess Detector
 brew "phpmd"
 # PHP Static Analysis Tool
@@ -158,6 +159,8 @@ brew "proxychains-ng"
 brew "python@3.8"
 # Cross-platform application and UI framework
 brew "qt"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Penetration testing for SQL injection and database servers
 brew "sqlmap"
 # Instant terminal sharing
@@ -186,8 +189,6 @@ brew "youtube-dl"
 brew "zmap"
 # UNIX shell (command interpreter)
 brew "zsh"
-# General-purpose scripting language
-brew "shivammathur/php/php@8.0"
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Black box WordPress vulnerability scanner
@@ -224,6 +225,8 @@ cask "obs"
 cask "obsidian"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
+# VPN client focusing on security
+cask "protonvpn"
 # Imaging utility to install operating systems to a microSD card
 cask "raspberry-pi-imager"
 # MySQL/MariaDB database management
