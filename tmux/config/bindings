@@ -39,8 +39,8 @@ bind E setw synchronize-panes off
 # Use CTRL+Shift+direction to resize tmux panes a certain with / height
 bind-key -n C-S-Up resize-pane -U 5
 bind-key -n C-S-Down resize-pane -D 5
-bind-key -n C-S-Left resize-pane -L 25
-bind-key -n C-S-Right resize-pane -R 25
+bind-key -n C-S-Left resize-pane -L 5
+bind-key -n C-S-Right resize-pane -R 5
 
 # Unbind old 'resurrect-save' key to prevent default layout overwrite with resurrect
 unbind C-s
