@@ -12,9 +12,6 @@ set -g @dracula-git-show-current-symbol ✓
 # Show location
 set -g @dracula-show-location false
 
-# Set fahrenheit vs Celsius
-set -g @dracula-show-fahrenheit false
-
 # Set powerline displaying
 set -g @dracula-show-powerline true
 
