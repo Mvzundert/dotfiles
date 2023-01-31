@@ -65,3 +65,7 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+
+-- Turn on lsp status information
+require('fidget').setup()
+
