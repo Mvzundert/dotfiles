@@ -1,6 +1,6 @@
 # Dracula theme config
 # available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, network, network-bandwidth, network-ping, weather, time
-set -g @dracula-plugins "git network battery"
+set -g @dracula-plugins "battery git network"
 
 # Set left icon to smiley
 set -g @dracula-show-left-icon '💀'
