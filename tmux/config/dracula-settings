@@ -3,7 +3,7 @@
 set -g @dracula-plugins "git network battery"
 
 # Set left icon to smiley
-set -g @dracula-show-left-icon smiley
+set -g @dracula-show-left-icon '💀'
 
 # Set git options
 set -g @dracula-git-no-repo-message "!git"
