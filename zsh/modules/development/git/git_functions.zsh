@@ -7,15 +7,15 @@ function git_update_hooks() {
         return 0
     fi
 
-    if ! [[ -d "${HOME}/.git-templates/hooks" ]]; then
+    if ! [[ -d "${HOME}/.git-template/template/hooks" ]]; then
         echo -e "\033[31mHalt:\033[0m .git-templates directory not found"
         return 0
     fi
 
-    cp "${HOME}"/.git-templates/hooks/* ./.git/hooks/
+    cp "${HOME}"/.git-template/template/hooks/* ./.git/hooks/
 }
 
-# -------------------------------------------------------------------
+# ------------------------------------------------------------------
 # Remove a file from gits history entirely
 # -------------------------------------------------------------------
 function git_history_remove() {
