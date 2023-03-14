@@ -12,6 +12,7 @@ alias gfa="git fetch --all --prune"
 alias gcmsg="git commit -m"
 alias gp="git push"
 alias gpt="git push && git push --tags"
+alias guh='git_update_hooks'
 
 # -------------------------------------------------------------------
 # Submodule

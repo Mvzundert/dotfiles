@@ -1,4 +1,21 @@
 # -------------------------------------------------------------------
+# Update githooks from template dir
+# -------------------------------------------------------------------
+function git_update_hooks() {
+    if ! [[ -d "$(pwd)/.git" ]]; then
+        echo -e "\033[31mHalt:\033[0m .git directory not found"
+        return 0
+    fi
+
+    if ! [[ -d "${HOME}/.git-templates/hooks" ]]; then
+        echo -e "\033[31mHalt:\033[0m .git-templates directory not found"
+        return 0
+    fi
+
+    cp "${HOME}"/.git-templates/hooks/* ./.git/hooks/
+}
+
+# -------------------------------------------------------------------
 # Remove a file from gits history entirely
 # -------------------------------------------------------------------
 function git_history_remove() {
