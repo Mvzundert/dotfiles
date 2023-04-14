@@ -109,6 +109,17 @@ if [[ -d PHP_8_0_SBIN ]]; then
 fi
 
 # -------------------------------------------------------------------
+# Add Cargo (Rust)  bin folder to PATH
+# -------------------------------------------------------------------
+RUST_BIN="$HOME/.cargo/bin"
+
+if [[ -d $RUST_BIN ]]; then
+    if ! [[ :$PATH: == *:$RUST_BIN:* ]]; then
+        export PATH="$RUST_BIN:$PATH"
+    fi
+fi
+
+# -------------------------------------------------------------------
 # Yarn
 # -------------------------------------------------------------------
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
