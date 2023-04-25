@@ -14,7 +14,8 @@ return require('packer').startup(function(use)
     }
 
     use({
-        'dracula/vim', as = 'dracula',
+    --  'dracula/vim', as = 'dracula',
+	"catppuccin/nvim", as = "catppuccin"
     })
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -32,6 +33,9 @@ return require('packer').startup(function(use)
     -- Git stuff
     use('lewis6991/gitsigns.nvim')
     use('tpope/vim-rhubarb')
+
+   -- Git Copilot 
+    use('github/copilot.vim') -- Make Github Copilot be a thing
 
     -- Setup Fugitive and it's dependencies
     use('tpope/vim-fugitive')

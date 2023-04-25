@@ -1,0 +1,1 @@
+set -g @catppuccin_flavour 'latte' # or frappe, macchiato, mocha
