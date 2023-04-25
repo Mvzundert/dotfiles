@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
 	"catppuccin/nvim", as = "catppuccin"
     })
 
+    use("folke/zen-mode.nvim")
+
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('theprimeagen/harpoon')
     use('mbbill/undotree')

@@ -12,6 +12,7 @@ tap "nickolasburr/pfa"
 tap "romkatv/powerlevel10k"
 tap "shivammathur/php"
 tap "stripe/stripe-cli"
+tap "symfony-cli/tap"
 tap "wpscanteam/tap"
 # Search tool like grep, but optimized for programmers
 brew "ack"
@@ -51,10 +52,12 @@ brew "composer"
 brew "coreutils"
 # Reimplementation of ctags(1)
 brew "ctags"
+# Lightweight DNS forwarder and DHCP server
+brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
 brew "docker", link: false
 # Isolated development environments using Docker
-brew "docker-compose"
+brew "docker-compose", link: false
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Text mode web browser
@@ -94,7 +97,7 @@ brew "libksba"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
+brew "python@3.11", link: false
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Directory/file & DNS busting tool written in Go
@@ -146,21 +149,27 @@ brew "perl"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # General-purpose scripting language
-brew "php@8.0", restart_service: true, link: true
+brew "php@8.0", restart_service: true
 # PHP Mess Detector
 brew "phpmd"
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
 # Hook preloader
 brew "proxychains-ng"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Cross-platform application and UI framework
 brew "qt"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust toolchain installer
+brew "rustup-init"
 # Penetration testing for SQL injection and database servers
 brew "sqlmap"
 # Instant terminal sharing
@@ -175,28 +184,28 @@ brew "watchman"
 brew "weechat"
 # Internet file retriever
 brew "wget"
-# Graphical network analyzer and capture tool
-brew "wireshark"
 # Command-line interface for WordPress
 brew "wp-cli"
 # Bash completion for Wpcli
 brew "wp-cli-completion"
 # JavaScript package manager
 brew "yarn"
-# Download YouTube videos from the command-line
-brew "youtube-dl"
+# Fork of youtube-dl with additional features and fixes
+brew "yt-dlp"
 # Network scanner for Internet-wide network studies
 brew "zmap"
 # UNIX shell (command interpreter)
 brew "zsh"
+# General-purpose scripting language
+brew "shivammathur/php/php@7.4"
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
+# Symfony CLI helps Symfony developers manage projects, from local code to remote infrastructure
+brew "symfony-cli/tap/symfony-cli"
 # Black box WordPress vulnerability scanner
 brew "wpscanteam/tap/wpscan"
 # JDK from the Java User Group (JUG)
 cask "adoptopenjdk"
-# Manage team projects and tasks
-cask "asana"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Web security testing toolkit
@@ -207,6 +216,8 @@ cask "cyberduck"
 cask "docker"
 # Launcher for *Epic Games* games
 cask "epic-games"
+# Collaborative team software
+cask "figma"
 # Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
 # HTTP and GraphQL Client
@@ -219,23 +230,33 @@ cask "jetbrains-toolbox"
 cask "libreoffice"
 # Penetration testing framework
 cask "metasploit"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
+# Open source implementation of Microsoft's .NET Framework
+cask "mono-mdk-for-visual-studio"
+# VPN client for secure internet access and private browsing
+cask "nordvpn"
 # Open-source software for live streaming and screen recording
 cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
-# VPN client focusing on security
-cask "protonvpn"
 # Imaging utility to install operating systems to a microSD card
 cask "raspberry-pi-imager"
 # MySQL/MariaDB database management
 cask "sequel-ace"
 # Instant messaging application focusing on security
 cask "signal"
+# Native GUI tool for relational databases
+cask "tableplus"
 # Web browser focusing on security
 cask "tor-browser"
 # Virtualizer for x86 hardware
 cask "virtualbox"
+# Open-source code editor
+cask "visual-studio-code"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
+# Network protocol analyzer
+cask "wireshark"
