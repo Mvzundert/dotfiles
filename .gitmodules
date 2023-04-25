@@ -10,3 +10,6 @@
 [submodule "zsh/plugins/powerlevel10k"]
 	path = zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "nvim/pack/github/start/copilot"]
+	path = nvim/pack/github/start/copilot
+	url = https://github.com/github/copilot.vim.git
