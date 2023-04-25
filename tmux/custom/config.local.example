@@ -44,19 +44,19 @@
 # set -g @dracula-show-location false
 
 # Switch from default fahrenheit to celsius: 
-set -g @dracula-show-fahrenheit false
+# set -g @dracula-show-fahrenheit false
 
 # Enable powerline symbols: 
-set -g @dracula-show-powerline true
+# set -g @dracula-show-powerline true
 
 # Enable window flags: 
 # set -g @dracula-show-flags true
 
 # Adjust the refresh rate for the bar the default is 5, it can accept any number
-set -g @dracula-refresh-rate 5
+# set -g @dracula-refresh-rate 5
 
 # Enable military time:
-set -g @dracula-military-time true 
+# set -g @dracula-military-time true 
 
 # Disable timezone:
 # set -g @dracula-show-timezone false
@@ -65,17 +65,17 @@ set -g @dracula-military-time true
 # set -g @dracula-show-left-icon session
 
 # Enable high contrast pane border:
-set -g @dracula-border-contrast true
+# set -g @dracula-border-contrast true
 
 # Enable cpu usage:
-set -g @dracula-cpu-usage true
+# set -g @dracula-cpu-usage true
 
 # Enable ram usage:
-set -g @dracula-ram-usage true
+# set -g @dracula-ram-usage true
 
 # Enable gpu usage:
 # set -g @dracula-gpu-usage true
 
 # Swap date to day/month
-set -g @dracula-day-month true
+# set -g @dracula-day-month true
 
