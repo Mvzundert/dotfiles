@@ -68,8 +68,6 @@ brew "exiftool"
 brew "exploitdb"
 # OpenType text shaping engine
 brew "harfbuzz"
-# Image manipulation library
-brew "jpeg", link: true
 # VP8/VP9 video codec
 brew "libvpx"
 # Play, record, convert, and stream audio and video
@@ -118,6 +116,8 @@ brew "hydra"
 brew "inetutils"
 # Enhanced version of john, a UNIX password cracker
 brew "john-jumbo"
+# Image manipulation library
+brew "jpeg", link: true
 # Conversion library
 brew "libiconv"
 # YAML Parser
