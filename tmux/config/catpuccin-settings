@@ -1,1 +1,17 @@
-set -g @catppuccin_flavour 'latte' # or frappe, macchiato, mocha
+# Set the flavor: Frappe, macchiato, mocha
+set -g @catppuccin_flavour 'macchiato'
+
+set -g @catppuccin_window_tabs_enabled on # or off to disable window_tabs
+
+# Set the seperator
+set -g @catppuccin_left_separator "█"
+set -g @catppuccin_right_separator "█"
+
+# Set datetime object
+set -g @catppuccin_date_time "%Y-%m-%d %H:%M"
+
+# Set the user component to on.
+# set -g @catppuccin_user "on"
+
+# Set the host info to on
+# set -g @catppuccin_host "off"
