@@ -8,7 +8,7 @@ set -g @catppuccin_left_separator "█"
 set -g @catppuccin_right_separator "█"
 
 # Set datetime object
-set -g @catppuccin_date_time "%Y-%m-%d %H:%M"
+# set -g @catppuccin_date_time "%Y-%m-%d %H:%M"
 
 # Set the user component to on.
 # set -g @catppuccin_user "on"
