@@ -14,7 +14,6 @@ return require('packer').startup(function(use)
     }
 
     use({
-    --  'dracula/vim', as = 'dracula',
 	"catppuccin/nvim", as = "catppuccin"
     })
 
