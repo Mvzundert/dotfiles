@@ -10,7 +10,7 @@
 setw -g aggressive-resize on
 
 # set vi mode for copy mode
- setw -g mode-keys vi
+setw -g mode-keys vi
 
 # # more settings to make copy-mode more vim-like
 unbind [
@@ -21,12 +21,12 @@ bind -Tcopy-mode-vi 'v' send -X begin-selection
 bind -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 
 # Buffers to/from Mac clipboard
- bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
- bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
+bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
+bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
 
 # Enable mouse control (clickable windows, panes, resizable panes)
+#set -g mouse-utf8 on
 set -g mouse on
-# set -g mouse-select-window on
 
 # don't rename windows automatically
 set-option -g allow-rename off
