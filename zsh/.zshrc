@@ -59,6 +59,9 @@ done
 export ALTERNATE_EDITOR="nano"
 export GPG_TTY=$(tty)
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f $ZSH/.p10k.zsh ]] || source $ZSH/.p10k.zsh
+
 # -------------------------------------------------------------------
 # Custom .zshrc source highlighting
 # see: https://github.com/zsh-users/zsh-syntax-highlighting
@@ -71,6 +74,3 @@ source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Enable zsh profiling for debugging
 # zprof
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
