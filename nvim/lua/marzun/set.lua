@@ -30,6 +30,11 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "180"
 
+-- Fix for netrw annoying behavior
+-- which  happens when the current directory (in the buffer) 
+-- and the directory we are browsing don't match. 
+vim.opt,netrw_keepdir = 0
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
