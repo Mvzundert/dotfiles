@@ -33,11 +33,11 @@ return require('packer').startup(function(use)
 	use('mfussenegger/nvim-lint')
 	use('j-hui/fidget.nvim')
 
-	use('nvim-lualine/lualine.nvim')        -- Fancier statusline
-	use('lukas-reineke/indent-blankline.nvim') -- Add indentation guides even on blank lines
-	use('numToStr/Comment.nvim')            -- "gc" to comment visual regions/lines
-	use('tpope/vim-sleuth')                 -- Detect tabstop and shiftwidth automatically
-	use('jxnblk/vim-mdx-js')                -- Make vim understand MDX files.
+	use('nvim-lualine/lualine.nvim')			-- Fancier statusline
+	use('lukas-reineke/indent-blankline.nvim')	-- Add indentation guides even on blank lines
+	use('numToStr/Comment.nvim')				-- "gc" to comment visual regions/lines
+	use('tpope/vim-sleuth')						-- Detect tabstop and shiftwidth automatically
+	use('jxnblk/vim-mdx-js')					-- Make vim understand MDX files.
 
 	-- Git stuff
 	use('lewis6991/gitsigns.nvim')
