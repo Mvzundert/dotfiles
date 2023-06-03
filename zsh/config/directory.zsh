@@ -18,9 +18,11 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias l="ls ${colorflag}"
-alias la="ls -AF ${colorflag}"
-alias ll="ls -lah ${colorflag}"
+alias l="exa"
+alias ls="exa -aF"
+alias ll="exa -lah --group-directories-first"
+alias cat="bat"
+
 alias rmf="rm -rf"
 
 alias d='dirs -v | head -10'
