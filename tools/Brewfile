@@ -30,6 +30,8 @@ brew "autoconf"
 brew "automake"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c"
 # Platform built on V8 to build network applications
@@ -62,6 +64,8 @@ brew "docker-compose", link: false
 brew "snappy"
 # Text mode web browser
 brew "elinks"
+# Modern replacement for 'ls'
+brew "exa"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Database of public exploits and corresponding vulnerable software
@@ -136,8 +140,6 @@ brew "netcat"
 brew "nikto"
 # Port scanning utility for large networks
 brew "nmap"
-# Manage multiple Node.js versions
-brew "nvm"
 # Command-line Git information tool
 brew "onefetch"
 # Development kit for the Java programming language
@@ -192,6 +194,8 @@ brew "wp-cli-completion"
 brew "yarn"
 # Fork of youtube-dl with additional features and fixes
 brew "yt-dlp"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
 # Network scanner for Internet-wide network studies
 brew "zmap"
 # UNIX shell (command interpreter)
