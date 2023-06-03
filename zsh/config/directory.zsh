@@ -23,6 +23,10 @@ alias ls="exa -aF"
 alias ll="exa -lah --group-directories-first"
 alias cat="bat"
 
+if [[ $OSTYPE == "linux-gnu" ]]; then
+    alias bat="/usr/local/bat/bat"
+fi
+
 alias rmf="rm -rf"
 
 alias d='dirs -v | head -10'
