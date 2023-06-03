@@ -54,15 +54,15 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # -------------------------------------------------------------------
 # These can enabled using the load file.
 
-if dotfiles::check "${PROMPT}"; then
+if dotfiles::check "${MARZUN}"; then
     # Prompt Module
     # shellcheck disable=SC2231
     source "$ZSH"/prompt/prompt.zsh;
     source "$ZSH"/prompt/gitprompt.zsh;
     source "$ZSH"/prompt/nodeprompt.zsh;
-elif dotfiles::check "${POWERLEVEL}"; then
-    source "$ZSH"/plugins/powerlevel10k/powerlevel10k.zsh-theme
-else
+elif dotfiles::check "${STARSHIP}"; then
+    eval "$(starship init zsh)"
+else 
     # shellcheck disable=SC2231
     source "$ZSH"/prompt/minimal_prompt.zsh;
     source "$ZSH"/prompt/gitprompt.zsh;    

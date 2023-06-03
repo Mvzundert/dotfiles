@@ -69,15 +69,18 @@ then
 fi
 
 #=======================================
-#========= Alacritty ===================
+#========= Starship Conf ===============
 #=======================================
-DIR="$HOME/.config/Alacritty"
+FILE="$HOME/.config/starship.toml"
 
-if [ ! -d $DIR ]
-    echo "Alacritty has been installed...skipping"
-then
-    echo "Alacritty symlinked"
-    ln -s $DOTFILES/terminal/Alacritty $HOME/.config/
+if [ -f $FILE ]; then
+    #  echo "File $FILE exists."
+    echo "Starship was already installed....skipping"
+else
+    #  echo "$FILE File created"
+    echo "Starship has been installed."
+    # Symlink the .tmux.conf file that makes sure the config works
+    ln -s $DOTFILES/zsh/prompt/starship.toml $HOME/.config/starship.toml
 fi
 
 #=======================================
