@@ -24,12 +24,6 @@ export MODULES=$ZSH/modules
 # display how long all tasks over 10 seconds take
 export REPORTTIME=10
 
-# define the code directory
-# # This is where my code exists and where I want the `c` autocomplete to work from exclusively
-if [[ -d ~/code ]]; then
-    export CODE_DIR=~/code
-fi
-
 # -------------------------------------------------------------------
 # Load utils file to activate helpers
 # -------------------------------------------------------------------
@@ -58,9 +52,6 @@ done
 
 export ALTERNATE_EDITOR="nano"
 export GPG_TTY=$(tty)
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $ZSH/.p10k.zsh ]] || source $ZSH/.p10k.zsh
 
 # -------------------------------------------------------------------
 # Custom .zshrc source highlighting

@@ -174,6 +174,8 @@ brew "ripgrep"
 brew "rustup-init"
 # Penetration testing for SQL injection and database servers
 brew "sqlmap"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Instant terminal sharing
 brew "tmate"
 # Terminal multiplexer
