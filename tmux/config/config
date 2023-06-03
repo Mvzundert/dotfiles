@@ -24,6 +24,8 @@ bind -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "tmux save-buffer - | reatt
 bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
 
+bind k send-keys "clear"\; send-keys "Enter"
+
 # Enable mouse control (clickable windows, panes, resizable panes)
 set-option -g mouse on
 
