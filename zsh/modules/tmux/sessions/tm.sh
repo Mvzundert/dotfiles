@@ -7,7 +7,7 @@ tmux has-session -t workspace || tmux new-session -s workspace -d
 
 # present menu for user to choose which workspace to open
 PS3="Please choose your session: "
-options=$(tmux list-sessions -F "#S" 2>/dev/null) "New Session"
+options=($(tmux list-sessions -F "#S" 2>/dev/null) "New Session")
 
 echo "Available sessions"
 echo "------------------"
