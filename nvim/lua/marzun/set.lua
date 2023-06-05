@@ -30,6 +30,10 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "180"
 
+-- vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+vim.g.netrw_sort_sequence = [[[\/]$,*]]
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
