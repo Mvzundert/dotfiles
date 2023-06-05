@@ -7,7 +7,7 @@ lsp.ensure_installed({
     'lua_ls',
     'eslint',
     'rust_analyzer',
-    'phpactor',
+    'intelephense',
 })
 
 -- Fix Undefined global 'vim'
