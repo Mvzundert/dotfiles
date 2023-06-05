@@ -7,6 +7,7 @@ lsp.ensure_installed({
     'lua_ls',
     'eslint',
     'rust_analyzer',
+    'phpactor',
 })
 
 -- Fix Undefined global 'vim'
@@ -40,10 +41,10 @@ lsp.setup_nvim_cmp({
 lsp.set_preferences({
     suggest_lsp_servers = false,
     sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
+        error = '❌',
+        warn = '⚠️ ',
+        hint = '💡',
+        info = '💬',
     }
 })
 

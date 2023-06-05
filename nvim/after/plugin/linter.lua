@@ -11,7 +11,7 @@ require('lint').linters_by_ft = {
 local phpcs = require('lint').linters.phpcs
 phpcs.args = {
   '-q',
-  '--standard=~/.crbcs/phpcs/ruleset.xml',
+  '--standard=~/code/cerberos/internal/coding_standards/phpcs/ruleset.xml',
   '--report=json',
   '-'
 }
