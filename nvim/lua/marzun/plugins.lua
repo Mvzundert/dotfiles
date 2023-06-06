@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-	use ('nvun-lua/plenary.nvim')
+	use('nvim-lua/plenary.nvim')
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -27,23 +27,38 @@ return require('packer').startup(function(use)
 		"catppuccin/nvim", as = "catppuccin"
 	})
 
+	use {
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		}
+	}
+
 	use("folke/zen-mode.nvim")
 
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('mfussenegger/nvim-lint')
+
 	use('j-hui/fidget.nvim')
 
-	use('nvim-lualine/lualine.nvim')			-- Fancier statusline
-	use('lukas-reineke/indent-blankline.nvim')	-- Add indentation guides even on blank lines
-	use('numToStr/Comment.nvim')				-- "gc" to comment visual regions/lines
-	use('tpope/vim-sleuth')						-- Detect tabstop and shiftwidth automatically
-	use('jxnblk/vim-mdx-js')					-- Make vim understand MDX files.
+	use('nvim-lualine/lualine.nvim')        -- Fancier statusline
+	use('lukas-reineke/indent-blankline.nvim') -- Add indentation guides even on blank lines
+	use('numToStr/Comment.nvim')            -- "gc" to comment visual regions/lines
+	use('tpope/vim-sleuth')                 -- Detect tabstop and shiftwidth automatically
+	use('jxnblk/vim-mdx-js')                -- Make vim understand MDX files.
 
 	-- Git stuff
 	use('lewis6991/gitsigns.nvim')
 	use('tpope/vim-rhubarb')
+	use 'nvim-tree/nvim-web-devicons'
+
+	-- Tabline
+	use 'romgrk/barbar.nvim'
 
 	-- Git Copilot
 	use('github/copilot.vim') -- Make Github Copilot be a thing
