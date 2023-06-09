@@ -41,7 +41,7 @@ Link to powerline font repo:(https://github.com/powerline/fonts)
 
 # How it looks
 
-![Screenshot 2020-06-03 at 12 12 55](https://user-images.githubusercontent.com/6066795/83624961-919d4480-a593-11ea-8864-a6a27fda2df6.png)
+![Screenshot 2023-06-09 at 10 16 10](https://github.com/Mvzundert/dotfiles/assets/6066795/c2eb90d3-11d7-443e-a2d0-2d54c431699a)
 
 # ZSH
 
