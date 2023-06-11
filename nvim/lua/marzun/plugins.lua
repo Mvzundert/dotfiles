@@ -44,7 +44,7 @@ return require('packer').startup(function(use)
 	use('mbbill/undotree')
 	use('mfussenegger/nvim-lint')
 
-	use('j-hui/fidget.nvim', { tag = 'legacy' })
+	use('j-hui/fidget.nvim')
 
 	use('nvim-lualine/lualine.nvim')        -- Fancier statusline
 	use('lukas-reineke/indent-blankline.nvim') -- Add indentation guides even on blank lines
