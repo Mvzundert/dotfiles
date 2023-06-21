@@ -46,10 +46,14 @@ return require('packer').startup(function(use)
 
 	use('j-hui/fidget.nvim', { tag = 'legacy' }) -- Fidget information in the statusline
 
-	use('nvim-lualine/lualine.nvim')      -- Fancier statusline
+	use('nvim-lualine/lualine.nvim')          -- Fancier statusline
 	use('lukas-reineke/indent-blankline.nvim') -- Add indentation guides even on blank lines
-	use('tpope/vim-sleuth')               -- Detect tabstop and shiftwidth automatically
-	use('jxnblk/vim-mdx-js')              -- Make vim understand MDX files.
+	use('tpope/vim-sleuth')                   -- Detect tabstop and shiftwidth automatically
+	use('jxnblk/vim-mdx-js')                  -- Make vim understand MDX files.
+
+	-- Tabline
+	use 'romgrk/barbar.nvim'
+
 
 	use {
 		'numToStr/Comment.nvim',
@@ -57,13 +61,19 @@ return require('packer').startup(function(use)
 			require('Comment').setup()
 		end
 	}
+
+	-- WhichKey
+	use {
+		"folke/which-key.nvim",
+		config = function()
+			require("config.whichkey").setup()
+		end,
+	}
+
 	-- Git stuff
 	use('lewis6991/gitsigns.nvim')
 	use('tpope/vim-rhubarb')
 	use 'nvim-tree/nvim-web-devicons'
-
-	-- Tabline
-	use 'romgrk/barbar.nvim'
 
 	-- Git Copilot
 	use('github/copilot.vim') -- Make Github Copilot be a thing
