@@ -1,7 +1,5 @@
 -- Keymaps for todo-comments
 vim.keymap.set("n", "<leader>ft", ":TodoQuickFix<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>ftt", ":ToDoTelescope<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>ftg", ":TodoTrouble<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ftl", ":TodoLocList<CR>", { noremap = true, silent = true })
 
 require 'todo-comments'.setup {
