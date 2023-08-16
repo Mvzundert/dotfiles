@@ -44,12 +44,21 @@ return require('packer').startup(function(use)
 	use('mbbill/undotree')
 	use('mfussenegger/nvim-lint')
 
-	use('j-hui/fidget.nvim', { tag = 'legacy' }) -- Fidget information in the statusline
+	-- Fidget information in the statusline
+	use {
+		'j-hui/fidget.nvim',
+		tag = 'legacy',
+		config = function()
+			require("fidget").setup {
+				-- options
+			}
+		end,
+	}
 
-	use('nvim-lualine/lualine.nvim')          -- Fancier statusline
+	use('nvim-lualine/lualine.nvim')        -- Fancier statusline
 	use('lukas-reineke/indent-blankline.nvim') -- Add indentation guides even on blank lines
-	use('tpope/vim-sleuth')                   -- Detect tabstop and shiftwidth automatically
-	use('jxnblk/vim-mdx-js')                  -- Make vim understand MDX files.
+	use('tpope/vim-sleuth')                 -- Detect tabstop and shiftwidth automatically
+	use('jxnblk/vim-mdx-js')                -- Make vim understand MDX files.
 
 	-- Tabline
 	use 'romgrk/barbar.nvim'
