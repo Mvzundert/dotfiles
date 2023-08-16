@@ -70,6 +70,14 @@ return require('packer').startup(function(use)
 		end,
 	}
 
+	use {
+		'folke/todo-comments.nvim',
+		requires = 'nvim-lua/plenary.nvim', -- required by todo-comments
+		config = function()
+			require('todo-comments').setup()
+		end
+	}
+
 	-- Git stuff
 	use('lewis6991/gitsigns.nvim')
 	use('tpope/vim-rhubarb')
