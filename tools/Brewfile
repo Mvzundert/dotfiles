@@ -1,7 +1,6 @@
 tap "adoptopenjdk/openjdk"
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
@@ -20,6 +19,12 @@ brew "ack"
 brew "readline"
 # Next-generation aircrack with lots of new features
 brew "aircrack-ng"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11", link: false
+# YAML Parser
+brew "libyaml"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
 # Interpreted, interactive, object-oriented programming language
@@ -57,13 +62,11 @@ brew "ctags"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
-brew "docker", link: false
+brew "docker"
 # Isolated development environments using Docker
-brew "docker-compose", link: false
+brew "docker-compose"
 # Compression/decompression library aiming for high speed
 brew "snappy"
-# Text mode web browser
-brew "elinks"
 # Modern replacement for 'ls'
 brew "exa"
 # Perl lib for reading and writing EXIF metadata
@@ -76,6 +79,8 @@ brew "harfbuzz"
 brew "libvpx"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Fast web fuzzer written in Go
+brew "ffuf"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
 # GNU compiler collection
@@ -98,8 +103,6 @@ brew "gnu-getopt"
 brew "libksba"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11", link: false
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Directory/file & DNS busting tool written in Go
@@ -122,10 +125,10 @@ brew "inetutils"
 brew "john-jumbo"
 # Image manipulation library
 brew "jpeg", link: true
+# Simple terminal UI for git commands
+brew "lazygit"
 # Conversion library
 brew "libiconv"
-# YAML Parser
-brew "libyaml"
 # Curses-based tool for viewing and analyzing log files
 brew "lnav"
 # NCurses Disk Usage
@@ -232,7 +235,7 @@ cask "insomnia"
 cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
-# Office suite
+# Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Penetration testing framework
 cask "metasploit"
@@ -266,3 +269,4 @@ cask "visual-studio-code"
 cask "vnc-viewer"
 # Network protocol analyzer
 cask "wireshark"
+vscode "ms-vsliveshare.vsliveshare"
