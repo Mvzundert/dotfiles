@@ -9,22 +9,21 @@ echo " "
 export DOTFILES=$HOME/.dotfiles
 
 if [[ -d ~/code ]]; then
-    export CODE_DIR=~/code
+	export CODE_DIR=~/code
 fi
-
 
 # =======================================
 # ========= OS dependencies =============
 # =======================================
 if [ "$(uname)" == "linux-gnu" ]; then
-    echo "\n\nRunning on Linux"
-    source apt.sh
+	echo "\n\nRunning on Linux"
+	source apt.sh
 fi
 
 if [ "$(uname)" == "Darwin" ]; then
-    echo "\n\nRunning on OSX"
-    source brew.sh
-    source osx.sh
+	echo "\n\nRunning on OSX"
+	source brew.sh
+	source osx.sh
 fi
 
 echo "Initializing submodule(s)"
@@ -35,10 +34,9 @@ git submodule update --init --recursive
 #=======================================
 DIR="$HOME/.dotfiles"
 
-if [ ! -d $DIR ]
-then
-    echo "set symlink for dotfiles"
-    ln -s $CODE_DIR/dotfiles $HOME/.dotfiles
+if [ ! -d $DIR ]; then
+	echo "set symlink for dotfiles"
+	ln -s $CODE_DIR/dotfiles $HOME/.dotfiles
 fi
 
 #=======================================
@@ -47,13 +45,13 @@ fi
 FILE="$HOME/.zshrc"
 
 if [ -f $FILE ]; then
-    #  echo "File $FILE exists."
-    echo "zshrc file was already installed...skipping"
+	#  echo "File $FILE exists."
+	echo "zshrc file was already installed...skipping"
 else
-    #  echo "$FILE File created"
-    echo "zshrc file has been installed"
-    # Symlink the .zshrc file that makes sure the config works
-    ln -s $DOTFILES/zsh/.zshrc $HOME
+	#  echo "$FILE File created"
+	echo "zshrc file has been installed"
+	# Symlink the .zshrc file that makes sure the config works
+	ln -s $DOTFILES/zsh/.zshrc $HOME
 fi
 
 #=======================================
@@ -61,11 +59,12 @@ fi
 #=======================================
 DIR="$HOME/.config/nvim"
 
-if [ ! -d $DIR ]
-    echo "NeoVim has been installed...skipping"
+if
+	[ ! -d $DIR ]
+	echo "NeoVim has been installed...skipping"
 then
-    echo "NeoVim symlinked"
-    ln -s $DOTFILES/nvim/ $HOME/.config/
+	echo "NeoVim symlinked"
+	ln -s $DOTFILES/lazy-nvim/ $HOME/.config/
 fi
 
 #=======================================
@@ -74,13 +73,13 @@ fi
 FILE="$HOME/.config/starship.toml"
 
 if [ -f $FILE ]; then
-    #  echo "File $FILE exists."
-    echo "Starship was already installed....skipping"
+	#  echo "File $FILE exists."
+	echo "Starship was already installed....skipping"
 else
-    #  echo "$FILE File created"
-    echo "Starship has been installed."
-    # Symlink the .tmux.conf file that makes sure the config works
-    ln -s $DOTFILES/zsh/prompt/starship.toml $HOME/.config/starship.toml
+	#  echo "$FILE File created"
+	echo "Starship has been installed."
+	# Symlink the .tmux.conf file that makes sure the config works
+	ln -s $DOTFILES/zsh/prompt/starship.toml $HOME/.config/starship.toml
 fi
 
 #=======================================
@@ -90,12 +89,12 @@ DIR="$HOME/.tmux/plugins/tpm"
 
 # Check if the tmux dir is emtpy (it should be)
 if [ "$(ls -A $DIR)" ]; then
-    # if we have TPM already we skip it.
-    echo "TPM has been installed...skipping"
+	# if we have TPM already we skip it.
+	echo "TPM has been installed...skipping"
 else
-    # if we don't have TPM we install it.
-    echo "TPM has been installed"
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	# if we don't have TPM we install it.
+	echo "TPM has been installed"
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 #=======================================
@@ -104,13 +103,13 @@ fi
 FILE="$HOME/.tmux.conf"
 
 if [ -f $FILE ]; then
-    #  echo "File $FILE exists."
-    echo "Tmux.conf was already installed....skipping"
+	#  echo "File $FILE exists."
+	echo "Tmux.conf was already installed....skipping"
 else
-    #  echo "$FILE File created"
-    echo "Tmux.conf has been installed."
-    # Symlink the .tmux.conf file that makes sure the config works
-    ln -s $DOTFILES/tmux/.tmux.conf $HOME
+	#  echo "$FILE File created"
+	echo "Tmux.conf has been installed."
+	# Symlink the .tmux.conf file that makes sure the config works
+	ln -s $DOTFILES/tmux/.tmux.conf $HOME
 fi
 
 echo '________          __    _____.__.__                 '
