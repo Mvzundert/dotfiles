@@ -8,3 +8,4 @@ nvim/plugged
 .idea
 .netrwhist
 nvim/.netrwhist
+lazy-lock.lua
