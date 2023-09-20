@@ -17,8 +17,6 @@ setopt hist_ignore_space
 setopt hist_verify
 # add commands to HISTFILE in order of execution
 setopt inc_append_history
-# share command history data
-setopt share_history
 
 ## History wrapper
 function omz_history {
