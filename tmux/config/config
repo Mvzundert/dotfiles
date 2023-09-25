@@ -46,8 +46,17 @@ set -g status-justify centre
 set -g base-index 1
 setw -g pane-base-index 1
 
+# skip "kill-pane 1? (y/n)" prompt
+bind-key x kill-pane 
+
+# don't exit from tmux when closing a session
+set -g detach-on-destroy off  
+
 # Move the status bar to top (or bottom)
 set-option -g status-position bottom
+
+# only works with Nerd Font
+set -g @t-fzf-prompt '  '
 
 # Make continuum not save every second.
 set -g @continuum-restore 'off'
@@ -56,5 +65,6 @@ set -g @continuum-restore 'off'
 # # Can't do xterm-256colors b/c tmux really
 # # really really wants "screen"
 set -g default-terminal "screen-256color"
+
 # Enable 24 bit true colors
 set -ga terminal-overrides ',xterm-256color:Tc'
