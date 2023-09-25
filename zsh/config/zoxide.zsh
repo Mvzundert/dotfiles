@@ -1,8 +1,5 @@
+# =============================================================================
 #
-# To initialize zoxide, add this to your configuration (usually ~/.zshrc):
-#
-eval "$(zoxide init zsh)"#
-
 # Utility functions for zoxide.
 #
 
@@ -100,4 +97,8 @@ fi
 \builtin alias z=__zoxide_z
 \builtin alias zi=__zoxide_zi
 
-# ================================
+# =============================================================================
+#
+# To initialize zoxide, add this to your configuration (usually ~/.zshrc):
+#
+ eval "$(zoxide init zsh)"

@@ -21,6 +21,17 @@ if [[ -d $USER_LOCAL_BIN ]]; then
 fi
 
 # -------------------------------------------------------------------
+# Add WSL local bin folder to PATH
+# -------------------------------------------------------------------
+WSL_LOCAL_BIN="/$HOME/.local/bin/"
+
+if [[ -d $WSL_LOCAL_BIN ]]; then
+    if ! [[ :$PATH: == *:$WSL_LOCAL_BIN:* ]]; then
+        export PATH="$WSL_LOCAL_BIN:$PATH"
+    fi
+fi
+
+# -------------------------------------------------------------------
 # Add local sbin folder to PATH
 # -------------------------------------------------------------------
 USER_LOCAL_SBIN="/usr/local/sbin"
