@@ -45,7 +45,7 @@ for file in $MODULES/extract/*; do
     source "$file"
 done
 
-source "$ZSH"/plugins/z.sh
+# source "$ZSH"/plugins/z.sh
 # shellcheck disable=SC1090
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 

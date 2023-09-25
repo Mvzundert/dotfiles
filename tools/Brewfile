@@ -8,6 +8,7 @@ tap "homebrew/services"
 tap "kevwil/patches"
 tap "neovim/neovim"
 tap "nickolasburr/pfa"
+tap "oven-sh/bun"
 tap "romkatv/powerlevel10k"
 tap "shivammathur/php"
 tap "stripe/stripe-cli"
@@ -15,6 +16,8 @@ tap "symfony-cli/tap"
 tap "wpscanteam/tap"
 # Search tool like grep, but optimized for programmers
 brew "ack"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Library for command-line editing
 brew "readline"
 # Next-generation aircrack with lots of new features
@@ -39,8 +42,6 @@ brew "bash"
 brew "bat"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c"
-# Platform built on V8 to build network applications
-brew "node"
 # Package manager for the web
 brew "bower"
 # Manage compile and link flags for libraries
@@ -64,7 +65,7 @@ brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Isolated development environments using Docker
-brew "docker-compose"
+brew "docker-compose", link: false
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Modern replacement for 'ls'
@@ -99,6 +100,8 @@ brew "git-lfs"
 brew "git-standup"
 # Command-line option parsing utility
 brew "gnu-getopt"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
 # X.509 and CMS library
 brew "libksba"
 # GNU Pretty Good Privacy (PGP) package
@@ -203,8 +206,12 @@ brew "yt-dlp"
 brew "zig"
 # Network scanner for Internet-wide network studies
 brew "zmap"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # General-purpose scripting language
 brew "shivammathur/php/php@7.4"
 # Stripe CLI utility
@@ -269,4 +276,6 @@ cask "visual-studio-code"
 cask "vnc-viewer"
 # Network protocol analyzer
 cask "wireshark"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
 vscode "ms-vsliveshare.vsliveshare"
