@@ -23,6 +23,7 @@ alias guh='git_update_hooks'
 # Github CLI
 # -------------------------------------------------------------------
 # Github PR's
+alias ghprl="gh pr list"
 alias ghpr="gh pr create --fill -a '@me'"
 alias ghd="gh pr diff"
 alias ghpc="gh pr checkout"
