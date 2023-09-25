@@ -22,11 +22,17 @@ alias guh='git_update_hooks'
 # -------------------------------------------------------------------
 # Github CLI
 # -------------------------------------------------------------------
-# Github PR's
+# Github PR's reviewing
 alias ghprl="gh pr list"
-alias ghpr="gh pr create --fill -a '@me'"
 alias ghd="gh pr diff"
 alias ghpc="gh pr checkout"
+alias ghmr="gh pr merge"
+alias ghra="gh pr review --approve"
+alias ghprv="gh pr view"
+alias ghprc="gh pr checks"
+
+# Github PR's creating
+alias ghpr="gh pr create --fill -a '@me'"
 
 # Github actions
 alias ghl="gh run list"
