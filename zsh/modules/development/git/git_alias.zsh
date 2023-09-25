@@ -18,7 +18,22 @@ alias gcmsg="git commit -m"
 alias gp="git push"
 alias gpt="git push && git push --tags"
 alias guh='git_update_hooks'
+
+# -------------------------------------------------------------------
+# Github CLI
+# -------------------------------------------------------------------
+# Github PR's
 alias ghpr="gh pr create --fill -a '@me'"
+alias ghd="gh pr diff"
+alias ghpc="gh pr checkout"
+
+# Github actions
+alias ghl="gh run list"
+alias ghrr="gh run rerun"
+
+# Github workflows
+alias ghwf="gh workflow list"
+alias ghr="gh workflow run"
 
 # -------------------------------------------------------------------
 # Submodule
