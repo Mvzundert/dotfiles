@@ -40,7 +40,7 @@ setw -g monitor-activity on
 set -g visual-activity on
 
 # Center the window list
-set -g status-justify centre
+# set -g status-justify centre
 
 # Start windows and panes at 1, not 0
 set -g base-index 1
