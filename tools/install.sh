@@ -64,7 +64,7 @@ if
 	echo "NeoVim has been installed...skipping"
 then
 	echo "NeoVim symlinked"
-	ln -s $DOTFILES/lazy-nvim/ $HOME/.config/
+	ln -s $DOTFILES/nvim/ $HOME/.config/
 fi
 
 #=======================================
