@@ -13,6 +13,7 @@ tap "romkatv/powerlevel10k"
 tap "shivammathur/php"
 tap "stripe/stripe-cli"
 tap "symfony-cli/tap"
+tap "tursodatabase/tap"
 tap "wpscanteam/tap"
 # Search tool like grep, but optimized for programmers
 brew "ack"
@@ -84,6 +85,8 @@ brew "ffmpeg"
 brew "ffuf"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GNU compiler collection
 brew "gcc"
 # GitHub command-line tool
@@ -218,6 +221,7 @@ brew "shivammathur/php/php@7.4"
 brew "stripe/stripe-cli/stripe"
 # Symfony CLI helps Symfony developers manage projects, from local code to remote infrastructure
 brew "symfony-cli/tap/symfony-cli"
+brew "tursodatabase/tap/turso"
 # Black box WordPress vulnerability scanner
 brew "wpscanteam/tap/wpscan"
 # JDK from the Java User Group (JUG)
