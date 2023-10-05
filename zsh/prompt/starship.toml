@@ -50,6 +50,10 @@ deleted = "🗑️ ×${count} "
 
 format = '[[($all_status$ahead_behind )](fg:#e3e5e5 bg:#33658A)]($style)'
 
+[docker_context]
+style = "bg:#86BBD8"
+format = '[[ $symbol ($context) ](fg:#5c0245 bg:#86BBD8)]($style)'
+
 [nodejs]
 style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](fg:#5c0245 bg:#86BBD8)]($style)'
