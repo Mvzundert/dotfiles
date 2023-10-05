@@ -48,7 +48,7 @@ staged = "🗃️ ×${count} "
 renamed = "📛 ×${count} "
 deleted = "🗑️ ×${count} "
 
-format = '[[($all_status$ahead_behind )](fg:#5c0245 bg:#33658A)]($style)'
+format = '[[($all_status$ahead_behind )](fg:#e3e5e5 bg:#33658A)]($style)'
 
 [nodejs]
 style = "bg:#86BBD8"
