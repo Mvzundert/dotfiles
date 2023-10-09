@@ -8,4 +8,4 @@ nvim/plugged
 .idea
 .netrwhist
 nvim/.netrwhist
-lazy-nvim/lazy-lock.json
+nvim/lazy-lock.json
