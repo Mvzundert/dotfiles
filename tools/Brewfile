@@ -66,15 +66,15 @@ brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Isolated development environments using Docker
-brew "docker-compose", link: false
+brew "docker-compose"
 # Compression/decompression library aiming for high speed
 brew "snappy"
-# Modern replacement for 'ls'
-brew "exa"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Database of public exploits and corresponding vulnerable software
 brew "exploitdb"
+# Modern, maintained replacement for ls
+brew "eza"
 # OpenType text shaping engine
 brew "harfbuzz"
 # VP8/VP9 video codec
