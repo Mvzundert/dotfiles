@@ -53,6 +53,7 @@ opt.backup = false
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
+opt.viminfo = "'100,f1,<1000,s1000,h"
 
 if vim.fn.has("nvim-0.9.0") == 1 then
   opt.splitkeep = "screen"
