@@ -18,9 +18,9 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias l="exa --icons --group-directories-first"
-alias ls="exa -aF --group-directories-first --icons"
-alias ll="exa -lahg --group-directories-first --icons --git"
+alias l="eza --group-directories-first --icons"
+alias ls="eza -aF --group-directories-first --icons"
+alias ll="eza -lah --group-directories-first --icons --git"
 alias llt="exa -lah --group-directories-first --icons --tree --git"
 alias cat="bat"
 
