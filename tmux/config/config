@@ -12,7 +12,7 @@ setw -g aggressive-resize on
 # set vi mode for copy mode
 setw -g mode-keys vi
 
-# # more settings to make copy-mode more vim-like
+# more settings to make copy-mode more vim-like
 unbind [
 bind Escape copy-mode
 unbind p
@@ -56,7 +56,7 @@ set -g detach-on-destroy off
 set-option -g status-position top
 
 # only works with Nerd Font
-set -g @t-fzf-prompt '  '
+set -g @t-fzf-prompt '🛸 '
 
 # Make continuum not save every second.
 set -g @continuum-restore 'off'
