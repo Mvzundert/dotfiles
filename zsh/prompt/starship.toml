@@ -2,7 +2,7 @@ command_timeout = 10000
 
 format = """
 [░▒▓](#9A348E)\
-[ ㍿ ](fg:#5c0245 bg:#DA627D)\
+[ 🐚 ](fg:#5c0245 bg:#DA627D)\
 [](fg:#DA627D bg:#FCA17D)\ 
 $directory\
 [](fg:#FCA17D bg:#33658A)\

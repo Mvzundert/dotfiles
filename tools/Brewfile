@@ -23,10 +23,10 @@ brew "openssl@3"
 brew "readline"
 # Next-generation aircrack with lots of new features
 brew "aircrack-ng"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11", link: false
 # YAML Parser
 brew "libyaml"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11", link: false
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Perl compatible regular expressions library with a new API
@@ -66,7 +66,7 @@ brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Isolated development environments using Docker
-brew "docker-compose"
+brew "docker-compose", link: false
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Perl lib for reading and writing EXIF metadata
