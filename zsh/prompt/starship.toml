@@ -32,6 +32,8 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = "🚀 "
+truncation_length = 10
+truncation_symbol = '..'
 style = "bg:#e3e5e5"
 format = '[[ $symbol $branch ](fg:#e3e5e5 bg:#33658A)]($style)'
 
