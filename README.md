@@ -8,7 +8,7 @@ development.
 In pursuit of my unhindered enjoyment of this project, the only end-user
 I choose to care about in this project is myself, and maybe a few select
 friends. The timeline, the features, and the implementation are all
-solely at my discretion. I reserve the right to make arbitrary decisions, 
+solely at my discretion. I reserve the right to make arbitrary decisions,
 and change them at a moment's notice, without owing anyone an explanation.
 
 If you see something here you like, you're welcome to fork the code under
@@ -19,7 +19,7 @@ to submit issues and pull requests. I may respond, or I may leave it sitting
 indefinitely. If I ignore your bug report or brilliant contribution until
 doomsday, don't take it personally.
 
-If you decide to try and *use* this software, you're taking your sanity
+If you decide to try and _use_ this software, you're taking your sanity
 into your own hands. As long as it runs on my machine, that is all I care
 about. It may be unstable, or not support your system. I offer neither
 warranty nor technical support.
@@ -27,53 +27,57 @@ warranty nor technical support.
 Long story short, I'm just coding for the love of coding!
 
 # DotFiles contains:
+
 My most recent setup of the dotfiles I use. Since more people are actively using
 the same setup and because I want to be able to recreate it on new machines I've created an installer.
 
-Feel free to use this as you see fit, install the entire thing or just grab stuff from all  the seperate configs
+Feel free to use this as you see fit, install the entire thing or just grab stuff from all the seperate configs
 Just realize you'll need to manage all dependencies yourself when grabbing stuff without the full installer.
 
 Most of the stuff I use makes use of powerline fonts, I'm assuming you either are able to install them yourself
-or are able to switch to non-powerline themes. Both tmux (tmux/.theme/adjusted) and oh-my-vim frameworks have theme's
-included that work without powerline fonts to get you started.
+or are able to switch to non-powerline themes.
 
 Link to powerline font repo:(https://github.com/powerline/fonts)
 
 # How it looks
 
-![Screenshot 2023-06-09 at 10 16 10](https://github.com/Mvzundert/dotfiles/assets/6066795/c2eb90d3-11d7-443e-a2d0-2d54c431699a)
+![Screenshot 2023-11-30 at 11 21 32](https://github.com/Mvzundert/dotfiles/assets/6066795/421291e7-5fd1-4986-8ea5-46fd1da74f90)
 
 # ZSH
 
-* Zshconfig (Alias, Config options, Function, Paths, Widgets)
+- Zshconfig (Alias, Config options, Function, Paths, Widgets)
 
-* Zshrc (Bundles all the config files)
+- Zshrc (Bundles all the config files)
 
 # Tmux:
 
-* tmux_config (Bindings, Config options)
+- tmux_config (Bindings, Config options)
 
-* tmux.conf (Bundles all the config files)
+- tmux.conf (Bundles all the config files)
 
 # Neovim
+
 NeoVim gets installed when on OSX using brew after that we set the config in
 ~/.config/nvim
 
 # To setup everything like i have it currently:
-* `cd ~/`
-* `git clone https://github.com/Mvzundert/dotfiles.git`
-* `cd ~/dotfiles/tools`
-* `./install.sh`
+
+- `cd ~/`
+- `git clone https://github.com/Mvzundert/dotfiles.git`
+- `cd ~/dotfiles/tools`
+- `./install.sh`
 
 # Overwrite tmux configuration
-* Copy `tmux/custom/config.local.example` to `tmux/custom/config.local`
+
+- Copy `tmux/custom/config.local.example` to `tmux/custom/config.local`
 
 # Usefull tmux commands
-* `prefix + z`: zoom in on current pane (again to switch back).
-* `prefix + ,`: rename current window.
-* `prefix + R`: Reload tmux configuration.
-* `prefix + 1`: go to first window.
-* `prefix + n`: go to next window.
-* `prefix + p`: go to previous window.
-* `prefix + q`: close pane.
-* `prefix + Q`: close window (confirmation).
+
+- `prefix + z`: zoom in on current pane (again to switch back).
+- `prefix + ,`: rename current window.
+- `prefix + R`: Reload tmux configuration.
+- `prefix + 1`: go to first window.
+- `prefix + n`: go to next window.
+- `prefix + p`: go to previous window.
+- `prefix + q`: close pane.
+- `prefix + Q`: close window (confirmation).
