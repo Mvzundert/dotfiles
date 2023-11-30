@@ -25,14 +25,12 @@ brew "readline"
 brew "aircrack-ng"
 # YAML Parser
 brew "libyaml"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11", link: false
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -45,8 +43,6 @@ brew "bat"
 brew "icu4c"
 # Package manager for the web
 brew "bower"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # Cross-platform make
 brew "cmake"
 # Console Matrix
@@ -64,7 +60,7 @@ brew "ctags"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
-brew "docker"
+brew "docker", link: false
 # Isolated development environments using Docker
 brew "docker-compose", link: false
 # Compression/decompression library aiming for high speed
@@ -109,6 +105,8 @@ brew "gnu-sed"
 brew "libksba"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Directory/file & DNS busting tool written in Go
@@ -159,8 +157,6 @@ brew "pandoc"
 brew "perl"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
-# General-purpose scripting language
-brew "php@8.0", restart_service: true
 # PHP Mess Detector
 brew "phpmd"
 # PHP Static Analysis Tool
@@ -175,6 +171,8 @@ brew "proxychains-ng"
 brew "python@3.10"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Cross-platform application and UI framework
 brew "qt"
 # Search tool like grep and The Silver Searcher
@@ -216,7 +214,7 @@ brew "zsh"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 # General-purpose scripting language
-brew "shivammathur/php/php@7.4"
+brew "shivammathur/php/php@7.4", link: true
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Symfony CLI helps Symfony developers manage projects, from local code to remote infrastructure
@@ -240,6 +238,8 @@ cask "epic-games"
 cask "figma"
 # Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
+# Superfamily of fonts for code
+cask "font-monaspace"
 # HTTP and GraphQL Client
 cask "insomnia"
 # Terminal emulator as alternative to Apple's Terminal app
