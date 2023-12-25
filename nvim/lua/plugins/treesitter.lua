@@ -35,6 +35,7 @@ return {
       "markdown",
       "markdown_inline",
       "python",
+      "php",
       "query",
       "regex",
       "tsx",
