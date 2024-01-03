@@ -176,7 +176,7 @@ brew "python@3.10"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
+brew "python@3.9", link: false
 # Cross-platform application and UI framework
 brew "qt"
 # Search tool like grep and The Silver Searcher
@@ -244,6 +244,8 @@ cask "figma"
 cask "font-hack-nerd-font"
 # Superfamily of fonts for code
 cask "font-monaspace"
+# Game development engine
+cask "godot"
 # HTTP and GraphQL Client
 cask "insomnia"
 # Terminal emulator as alternative to Apple's Terminal app
