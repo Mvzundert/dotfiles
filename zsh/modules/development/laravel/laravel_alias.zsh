@@ -42,3 +42,13 @@ alias sartqw="sart queue:work --once"
 alias sci="sail composer install"
 alias scu="sail composer update"
 alias scr="sail composer require"
+
+# -------------------------------------------------------------------
+# NPM when using sail
+# -------------------------------------------------------------------
+alias sni="sail npm install"
+alias snu="sail npm update"
+alias snt="sail npm run test"
+alias snw="sail npm run watch"
+alias snb="sail npm run build"
+alias snd="sail npm run dev"
