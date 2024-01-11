@@ -47,22 +47,5 @@ return {
             -- Alternatively, set all headings at once.
             -- headings = "subtle",
         },
-
-        highlight_groups = {
-            -- Comment = { fg = "foam" },
-            -- VertSplit = { fg = "muted", bg = "muted" },
-        },
-
-        before_highlight = function(group, highlight, palette)
-            -- Disable all undercurls
-            -- if highlight.undercurl then
-            --     highlight.undercurl = false
-            -- end
-            --
-            -- Change palette colour
-            -- if highlight.fg == palette.pine then
-            --     highlight.fg = palette.foam
-            -- end
-        end,
     },
 }
