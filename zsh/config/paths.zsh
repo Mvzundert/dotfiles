@@ -131,6 +131,17 @@ if [[ -d $RUST_BIN ]]; then
 fi
 
 # -------------------------------------------------------------------
+# Add GO  bin folder to PATH
+# -------------------------------------------------------------------
+GO_BIN="/usr/local/go/bin"
+
+if [[ -d $GO_BIN ]]; then
+    if ! [[ :$PATH: == *:$GO_BIN:* ]]; then
+        export PATH="$GO_BIN:$PATH"
+    fi
+fi
+
+# -------------------------------------------------------------------
 # Yarn
 # -------------------------------------------------------------------
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
