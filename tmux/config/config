@@ -58,13 +58,17 @@ set-option -g status-position top
 # only works with Nerd Font
 set -g @t-fzf-prompt '🛸 '
 
-# Make continuum not save every second.
-set -g @continuum-restore 'off'
+# show zoxide results by default
+set -g @t-fzf-default-results 'zoxide'
+
+# show tmux sessions by default
+# set -g @t-fzf-default-results 'sessions' 
 
 # Set term for 256 colors
-# # Can't do xterm-256colors b/c tmux really
-# # really really wants "screen"
+# Can't do xterm-256colors b/c tmux really
+# really really wants "screen"
 set -g default-terminal "screen-256color"
 
 # Enable 24 bit true colors
 set -ga terminal-overrides ',xterm-256color:Tc'
+
