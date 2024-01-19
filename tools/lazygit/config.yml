@@ -24,8 +24,6 @@ gui:
   showBottomLine: true # for hiding the bottom information line (unless it has important information to tell you)
   showPanelJumps: true # for showing the jump-to-panel keybindings as panel subtitles
   showCommandLog: true
-  showIcons: false # deprecated: use nerdFontsVersion instead
-  nerdFontsVersion: "" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
   commandLogSize: 8
   splitDiff: "auto" # one of 'auto' | 'always'
   skipRewordInEditorWarning: false # for skipping the confirmation before launching the reword editor
@@ -38,7 +36,7 @@ git:
     useConfig: false
     pager: delta --dark --paging=never
   commit:
-    signOff: false
+    signOff: true
   merging:
     # only applicable to unix users
     manualCommit: false
@@ -53,7 +51,7 @@ git:
     # this determines whether the git graph is rendered in the commits panel
     showGraph: "when-maximised"
     # displays the whole git graph by default in the commits panel (equivalent to passing the `--all` argument to `git log`)
-    showWholeGraph: false
+    showWholeGraph: true
   skipHookPrefix: WIP
   # The main branches. We colour commits green if they belong to one of these branches,
   # so that you can easily see which commits are unique to your branch (coloured in yellow)
