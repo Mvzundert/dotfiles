@@ -1,3 +1,10 @@
+
+local function get_branch()
+	require("lualine.components.branch.git_branch").init()
+	local branch = require("lualine.components.branch.git_branch").get_branch()
+	return string.sub(branch, 1, 42)
+end
+
 return {
     {
       "nvim-lualine/lualine.nvim",
@@ -23,7 +30,14 @@ return {
             },
             sections = {
                 lualine_a = {'mode'},
-                lualine_b = {'branch'},
+                lualine_b = {
+                    get_branch,
+                    {
+                        'diff',
+                        colored = true, -- Displays a colored diff status if set to true
+                    },
+                    'diagnostics',
+                },
                 lualine_c = {'filename'},
                 lualine_x = {'encoding', 'fileformat', 'filetype'},
                 lualine_y = {'progress'},
@@ -44,4 +58,3 @@ return {
             },
     }
 }
-
