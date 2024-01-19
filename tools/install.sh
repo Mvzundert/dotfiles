@@ -55,7 +55,7 @@ else
 fi
 
 #=======================================
-#========= neovim ======================
+#========= Neovim ======================
 #=======================================
 DIR="$HOME/.config/nvim"
 
@@ -76,7 +76,6 @@ if [ -f $FILE ]; then
 	#  echo "File $FILE exists."
 	echo "Starship was already installed....skipping"
 else
-	#  echo "$FILE File created"
 	echo "Starship has been installed."
 	# Symlink the .tmux.conf file that makes sure the config works
 	ln -s $DOTFILES/zsh/prompt/starship.toml $HOME/.config/starship.toml

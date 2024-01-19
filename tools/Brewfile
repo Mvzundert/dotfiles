@@ -132,7 +132,7 @@ brew "inetutils"
 # Enhanced version of john, a UNIX password cracker
 brew "john-jumbo"
 # Image manipulation library
-brew "jpeg", link: true
+brew "jpeg"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Conversion library
