@@ -6,9 +6,10 @@ set -g @monokai-plugins "git network weather cpu-usage ram-usage"
 set -g @monokai-show-left-icon '💀'
 
 # Set git options
-set -g @monokai-git-no-repo-message "!git"
-set -g @monokai-git-show-current-symbol ✓
+set -g @monokai-git-show-current-symbol 🚀 
+set -g @monokai-git-show-diff-symbol 🎯
 set -g @monokai-git-show-remote-status true
+set -g @monokai-git-no-repo-message " "
 
 # Set the refresh rate
 set -g @monokai-refresh-rate 5
