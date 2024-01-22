@@ -13,6 +13,8 @@ else # macOS `ls`
     colorflag="-G"
 fi
 
+alias rmf="rmrf_prompt"
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....="cd ../../.."
@@ -22,13 +24,22 @@ alias l="eza -a1 --group-directories-first --icons"
 alias ls="eza -a --group-directories-first --icons"
 alias ll="eza -alh --group-directories-first --icons --git"
 alias llt="eza -a1T --level=2 --group-directories-first --icons --git"
+
+############################
+# Bat alias
+############################
 alias cat="bat"
+alias tlog="tail -f $1 | bat --paging=never -l log"
+alias bathelp='bat --plain --language=help'
+
+# Bat function replacing help with highlighting
+help() {
+    "$@" --help 2>&1 | bathelp
+}
 
 if [[ $OSTYPE == "linux-gnu" ]]; then
     alias bat="/usr/local/bat/bat"
 fi
-
-alias rmf="rm -rf"
 
 alias d='dirs -v | head -10'
 alias 1='cd -'
