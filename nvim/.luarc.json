@@ -1,12 +1,10 @@
 {
-    "diagnostics.disable": [
-        "missing-fields",
-        "param-type-mismatch",
-        "undefined-doc-name",
-        "inject-field"
-    ],
-    "diagnostics.globals": [
-        "load_textobjects",
-        "vim"
-    ]
+  "diagnostics.disable": [
+    "missing-fields",
+    "param-type-mismatch",
+    "undefined-doc-name",
+    "inject-field"
+  ],
+  "diagnostics.globals": ["load_textobjects", "vim"]
 }
+
