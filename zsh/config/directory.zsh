@@ -32,11 +32,6 @@ alias cat="bat"
 alias tlog="tail -f $1 | bat --paging=never -l log"
 alias bathelp='bat --plain --language=help'
 
-# Bat function replacing help with highlighting
-help() {
-    "$@" --help 2>&1 | bathelp
-}
-
 if [[ $OSTYPE == "linux-gnu" ]]; then
     alias bat="/usr/local/bat/bat"
 fi
