@@ -41,6 +41,8 @@ brew "bash"
 brew "bat"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c"
+# Platform built on V8 to build network applications
+brew "node"
 # Package manager for the web
 brew "bower"
 # Cross-platform make
@@ -62,9 +64,9 @@ brew "ctags"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
-brew "docker", link: false
+brew "docker"
 # Isolated development environments using Docker
-brew "docker-compose", link: false
+brew "docker-compose"
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Perl lib for reading and writing EXIF metadata
@@ -73,6 +75,8 @@ brew "exiftool"
 brew "exploitdb"
 # Modern, maintained replacement for ls
 brew "eza"
+# GNU compiler collection
+brew "gcc"
 # OpenType text shaping engine
 brew "harfbuzz"
 # VP8/VP9 video codec
@@ -85,8 +89,6 @@ brew "ffuf"
 brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# GNU compiler collection
-brew "gcc"
 # GitHub command-line tool
 brew "gh"
 # Interpreter for PostScript and PDF
@@ -176,7 +178,7 @@ brew "python@3.10"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.9", link: false
+brew "python@3.9"
 # Cross-platform application and UI framework
 brew "qt"
 # Search tool like grep and The Silver Searcher
@@ -226,8 +228,8 @@ brew "symfony-cli/tap/symfony-cli"
 brew "tursodatabase/tap/turso"
 # Black box WordPress vulnerability scanner
 brew "wpscanteam/tap/wpscan"
-# JDK from the Java User Group (JUG)
-cask "adoptopenjdk"
+# GPU-accelerated terminal emulator
+cask "alacritty"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Web security testing toolkit
@@ -252,6 +254,8 @@ cask "insomnia"
 cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
+# Open-source keystroke visualizer
+cask "keycastr"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Penetration testing framework
@@ -284,6 +288,8 @@ cask "virtualbox"
 cask "visual-studio-code"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
+# Native desktop client for WhatsApp
+cask "whatsapp"
 # Network protocol analyzer
 cask "wireshark"
 vscode "ms-dotnettools.csharp"
