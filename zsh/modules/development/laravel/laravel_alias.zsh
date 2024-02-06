@@ -16,6 +16,8 @@ alias arttc="art translations:clean"
 alias artte="art translations:export"
 # Start the queue worker once
 alias artqw="art queue:work --once"
+# Do all the IDE helper stuff
+alias artide=" art ide-helper:models && art ide-helper:meta && art ide-helper:generate"
 
 # -------------------------------------------------------------------
 # Artisan when using Sail
