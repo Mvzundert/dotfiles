@@ -4,7 +4,7 @@ function build_project_assets() {
 
 \033[33mOptions:\033[0m
     \033[92m-h\033[0m  Show this help text.
-    \033[92m-f\033[0m  Fresh install, Remove vendor/node_modules and install everything.
+    \033[92m-f\033[0m  Fresh install, Remove vendor/node_modules/target and install everything.
     \033[92m-i\033[0m  Install everything.
     \033[92m-p\033[0m  Install everything as on production.
     \033[92m-c\033[0m  Install only composer dependencies.
@@ -100,11 +100,6 @@ function build_project_assets() {
             if [[ -f yarn.lock ]]; then
                 PACKAGE_MANAGER="yarn"
             fi
-
-            # Check for Bun install
-#            if [[ -n "$(command -v bun)" ]]; then
-#                PACKAGE_MANAGER="bun --no-save"
-#            fi
 
             if [[ ${PACKAGE_INSTALL} == true ]] || [[ ${REFRESH} == true ]]; then
                 # Install packages
