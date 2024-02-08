@@ -36,7 +36,7 @@ git:
     useConfig: false
     pager: delta --dark --paging=never
   commit:
-    signOff: true
+    signOff: false
   merging:
     # only applicable to unix users
     manualCommit: false
