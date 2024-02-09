@@ -23,7 +23,7 @@ alias .....="cd ../../../.."
 alias l="eza -a1 --group-directories-first --icons"
 alias ls="eza -a --group-directories-first --icons"
 alias ll="eza -alh --group-directories-first --icons --git"
-alias llt="eza -a1T --level=2 --group-directories-first --icons --git"
+alias tree="eza -a1T --level=2 --group-directories-first --icons --git"
 
 ############################
 # Bat alias
