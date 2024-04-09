@@ -1,7 +1,0 @@
-indent_type = "Spaces"
-indent_width = 4
-charset = "UTF-8"
-trim_trailing_whitespace = true
-end_of_line = "LF"
-insert_final_newline = true
-column_width = 180
