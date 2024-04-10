@@ -15,6 +15,17 @@ return {
     },
   },
 
+  {
+    'zbirenbaum/copilot-cmp',
+    config = function()
+      require('copilot_cmp').setup()
+    end,
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
+  },
+
   { -- Autoformat
     'stevearc/conform.nvim',
     lazy = false,
@@ -94,6 +105,14 @@ return {
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
+      local has_words_before = function()
+        if vim.api.nvim_buf_get_option(0, 'buftype') == 'prompt' then
+          return false
+        end
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match '^%s*$' == nil
+      end
+
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -120,6 +139,18 @@ return {
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
           ['<C-y>'] = cmp.mapping.confirm { select = true },
+
+          -- Unlike other completion sources, copilot can use other lines above or below an empty line to provide a completion.
+          -- This can cause problematic for individuals that select menu entries with <TAB>.
+          -- This behavior is configurable via cmp's config and the following code will make it so that the menu still appears normally,
+          -- but tab will fallback to indenting unless a non-whitespace character has actually been typed.
+          ['<Tab>'] = vim.schedule_wrap(function(fallback)
+            if cmp.visible() and has_words_before() then
+              cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+            else
+              fallback()
+            end
+          end),
 
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
@@ -148,10 +179,31 @@ return {
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
+        sorting = {
+          priority_weight = 2,
+          comparators = {
+            require('copilot_cmp.comparators').prioritize,
+
+            -- Below is the default comparitor list and order for nvim-cmp
+            cmp.config.compare.offset,
+            -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.locality,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+          },
+        },
         sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
+          -- Copilot Source
+          { name = 'copilot', group_index = 2 },
+          -- Other Sources
+          { name = 'nvim_lsp', group_index = 2 },
+          { name = 'path', group_index = 2 },
+          { name = 'luasnip', group_index = 2 },
         },
       }
     end,
