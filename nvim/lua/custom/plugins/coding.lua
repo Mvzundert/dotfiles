@@ -138,7 +138,9 @@ return {
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          -- ['<C-y>'] = cmp.mapping.confirm { select = true },
+          -- Set `select` to `false` to only confirm explicitly selected items.
+          ['<CR>'] = cmp.mapping.confirm { select = true },
 
           -- Unlike other completion sources, copilot can use other lines above or below an empty line to provide a completion.
           -- This can cause problematic for individuals that select menu entries with <TAB>.
