@@ -11,7 +11,7 @@ return {
     event = 'VeryLazy',
     opts = {
       options = {
-        theme = 'molokai',
+        theme = 'gruvbox',
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
         disabled_filetypes = {
