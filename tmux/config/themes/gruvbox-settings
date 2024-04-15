@@ -1,2 +1,0 @@
-set -g @tmux-gruvbox 'dark' # or 'light'
-
