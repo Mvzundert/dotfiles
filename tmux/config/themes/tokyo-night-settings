@@ -1,0 +1,12 @@
+### Tokyo Night Theme configuration
+set -g @tokyo-night-tmux_show_music 1
+
+# set -g @tokyo-night-tmux_show_netspeed 1
+# set -g @tokyo-night-tmux_netspeed_iface "wlan0" # find your interface with ip link
+#
+# set -g @tokyo-night-tmux_show_path 1
+# set -g @tokyo-night-tmux_path_format relative # 'relative' or 'full'
+#
+# set -g @tokyo-night-tmux_show_battery_widget 1
+# set -g @tokyo-night-tmux_battery_name "BAT1"  # some linux distro have 'BAT0'
+# set -g @tokyo-night-tmux_battery_low_threshold 21 # default
