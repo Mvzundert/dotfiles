@@ -1,0 +1,24 @@
+# Gruvbox theme config
+# available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, network, network-bandwidth, network-ping, weather, time
+set -g @gruvbox-plugins "battery git network"
+
+# Set left icon to smiley
+set -g @gruvbox-show-left-icon '💀'
+
+# Set git options
+set -g @gruvbox-git-no-repo-message "!git"
+set -g @gruvbox-git-show-current-symbol ✓
+
+# Show location
+set -g @gruvbox-show-location false
+
+# Set powerline displaying
+set -g @gruvbox-show-powerline true
+
+# Set the refresh rate
+set -g @gruvbox-refresh-rate 5
+
+# Set time options
+set -g @gruvbox-military-time true
+set -g @gruvbox-day-month true
+
