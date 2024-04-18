@@ -1,6 +1,6 @@
 return {
   'UtkarshVerma/molokai.nvim',
-  lazy = false,
+  lazy = true,
   name = 'molokai',
   priority = 1000,
   opts = {
