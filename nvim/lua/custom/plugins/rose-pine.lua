@@ -1,6 +1,6 @@
 return {
   'rose-pine/neovim',
-  lazy = false,
+  lazy = true,
   name = 'rose-pine',
   priority = 1000,
   opts = {
