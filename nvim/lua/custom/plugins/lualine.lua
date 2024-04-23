@@ -1,7 +1,17 @@
+-- Added git branch information to the statusline
 local function get_branch()
   require('lualine.components.branch.git_branch').init()
   local branch = require('lualine.components.branch.git_branch').get_branch()
   return string.sub(branch, 1, 42)
+end
+
+-- Fixed recording not showing in status line
+local function macro_recording()
+  local mode = require('noice').api.statusline.mode.get()
+  if mode then
+    return string.match(mode, '^recording @.*') or ''
+  end
+  return ''
 end
 
 return {
@@ -37,7 +47,7 @@ return {
           },
           'diagnostics',
         },
-        lualine_c = { 'filename' },
+        lualine_c = { 'filename', macro_recording },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
