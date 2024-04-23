@@ -7,3 +7,8 @@ alias dcu='docker-compose up -d'
 alias dcuv='docker-compose up'
 alias dcb='docker-compose build'
 alias dcrn='docker exec -it crb_dock_nginx bash -c "nginx -s reload"'
+
+# -------------------------------------------------------------------
+# LazyDocker alias
+# -------------------------------------------------------------------
+alias ldoc='lazydocker'
