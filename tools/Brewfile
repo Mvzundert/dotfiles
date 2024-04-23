@@ -5,7 +5,9 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "jesseduffield/lazydocker"
 tap "kevwil/patches"
+tap "libsql/sqld"
 tap "neovim/neovim"
 tap "nickolasburr/pfa"
 tap "oven-sh/bun"
@@ -29,8 +31,6 @@ brew "libyaml"
 brew "ansible"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -64,9 +64,7 @@ brew "ctags"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
-brew "docker"
-# Isolated development environments using Docker
-brew "docker-compose"
+brew "docker", link: false
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Perl lib for reading and writing EXIF metadata
@@ -111,8 +109,8 @@ brew "libksba"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Directory/file & DNS busting tool written in Go
@@ -135,6 +133,8 @@ brew "inetutils"
 brew "john-jumbo"
 # Image manipulation library
 brew "jpeg"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Conversion library
@@ -155,6 +155,8 @@ brew "nikto"
 brew "nmap"
 # Command-line Git information tool
 brew "onefetch"
+# OCaml package manager
+brew "opam"
 # Development kit for the Java programming language
 brew "openjdk"
 # Swiss-army knife of markup format conversion
@@ -175,6 +177,8 @@ brew "pre-commit"
 brew "proxychains-ng"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Interpreted, interactive, object-oriented programming language
@@ -207,7 +211,7 @@ brew "wp-cli"
 brew "wp-cli-completion"
 # JavaScript package manager
 brew "yarn"
-# Fork of youtube-dl with additional features and fixes
+# Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # Programming language designed for robustness, optimality, and clarity
 brew "zig"
@@ -217,6 +221,8 @@ brew "zmap"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# A simple terminal UI for docker, written in Go
+brew "jesseduffield/lazydocker/lazydocker"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 # General-purpose scripting language
@@ -236,7 +242,7 @@ cask "balenaetcher"
 cask "burp-suite"
 # Server and cloud storage browser
 cask "cyberduck"
-# App to build and share containerized applications and microservices
+# App to build and share containerised applications and microservices
 cask "docker"
 # Launcher for *Epic Games* games
 cask "epic-games"
@@ -246,15 +252,13 @@ cask "figma"
 cask "font-hack-nerd-font"
 # Superfamily of fonts for code
 cask "font-monaspace"
-# Game development engine
-cask "godot"
 # HTTP and GraphQL Client
 cask "insomnia"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
-# Open-source keystroke visualizer
+# Open-source keystroke visualiser
 cask "keycastr"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
@@ -282,7 +286,7 @@ cask "signal"
 cask "tableplus"
 # Web browser focusing on security
 cask "tor-browser"
-# Virtualizer for x86 hardware
+# Virtualiser for x86 hardware
 cask "virtualbox"
 # Open-source code editor
 cask "visual-studio-code"
@@ -292,6 +296,3 @@ cask "vnc-viewer"
 cask "whatsapp"
 # Network protocol analyzer
 cask "wireshark"
-vscode "ms-dotnettools.csharp"
-vscode "ms-dotnettools.vscode-dotnet-runtime"
-vscode "ms-vsliveshare.vsliveshare"
