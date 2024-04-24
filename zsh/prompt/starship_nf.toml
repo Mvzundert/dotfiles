@@ -1,5 +1,5 @@
 [git_branch]
-symbol = "🚀 "
+symbol = "🚀"
 truncation_length = 15
 truncation_symbol = "…/"
 format = '$symbol $branch '
@@ -72,6 +72,8 @@ symbol = " "
 symbol = " "
 
 [directory]
+truncation_length = 3
+truncation_symbol = "…/"
 read_only = " 󰌾"
 
 [directory.substitutions]
