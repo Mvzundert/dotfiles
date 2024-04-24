@@ -1,3 +1,58 @@
+[git_branch]
+symbol = "🚀 "
+truncation_length = 15
+truncation_symbol = "…/"
+format = '$symbol $branch '
+
+[git_status]
+conflicted = '⚔️  x ${count} '
+ahead = '🏎💨 x ${count} '
+behind = '🐢 x ${count} '
+diverged = '😵 x ${count} '
+up_to_date = '✓ '
+untracked = '🤷x ${count} '
+stashed = '📦 '
+modified = '🎯x ${count} '
+staged = '[😵x\($count\)]'
+renamed = '👅'
+deleted = '🗑x ${count} '
+format = '$all_status$ahead_behind'
+
+[line_break]
+disabled = false
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+FreeBSD = " "
+HardenedBSD = "󰞌 "
+Kali = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mint = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
 [aws]
 symbol = "  "
 
@@ -19,6 +74,19 @@ symbol = " "
 [directory]
 read_only = " 󰌾"
 
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"code" = "󰲋 "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[nix_shell]
+symbol = " "
+
 [docker_context]
 symbol = " "
 
@@ -28,56 +96,11 @@ symbol = " "
 [elm]
 symbol = " "
 
-[fennel]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[git_branch]
-symbol = " "
-
 [golang]
 symbol = " "
 
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[kotlin]
-symbol = " "
-
 [lua]
 symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
-[nix_shell]
-symbol = " "
 
 [nodejs]
 symbol = " "
@@ -85,62 +108,11 @@ symbol = " "
 [ocaml]
 symbol = " "
 
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
-
-[package]
-symbol = "󰏗 "
-
 [perl]
 symbol = " "
 
 [php]
 symbol = " "
-
-[pijul_channel]
-symbol = " "
 
 [python]
 symbol = " "
