@@ -1,15 +1,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-right_format = """[](color_purple)\
-$os\
-$git_metrics\
-$rust\
-$golang\
-$nodejs\
-$php\
-$python\
-[ ](color_purple)\
-"""
+# right_format = """[](color_purple)\
+# $os\
+# $git_metrics\
+# [ ](color_purple)\
+# """
 
 format = """
 [](color_orange)\
@@ -19,6 +14,11 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:color_aqua bg:color_blue)\
+$rust\
+$golang\
+$nodejs\
+$php\
+$python\
 [](fg:color_blue bg:color_bg3)\
 $docker_context\
 [ ](fg:color_bg1)\
@@ -107,28 +107,28 @@ format = '[ +$added]($added_style)[-$deleted ]($deleted_style)'
 
 [nodejs]
 symbol = ""
-style = "bg:color_purple"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:color_purple"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:color_purple"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [php]
 symbol = ""
-style = "bg:color_purple"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [python]
 symbol = ""
-style = "bg:color_purple"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [docker_context]
 symbol = ""
