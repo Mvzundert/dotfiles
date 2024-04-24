@@ -21,7 +21,7 @@ return {
     event = 'VeryLazy',
     opts = {
       options = {
-        theme = 'gruvbox',
+        theme = 'nord',
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
         disabled_filetypes = {
