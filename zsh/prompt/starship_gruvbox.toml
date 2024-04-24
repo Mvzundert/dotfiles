@@ -1,24 +1,26 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+right_format = """[](color_purple)\
+$os\
+$git_metrics\
+$rust\
+$golang\
+$nodejs\
+$php\
+$python\
+[ ](color_purple)\
+"""
+
 format = """
 [](color_orange)\
-$os\
-$username\
 [](bg:color_yellow fg:color_orange)\
 $directory\
 [](fg:color_yellow bg:color_aqua)\
 $git_branch\
 $git_status\
 [](fg:color_aqua bg:color_blue)\
-$rust\
-$golang\
-$nodejs\
-$php\
-$python\
 [](fg:color_blue bg:color_bg3)\
 $docker_context\
-[](fg:color_bg3 bg:color_bg1)\
-$time\
 [ ](fg:color_bg1)\
 $line_break$character"""
 
@@ -37,8 +39,8 @@ color_red = '#cc241d'
 color_yellow = '#d79921'
 
 [os]
-disabled = true
-style = "bg:color_orange fg:color_fg0"
+disabled = false
+style = "bg:color_purple fg:color_fg0"
 
 [os.symbols]
 Windows = "󰍲"
@@ -60,12 +62,6 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
-
-[username]
-show_always = false
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_orange fg:color_fg0"
-format = '[ $user ]($style)'
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
@@ -89,43 +85,55 @@ format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_status]
 style = "bg:color_aqua"
+
+conflicted = '⚔️  x ${count} '
+ahead = '🏎💨 x ${count} '
+behind = '🐢 x ${count} '
+diverged = '😵 x ${count} '
+up_to_date = '✓ '
+untracked = '🤷x ${count} '
+stashed = '📦 '
+modified = '🎯x ${count} '
+staged = '[😵x\($count\)](bg:color_aqua) '
+renamed = '👅'
+deleted = '🗑'
 format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+
+[git_metrics]
+disabled = false
+added_style = 'bg:color_purple'
+deleted_style = 'bg:color_purple'
+format = '[ +$added]($added_style)[-$deleted ]($deleted_style)'
 
 [nodejs]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_purple"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_purple"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_purple"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
 
 [php]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_purple"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
 
 [python]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_purple"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_purple)]($style)'
 
 [docker_context]
 symbol = ""
 style = "bg:color_bg3"
 format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
-
-[time]
-disabled = true
-time_format = "%R"
-style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
 [line_break]
 disabled = false
