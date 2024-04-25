@@ -21,6 +21,10 @@ format = '$all_status$ahead_behind'
 [line_break]
 disabled = false
 
+[cmd_duration]
+min_time = 500
+format = 'underwent [$duration](bold yellow)'
+
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
