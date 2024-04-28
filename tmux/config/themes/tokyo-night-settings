@@ -8,13 +8,13 @@ set -g @tokyo-night-tmux_window_id_style digital
 set -g @tokyo-night-tmux_pane_id_style hsquare
 set -g @tokyo-night-tmux_zoom_id_style dsquare
 
-set -g @tokyo-night-tmux_show_music 1
+# set -g @tokyo-night-tmux_show_music 0
 
 set -g @tokyo-night-tmux_show_netspeed 1
 set -g @tokyo-night-tmux_netspeed_iface "en0" # find your interface with ip link
 
-set -g @tokyo-night-tmux_show_path 1
-set -g @tokyo-night-tmux_path_format relative # 'relative' or 'full'
+# set -g @tokyo-night-tmux_show_path 0
+# set -g @tokyo-night-tmux_path_format relative # 'relative' or 'full'
 #
 # set -g @tokyo-night-tmux_show_battery_widget 1
 # set -g @tokyo-night-tmux_battery_name "BAT1"  # some linux distro have 'BAT0'

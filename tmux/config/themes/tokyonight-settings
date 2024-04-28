@@ -1,4 +1,0 @@
-### Tokyo Night Theme configuration
-set -g @theme_variation 'Moon' # Night, Moon, Storm
-set -g @theme_left_separator ' '
-set -g @theme_right_separator ' '
