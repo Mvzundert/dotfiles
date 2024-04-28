@@ -24,7 +24,13 @@ alias guh='git_update_hooks'
 # -------------------------------------------------------------------
 # Github PR's reviewing
 alias ghprl="gh pr list"
+
+# Github Diffs
 alias ghd="gh pr diff"
+alias ghdp="gh pr diff --patch"
+alias ghdm="gh pr diff --name-only"
+alias ghdw="gh pr diff --web"
+
 alias ghpc="gh pr checkout"
 alias ghprm="gh pr review --approve && gh pr merge"
 alias ghprv="gh pr view"
