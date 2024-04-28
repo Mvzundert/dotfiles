@@ -15,6 +15,7 @@ return {
     },
     opts = {
       options = {
+        separator_style = 'padded_slant',
       -- stylua: ignore
       close_command = function(n) require("mini.bufremove").delete(n, false) end,
       -- stylua: ignore
