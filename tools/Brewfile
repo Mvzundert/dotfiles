@@ -1,4 +1,5 @@
 tap "adoptopenjdk/openjdk"
+tap "filosottile/musl-cross"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -12,6 +13,7 @@ tap "neovim/neovim"
 tap "nickolasburr/pfa"
 tap "oven-sh/bun"
 tap "romkatv/powerlevel10k"
+tap "sergiobenitez/osxct"
 tap "shivammathur/php"
 tap "stripe/stripe-cli"
 tap "symfony-cli/tap"
@@ -221,10 +223,14 @@ brew "zmap"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Linux cross compilers based on musl libc
+brew "filosottile/musl-cross/musl-cross"
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
+# x86_64 Linux GNU Toolchain
+brew "sergiobenitez/osxct/x86_64-unknown-linux-gnu"
 # General-purpose scripting language
 brew "shivammathur/php/php@7.4", link: true
 # Stripe CLI utility
