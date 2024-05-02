@@ -1,3 +1,33 @@
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$docker_context\
+$package\
+$elixir\
+$golang\
+$lua\
+$nodejs\
+$ocaml\
+$php\
+$python\
+$ruby\
+$rust\
+$zig\
+$cmd_duration\
+$line_break\
+$time\
+$status\
+$container\
+$shell\
+$character"""
+
+right_format = """
+$localip\
+$battery\
+$line_break\
+"""
+
 [git_branch]
 symbol = "🚀"
 truncation_length = 15
@@ -14,129 +44,100 @@ untracked = '🤷x ${count} '
 stashed = '📦 '
 modified = '🎯x ${count} '
 staged = '[😵x\($count\)]'
-renamed = '👅'
+renamed = '👅 '
 deleted = '🗑x ${count} '
 format = '$all_status$ahead_behind'
+
+[git_commit]
+commit_hash_length = 5
+tag_symbol = '🏷 '
+only_detached = false
+tag_disabled = false
+style = 'bold dimmed blue'
+format = '[\($hash$tag\)]($style) '
+
+[localip]
+ssh_only = false
+format = '[$localipv4](bold dimmed green) '
+disabled = true
 
 [line_break]
 disabled = false
 
 [cmd_duration]
-min_time = 500
+min_time = 1000
 format = 'underwent [$duration](bold yellow)'
 
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Arch = " "
-Artix = " "
-CentOS = " "
-Debian = " "
-FreeBSD = " "
-HardenedBSD = "󰞌 "
-Kali = " "
-Linux = " "
-Macos = " "
-Manjaro = " "
-Mint = " "
-NixOS = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Windows = "󰍲 "
-
-[package]
-symbol = "󰏗 "
-
-[aws]
-symbol = "  "
-
-[buf]
-symbol = " "
-
-[c]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[crystal]
-symbol = " "
-
-[dart]
-symbol = " "
-
+# Configure Directory Path
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
-read_only = " 󰌾"
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"code" = "󰲋 "
+truncate_to_repo = false
+style = 'bold yellow'
+read_only_style = "197"
+read_only = "  "
+format = "[in](bold dimmed purple) [$path]($style)[$read_only]($read_only_style) "
 
 [memory_usage]
 symbol = "󰍛 "
+disabled = true
+threshold = -1
+style = 'bold dimmed green'
 
-[nix_shell]
-symbol = " "
+[battery]
+charging_symbol = '⚡️ '
+disabled = false
+
+[[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 20%
+threshold = 20
+style = 'bold red'
+discharging_symbol = '💀 '
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 50%
+threshold = 50
+style = 'bold yellow'
+discharging_symbol = '💦 '
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 50% and 100%
+threshold = 100
+style = 'bold green'
+discharging_symbol = '💦 '
+
+[shell]
+zsh_indicator = ' '
+style = 'bold dimmed purple'
+disabled = false
 
 [docker_context]
-symbol = " "
+symbol = "🐳"
+format = 'via [$symbol $context](blue bold)'
 
 [elixir]
-symbol = " "
-
-[elm]
-symbol = " "
+symbol = "💧 "
 
 [golang]
-symbol = " "
+symbol = "🐹 "
 
 [lua]
-symbol = " "
+symbol = "🌙 "
 
 [nodejs]
 symbol = " "
 
 [ocaml]
-symbol = " "
-
-[perl]
-symbol = " "
+symbol = "🐫 "
 
 [php]
-symbol = " "
+symbol = "🐘 "
 
 [python]
-symbol = " "
-
-[rlang]
-symbol = "󰟔 "
+symbol = "🐍 "
 
 [ruby]
-symbol = " "
+symbol = "💎 "
 
 [rust]
-symbol = " "
-
-[scala]
-symbol = " "
-
-[swift]
-symbol = " "
+symbol = "🦀 "
 
 [zig]
 symbol = " "
