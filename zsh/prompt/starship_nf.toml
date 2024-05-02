@@ -72,7 +72,7 @@ format = 'underwent [$duration](bold yellow)'
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
-truncate_to_repo = false
+truncate_to_repo = true
 style = 'bold yellow'
 read_only_style = "197"
 read_only = "  "
