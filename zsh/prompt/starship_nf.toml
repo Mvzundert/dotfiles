@@ -2,6 +2,7 @@ format = """
 $directory\
 $git_branch\
 $git_commit\
+$git_status\
 $docker_context\
 $package\
 $elixir\
@@ -25,6 +26,7 @@ $character"""
 right_format = """
 $localip\
 $battery\
+$memory_usage\
 $line_break\
 """
 
@@ -32,7 +34,8 @@ $line_break\
 symbol = "🚀"
 truncation_length = 15
 truncation_symbol = "…/"
-format = '$symbol $branch '
+style = 'bold dimmed blue'
+format = '[$symbol $branch ]($style)'
 
 [git_status]
 conflicted = '⚔️  x ${count} '
@@ -46,14 +49,15 @@ modified = '🎯x ${count} '
 staged = '[😵x\($count\)]'
 renamed = '👅 '
 deleted = '🗑x ${count} '
-format = '$all_status$ahead_behind'
+style = 'bold dimmed green'
+format = '[$all_status$ahead_behind]($style)'
 
 [git_commit]
 commit_hash_length = 5
 tag_symbol = '🏷 '
 only_detached = false
 tag_disabled = false
-style = 'bold dimmed blue'
+style = 'bold dimmed purple'
 format = '[\($hash$tag\)]($style) '
 
 [localip]
@@ -72,11 +76,11 @@ format = 'underwent [$duration](bold yellow)'
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
-truncate_to_repo = true
+truncate_to_repo = false
 style = 'bold yellow'
 read_only_style = "197"
 read_only = "  "
-format = "[in](bold dimmed purple) [$path]($style)[$read_only]($read_only_style) "
+format = "[in](bold bright-black) [$path]($style)[$read_only]($read_only_style) "
 
 [memory_usage]
 symbol = "󰍛 "
@@ -85,7 +89,7 @@ threshold = -1
 style = 'bold dimmed green'
 
 [battery]
-charging_symbol = '⚡️ '
+charging_symbol = '⚡️'
 disabled = false
 
 [[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 20%
@@ -100,12 +104,12 @@ discharging_symbol = '💦 '
 
 [[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 50% and 100%
 threshold = 100
-style = 'bold green'
+style = 'bold dimmed green'
 discharging_symbol = '💦 '
 
 [shell]
 zsh_indicator = ' '
-style = 'bold dimmed purple'
+style = 'bold purple'
 disabled = false
 
 [docker_context]
