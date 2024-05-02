@@ -32,7 +32,7 @@ $line_break\
 
 [git_branch]
 symbol = "🚀"
-truncation_length = 15
+truncation_length = 7
 truncation_symbol = "…/"
 style = 'bold dimmed blue'
 format = '[$symbol $branch ]($style)'
@@ -59,6 +59,7 @@ only_detached = false
 tag_disabled = false
 style = 'bold dimmed purple'
 format = '[\($hash$tag\)]($style) '
+disabled = true
 
 [localip]
 ssh_only = false
