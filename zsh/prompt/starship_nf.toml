@@ -112,7 +112,7 @@ discharging_symbol = '💦 '
 [shell]
 zsh_indicator = ' '
 style = 'bold purple'
-disabled = false
+disabled = true
 
 [docker_context]
 symbol = "🐳"
