@@ -71,7 +71,7 @@ disabled = false
 
 [cmd_duration]
 min_time = 1000
-format = 'underwent [$duration](bold yellow)'
+format = ' underwent [$duration](bold yellow)'
 
 # Configure Directory Path
 [directory]
