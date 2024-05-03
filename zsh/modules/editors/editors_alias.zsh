@@ -2,6 +2,7 @@
 alias vim="stty stop '' -ixoff; nvim"
 alias vi="stty stop '' -ixoff; nvim"
 alias emacs="vim"
+alias nano="vim"
 
 # Intellij
 alias pst="phpstorm ."
