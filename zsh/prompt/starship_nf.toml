@@ -8,18 +8,16 @@ $package\
 $elixir\
 $golang\
 $lua\
-$nodejs\
 $ocaml\
 $php\
 $python\
 $ruby\
 $rust\
 $zig\
+$nodejs\
 $cmd_duration\
 $line_break\
-$time\
 $status\
-$container\
 $shell\
 $character"""
 
@@ -30,12 +28,22 @@ $memory_usage\
 $line_break\
 """
 
+[character]
+success_symbol = '[](bold green)'
+error_symbol = '[](bold red)'
+vimcmd_symbol = '[](bold green)'
+vimcmd_replace_one_symbol = '[](bold purple)'
+vimcmd_replace_symbol = '[](bold purple)'
+vimcmd_visual_symbol = '[](bold yellow)'
+disabled = false
+
 [git_branch]
 symbol = "🚀"
 truncation_length = 7
 truncation_symbol = "…/"
 style = 'bold dimmed blue'
 format = '[$symbol $branch ]($style)'
+disabled = false
 
 [git_status]
 conflicted = '⚔️  x ${count} '
@@ -51,6 +59,7 @@ renamed = '👅 '
 deleted = '🗑x ${count} '
 style = 'bold dimmed green'
 format = '[$all_status$ahead_behind]($style)'
+disabled = false
 
 [git_commit]
 commit_hash_length = 5
@@ -72,6 +81,7 @@ disabled = false
 [cmd_duration]
 min_time = 1000
 format = ' underwent [$duration](bold yellow)'
+disabled = true
 
 # Configure Directory Path
 [directory]
@@ -104,7 +114,7 @@ threshold = 50
 style = 'bold yellow'
 discharging_symbol = '💦 '
 
-[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 50% and 100%
+[[battery.display]] # 'bold dimmed green' style and 💦 symbol when capacity is between 50% and 100%
 threshold = 100
 style = 'bold dimmed green'
 discharging_symbol = '💦 '
@@ -117,7 +127,7 @@ disabled = true
 [docker_context]
 style = 'bold blue'
 symbol = "🐳"
-format = 'via [$symbol $context]($style)'
+format = '[$symbol $context]($style)'
 disabled = false
 
 [elixir]
