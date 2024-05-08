@@ -45,6 +45,8 @@ brew "bat"
 brew "icu4c"
 # Platform built on V8 to build network applications
 brew "node"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Package manager for the web
 brew "bower"
 # Cross-platform make
@@ -85,6 +87,8 @@ brew "libvpx"
 brew "ffmpeg"
 # Fast web fuzzer written in Go
 brew "ffuf"
+# Fast and simple Node.js version manager
+brew "fnm"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
 # Command-line fuzzy finder written in Go
@@ -155,6 +159,8 @@ brew "netcat"
 brew "nikto"
 # Port scanning utility for large networks
 brew "nmap"
+# Platform built on V8 to build network applications
+brew "node@20"
 # Command-line Git information tool
 brew "onefetch"
 # OCaml package manager
@@ -266,6 +272,8 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 # Open-source keystroke visualiser
 cask "keycastr"
+# Multiplayer online battle arena game
+cask "league-of-legends"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Penetration testing framework
