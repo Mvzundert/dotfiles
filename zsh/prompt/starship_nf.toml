@@ -46,7 +46,7 @@ up_to_date = '✓ '
 untracked = '🤷x ${count} '
 stashed = '📦 '
 modified = '🎯x ${count} '
-staged = '[😵x\($count\)]'
+staged = '😵x ${count} '
 renamed = '👅 '
 deleted = '🗑x ${count} '
 style = 'bold dimmed green'
@@ -115,35 +115,68 @@ style = 'bold purple'
 disabled = true
 
 [docker_context]
+style = 'bold blue'
 symbol = "🐳"
-format = 'via [$symbol $context](blue bold)'
+format = 'via [$symbol $context]($style)'
+disabled = false
 
 [elixir]
+style = 'bold yellow'
+format = '[$symbol$version]($style) '
 symbol = "💧 "
+disabled = false
 
 [golang]
+style = 'bold blue'
+format = '[$symbol$version]($style) '
 symbol = "🐹 "
+disabled = false
 
 [lua]
+style = 'bold cyan'
+format = '[$symbol$version]($style) '
 symbol = "🌙 "
+disabled = false
 
 [nodejs]
+style = 'bold green'
 symbol = " "
+version_format = 'v${raw}'
+format = '[$symbol$version]($style) '
+disabled = false
 
 [ocaml]
+style = 'bold yellow'
 symbol = "🐫 "
+format = '[$symbol$version]($style) '
+disabled = false
 
 [php]
+style = 'bold purple'
 symbol = "🐘 "
+format = '[$symbol$version]($style) '
+disabled = false
 
 [python]
+style = 'bold green'
+format = '[$symbol$version]($style) '
 symbol = "🐍 "
+disabled = false
 
 [ruby]
+style = 'bold red'
+format = '[$symbol$version]($style) '
 symbol = "💎 "
+disabled = false
 
 [rust]
+style = 'bold red'
+format = '[$symbol$version]($style) '
 symbol = "🦀 "
+disabled = false
 
 [zig]
+style = 'bold yellow'
+format = '[$symbol$version]($style) '
 symbol = " "
+disabled = false
