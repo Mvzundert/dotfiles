@@ -1,3 +1,5 @@
+command_timeout = 5000
+
 format = """
 $directory\
 $git_branch\
