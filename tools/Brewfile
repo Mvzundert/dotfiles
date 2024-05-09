@@ -159,8 +159,8 @@ brew "netcat"
 brew "nikto"
 # Port scanning utility for large networks
 brew "nmap"
-# Platform built on V8 to build network applications
-brew "node@20"
+# Retrieves currently playing media, and simulates media actions
+brew "nowplaying-cli"
 # Command-line Git information tool
 brew "onefetch"
 # OCaml package manager
