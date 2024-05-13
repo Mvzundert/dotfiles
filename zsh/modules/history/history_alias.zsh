@@ -1,1 +1,1 @@
-alias hg='history | ack'
+alias hg='history | fzf --height 60% --layout=reverse --border'
