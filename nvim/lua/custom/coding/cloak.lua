@@ -27,4 +27,8 @@ return {
       },
     },
   },
+  keys = {
+    -- Toggle cloak
+    { '<leader>tl', '<cmd>:CloakToggle<cr>', { desc = 'Toggle Cloak for Env files' } },
+  },
 }
