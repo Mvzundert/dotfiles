@@ -48,6 +48,3 @@ set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
 
 -- highlights under cursor
 set('n', '<leader>ui', vim.show_pos, { desc = 'Inspect Pos' })
-
--- Toggle cloak
-set('n', '<leader>tl', '<cmd>:CloakToggle<cr>', { desc = 'Toggle Cloak for Env files' })
