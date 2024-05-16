@@ -1,6 +1,9 @@
 ## History command configuration
-# remove older duplicate entries from history
+# Deal with duplicates in the history file
 setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 # remove superfluous blanks from history items
 setopt hist_reduce_blanks 
 # save history entries as soon as they are entered
@@ -48,5 +51,7 @@ esac
 ## History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 HISTSIZE=50000
-SAVEHIST=10000
+SAVEHIST=$HISTSIZE
 
+# Make sure we remove the duplicates
+HISTDUP=erase
