@@ -21,7 +21,7 @@ return {
       -- Anything before this will be used. The last items to be processed are the untracked files.
     },
     hide_root_node = true, -- Hide the root node.
-    popup_border_style = 'shadow', -- "double", "none", "rounded", "shadow", "single" or "solid"
+    popup_border_style = 'rounded', -- "double", "none", "rounded", "shadow", "single" or "solid"
     filesystem = {
       filtered_items = {
         visible = true,
