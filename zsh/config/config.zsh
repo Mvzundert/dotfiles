@@ -7,6 +7,8 @@ setopt prompt_subst
 # Initiate the prompt magic
 promptinit
 
+source $ZSH/plugins/fzf-tab/fzf-tab.plugin.zsh
+
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
 
 if [[ "$(uname)" == 'Linux' || "$(uname)" == 'linux-gnu'  ]]; then
