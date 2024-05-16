@@ -9,4 +9,3 @@ nvim/plugged
 .netrwhist
 nvim/.netrwhist
 nvim/lazy-lock.json
-zsh/plugins/
