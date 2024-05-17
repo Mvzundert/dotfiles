@@ -3,7 +3,6 @@ tap "filosottile/musl-cross"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazydocker"
@@ -31,8 +30,6 @@ brew "aircrack-ng"
 brew "libyaml"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
-# Perl compatible regular expressions library with a new API
-brew "pcre2"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -49,6 +46,8 @@ brew "node"
 brew "openssl@1.1"
 # Package manager for the web
 brew "bower"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # Cross-platform make
 brew "cmake"
 # Console Matrix
@@ -69,14 +68,16 @@ brew "ctags"
 brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
 brew "docker", link: false
-# Compression/decompression library aiming for high speed
-brew "snappy"
+# Functional metaprogramming aware language built on Erlang VM
+brew "elixir"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Database of public exploits and corresponding vulnerable software
 brew "exploitdb"
 # Modern, maintained replacement for ls
 brew "eza"
+# Compression/decompression library aiming for high speed
+brew "snappy"
 # GNU compiler collection
 brew "gcc"
 # OpenType text shaping engine
@@ -149,8 +150,6 @@ brew "libiconv"
 brew "lnav"
 # NCurses Disk Usage
 brew "ncdu"
-# Fast, highly customisable system info script
-brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Utility for managing network connections
@@ -173,6 +172,8 @@ brew "pandoc"
 brew "perl"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
+# General-purpose scripting language
+brew "php@8.2", link: true
 # PHP Mess Detector
 brew "phpmd"
 # PHP Static Analysis Tool
@@ -233,8 +234,6 @@ brew "zsh"
 brew "filosottile/musl-cross/musl-cross"
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
 # x86_64 Linux GNU Toolchain
 brew "sergiobenitez/osxct/x86_64-unknown-linux-gnu"
 # General-purpose scripting language
