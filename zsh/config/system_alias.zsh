@@ -10,6 +10,7 @@ alias dotc="vim ~/.dotfiles/"
 alias sshc="vim ~/.ssh/config"
 alias emacs='emacsclient --tty'
 alias buuc='brew update && brew upgrade && brew cleanup'
+alias bbd='brew bundle dump --describe -f'
 
 # -------------------------------------------------------------------
 # System
