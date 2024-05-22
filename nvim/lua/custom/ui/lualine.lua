@@ -21,7 +21,7 @@ return {
     event = 'VeryLazy',
     opts = {
       options = {
-        theme = 'eldritch', -- gruvbox, everforest, eldritch
+        theme = 'auto', -- auto(detects automatically), gruvbox, everforest, eldritch
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
         disabled_filetypes = {
