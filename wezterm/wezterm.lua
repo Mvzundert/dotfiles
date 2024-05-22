@@ -20,9 +20,9 @@ end
 
 function Scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Eldritch"
+		return "Tokyo Night"
 	else
-		return "Eldritch"
+		return "Tokyo Night"
 	end
 end
 
