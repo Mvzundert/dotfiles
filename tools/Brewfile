@@ -305,6 +305,8 @@ cask "virtualbox"
 cask "visual-studio-code"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Network protocol analyzer
