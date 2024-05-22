@@ -19,6 +19,13 @@ config.window_close_confirmation = "NeverPrompt"
 -- Disable the title bar but enable the resizable border
 config.window_decorations = "RESIZE"
 
+config.window_padding = {
+	left = "1cell",
+	right = "1cell",
+	top = "0cell",
+	bottom = "0cell",
+}
+
 -- We detect which mode (dark or light) the system is in and swap style accordingly
 function Get_appearance()
 	if wezterm.gui then
