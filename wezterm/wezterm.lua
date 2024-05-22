@@ -10,6 +10,15 @@ local act = wezterm.action
 -- Disale default keybindings as they interfere with Tmux
 config.disable_default_key_bindings = true
 
+-- Don't show a message when exiting process
+config.exit_behavior_messaging = "Verbose"
+
+-- Don't show a message when we exit WezTerm
+config.window_close_confirmation = "NeverPrompt"
+
+-- Disable the title bar but enable the resizable border
+config.window_decorations = "RESIZE"
+
 -- We detect which mode (dark or light) the system is in and swap style accordingly
 function Get_appearance()
 	if wezterm.gui then
@@ -45,6 +54,9 @@ config.window_background_image_hsb = {
 
 -- Opacity of the window background, don't go higher then 1.0
 config.window_background_opacity = 0.8
+
+-- we disable the scrollbar
+config.enable_scroll_bar = false
 
 -- Everything Font related
 config.font = wezterm.font("Hack nerd font")
