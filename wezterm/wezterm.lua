@@ -36,9 +36,13 @@ end
 
 function Scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
+		-- Dark theme gets to be transparent
+		config.window_background_opacity = 0.8
 		return "Tokyo Night (Gogh)"
 	else
-		return "Tokyo Night (Gogh)"
+		-- Light theme gets unreadable when transparent
+		config.window_background_opacity = 1.0
+		return "Tokyo Night Light (Gogh)"
 	end
 end
 
@@ -60,7 +64,7 @@ config.window_background_image_hsb = {
 }
 
 -- Opacity of the window background, don't go higher then 1.0
-config.window_background_opacity = 0.8
+-- config.window_background_opacity = 0.8
 
 -- we disable the scrollbar
 config.enable_scroll_bar = false
