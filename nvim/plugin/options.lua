@@ -6,6 +6,9 @@ vim.g.have_nerd_font = true
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
+-- Make vim background transparent to work alongside transparent terminal backgrounds
+vim.g.base16_background_transparent = 1
+
 -- Make line numbers default
 opt.number = true
 -- You can also add relative line numbers, to help with jumping.
