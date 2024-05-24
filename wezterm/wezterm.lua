@@ -37,7 +37,7 @@ end
 function Scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		-- Dark theme gets to be transparent
-		config.window_background_opacity = 0.6
+		config.window_background_opacity = 0.8
 		return "Tokyo Night (Gogh)"
 	else
 		-- Light theme gets unreadable when transparent
