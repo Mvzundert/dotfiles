@@ -2,7 +2,6 @@ tap "adoptopenjdk/openjdk"
 tap "filosottile/musl-cross"
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazydocker"
@@ -265,6 +264,8 @@ cask "font-hack-nerd-font"
 cask "font-monaspace"
 # HTTP and GraphQL Client
 cask "insomnia"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Open-source keystroke visualiser
