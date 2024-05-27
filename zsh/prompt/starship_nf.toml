@@ -39,6 +39,9 @@ vimcmd_replace_symbol = '[](bold purple)'
 vimcmd_visual_symbol = '[](bold yellow)'
 disabled = false
 
+[package]
+format = '[🎁 $version](208 bold) '
+
 [git_branch]
 symbol = "🚀"
 truncation_length = 7
@@ -129,7 +132,7 @@ disabled = true
 [docker_context]
 style = 'bold blue'
 symbol = "🐳"
-format = '[$symbol $context]($style)'
+format = '[$symbol $context]($style) '
 disabled = false
 
 [elixir]
