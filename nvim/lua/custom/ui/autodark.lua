@@ -5,12 +5,12 @@ return {
 
     set_dark_mode = function()
       vim.api.nvim_set_option('background', 'dark')
-      vim.cmd.colorscheme 'base16-everforest'
+      vim.cmd.colorscheme 'everforest'
     end,
 
     set_light_mode = function()
       vim.api.nvim_set_option('background', 'light')
-      vim.cmd.colorscheme 'base16-gruvbox-light-soft'
+      vim.cmd.colorscheme 'everforest'
     end,
   },
 }

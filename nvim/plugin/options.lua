@@ -1,4 +1,5 @@
 local opt = vim.opt
+local g = vim.g
 
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
@@ -7,7 +8,10 @@ vim.g.have_nerd_font = true
 vim.g.markdown_recommended_style = 0
 
 -- Make vim background transparent to work alongside transparent terminal backgrounds
-vim.g.base16_background_transparent = 1
+g.base16_background_transparent = 1
+
+-- Access colors present in 256 colorspace
+g.base16_colorspace = 256
 
 -- Make line numbers default
 opt.number = true
