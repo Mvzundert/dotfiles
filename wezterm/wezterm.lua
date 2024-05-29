@@ -38,11 +38,11 @@ function Scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		-- Dark theme gets to be transparent
 		config.window_background_opacity = 0.8
-		return "Kanagawa (Gogh)"
+		return "Tokyo Night Moon"
 	else
 		-- Light theme gets unreadable when transparent
 		config.window_background_opacity = 0.9
-		return "GruvboxLight"
+		return "Tokyo Night Day"
 	end
 end
 
