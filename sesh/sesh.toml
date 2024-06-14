@@ -1,12 +1,23 @@
 [default_session]
 
 [[session]]
-name = "📥 Downloads"
+name = "  Downloads"
 path = "~/Downloads"
-startup_command = "ll"
 
 [[session]]
-name = "📦 Dotfiles"
+name = "󰈙 Documents"
+path = "~/Documents"
+
+[[session]]
+name = "  Music"
+path = "~/Music"
+
+[[session]]
+name = "  Pictures"
+path = "~/Pictures"
+
+[[session]]
+name = "🎁 Dotfiles"
 path = "~/code/dotfiles/"
 startup_command = "vim"
 
@@ -23,5 +34,5 @@ name = "🚀 Clients"
 path = "~/code/clients/"
 
 [[session]]
-name = "🏎💨 Marzun"
+name = "  Marzun"
 path = "~/code/marzun/"
