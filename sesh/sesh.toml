@@ -1,0 +1,27 @@
+[default_session]
+
+[[session]]
+name = "📥 Downloads"
+path = "~/Downloads"
+startup_command = "ll"
+
+[[session]]
+name = "📦 Dotfiles"
+path = "~/code/dotfiles/"
+startup_command = "vim"
+
+[[session]]
+name = "🐢 Cerberos"
+path = "~/code/cerberos/"
+
+[[session]]
+name = "🐳 CRB-Dock"
+path = "~/code/crb-dock/"
+
+[[session]]
+name = "🚀 Clients"
+path = "~/code/clients/"
+
+[[session]]
+name = "🏎💨 Marzun"
+path = "~/code/marzun/"

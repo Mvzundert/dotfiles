@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazydocker"
+tap "joshmedeski/sesh"
 tap "kevwil/patches"
 tap "libsql/sqld"
 tap "neovim/neovim"
@@ -77,8 +78,6 @@ brew "exploitdb"
 brew "eza"
 # Compression/decompression library aiming for high speed
 brew "snappy"
-# GNU compiler collection
-brew "gcc"
 # OpenType text shaping engine
 brew "harfbuzz"
 # VP8/VP9 video codec
@@ -93,6 +92,8 @@ brew "fnm"
 brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
+brew "gcc"
 # GitHub command-line tool
 brew "gh"
 # Interpreter for PostScript and PDF
@@ -233,6 +234,8 @@ brew "zsh"
 brew "filosottile/musl-cross/musl-cross"
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker"
+# Smart terminal session manager
+brew "joshmedeski/sesh/sesh"
 # x86_64 Linux GNU Toolchain
 brew "sergiobenitez/osxct/x86_64-unknown-linux-gnu"
 # General-purpose scripting language
@@ -246,6 +249,8 @@ brew "tursodatabase/tap/turso"
 brew "wpscanteam/tap/wpscan"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# Chromium based browser
+cask "arc"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Web security testing toolkit
@@ -258,9 +263,7 @@ cask "docker"
 cask "epic-games"
 # Collaborative team software
 cask "figma"
-# Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
-# Superfamily of fonts for code
 cask "font-monaspace"
 # HTTP and GraphQL Client
 cask "insomnia"
@@ -288,6 +291,8 @@ cask "obs"
 cask "obsidian"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
+# Administration and development platform for PostgreSQL
+cask "pgadmin4"
 # Imaging utility to install operating systems to a microSD card
 cask "raspberry-pi-imager"
 # MySQL/MariaDB database management
