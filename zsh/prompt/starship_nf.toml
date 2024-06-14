@@ -96,7 +96,7 @@ truncate_to_repo = false
 style = 'bold yellow'
 read_only_style = "197"
 read_only = "  "
-format = "[in](bold bright-black) [$path]($style)[$read_only]($read_only_style) "
+format = "[in](bold dimmed blue) [$path]($style)[$read_only]($read_only_style) "
 
 [memory_usage]
 symbol = "󰍛 "
