@@ -11,7 +11,7 @@ alias sshc="vim ~/.ssh/config"
 alias emacs='emacsclient --tty'
 alias buuc='brew update && brew upgrade && brew cleanup'
 alias bbd='brew bundle dump --describe -f'
-alias t='sesh connect $(sesh list -e | fzf --height 40% --border)'
+alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
 
 # -------------------------------------------------------------------
 # System
