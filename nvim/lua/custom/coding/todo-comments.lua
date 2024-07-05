@@ -7,6 +7,6 @@ return {
     -- refer to the configuration section below
   },
   keys = {
-    { '<leader>tt', '<cmd>TodoTelescope<cr>', desc = 'Open Todo in Telescope' },
+    { '<leader>ct', '<cmd>TodoTelescope<cr>', desc = 'Open Todo in Telescope' },
   },
 }

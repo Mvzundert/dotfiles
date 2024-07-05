@@ -84,8 +84,10 @@ return {
   end,
   -- stylua: ignore
   keys = {
-    {"<leader>T", "", desc = "+test"},
+    {"<leader>T", "", desc = "+[T]est"},
     { "<leader>Tf", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
+    { "<leader>Tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
+    { "<leader>Tl", function() require("neotest").run.run_last() end, desc = "Run Last" },
     { "<leader>To", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
     { "<leader>Ts", function() require("neotest").summary.toggle() end, desc = "Toggle Summary" },
   },

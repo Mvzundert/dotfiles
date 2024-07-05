@@ -34,17 +34,11 @@ set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 -- save file
 set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
---keywordprg
-set('n', '<leader>K', '<cmd>norm! K<cr>', { desc = 'Keywordprg' })
-
 -- better indenting
 set('v', '<', '<gv')
 set('v', '>', '>gv')
 
-set('n', '<leader>ts', '<cmd>Telescope colorscheme<cr>', { desc = 'Switch Colorscheme' })
+set('n', '<leader>ws', '<cmd>Telescope colorscheme<cr>', { desc = 'Switch Colorscheme' })
 
 -- quit
 set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
-
--- highlights under cursor
-set('n', '<leader>ui', vim.show_pos, { desc = 'Inspect Pos' })
