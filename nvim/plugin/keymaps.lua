@@ -38,7 +38,7 @@ set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 set('v', '<', '<gv')
 set('v', '>', '>gv')
 
-set('n', '<leader>ws', '<cmd>Telescope colorscheme<cr>', { desc = 'Switch Colorscheme' })
+set('n', '<leader>tss', '<cmd>Telescope colorscheme<cr>', { desc = 'Switch Colorscheme' })
 
 -- quit
 set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
