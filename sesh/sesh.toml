@@ -5,7 +5,7 @@ name = "  Downloads"
 path = "~/Downloads"
 
 [[session]]
-name = "󰈙  Documents"
+name = "󰈙 Documents"
 path = "~/Documents"
 
 [[session]]
@@ -34,5 +34,5 @@ name = "🚀 Clients"
 path = "~/code/clients/"
 
 [[session]]
-name = "  Marzun"
+name = "💀 Marzun"
 path = "~/code/marzun/"
