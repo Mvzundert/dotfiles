@@ -38,11 +38,11 @@ function Scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		-- Opacity of the window background, don't go higher then 1.0
 		config.window_background_opacity = 0.9
-		return "Tokyo Night Moon"
+		return "rose-pine-moon"
 	else
 		-- Opacity of the window background, don't go higher then 1.0
 		config.window_background_opacity = 0.9
-		return "Tokyo Night Day"
+		return "rose-pine-dawn"
 	end
 end
 
