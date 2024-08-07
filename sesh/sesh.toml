@@ -1,7 +1,7 @@
 [default_session]
 
 [[session]]
-name = "  Downloads"
+name = " Downloads"
 path = "~/Downloads"
 
 [[session]]
