@@ -59,7 +59,7 @@ brew "curl"
 # Generic library support script
 brew "libtool"
 # General-purpose scripting language
-brew "php"
+brew "php", link: false
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
@@ -177,7 +177,7 @@ brew "perl"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # General-purpose scripting language
-brew "php@8.2", restart_service: true
+brew "php@8.2", restart_service: true, link: true
 # PHP Mess Detector
 brew "phpmd"
 # PHP Static Analysis Tool
