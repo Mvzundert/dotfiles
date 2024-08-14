@@ -69,9 +69,7 @@ brew "ctags"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
 # Pack, ship and run any application as a lightweight container
-brew "docker", link: false
-# Isolated development environments using Docker
-brew "docker-compose", link: false
+brew "docker"
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Functional metaprogramming aware language built on Erlang VM
@@ -204,8 +202,6 @@ brew "rustup"
 brew "sqlmap"
 # Cross-shell prompt for astronauts
 brew "starship"
-# Instant terminal sharing
-brew "tmate"
 # Terminal multiplexer
 brew "tmux"
 # Anonymizing overlay network for TCP
