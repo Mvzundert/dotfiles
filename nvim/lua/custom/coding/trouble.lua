@@ -8,7 +8,15 @@ return {
   },
   keys = {
     { '<leader>t', '', desc = '+[T]rouble' },
-    { '<leader>to', '<cmd>TroubleToggle<cr>', desc = 'Open Trouble' },
-    { '<leader>tr', '<cmd>TroubleRefresh<cr>', desc = 'Refresh Trouble' },
+    {
+      '<leader>td',
+      '<cmd>Trouble diagnostics toggle<cr>',
+      desc = 'Diagnostics (Trouble)',
+    },
+    {
+      '<leader>tl',
+      '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
+      desc = 'LSP Definitions / references / ... (Trouble)',
+    },
   },
 }
