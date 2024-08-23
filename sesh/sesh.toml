@@ -1,38 +1,38 @@
 [default_session]
 
 [[session]]
-name = " Downloads"
+name = "Downloads"
 path = "~/Downloads"
 
 [[session]]
-name = "󰈙 Documents"
+name = "Documents"
 path = "~/Documents"
 
 [[session]]
-name = "  Music"
+name = "Music"
 path = "~/Music"
 
 [[session]]
-name = "  Pictures"
+name = "Pictures"
 path = "~/Pictures"
 
 [[session]]
-name = "🎁 Dotfiles"
+name = "Dotfiles"
 path = "~/code/dotfiles/"
 startup_command = "vim"
 
 [[session]]
-name = "🐢 Cerberos"
+name = "Cerberos"
 path = "~/code/cerberos/"
 
 [[session]]
-name = "🐳 CRB-Dock"
+name = "CRB-Dock"
 path = "~/code/crb-dock/"
 
 [[session]]
-name = "🚀 Clients"
+name = "Clients"
 path = "~/code/clients/"
 
 [[session]]
-name = "💀 Marzun"
+name = "Marzun"
 path = "~/code/marzun/"
