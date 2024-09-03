@@ -37,7 +37,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   {},
   -- automatically check for plugin updates
-  checker = { enabled = false },
+  checker = { enabled = true },
   performance = {
     rtp = {
       -- disable some rtp plugins

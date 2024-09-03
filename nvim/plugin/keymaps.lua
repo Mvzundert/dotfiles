@@ -38,7 +38,12 @@ set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 set('v', '<', '<gv')
 set('v', '>', '>gv')
 
-set('n', '<leader>tss', '<cmd>Telescope colorscheme<cr>', { desc = 'Switch Colorscheme' })
+-- Added cloak keymaps to unburden the plugin
+set('n', '<leader>cc', '<cmd>:CloakToggle<cr>', { desc = 'Toggle Cloak for Env files' })
+set('n', '<leader>cpl', '<cmd>:CloakPreviewLine<cr>', { desc = 'Toggle Cloak preview for current line' })
+
+-- Preview colorschemes
+set('n', '<leader>tcs', '<cmd>Telescope colorscheme<cr>', { desc = 'Switch Colorscheme' })
 
 -- quit
 set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
