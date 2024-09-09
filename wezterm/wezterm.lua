@@ -38,7 +38,7 @@ function Scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		-- Opacity of the window background, don't go higher then 1.0
 		config.window_background_opacity = 0.9
-		return "rose-pine-moon"
+		return "eldritch"
 	else
 		-- Opacity of the window background, don't go higher then 1.0
 		config.window_background_opacity = 0.9
