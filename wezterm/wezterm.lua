@@ -11,10 +11,13 @@ local act = wezterm.action
 config.disable_default_key_bindings = true
 
 -- Don't show a message when exiting process
-config.exit_behavior_messaging = "Verbose"
+config.exit_behavior_messaging = "None"
 
 -- Don't show a message when we exit WezTerm
 config.window_close_confirmation = "NeverPrompt"
+
+-- Stop hiding the cursor when typing
+config.hide_mouse_cursor_when_typing = false
 
 -- Disable the title bar but enable the resizable border
 config.window_decorations = "RESIZE"
@@ -50,24 +53,24 @@ config.color_scheme = Scheme_for_appearance(Get_appearance())
 
 -- Path to background image, must be full path
 -- config.window_background_image = "/full/path/to/image"
-
-config.window_background_image_hsb = {
-	-- Darken the background image by reducing it to 1/3rd
-	brightness = 0.1,
-
-	-- You can adjust the hue by scaling its value.
-	-- a multiplier of 1.0 leaves the value unchanged.
-	hue = 1.0,
-
-	-- You can adjust the saturation also.
-	saturation = 1.0,
-}
+--
+-- config.window_background_image_hsb = {
+-- 	-- Darken the background image by reducing it to 1/3rd
+-- 	brightness = 0.1,
+--
+-- 	-- You can adjust the hue by scaling its value.
+-- 	-- a multiplier of 1.0 leaves the value unchanged.
+-- 	hue = 1.0,
+--
+-- 	-- You can adjust the saturation also.
+-- 	saturation = 1.0,
+-- }
 
 -- we disable the scrollbar
 config.enable_scroll_bar = false
 
 -- Everything Font related
-config.font = wezterm.font("Hack nerd font")
+config.font = wezterm.font("Monaspace Argon")
 config.font_size = 20.0
 
 -- Everything related to the tabbar
