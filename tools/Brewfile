@@ -59,7 +59,7 @@ brew "curl"
 # Generic library support script
 brew "libtool"
 # General-purpose scripting language
-brew "php", link: false
+brew "php"
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
@@ -175,7 +175,7 @@ brew "perl"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # General-purpose scripting language
-brew "php@8.2", restart_service: true, link: true
+brew "php@8.2", restart_service: true
 # PHP Mess Detector
 brew "phpmd"
 # PHP Static Analysis Tool
@@ -303,6 +303,8 @@ cask "tableplus"
 cask "tor-browser"
 # Virtualiser for x86 hardware
 cask "virtualbox"
+# Integrated development environment
+cask "visual-studio"
 # Open-source code editor
 cask "visual-studio-code"
 # Remote desktop application focusing on security
