@@ -13,7 +13,7 @@ return {
     default_source = 'filesystem', -- you can choose a specific source `last` here which indicates the last used source
     enable_diagnostics = false,
     enable_git_status = true,
-    add_blank_line_at_top = true, -- Add a blank line at the top of the tree.
+    add_blank_line_at_top = false, -- Add a blank line at the top of the tree.
     git_status_async_options = {
       batch_size = 1000, -- how many lines of git status results to process at a time
       batch_delay = 10, -- delay in ms between batches. Spreads out the workload to let other processes run.
