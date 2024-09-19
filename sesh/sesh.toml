@@ -9,10 +9,6 @@ name = "Documents"
 path = "~/Documents"
 
 [[session]]
-name = "Music"
-path = "~/Music"
-
-[[session]]
 name = "Pictures"
 path = "~/Pictures"
 
@@ -36,3 +32,11 @@ path = "~/code/clients/"
 [[session]]
 name = "Marzun"
 path = "~/code/marzun/"
+
+[[session]]
+name = "Learning"
+path = "~/code/marzun/learning"
+
+[[session]]
+name = "Pwnd"
+path = "~/code/marzun/pwnd"
