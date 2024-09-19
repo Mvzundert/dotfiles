@@ -65,13 +65,13 @@ if [[ -d $COMPOSER_BIN ]]; then
 fi
 
 # -------------------------------------------------------------------
-# Add ruby bin folder to PATH
+# Add rbenv to PATH
 # -------------------------------------------------------------------
-RUBY_BIN="/usr/local/opt/ruby/bin"
+RBENV="$HOME/.rbenv/bin"
 
-if [[ -d $RUBY_BIN ]]; then
-    if ! [[ :$PATH: == *:$RUBY_BIN:* ]]; then
-        export PATH="$RUBY_BIN:$PATH"
+if [[ -d $RBENV ]]; then
+    if ! [[ :$PATH: == *:$RBENV:* ]]; then
+        export PATH="$RBENV:$PATH"
     fi
 fi
 
