@@ -140,6 +140,14 @@ if dotfiles::check "${ELIXIR}"; then
     done
 fi
 
+if dotfiles::check "${RUBY}"; then
+    # Ruby modules
+    for file in $MODULES/development/ruby/*; do
+        # shellcheck disable=SC1090
+        source "$file"
+    done
+fi
+
 #############################
 # Frameworks
 #############################
