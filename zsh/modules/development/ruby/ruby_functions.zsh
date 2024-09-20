@@ -1,6 +1,4 @@
 rbenv() {
-  eval "$(command rbenv init -)"
+  eval "$(command rbenv init - --no-rehash zsh)"
   rbenv "$@"
 }
-
-
