@@ -13,6 +13,14 @@ return {
         markdown = true,
         help = true,
       },
+      server_opts_overrides = {
+        trace = 'verbose',
+        settings = {
+          advanced = {
+            inlineSuggestCount = 3, -- #completions for getCompletions
+          },
+        },
+      },
     },
   },
 }
