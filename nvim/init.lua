@@ -1,4 +1,3 @@
-vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- [[ Basic Autocommands ]]
@@ -57,7 +56,11 @@ require('lazy').setup({
   { import = 'custom.ui' },
   { import = 'custom.ui.themes' },
   { import = 'custom.ui.notifications' },
-  { import = 'custom.coding' },
+  { import = 'custom.ui.filetree' },
+  { import = 'custom.coding.git' },
+  { import = 'custom.coding.cmp' },
+  { import = 'custom.coding.test' },
+  { import = 'custom.coding.format' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
