@@ -70,7 +70,12 @@ config.color_scheme = Scheme_for_appearance(Get_appearance())
 config.enable_scroll_bar = false
 
 -- Everything Font related
-config.font = wezterm.font("Monaspace Argon")
+-- config.font = wezterm.font("Monaspace Argon")
+-- config.font = wezterm.font("Monaspace Radon")
+-- config.font = wezterm.font("Monaspace Xenon")
+-- config.font = wezterm.font("Monaspace Neon")
+-- config.font = wezterm.font("Monaspace Krypton")
+-- config.font = wezterm.font("Terminess Nerd Font Mono")
 config.font_size = 20.0
 
 -- Everything related to the tabbar
