@@ -4,7 +4,7 @@ return { -- Adds git related signs to the gutter, as well as utilities for manag
   opts = {
     current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
     signs = {
-      add = { text = ' ' },
+      add = { text = '┃' },
       change = { text = ' ' },
       delete = { text = ' ' },
       topdelete = { text = '‾' },
