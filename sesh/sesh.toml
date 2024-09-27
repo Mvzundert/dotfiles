@@ -1,18 +1,6 @@
 [default_session]
 
 [[session]]
-name = "Downloads"
-path = "~/Downloads"
-
-[[session]]
-name = "Documents"
-path = "~/Documents"
-
-[[session]]
-name = "Pictures"
-path = "~/Pictures"
-
-[[session]]
 name = "Dotfiles"
 path = "~/code/dotfiles/"
 startup_command = "vim"
