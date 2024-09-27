@@ -40,8 +40,9 @@ end
 function Scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		-- Opacity of the window background, don't go higher then 1.0
-		config.window_background_opacity = 1.0
-		return "Everforest Dark (Gogh)"
+		config.window_background_opacity = 0.9
+		return "synthwave-everything"
+		-- return "Everforest Dark (Gogh)"
 	else
 		-- Opacity of the window background, don't go higher then 1.0
 		config.window_background_opacity = 1.0
