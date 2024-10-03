@@ -40,13 +40,13 @@ end
 function Scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		-- Opacity of the window background, don't go higher then 1.0
-		config.window_background_opacity = 0.9
+		config.window_background_opacity = 1.0
 		-- return "Oxocarbon Dark (Gogh)"
-		return "tokyonight-storm"
+		return "Synthwave (Gogh)"
 	else
 		-- Opacity of the window background, don't go higher then 1.0
-		config.window_background_opacity = 0.9
-		return "tokyonight-storm"
+		config.window_background_opacity = 1.0
+		return "Synthwave (Gogh)"
 	end
 end
 
