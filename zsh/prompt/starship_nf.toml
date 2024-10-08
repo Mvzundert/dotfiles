@@ -1,27 +1,27 @@
 command_timeout = 5000
 
 format = """
-$directory\
-$git_branch\
-$git_commit\
-$git_status\
-$docker_context\
-$package\
-$elixir\
-$golang\
-$lua\
-$ocaml\
-$php\
-$python\
-$ruby\
-$rust\
-$zig\
-$nodejs\
-$cmd_duration\
-$line_break\
-$status\
-$shell\
-$character"""
+ $directory\
+ $git_branch\
+ $git_commit\
+ $git_status\
+ $docker_context\
+ $package\
+ $elixir\
+ $golang\
+ $lua\
+ $ocaml\
+ $php\
+ $python\
+ $ruby\
+ $rust\
+ $zig\
+ $nodejs\
+ $cmd_duration\
+ $line_break\
+ $status\
+ $shell\
+ $character"""
 
 right_format = """
 $localip\
@@ -43,10 +43,10 @@ disabled = false
 format = '[🎁 $version](208 bold) '
 
 [git_branch]
-symbol = "🚀"
-truncation_length = 7
+symbol = " "
+truncation_length = 10
 truncation_symbol = "…/"
-style = 'bold dimmed blue'
+style = 'bold dimmed red'
 format = '[$symbol $branch ]($style)'
 disabled = false
 
@@ -62,7 +62,7 @@ modified = '🎯x ${count} '
 staged = '😵x ${count} '
 renamed = '👅 '
 deleted = '🗑 x ${count} '
-style = 'bold dimmed green'
+style = 'bold dimmed red'
 format = '[$all_status$ahead_behind]($style)'
 disabled = false
 
@@ -73,7 +73,7 @@ only_detached = false
 tag_disabled = false
 style = 'bold dimmed purple'
 format = '[\($hash$tag\)]($style) '
-disabled = true
+disabled = false
 
 [localip]
 ssh_only = false
@@ -93,10 +93,10 @@ disabled = true
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = false
-style = 'bold yellow'
+style = 'yellow'
 read_only_style = "197"
 read_only = "  "
-format = "[in](bold dimmed blue) [$path]($style)[$read_only]($read_only_style) "
+format = "[$path]($style)[$read_only]($read_only_style) "
 
 [memory_usage]
 symbol = "󰍛 "
@@ -136,7 +136,7 @@ format = '[$symbol $context]($style) '
 disabled = false
 
 [elixir]
-style = 'bold yellow'
+style = 'bold red'
 format = '[$symbol$version]($style) '
 symbol = "💧 "
 disabled = false
