@@ -26,7 +26,7 @@ warranty nor technical support.
 
 Long story short, I'm just coding for the love of coding!
 
-# DotFiles contains:
+# DotFiles:
 
 My most recent setup of the dotfiles I use. Since more people are actively using
 the same setup and because I want to be able to recreate it on new machines I've created an installer.
