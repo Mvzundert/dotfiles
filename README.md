@@ -39,10 +39,6 @@ or are able to switch to non-powerline themes.
 
 Link to powerline font repo:(https://github.com/powerline/fonts)
 
-# How it looks
-
-![Screenshot 2023-11-30 at 11 21 32](https://github.com/Mvzundert/dotfiles/assets/6066795/421291e7-5fd1-4986-8ea5-46fd1da74f90)
-
 # ZSH
 
 - Zshconfig (Alias, Config options, Function, Paths, Widgets)
