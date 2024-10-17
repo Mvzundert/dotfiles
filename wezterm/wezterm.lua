@@ -17,7 +17,7 @@ config.exit_behavior_messaging = "None"
 config.window_close_confirmation = "NeverPrompt"
 
 -- Stop hiding the cursor when typing
-config.hide_mouse_cursor_when_typing = false
+config.hide_mouse_cursor_when_typing = true
 
 -- Disable the title bar but enable the resizable border
 config.window_decorations = "RESIZE"
