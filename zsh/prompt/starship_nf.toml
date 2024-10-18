@@ -68,7 +68,7 @@ disabled = false
 
 [git_commit]
 commit_hash_length = 5
-tag_symbol = '🏷 '
+tag_symbol = ' 🏷  '
 only_detached = false
 tag_disabled = false
 style = 'bold dimmed purple'
