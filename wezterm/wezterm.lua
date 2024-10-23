@@ -44,7 +44,7 @@ function Scheme_for_appearance(appearance)
 		return "Everforest Dark (Gogh)"
 	else
 		-- Opacity of the window background, don't go higher then 1.0
-		config.window_background_opacity = 1.0
+		config.window_background_opacity = 0.8
 		return "Everforest Light (Gogh)"
 	end
 end
