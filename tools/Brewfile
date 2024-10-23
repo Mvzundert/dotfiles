@@ -182,6 +182,8 @@ brew "phpmd"
 brew "phpstan"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
+# Object-relational database system
+brew "postgresql@14"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Hook preloader
@@ -194,8 +196,12 @@ brew "python@3.11"
 brew "python@3.9"
 # Cross-platform application and UI framework
 brew "qt"
+# Ruby version manager
+brew "rbenv"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Rust toolchain installer
 brew "rustup"
 # Penetration testing for SQL injection and database servers
@@ -245,8 +251,6 @@ brew "symfony-cli/tap/symfony-cli"
 brew "tursodatabase/tap/turso"
 # Black box WordPress vulnerability scanner
 brew "wpscanteam/tap/wpscan"
-# GPU-accelerated terminal emulator
-cask "alacritty"
 # Chromium based browser
 cask "arc"
 # Tool to flash OS images to SD cards & USB drives
@@ -275,8 +279,6 @@ cask "keycastr"
 cask "league-of-legends"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
-# Penetration testing framework
-cask "metasploit"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # Open source implementation of Microsoft's .NET Framework
