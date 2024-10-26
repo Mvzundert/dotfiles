@@ -1,0 +1,28 @@
+# Pick a softer palette.
+set -g @catppuccin_flavor 'macchiato'
+set -g @catppuccin_status_background 'none'
+
+
+## Window default configuration
+set -g @catppuccin_window_default_text " #{window_name}"
+set -g @catppuccin_window_status "icon"
+set -g @catppuccin_window_default_fill "number"
+set -g @catppuccin_window_number_position "left"
+
+## Window current configuration
+set -g @catppuccin_window_current_text " #{window_name}"
+set -g @catppuccin_window_current_fill "all"
+
+# date time  config
+set -g @catppuccin_date_time_text " %d-%m-%y %H:%M"
+
+# Make the status line pretty and add some modules
+set -g status-right-length 100
+set -g status-left-length 100
+set -g status-left ""
+set -g status-right "#{E:@catppuccin_status_application}"
+set -ag status-right "#{E:@catppuccin_status_session}"
+set -ag status-right "#{E:@catppuccin_status_uptime}"
+set -ag status-right "#{E:@catppuccin_status_date_time}"
+
+
