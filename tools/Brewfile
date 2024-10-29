@@ -1,4 +1,5 @@
 tap "adoptopenjdk/openjdk"
+tap "felixkratz/formulae"
 tap "filosottile/musl-cross"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -10,6 +11,7 @@ tap "kevwil/patches"
 tap "libsql/sqld"
 tap "neovim/neovim"
 tap "nickolasburr/pfa"
+tap "nikitabobko/tap"
 tap "oven-sh/bun"
 tap "romkatv/powerlevel10k"
 tap "sergiobenitez/osxct"
@@ -234,6 +236,8 @@ brew "zmap"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Custom macOS statusbar with shell plugin, interaction and graph support
+brew "felixkratz/formulae/sketchybar"
 # Linux cross compilers based on musl libc
 brew "filosottile/musl-cross/musl-cross"
 # A simple terminal UI for docker, written in Go
@@ -243,7 +247,7 @@ brew "joshmedeski/sesh/sesh"
 # x86_64 Linux GNU Toolchain
 brew "sergiobenitez/osxct/x86_64-unknown-linux-gnu"
 # General-purpose scripting language
-brew "shivammathur/php/php@7.4", link: true
+brew "shivammathur/php/php@7.4"
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Symfony CLI helps Symfony developers manage projects, from local code to remote infrastructure
@@ -251,10 +255,12 @@ brew "symfony-cli/tap/symfony-cli"
 brew "tursodatabase/tap/turso"
 # Black box WordPress vulnerability scanner
 brew "wpscanteam/tap/wpscan"
-# Chromium based browser
-cask "arc"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Web security testing toolkit
 cask "burp-suite"
 # Server and cloud storage browser
