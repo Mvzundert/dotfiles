@@ -22,6 +22,10 @@ config.hide_mouse_cursor_when_typing = true
 -- Disable the title bar but enable the resizable border
 config.window_decorations = "RESIZE"
 
+-- Determine the initial window size
+-- config.initial_rows = 40
+-- config.initial_cols = 150
+
 config.window_padding = {
 	left = "1cell",
 	right = "1cell",
