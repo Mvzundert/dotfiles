@@ -34,11 +34,6 @@ the same setup and because I want to be able to recreate it on new machines I've
 Feel free to use this as you see fit, install the entire thing or just grab stuff from all the seperate configs
 Just realize you'll need to manage all dependencies yourself when grabbing stuff without the full installer.
 
-Most of the stuff I use makes use of powerline fonts, I'm assuming you either are able to install them yourself
-or are able to switch to non-powerline themes.
-
-Link to powerline font repo:(https://github.com/powerline/fonts)
-
 # ZSH
 
 - Zshconfig (Alias, Config options, Function, Paths, Widgets)
@@ -60,12 +55,12 @@ NeoVim gets installed when on OSX using brew after that we set the config in
 
 - `cd ~/`
 - `git clone https://github.com/Mvzundert/dotfiles.git`
-- `cd ~/dotfiles/tools`
+- `cd ~/dotfiles/tools/install`
 - `./install.sh`
 
 # Overwrite tmux configuration
 
-- Copy `tmux/custom/config.local.example` to `tmux/custom/config.local`
+- Copy `tools/multiplex/tmux/custom/config.local.example` to `tools/multiplex/tmux/custom/config.local`
 
 # Usefull tmux commands
 
