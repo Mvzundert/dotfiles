@@ -1,5 +1,4 @@
 tap "adoptopenjdk/openjdk"
-tap "felixkratz/formulae"
 tap "filosottile/musl-cross"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -42,8 +41,6 @@ brew "bash"
 brew "libgit2@1.7"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c"
 # Platform built on V8 to build network applications
 brew "node"
 # Cryptography and SSL/TLS Toolkit
@@ -236,8 +233,6 @@ brew "zmap"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
-# Custom macOS statusbar with shell plugin, interaction and graph support
-brew "felixkratz/formulae/sketchybar"
 # Linux cross compilers based on musl libc
 brew "filosottile/musl-cross/musl-cross"
 # A simple terminal UI for docker, written in Go
