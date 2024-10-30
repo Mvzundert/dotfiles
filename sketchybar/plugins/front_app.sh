@@ -16,9 +16,6 @@ case $INFO in
 "WezTerm")
     ICON=󰄛
     ;;
-"WhatsApp")
-    ICON=
-    ;;
 "Preview")
     ICON_PADDING_RIGHT=3
     ICON=
