@@ -95,12 +95,12 @@ end
 function Scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		-- Opacity of the window background, don't go higher then 1.0
-		config.window_background_opacity = 0.6
+		config.window_background_opacity = 0.8
 
 		-- Add blur on macos
 		config.macos_window_background_blur = 20
 
-		return "catppuccin-macchiato"
+		return "catppuccin-mocha"
 	else
 		-- Opacity of the window background, don't go higher then 1.0
 		config.window_background_opacity = 0.8
