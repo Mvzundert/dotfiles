@@ -61,6 +61,7 @@ require('lazy').setup({
   { import = 'custom.coding.git' },
   { import = 'custom.coding.cmp' },
   { import = 'custom.coding.test' },
+  { import = 'custom.coding.search' },
   { import = 'custom.coding.format' },
 }, {
   ui = {

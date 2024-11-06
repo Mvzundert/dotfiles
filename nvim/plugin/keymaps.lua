@@ -42,6 +42,9 @@ set('v', '>', '>gv')
 set('n', '<leader>cc', '<cmd>:CloakToggle<cr>', { desc = 'Toggle Cloak for Env files' })
 set('n', '<leader>cpl', '<cmd>:CloakPreviewLine<cr>', { desc = 'Toggle Cloak preview for current line' })
 
+-- Added Grug keymaps to unburden the plugin
+set('n', '<leader>gr', '<cmd>:GrugFar<cr>', { desc = 'Search with Grug' })
+
 -- Preview colorschemes
 set('n', '<leader>tcs', '<cmd>Telescope colorscheme<cr>', { desc = 'Switch Colorscheme' })
 
