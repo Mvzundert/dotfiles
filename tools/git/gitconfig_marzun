@@ -1,0 +1,37 @@
+
+[init]
+	defaultBranch = master
+[user]
+	name = Marius van Zundert
+	email = marius.vanzundert@gmail.com
+	signingkey = marius.vanzundert@gmail.com
+[core]
+	editor = vim
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[color]
+	ui = true
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+	sort = -version:refname
+[gpg]
+	program = gpg
+[advice]
+	skippedCherryPicks = false
+[delta]
+	side-by-side = true
+	line-numbers = true
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
