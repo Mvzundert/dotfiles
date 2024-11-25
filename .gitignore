@@ -9,3 +9,4 @@ nvim/plugged
 .netrwhist
 nvim/.netrwhist
 nvim/lazy-lock.json
+tools/hyprland/ml4w/cache
