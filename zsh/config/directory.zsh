@@ -25,10 +25,6 @@ alias cat="bat"
 alias tlog="tail -f $1 | bat --paging=never -l log"
 alias bathelp='bat --plain --language=help'
 
-if [[ $OSTYPE == "linux-gnu" ]]; then
-    alias bat="/usr/local/bat/bat"
-fi
-
 alias d='dirs -v | head -10'
 alias 1='cd -'
 alias 2='cd -2'
