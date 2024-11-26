@@ -2,6 +2,9 @@
 tmux/custom/*.local
 zsh/load.zsh
 zsh/custom/
+zsh/plugins/fzf-tab
+zsh/plugins/zsh-autosuggestions
+zsh/plugins/zsh-syntax-highlighting
 nvim/plugged
 !zsh/custom/.gitkeep
 !zsh/custom/custom_example
