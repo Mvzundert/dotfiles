@@ -3,8 +3,10 @@
 
 # we set ctrl+a as the a new prefix
 set -g prefix C-a
+
 # we unbind ctrl+b
 unbind C-b
+
 # we set ctrl+a as the new prefix
 bind C-a send-prefix
 
