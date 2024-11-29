@@ -38,13 +38,6 @@ set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 set('v', '<', '<gv')
 set('v', '>', '>gv')
 
--- Added cloak keymaps to unburden the plugin
-set('n', '<leader>cc', '<cmd>:CloakToggle<cr>', { desc = 'Toggle Cloak for Env files' })
-set('n', '<leader>cpl', '<cmd>:CloakPreviewLine<cr>', { desc = 'Toggle Cloak preview for current line' })
-
--- Added Grug keymaps to unburden the plugin
-set('n', '<leader>gr', '<cmd>:GrugFar<cr>', { desc = 'Search with Grug' })
-
 -- Preview colorschemes
 set('n', '<leader>tcs', '<cmd>Telescope colorscheme<cr>', { desc = 'Switch Colorscheme' })
 

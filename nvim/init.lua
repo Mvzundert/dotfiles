@@ -53,16 +53,20 @@ require('lazy').setup({
       },
     },
   },
-  { import = 'custom' },
-  { import = 'custom.ui' },
-  { import = 'custom.ui.themes' },
-  { import = 'custom.ui.notifications' },
-  { import = 'custom.ui.filetree' },
-  { import = 'custom.coding.git' },
-  { import = 'custom.coding.cmp' },
-  { import = 'custom.coding.test' },
-  { import = 'custom.coding.search' },
-  { import = 'custom.coding.format' },
+
+  { import = 'coding.ai' },
+  { import = 'coding.cmp' },
+  { import = 'coding.format' },
+  { import = 'coding.git' },
+  { import = 'coding.lsp' },
+  { import = 'coding.search' },
+  { import = 'coding.test' },
+  { import = 'coding.todo' },
+
+  { import = 'ui.filetree' },
+  { import = 'ui.misc' },
+  { import = 'ui.notifications' },
+  { import = 'ui.themes' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

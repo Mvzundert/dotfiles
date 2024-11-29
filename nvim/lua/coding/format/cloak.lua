@@ -1,3 +1,5 @@
+local set = vim.keymap.set
+
 return {
   'laytan/cloak.nvim',
   opts = {
@@ -31,4 +33,6 @@ return {
       },
     },
   },
+  set('n', '<leader>cc', '<cmd>:CloakToggle<cr>', { desc = 'Toggle Cloak for Env files' }),
+  set('n', '<leader>cpl', '<cmd>:CloakPreviewLine<cr>', { desc = 'Toggle Cloak preview for current line' }),
 }
