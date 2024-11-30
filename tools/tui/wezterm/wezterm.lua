@@ -7,6 +7,8 @@ local config = wezterm.config_builder()
 -- Alias action
 local act = wezterm.action
 
+config.enable_wayland = false
+
 -- Disale default keybindings as they interfere with Tmux
 config.disable_default_key_bindings = true
 
