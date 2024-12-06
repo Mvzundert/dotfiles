@@ -24,7 +24,7 @@ into your own hands. As long as it runs on my machine, that is all I care
 about. It may be unstable, or not support your system. I offer neither
 warranty nor technical support.
 
-Long story short, I'm just coding for the love of coding!
+Long story short, I'm just coding for the love of coding!!
 
 # DotFiles:
 
