@@ -57,6 +57,19 @@ return {
 \   _-'                                                                `-_   /
 `''                                                                      ``'
 ]],
+      },
+      -- sections = {
+      --   {
+      --     section = 'terminal',
+      --     cmd = 'chafa $HOME/.config/nvim/unicorn.png --format symbols --symbols vhalf; sleep .1',
+      --     height = 17,
+      --     padding = 1,
+      --   },
+      --   {
+      --     { section = 'keys', gap = 1, padding = 1 },
+      --     { section = 'startup' },
+      --   },
+      -- },
     },
     notifier = {
       enabled = true,

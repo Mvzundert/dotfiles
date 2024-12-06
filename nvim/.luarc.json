@@ -2,7 +2,8 @@
     "diagnostics.disable": [
         "param-type-mismatch",
         "deprecated",
-        "missing-fields"
+        "missing-fields",
+        "undefined-field"
     ],
     "diagnostics.globals": [
         "local"

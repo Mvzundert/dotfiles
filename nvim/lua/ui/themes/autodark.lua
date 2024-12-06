@@ -3,14 +3,7 @@ return {
   opts = {
     update_interval = 1000,
 
-    -- base16
-    -- eldritch
     -- everforest
-    -- gruvbox
-    -- kanagawa
-    -- rose-pine
-    -- synthwave
-    -- tokyo-night
     -- vague
     -- catppuccin
 
