@@ -52,14 +52,6 @@ return {
         return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match '^%s*$' == nil
       end
 
-      -- Setup up vim-dadbod
-      -- cmp.setup.filetype({ 'sql' }, {
-      --   sources = {
-      --     { name = 'vim-dadbod-completion' },
-      --     { name = 'buffer' },
-      --   },
-      -- })
-
       cmp.setup {
         snippet = {
           expand = function(args)
