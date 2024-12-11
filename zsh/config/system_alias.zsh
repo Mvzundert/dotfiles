@@ -12,6 +12,7 @@ alias emacs='emacsclient --tty'
 alias buuc='brew update && brew upgrade && brew cleanup'
 alias bbd='brew bundle dump --describe -f'
 alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
+alias jot='script -kadr $HOME/Documents/$(date "+%d-%m-%Y").txt'
 
 # -------------------------------------------------------------------
 # System
