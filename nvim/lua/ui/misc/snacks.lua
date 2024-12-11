@@ -58,18 +58,6 @@ return {
 `''                                                                      ``'
 ]],
       },
-      -- sections = {
-      --   {
-      --     section = 'terminal',
-      --     cmd = 'chafa $HOME/.config/nvim/unicorn.png --format symbols --symbols vhalf; sleep .1',
-      --     height = 17,
-      --     padding = 1,
-      --   },
-      --   {
-      --     { section = 'keys', gap = 1, padding = 1 },
-      --     { section = 'startup' },
-      --   },
-      -- },
     },
     notifier = {
       enabled = true,
@@ -142,6 +130,45 @@ return {
       },
     },
   },
+  zen = {
+    -- You can add any `Snacks.toggle` id here.
+    -- Toggle state is restored when the window is closed.
+    -- Toggle config options are NOT merged.
+    ---@type table<string, boolean>
+    toggles = {
+      dim = true,
+      git_signs = false,
+      mini_diff_signs = false,
+      -- diagnostics = false,
+      -- inlay_hints = false,
+    },
+    show = {
+      statusline = false, -- can only be shown when using the global statusline
+      tabline = false,
+    },
+    ---@type snacks.win.Config
+    win = { style = 'zen' },
+
+    --- Options for the `Snacks.zen.zoom()`
+    ---@type snacks.zen.Config
+    zoom = {
+      toggles = {},
+      show = { statusline = true, tabline = true },
+      win = {
+        backdrop = true,
+        width = 0, -- full width
+      },
+    },
+  },
+  keys = {
+    {
+      '<leader>z',
+      function()
+        Snacks.zen()
+      end,
+      desc = 'Toggle Zen Mode',
+    },
+  },
   init = function()
     vim.api.nvim_create_autocmd('User', {
       pattern = 'VeryLazy',
@@ -160,6 +187,9 @@ return {
         Snacks.toggle.line_number():map '<leader>ul'
         Snacks.toggle.treesitter():map '<leader>uT'
         Snacks.toggle.inlay_hints():map '<leader>uh'
+
+        -- Dimming
+        Snacks.toggle.dim():map '<leader>ud'
       end,
     })
   end,
