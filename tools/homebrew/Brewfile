@@ -27,10 +27,6 @@ brew "openssl@3"
 brew "readline"
 # Next-generation aircrack with lots of new features
 brew "aircrack-ng"
-# YAML Parser
-brew "libyaml"
-# Automate deployment, configuration, and upgrading
-brew "ansible"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -49,6 +45,10 @@ brew "openssl@1.1"
 brew "bower"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Versatile and fast Unicode/ASCII/ANSI graphics renderer
+brew "chafa"
 # Cross-platform make
 brew "cmake"
 # Console Matrix
@@ -58,7 +58,7 @@ brew "curl"
 # Generic library support script
 brew "libtool"
 # General-purpose scripting language
-brew "php"
+brew "php", link: false
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
@@ -79,8 +79,6 @@ brew "exiftool"
 brew "exploitdb"
 # Modern, maintained replacement for ls
 brew "eza"
-# OpenType text shaping engine
-brew "harfbuzz"
 # VP8/VP9 video codec
 brew "libvpx"
 # Play, record, convert, and stream audio and video
@@ -103,10 +101,6 @@ brew "ghostscript"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# Git extension for versioning large files
-brew "git-lfs"
-# Git extension to generate reports for standup meetings
-brew "git-standup"
 # Command-line option parsing utility
 brew "gnu-getopt"
 # GNU implementation of the famous stream editor
@@ -117,8 +111,8 @@ brew "libksba"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Manage compile and link flags for libraries
-brew "pkg-config"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Directory/file & DNS busting tool written in Go
@@ -131,8 +125,6 @@ brew "gulp-cli"
 brew "htop"
 # Apache HTTP server
 brew "httpd"
-# Open source relational database management system
-brew "mysql-client"
 # Network logon cracker which supports many services
 brew "hydra"
 # GNU utilities for networking
@@ -147,8 +139,12 @@ brew "jq"
 brew "lazygit"
 # Conversion library
 brew "libiconv"
+# YAML Parser
+brew "libyaml"
 # Curses-based tool for viewing and analyzing log files
 brew "lnav"
+# Open source relational database management system
+brew "mysql-client"
 # NCurses Disk Usage
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -174,7 +170,9 @@ brew "perl"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # General-purpose scripting language
-brew "php@8.2", restart_service: true
+brew "php@8.1"
+# General-purpose scripting language
+brew "php@8.2", restart_service: true, link: true
 # PHP Mess Detector
 brew "phpmd"
 # PHP Static Analysis Tool
@@ -207,6 +205,8 @@ brew "rustup"
 brew "sqlmap"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Simplified and community-driven man pages
+brew "tldr"
 # Terminal multiplexer
 brew "tmux"
 # Anonymizing overlay network for TCP
@@ -242,7 +242,7 @@ brew "joshmedeski/sesh/sesh"
 # x86_64 Linux GNU Toolchain
 brew "sergiobenitez/osxct/x86_64-unknown-linux-gnu"
 # General-purpose scripting language
-brew "shivammathur/php/php@7.4"
+brew "shivammathur/php/php@7.4", link: true
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Symfony CLI helps Symfony developers manage projects, from local code to remote infrastructure
@@ -250,8 +250,6 @@ brew "symfony-cli/tap/symfony-cli"
 brew "tursodatabase/tap/turso"
 # Black box WordPress vulnerability scanner
 brew "wpscanteam/tap/wpscan"
-# AeroSpace is an i3-like tiling window manager for macOS
-cask "aerospace"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Web browser focusing on privacy
@@ -276,14 +274,12 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 # Open-source keystroke visualiser
 cask "keycastr"
-# Multiplayer online battle arena game
-cask "league-of-legends"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
+# Penetration testing framework
+cask "metasploit"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
-# Open source implementation of Microsoft's .NET Framework
-cask "mono-mdk-for-visual-studio"
 # VPN client for secure internet access and private browsing
 cask "nordvpn"
 # Open-source software for live streaming and screen recording
@@ -306,10 +302,6 @@ cask "tableplus"
 cask "tor-browser"
 # Virtualiser for x86 hardware
 cask "virtualbox"
-# Integrated development environment
-cask "visual-studio"
-# Open-source code editor
-cask "visual-studio-code"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
