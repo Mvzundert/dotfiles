@@ -1,0 +1,8 @@
+# Determine the position of the quick terminal
+quick-terminal-position=top
+
+# Determine the screen of the quick terminal
+quick-terminal-screen=main
+
+# Keybind to toggle the quick terminal
+keybind = cmd+g=toggle_quick_terminal

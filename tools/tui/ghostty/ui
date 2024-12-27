@@ -1,0 +1,22 @@
+# Disable the prompt for confirmation when closing a window.
+confirm-close-surface=false
+
+# Theme for Dark and Light
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+
+# Background opacity and blur radius
+background-opacity=0.8
+background-blur-radius=20
+
+# Hide the title
+title = " "
+
+# Windows won't have native decorations, i.e. titlebar and borders.
+window-decoration=false
+
+# stick with the system window theme
+window-theme=auto
+
+# Default window size
+window-height=34
+window-width=127

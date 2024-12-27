@@ -1,0 +1,14 @@
+# Keybindings
+config-file = "./bindings"
+
+# Fonts options
+config-file = "./fonts"
+
+# Theme options
+config-file = "./ui"
+
+# MacOS only options
+config-file = "./macos"
+
+# Quick terminal options
+# config-file = "quick"
