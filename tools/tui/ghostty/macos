@@ -1,0 +1,14 @@
+# https://ghostty.org/docs/config/reference#macos-non-native-fullscreen
+#
+# Options: 
+# visible-menu - Use non-native macOS fullscreen, keep the menu bar visible
+# true - Use non-native macOS fullscreen, hide the menu bar
+# false - Use native macOS fullscreen
+macos-non-native-fullscreen=true
+
+# https://ghostty.org/docs/config/reference#macos-auto-secure-input
+# If true, Ghostty on macOS will automatically enable the "Secure Input" feature when it detects that a password prompt is being displayed.
+macos-auto-secure-input=true
+
+# https://ghostty.org/docs/config/reference#macos-secure-input-indication
+macos-secure-input-indication=true
