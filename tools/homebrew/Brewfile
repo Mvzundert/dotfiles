@@ -79,6 +79,8 @@ brew "exiftool"
 brew "exploitdb"
 # Modern, maintained replacement for ls
 brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # VP8/VP9 video codec
 brew "libvpx"
 # Play, record, convert, and stream audio and video
