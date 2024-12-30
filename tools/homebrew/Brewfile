@@ -221,8 +221,6 @@ brew "wget"
 brew "wp-cli"
 # Bash completion for Wpcli
 brew "wp-cli-completion"
-# JavaScript package manager
-brew "yarn"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # Programming language designed for robustness, optimality, and clarity
@@ -252,8 +250,6 @@ brew "tursodatabase/tap/turso"
 brew "wpscanteam/tap/wpscan"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
-# Web browser focusing on privacy
-cask "brave-browser"
 # Web security testing toolkit
 cask "burp-suite"
 # Server and cloud storage browser
@@ -270,8 +266,6 @@ cask "font-monaspace"
 cask "ghostty"
 # HTTP and GraphQL Client
 cask "insomnia"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Open-source keystroke visualiser
