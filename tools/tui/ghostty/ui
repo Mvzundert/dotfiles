@@ -5,7 +5,7 @@ confirm-close-surface=false
 theme = dark:catppuccin-mocha,light:catppuccin-latte
 
 # Background opacity and blur radius
-background-opacity=0.5
+background-opacity=0.8
 background-blur-radius=20
 
 # Hide the title
