@@ -1,6 +1,7 @@
-# To enable a module: true, Disable: Leave empty
 PHP=
 PYTHON=
+ELIXIR=
+RUBY=
 
 LARAVEL=
 DRUPAL=
@@ -11,5 +12,6 @@ BUILD=
 GIT=
 TMUX=
 HACK=
-PROMPT=
-POWERLEVEL=
+
+MARZUN=
+STARSHIP=
