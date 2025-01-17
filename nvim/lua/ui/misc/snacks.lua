@@ -60,7 +60,7 @@ return {
       },
     },
     notifier = {
-      enabled = true,
+      enabled = false,
       width = { min = 40, max = 0.4 },
       height = { min = 1, max = 0.6 },
       -- editor margin to keep free. tabline and statusline are taken into account automatically
