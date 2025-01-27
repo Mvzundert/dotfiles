@@ -42,6 +42,9 @@ set -g visual-activity on
 # Center the window list
 # set -g status-justify centre
 
+set -g pane-active-border-style "bg=default"
+set -g pane-border-style "bg=default"
+
 # Start windows and panes at 1, not 0
 set -g base-index 1
 setw -g pane-base-index 1
@@ -70,7 +73,7 @@ set -g default-terminal "screen-256color"
 set -ga terminal-overrides ',xterm-256color:Tc'
 
 bind-key "T" run-shell "sesh connect \"$(
-  sesh list --icons | fzf-tmux -p 55%,60% \
+  sesh list --icons | fzf-tmux -p 80%,70% \
     --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
     --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
     --bind 'tab:down,btab:up' \
@@ -79,5 +82,7 @@ bind-key "T" run-shell "sesh connect \"$(
     --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c --icons)' \
     --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z --icons)' \
     --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
-    --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)'
+    --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \
+    --preview-window 'right:60%' \
+    --preview 'sesh preview {}' \
 )\""
