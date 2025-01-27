@@ -2,8 +2,7 @@
 confirm-close-surface=false
 
 # Theme for Dark and Light
-theme = dark:GruvBoxDark,light:GruvBoxLight
-
+theme = dark:Everforest Dark - Hard,light:catppuccin-latte
 # Background opacity and blur radius
 background-opacity=0.8
 background-blur-radius=20
