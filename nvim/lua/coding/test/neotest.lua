@@ -22,7 +22,7 @@ return {
 
         -- Run N tests in parallel, <=1 doesn't pass --parallel to pest at all
         -- -- Default: 0
-        parallel = 16,
+        parallel = 10,
 
         -- Enable ["compact" output printer](https://pestphp.com/docs/optimizing-tests#content-compact-printer)
         -- -- Default: false
