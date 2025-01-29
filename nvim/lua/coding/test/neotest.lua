@@ -3,6 +3,7 @@ return {
   dependencies = {
     'nvim-neotest/nvim-nio',
     'olimorris/neotest-phpunit',
+    'V13Axel/neotest-pest',
   },
   opts = {
     -- Can be a list of adapters like what neotest expects,
@@ -10,7 +11,26 @@ return {
     -- or a table of adapter names, mapped to adapter configs.
     -- The adapter will then be automatically loaded with the config.
     adapters = {
+      ['neotest-pest'] = {
+        -- Ignore these directories when looking for tests
+        -- -- Default: { "vendor", "node_modules" }
+        ignore_dirs = { 'vendor', 'node_modules' },
+
+        -- Specify suffixes for files that should be considered tests
+        -- -- Default: { "Test.php" }
+        test_file_suffixes = { 'Test.php', '_test.php', 'PestTest.php' },
+
+        -- Run N tests in parallel, <=1 doesn't pass --parallel to pest at all
+        -- -- Default: 0
+        parallel = 16,
+
+        -- Enable ["compact" output printer](https://pestphp.com/docs/optimizing-tests#content-compact-printer)
+        -- -- Default: false
+        compact = false,
+      },
+
       ['neotest-phpunit'] = {
+        root_ignore_files = { 'tests/Pest.php' },
         phpunit_bin = 'vendor/bin/phpunit',
         phpunit_args = {
           '--colors=always',
