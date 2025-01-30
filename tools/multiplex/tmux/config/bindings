@@ -72,7 +72,7 @@ bind w display-popup -E -w "90%" -h "90%" "\
   xargs tmux switch-client -t"
 
 bind w display-popup -E -w "90%" -h "90%" "\
-  tmux list-sessions -F '#{?session_attached,,#{session_name}} ' |\
+  tmux list-sessions -F '#{session_name} ' |\
   sed '/^\s*$/d' |\
   fzf --reverse --header 'jump-to-session' --exit-0 --preview='tmux list-windows -t {1} -F \"#{window_index}: #{window_name}\" | while read -r line; do tmux capture-pane -peJ -t {1}:$(echo $line | cut -d\":\" -f1) | sed \"s/^/$(echo $line | cut -d\":\" -f2): /\"; done' |\
   xargs tmux switch-client -t"
