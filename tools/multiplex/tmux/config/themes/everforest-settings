@@ -1,5 +1,0 @@
-# or any permutation of dark/light and soft/medium/hard
-set -g @everforest_theme 'dark-soft' 
-
-# or off to disable window_tabs
-set -g @everforest_window_tabs_enabled on 
