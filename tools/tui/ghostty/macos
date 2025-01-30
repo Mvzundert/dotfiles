@@ -18,3 +18,5 @@ macos-auto-secure-input=true
 
 # https://ghostty.org/docs/config/reference#macos-secure-input-indication
 macos-secure-input-indication=true
+
+macos-titlebar-style = hidden
