@@ -1,6 +1,5 @@
 # remap prefix to Control + a which is just
 # more sensible then Control + b.
-
 # we set ctrl+a as the a new prefix
 set -g prefix C-a
 
@@ -42,20 +41,22 @@ bind -r C-l select-window -t :+
 bind e setw synchronize-panes on
 bind E setw synchronize-panes off
 
-# Make tmux not shit itself when clearing
-# bind -n C-k send-keys -R \; clear-history
-# set -g prefix C-h
-# unbind K
-# bind K send-keys -R \; send-keys C-l \; clear-history
-
 # Use CTRL+Shift+direction to resize tmux panes a certain with / height
 bind-key -n C-S-Up resize-pane -U 5
 bind-key -n C-S-Down resize-pane -D 5
 bind-key -n C-S-Left resize-pane -L 5
 bind-key -n C-S-Right resize-pane -R 5
 
-# open lazygit in a new window
+# Open tmux session swapping in a popup window
+unbind w
+bind w display-popup -E -w "90%" -h "90%" "\
+  tmux list-sessions -F '#{?session_attached,,#{session_name}} ' |\
+  sed '/^\s*$/d' |\
+  fzf --reverse --header 'jump-to-session' --exit-0 --preview='tmux list-windows -t {1} -F \"#{window_index}: #{window_name}\" | while read -r line; do tmux capture-pane -peJ -t {1}:$(echo $line | cut -d\":\" -f1) | sed \"s/^/$(echo $line | cut -d\":\" -f2): /\"; done' |\
+  xargs tmux switch-client -t"
+
+# Open lazygit in a new window
 bind-key g display-popup -w "90%" -h "90%" -d "#{pane_current_path}" -E "lazygit"
 
-# Unbind old 'resurrect-save' key to prevent default layout overwrite with resurrect
-unbind C-s
+# Open lazydocker in a new window
+bind-key d display-popup -w "90%" -h "90%" -E "lazydocker"
