@@ -19,3 +19,12 @@ window-theme=auto
 # Default window size
 window-height=34
 window-width=127
+
+window-padding-color = background
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = false
+adjust-cell-height = 10%
+
+mouse-hide-while-typing = true
+cursor-invert-fg-bg = true
