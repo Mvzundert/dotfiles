@@ -10,6 +10,13 @@ unbind C-b
 # we set ctrl+a as the new prefix
 bind C-a send-prefix
 
+# tile all windows
+ unbind =
+ bind = select-layout tiled
+
+# reload config file
+bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
+
 # smart pane switching with awareness of vim splits
 # need to pair this with Plugin 'christoomey/vim-tmux-navigator' for vim
 # makes a ton of sense once used to it.
@@ -46,6 +53,9 @@ bind-key -n C-S-Up resize-pane -U 5
 bind-key -n C-S-Down resize-pane -D 5
 bind-key -n C-S-Left resize-pane -L 5
 bind-key -n C-S-Right resize-pane -R 5
+
+# open lazygit in a new window
+bind-key g display-popup -w "90%" -h "90%" -d "#{pane_current_path}" -E "lazygit"
 
 # Unbind old 'resurrect-save' key to prevent default layout overwrite with resurrect
 unbind C-s
