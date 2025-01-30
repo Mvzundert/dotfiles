@@ -9,7 +9,7 @@ shell-integration = zsh
 # visible-menu - Use non-native macOS fullscreen, keep the menu bar visible
 # true - Use non-native macOS fullscreen, hide the menu bar
 # false - Use native macOS fullscreen
-macos-non-native-fullscreen=true
+macos-non-native-fullscreen=false
 
 # https://ghostty.org/docs/config/reference#macos-auto-secure-input
 #
@@ -19,4 +19,4 @@ macos-auto-secure-input=true
 # https://ghostty.org/docs/config/reference#macos-secure-input-indication
 macos-secure-input-indication=true
 
-macos-titlebar-style = hidden
+macos-titlebar-style=hidden
