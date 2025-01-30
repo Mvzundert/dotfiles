@@ -3,6 +3,7 @@ confirm-close-surface=false
 
 # Theme for Dark and Light
 theme = dark:detuned,light:Monokai Pro Light
+
 # Background opacity and blur radius
 background-opacity=0.8
 background-blur-radius=20
@@ -26,5 +27,4 @@ window-padding-y = 0
 window-padding-balance = false
 adjust-cell-height = 10%
 
-mouse-hide-while-typing = true
 cursor-invert-fg-bg = true
