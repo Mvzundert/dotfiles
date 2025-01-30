@@ -4,7 +4,7 @@ confirm-close-surface=false
 # Theme for Dark and Light
 theme = dark:detuned,light:Builtin Solarized Light
 # Background opacity and blur radius
-background-opacity=0.7
+background-opacity=0.8
 background-blur-radius=20
 
 # Hide the title
