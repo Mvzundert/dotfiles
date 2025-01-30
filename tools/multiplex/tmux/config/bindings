@@ -47,6 +47,22 @@ bind-key -n C-S-Down resize-pane -D 5
 bind-key -n C-S-Left resize-pane -L 5
 bind-key -n C-S-Right resize-pane -R 5
 
+# Open tmux session spawning and search in a popup window using sesh and fzf
+bind-key "T" run-shell "sesh connect \"$(
+  sesh list --icons | fzf-tmux -p 90%,90% \
+    --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+    --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
+    --bind 'tab:down,btab:up' \
+    --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list --icons)' \
+    --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t --icons)' \
+    --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c --icons)' \
+    --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z --icons)' \
+    --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+    --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \
+    --preview-window 'right:60%' \
+    --preview 'sesh preview {}' \
+)\""
+
 # Open tmux session swapping in a popup window
 unbind w
 bind w display-popup -E -w "90%" -h "90%" "\
@@ -55,8 +71,18 @@ bind w display-popup -E -w "90%" -h "90%" "\
   fzf --reverse --header 'jump-to-session' --exit-0 --preview='tmux list-windows -t {1} -F \"#{window_index}: #{window_name}\" | while read -r line; do tmux capture-pane -peJ -t {1}:$(echo $line | cut -d\":\" -f1) | sed \"s/^/$(echo $line | cut -d\":\" -f2): /\"; done' |\
   xargs tmux switch-client -t"
 
+bind w display-popup -E -w "90%" -h "90%" "\
+  tmux list-sessions -F '#{?session_attached,,#{session_name}} ' |\
+  sed '/^\s*$/d' |\
+  fzf --reverse --header 'jump-to-session' --exit-0 --preview='tmux list-windows -t {1} -F \"#{window_index}: #{window_name}\" | while read -r line; do tmux capture-pane -peJ -t {1}:$(echo $line | cut -d\":\" -f1) | sed \"s/^/$(echo $line | cut -d\":\" -f2): /\"; done' |\
+  xargs tmux switch-client -t"
+
+# Open gh issues and pr's for the current dir for the user. (Requires GH CLI)
+#bind-key s display-popup -w "90%" -h "90%" -E "$DOTFILES/tools/multiplex/tmux/config/scripts/gh_status.sh"
+
 # Open lazygit in a new window
 bind-key g display-popup -w "90%" -h "90%" -d "#{pane_current_path}" -E "lazygit"
 
 # Open lazydocker in a new window
 bind-key d display-popup -w "90%" -h "90%" -E "lazydocker"
+
