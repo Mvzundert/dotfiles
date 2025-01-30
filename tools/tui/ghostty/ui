@@ -2,7 +2,7 @@
 confirm-close-surface=false
 
 # Theme for Dark and Light
-theme = dark:detuned,light:Builtin Solarized Light
+theme = dark:DoomOne,light:Builtin Solarized Light
 # Background opacity and blur radius
 background-opacity=0.8
 background-blur-radius=20
