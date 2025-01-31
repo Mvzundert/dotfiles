@@ -132,6 +132,14 @@ if dotfiles::check "${PYTHON}"; then
     done
 fi
 
+if dotfiles::check "${GO}"; then
+    # Python modules
+    for file in $MODULES/development/go/*; do
+        # shellcheck disable=SC1090
+        source "$file"
+    done
+fi
+
 if dotfiles::check "${ELIXIR}"; then
     # Elixir modules
     for file in $MODULES/development/elixir/*; do
