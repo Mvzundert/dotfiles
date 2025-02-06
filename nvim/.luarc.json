@@ -3,7 +3,8 @@
         "param-type-mismatch",
         "deprecated",
         "missing-fields",
-        "undefined-field"
+        "undefined-field",
+        "undefined-global"
     ],
     "diagnostics.globals": [
         "local"
