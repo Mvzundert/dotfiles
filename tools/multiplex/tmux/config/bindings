@@ -86,3 +86,5 @@ bind-key g display-popup -w "90%" -h "90%" -d "#{pane_current_path}" -E "lazygit
 # Open lazydocker in a new window
 bind-key d display-popup -w "90%" -h "90%" -E "lazydocker"
 
+# Open GH dash in a new window
+bind-key P display-popup -w "90%" -h "90%" -E "gh dash"
