@@ -3,6 +3,36 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
+    explorer = {
+      enabled = true,
+      sort = { fields = { 'sort' } },
+      tree = true,
+      supports_live = false,
+      follow_file = true,
+      focus = 'list',
+      auto_close = true,
+      jump = { close = false },
+      layout = { preset = 'sidebar', preview = false },
+      formatters = { file = { filename_only = true } },
+      matcher = { sort_empty = true },
+      config = function(opts)
+        return require('snacks.picker.source.explorer').setup(opts)
+      end,
+    },
+    win = {
+      list = {
+        keys = {
+          ['<BS>'] = 'explorer_up',
+          ['a'] = 'explorer_add',
+          ['d'] = 'explorer_del',
+          ['r'] = 'explorer_rename',
+          ['c'] = 'explorer_copy',
+          ['y'] = 'explorer_yank',
+          ['<c-c>'] = 'explorer_cd',
+          ['.'] = 'explorer_focus',
+        },
+      },
+    },
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
@@ -58,47 +88,6 @@ return {
 `''                                                                      ``'
 ]],
       },
-    },
-    notifier = {
-      enabled = false,
-      width = { min = 40, max = 0.4 },
-      height = { min = 1, max = 0.6 },
-      -- editor margin to keep free. tabline and statusline are taken into account automatically
-      margin = { top = 0, right = 1, bottom = 0 },
-      padding = true, -- add 1 cell of left/right padding to the notification window
-      sort = { 'level', 'added' }, -- sort by level and time
-      -- minimum log level to display. TRACE is the lowest
-      -- all notifications are stored in history
-      level = vim.log.levels.TRACE,
-      icons = {
-        error = ' ',
-        warn = ' ',
-        info = ' ',
-        debug = ' ',
-        trace = ' ',
-      },
-      keep = function(notif)
-        return vim.fn.getcmdpos() > 0
-      end,
-      ---@type snacks.notifier.style
-      style = 'fancy',
-      top_down = true, -- place notifications from top to bottom
-      date_format = '%R', -- time format for notifications
-      refresh = 50, -- refresh at most every 50ms
-      -- LSP progress notification
-      vim.api.nvim_create_autocmd('LspProgress', {
-        ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
-        callback = function(ev)
-          local spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }
-          vim.notify(vim.lsp.status(), 'info', {
-            id = 'lsp_progress',
-            title = 'LSP Progress',
-            opts = function(notif)
-              notif.icon = ev.data.params.value.kind == 'end' and ' ' or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
-            end,
-          })
-        end,
-      }),
     },
     quickfile = { enabled = true },
     statuscolumn = {
@@ -160,15 +149,6 @@ return {
       },
     },
   },
-  keys = {
-    {
-      '<leader>z',
-      function()
-        Snacks.zen()
-      end,
-      desc = 'Toggle Zen Mode',
-    },
-  },
   init = function()
     vim.api.nvim_create_autocmd('User', {
       pattern = 'VeryLazy',
@@ -181,16 +161,180 @@ return {
           Snacks.debug.backtrace()
         end
         vim.print = _G.dd -- Override print to use snacks for `:=` command
-
-        -- Create some toggle mappings
-        Snacks.toggle.option('relativenumber', { name = 'Relative Number' }):map '<leader>ur'
-        Snacks.toggle.line_number():map '<leader>ul'
-        Snacks.toggle.treesitter():map '<leader>uT'
-        Snacks.toggle.inlay_hints():map '<leader>uh'
-
-        -- Dimming
-        Snacks.toggle.dim():map '<leader>ud'
       end,
     })
   end,
+  keys = {
+    {
+      '<leader>/',
+      function()
+        Snacks.picker.grep()
+      end,
+      desc = 'Grep',
+    },
+    {
+      '<leader>:',
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = 'Command History',
+    },
+    {
+      '<leader>e',
+      function()
+        Snacks.explorer()
+      end,
+      desc = 'File Explorer',
+    },
+    -- find
+    {
+      '<leader>fb',
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = 'Buffers',
+    },
+    {
+      '<leader>fc',
+      function()
+        Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
+      end,
+      desc = 'Find Config File',
+    },
+    {
+      '<leader>ff',
+      function()
+        Snacks.picker.files()
+      end,
+      desc = 'Find Files',
+    },
+    {
+      '<leader>fg',
+      function()
+        Snacks.picker.git_files()
+      end,
+      desc = 'Find Git Files',
+    },
+    {
+      '<leader>fp',
+      function()
+        Snacks.picker.projects()
+      end,
+      desc = 'Projects',
+    },
+    {
+      '<leader>fr',
+      function()
+        Snacks.picker.recent()
+      end,
+      desc = 'Recent',
+    },
+    -- Grep
+    {
+      '<leader>sg',
+      function()
+        Snacks.picker.grep()
+      end,
+      desc = 'Grep',
+    },
+    {
+      '<leader>sw',
+      function()
+        Snacks.picker.grep_word()
+      end,
+      desc = 'Visual selection or word',
+      mode = { 'n', 'x' },
+    },
+    {
+      '<leader>sa',
+      function()
+        Snacks.picker.autocmds()
+      end,
+      desc = 'Autocmds',
+    },
+    {
+      '<leader>sc',
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = 'Command History',
+    },
+    {
+      '<leader>sC',
+      function()
+        Snacks.picker.commands()
+      end,
+      desc = 'Commands',
+    },
+    {
+      '<leader>sd',
+      function()
+        Snacks.picker.diagnostics()
+      end,
+      desc = 'Diagnostics',
+    },
+    {
+      '<leader>sD',
+      function()
+        Snacks.picker.diagnostics_buffer()
+      end,
+      desc = 'Buffer Diagnostics',
+    },
+    {
+      '<leader>sh',
+      function()
+        Snacks.picker.help()
+      end,
+      desc = 'Help Pages',
+    },
+    {
+      '<leader>sk',
+      function()
+        Snacks.picker.keymaps()
+      end,
+      desc = 'Keymaps',
+    },
+    {
+      '<leader>sm',
+      function()
+        Snacks.picker.marks()
+      end,
+      desc = 'Marks',
+    },
+    {
+      '<leader>sM',
+      function()
+        Snacks.picker.man()
+      end,
+      desc = 'Man Pages',
+    },
+    {
+      '<leader>sR',
+      function()
+        Snacks.picker.resume()
+      end,
+      desc = 'Resume',
+    },
+    {
+      '<leader>su',
+      function()
+        Snacks.picker.undo()
+      end,
+      desc = 'Undo History',
+    },
+    {
+      '<leader>uC',
+      function()
+        Snacks.picker.colorschemes()
+      end,
+      desc = 'Colorschemes',
+    },
+    {
+      '<leader>z',
+      function()
+        Snacks.zen()
+      end,
+      desc = 'Toggle Zen Mode',
+    },
+  },
 }
