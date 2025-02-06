@@ -162,6 +162,97 @@ return {
   },
   keys = {
     {
+      '<leader>/',
+      function()
+        Snacks.picker.grep()
+      end,
+      desc = 'Grep',
+    },
+    {
+      '<leader>:',
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = 'Command History',
+    },
+    {
+      '<leader>fc',
+      function()
+        Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
+      end,
+      desc = 'Find Config File',
+    },
+    {
+      '<leader>fg',
+      function()
+        Snacks.picker.git_files()
+      end,
+      desc = 'Find Git Files',
+    },
+    {
+      '<leader>sa',
+      function()
+        Snacks.picker.autocmds()
+      end,
+      desc = 'Autocmds',
+    },
+    {
+      '<leader>sc',
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = 'Command History',
+    },
+    {
+      '<leader>sC',
+      function()
+        Snacks.picker.commands()
+      end,
+      desc = 'Commands',
+    },
+    {
+      '<leader>sd',
+      function()
+        Snacks.picker.diagnostics()
+      end,
+      desc = 'Diagnostics',
+    },
+    {
+      '<leader>sD',
+      function()
+        Snacks.picker.diagnostics_buffer()
+      end,
+      desc = 'Buffer Diagnostics',
+    },
+    {
+      '<leader>sh',
+      function()
+        Snacks.picker.help()
+      end,
+      desc = 'Help Pages',
+    },
+    {
+      '<leader>sk',
+      function()
+        Snacks.picker.keymaps()
+      end,
+      desc = 'Keymaps',
+    },
+    {
+      '<leader>sR',
+      function()
+        Snacks.picker.resume()
+      end,
+      desc = 'Resume',
+    },
+    {
+      '<leader>su',
+      function()
+        Snacks.picker.undo()
+      end,
+      desc = 'Undo History',
+    },
+    {
       '<leader>z',
       function()
         Snacks.zen()
