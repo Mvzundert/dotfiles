@@ -23,6 +23,10 @@ set('n', '<leader>sk', function()
   Snacks.picker.keymaps()
 end, { desc = '[S]earch [K]eymaps' })
 
+set('n', '<leader>sr', function()
+  Snacks.picker.registers()
+end, { desc = '[S]earch [R]egisters' })
+
 set('n', '<leader>sR', function()
   Snacks.picker.resume()
 end, { desc = 'Resume' })
@@ -33,7 +37,7 @@ end, { desc = '[S]earch [U]ndo History' })
 
 set('n', '<leader>n', function()
   Snacks.picker.notifications()
-end, { desc = 'Toggle [N]otificatio' })
+end, { desc = 'Toggle [N]otifications' })
 
 set('n', '<leader>z', function()
   Snacks.zen()
