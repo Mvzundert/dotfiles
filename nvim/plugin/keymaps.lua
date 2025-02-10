@@ -43,3 +43,94 @@ set('n', '<leader>tcs', '<cmd>Telescope colorscheme<cr>', { desc = 'Switch Color
 
 -- quit
 set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+
+-- ==============
+-- Snacks Keymaps
+-- ==============
+
+-- Snacks.explorer.open(opts)
+
+-- Snacks Explorer
+set('n', '<leader>e', function()
+  Snacks.explorer.open(opts)
+end, { desc = 'Filetree' })
+
+-- Snacks grep search
+set('n', '<leader>/', function()
+  Snacks.picker.grep()
+end, { desc = 'Grep' })
+
+-- Snacks Command History
+set('n', '<leader>:', function()
+  Snacks.picker.command_history()
+end, { desc = 'Command History' })
+
+-- Snacks Command History
+set('n', '<leader>fc', function()
+  Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
+end, { desc = 'Find Config Files' })
+
+-- Snacks Find Git files
+set('n', '<leader>fg', function()
+  Snacks.picker.git_files()
+end, { desc = 'Find Git Files' })
+
+-- Snacks Find Git files
+set('n', '<leader>fg', function()
+  Snacks.picker.git_files()
+end, { desc = 'Find Git Files' })
+
+-- Snacks Autocmds
+set('n', '<leader>sa', function()
+  Snacks.picker.autocmds()
+end, { desc = 'Autocmds' })
+
+-- Snacks Commands
+set('n', '<leader>sC', function()
+  Snacks.picker.commands()
+end, { desc = 'Commands' })
+
+-- Snacks Command History
+set('n', '<leader>sc', function()
+  Snacks.picker.command_history()
+end, { desc = 'Command History' })
+
+-- Snacks Diagnostics
+set('n', '<leader>sd', function()
+  Snacks.picker.diagnostics()
+end, { desc = 'Diagnostics' })
+
+-- Snacks Diagnostics
+set('n', '<leader>sd', function()
+  Snacks.picker.diagnostics()
+end, { desc = 'Diagnostics' })
+
+-- Snacks Buffer Diagnostics
+set('n', '<leader>sD', function()
+  Snacks.picker.diagnostics_buffer()
+end, { desc = 'Buffer Diagnostics' })
+
+-- Snacks Help pages
+set('n', '<leader>sh', function()
+  Snacks.picker.help()
+end, { desc = 'Help Pages' })
+
+-- Snacks search keymaps
+set('n', '<leader>sk', function()
+  Snacks.picker.keymaps()
+end, { desc = 'Search Keymaps' })
+
+-- Snacks Resume
+set('n', '<leader>sR', function()
+  Snacks.picker.resume()
+end, { desc = 'Resume' })
+
+-- Snacks View undo history
+set('n', '<leader>su', function()
+  Snacks.picker.undo()
+end, { desc = 'View Undo History' })
+
+-- Snacks Zen mode
+set('n', '<leader>z', function()
+  Snacks.zen()
+end, { desc = 'Toggle Zen Mode' })
