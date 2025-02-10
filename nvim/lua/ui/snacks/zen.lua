@@ -1,7 +1,6 @@
 return {
   'folke/snacks.nvim',
-  priority = 1000,
-  lazy = false,
+  ---@type snacks.Config
   opts = {
     dim = {
       enabled = true, -- enable/disable the plugin
