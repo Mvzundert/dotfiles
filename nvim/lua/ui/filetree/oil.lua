@@ -186,9 +186,6 @@ return {
           border = 'rounded',
         },
       }
-
-      -- Open parent directory in floating window
-      vim.keymap.set('n', '<leader>-', require('oil').toggle_float)
     end,
   },
 }
