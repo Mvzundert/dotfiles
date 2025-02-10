@@ -102,11 +102,4 @@ return {
 
     require('neotest').setup(opts)
   end,
-  -- stylua: ignore
-  keys = {
-    {"<leader>T", "", desc = "+[T]est"},
-    { "<leader>Tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
-    { "<leader>Tl", function() require("neotest").run.run_last() end, desc = "Run Last" },
-    { "<leader>Ts", function() require("neotest").summary.toggle() end, desc = "Toggle Summary" },
-  },
 }
