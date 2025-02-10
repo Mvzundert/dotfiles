@@ -5,7 +5,7 @@
 local set = vim.keymap.set
 
 -- =====================================================================
--- General Keymaps
+-- General
 -- =====================================================================
 set('n', '<leader>fc', function()
   Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
@@ -44,7 +44,7 @@ set('n', '<leader>z', function()
 end, { desc = 'Toggle [Z]en Mode' })
 
 -- =====================================================================
--- Security Keymaps
+-- Security
 -- =====================================================================
 -- Toggle cloak for env files
 set('n', '<leader>cc', '<cmd>:CloakToggle<cr>', { desc = 'Toggle Cloak for Env files' })
@@ -52,7 +52,7 @@ set('n', '<leader>cc', '<cmd>:CloakToggle<cr>', { desc = 'Toggle Cloak for Env f
 set('n', '<leader>cpl', '<cmd>:CloakPreviewLine<cr>', { desc = 'Toggle Cloak preview for current line' })
 
 -- =====================================================================
--- Navigation Keymaps
+-- Navigation
 -- =====================================================================
 -- TIP: Disable arrow keys in normal mode
 set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -72,14 +72,14 @@ set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
 set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
 -- =====================================================================
--- Formatting Keymaps
+-- Formatting
 -- =====================================================================
 -- better indenting
 set('v', '<', '<gv')
 set('v', '>', '>gv')
 
 -- =====================================================================
--- Explorer Keymaps
+-- Explorer
 -- =====================================================================
 -- @ToDo: figure out how to hide the search and set sane defaults for this to be useful.
 -- set('n', '<leader>ee', function()
@@ -87,7 +87,7 @@ set('v', '>', '>gv')
 -- end, { desc = '[E]xplorer' })
 
 -- =====================================================================
--- Search Keymaps
+-- Search
 -- =====================================================================
 set('n', '<leader>sf', function()
   Snacks.picker.files()
@@ -108,7 +108,7 @@ end, { desc = 'Search using grep in current buffer ' })
 set('n', '<leader>gr', '<cmd>:GrugFar<cr>', { desc = 'Search with Grug' })
 
 -- =====================================================================
--- Git Keymaps
+-- Git
 -- =====================================================================
 set('n', '<leader>gs', function()
   Snacks.picker.git_status()
@@ -135,7 +135,7 @@ set('n', '<leader>glb', function()
 end, { desc = 'Toggle [G]it [L]ine [B]lame' })
 
 -- =====================================================================
--- LSP Keymap
+-- LSP
 -- =====================================================================
 set('n', '<leader>gd', function()
   Snacks.picker.lsp_definitions()
@@ -158,14 +158,14 @@ set('n', '<leader>gt', function()
 end, { desc = '[G]oto [T]ype Definitions' })
 
 -- =====================================================================
--- Todo Keymaps
+-- Todo
 -- =====================================================================
 set('n', '<leader>ct', function()
   Snacks.picker.todo_comments()
 end, { desc = '[C]heck [T]odo' })
 
 -- =====================================================================
--- Test Keymaps
+-- Test
 -- =====================================================================
 set('n', '<leader>tn', function()
   require('neotest').run.run()
@@ -180,7 +180,7 @@ set('n', '<leader>ts', function()
 end, { desc = 'Toggle Summary' })
 
 -- =====================================================================
--- Commands Keymaps
+-- Commands
 -- =====================================================================
 set('n', '<leader>:', function()
   Snacks.picker.command_history()
@@ -195,7 +195,7 @@ set('n', '<leader>sc', function()
 end, { desc = '[S]earch [C]ommands' })
 
 -- =====================================================================
--- Diagnostics Keymaps
+-- Diagnostics
 -- =====================================================================
 set('n', '<leader>sd', function()
   Snacks.picker.diagnostics()
