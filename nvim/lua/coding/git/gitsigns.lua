@@ -20,22 +20,4 @@ return { -- Adds git related signs to the gutter, as well as utilities for manag
       untracked = { text = '┆' },
     },
   },
-  keys = {
-    {
-      '<leader>gsb',
-      function()
-        require('gitsigns').toggle_current_line_blame()
-      end,
-      mode = '',
-      desc = 'Toggle git line blame',
-    },
-    {
-      '<leader>gsd',
-      function()
-        require('gitsigns').toggle_deleted()
-      end,
-      mode = '',
-      desc = 'Toggle git deleted',
-    },
-  },
 }
