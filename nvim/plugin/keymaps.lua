@@ -31,6 +31,10 @@ set('n', '<leader>su', function()
   Snacks.picker.undo()
 end, { desc = '[S]earch [U]ndo History' })
 
+set('n', '<leader>n', function()
+  Snacks.picker.notifications()
+end, { desc = 'Toggle [N]otificatio' })
+
 set('n', '<leader>z', function()
   Snacks.zen()
 end, { desc = 'Toggle [Z]en Mode' })
