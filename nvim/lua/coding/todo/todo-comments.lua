@@ -66,7 +66,4 @@ return {
       -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
     },
   },
-  keys = {
-    { '<leader>ct', '<cmd>TodoTelescope<cr>', desc = 'Open Todo in Telescope' },
-  },
 }
