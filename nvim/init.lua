@@ -64,7 +64,8 @@ require('lazy').setup({
   { import = 'coding.todo' },
 
   { import = 'ui.filetree' },
-  { import = 'ui.misc' },
+  { import = 'ui.menu' },
+  { import = 'ui.snacks' },
   { import = 'ui.notifications' },
   { import = 'ui.themes' },
 }, {
