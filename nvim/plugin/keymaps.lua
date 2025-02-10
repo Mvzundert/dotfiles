@@ -110,6 +110,12 @@ set('n', '<leader>gr', '<cmd>:GrugFar<cr>', { desc = 'Search with Grug' })
 -- =====================================================================
 -- Git
 -- =====================================================================
+--{ "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+
+set('n', '<leader>lg', function()
+  Snacks.lazygit()
+end, { desc = 'Open [L]azy [G]it' })
+
 set('n', '<leader>gs', function()
   Snacks.picker.git_status()
 end, { desc = 'Search [G]it [S]atus' })
