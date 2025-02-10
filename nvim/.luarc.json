@@ -4,7 +4,8 @@
         "deprecated",
         "missing-fields",
         "undefined-field",
-        "undefined-global"
+        "undefined-global",
+        "assign-type-mismatch"
     ],
     "diagnostics.globals": [
         "local"
