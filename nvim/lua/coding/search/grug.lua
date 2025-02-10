@@ -9,6 +9,4 @@ return {
       -- engine = 'ripgrep' is default, but 'astgrep' can be specified
     }
   end,
-
-  set('n', '<leader>gr', '<cmd>:GrugFar<cr>', { desc = 'Search with Grug' }),
 }
