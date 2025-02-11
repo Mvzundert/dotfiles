@@ -64,8 +64,9 @@ return {
       },
 
       highlight_groups = {
-        -- Comment = { fg = "foam" },
-        -- VertSplit = { fg = "muted", bg = "muted" },
+        Title = { fg = 'Iris' },
+        Directory = { fg = 'Text' },
+        Comment = { fg = 'Subtle' },
       },
 
       before_highlight = function(group, highlight, palette)
