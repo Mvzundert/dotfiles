@@ -7,6 +7,7 @@ return {
       sources = {
         explorer = {
           hidden = true, -- show hidden files
+          ignored = true, -- show ignored files
           layout = {
             auto_hide = { 'input' },
           },
