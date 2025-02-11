@@ -115,9 +115,6 @@ return {
             {
               icon = ' ',
               title = 'Git Status',
-              action = function()
-                vim.fn.jobstart('gh pr list --web', { detach = true })
-              end,
               cmd = 'git --no-pager diff --stat -B -M -C',
               height = 10,
             },
