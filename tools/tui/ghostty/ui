@@ -2,7 +2,7 @@
 confirm-close-surface=false
 
 # Theme for Dark and Light
-theme = dark:detuned,light:Monokai Pro Light
+theme = dark:rose-pine,light:rose-pine-dawn
 
 # Background opacity and blur radius
 background-opacity=0.8
