@@ -81,10 +81,9 @@ set('v', '>', '>gv')
 -- =====================================================================
 -- Explorer
 -- =====================================================================
--- @ToDo: figure out how to hide the search and set sane defaults for this to be useful.
--- set('n', '<leader>ee', function()
---   Snacks.explorer()
--- end, { desc = '[E]xplorer' })
+set('n', '<leader>e', function()
+  Snacks.explorer()
+end, { desc = '[E]xplorer' })
 
 -- =====================================================================
 -- Search
