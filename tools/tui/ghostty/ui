@@ -2,7 +2,7 @@
 confirm-close-surface=false
 
 # Theme for Dark and Light
-theme = dark:detuned,light:rose-pine-dawn
+theme = dark:UltraDark, light:rose-pine-dawn
 
 # Background opacity and blur radius
 background-opacity=0.8
