@@ -5,8 +5,8 @@ confirm-close-surface=false
 theme = dark:tokyonight, light:tokyonight-day
 
 # Background opacity and blur radius
-background-opacity=0.7
-background-blur-radius=40
+# background-opacity=0.7
+# background-blur-radius=40
 
 # Hide the title
 title = " "
