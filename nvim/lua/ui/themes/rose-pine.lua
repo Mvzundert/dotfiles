@@ -63,11 +63,11 @@ return {
         -- },
       },
 
-      highlight_groups = {
-        Title = { fg = 'Iris' },
-        Directory = { fg = 'Text' },
-        Comment = { fg = 'Subtle' },
-      },
+      -- highlight_groups = {
+      --   Title = { fg = 'Iris' },
+      --   Directory = { fg = 'Text' },
+      --   Comment = { fg = 'Subtle' },
+      -- },
 
       before_highlight = function(group, highlight, palette)
         -- Disable all undercurls
