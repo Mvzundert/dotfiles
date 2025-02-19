@@ -31,7 +31,7 @@ $line_break\
 """
 
 [character]
-success_symbol = '[](bold green)'
+success_symbol = '[](bold blue)'
 error_symbol = '[](bold red)'
 vimcmd_symbol = '[](bold green)'
 vimcmd_replace_one_symbol = '[](bold purple)'
@@ -43,15 +43,15 @@ disabled = false
 format = '[🎁 $version](208 bold) '
 
 [git_branch]
-symbol = ""
+symbol = ""
 truncation_length = 10
 truncation_symbol = "…/"
-style = 'bold purple'
+style = 'bold dimmed purple'
 format = '[$symbol $branch ]($style)'
 disabled = false
 
 [git_status]
-conflicted = '⚔️  x ${count} '
+conflicted = '⚔️ x ${count} '
 ahead = '🏎💨 x ${count} '
 behind = '🐢 x ${count} '
 diverged = '😵 x ${count} '
@@ -71,7 +71,7 @@ commit_hash_length = 5
 tag_symbol = ' 🏷  '
 only_detached = false
 tag_disabled = false
-style = 'bold red'
+style = 'bold dimmed red'
 format = '[\($hash$tag\)]($style) '
 disabled = false
 
@@ -125,9 +125,10 @@ style = 'bold dimmed green'
 discharging_symbol = '💦 '
 
 [shell]
-zsh_indicator = ' '
+zsh_indicator = '🐚'
+fish_indicator = '🐟'
 style = 'bold purple'
-disabled = true
+disabled = false
 
 [docker_context]
 style = 'bold blue'
