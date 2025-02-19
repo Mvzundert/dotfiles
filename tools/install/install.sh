@@ -51,7 +51,7 @@ else
 	#  echo "$FILE File created"
 	echo "zshrc file has been installed"
 	# Symlink the .zshrc file that makes sure the config works
-	ln -s $DOTFILES/zsh/.zshrc $HOME
+	ln -s $DOTFILES/shells/zsh/.zshrc $HOME
 fi
 
 #=======================================
@@ -64,7 +64,7 @@ if
 	echo "NeoVim has been installed...skipping"
 then
 	echo "NeoVim symlinked"
-	ln -s $DOTFILES/nvim/ $HOME/.config/
+	ln -s $DOTFILES/tools/nvim/ $HOME/.config/
 fi
 
 #=======================================
@@ -78,7 +78,7 @@ if [ -f $FILE ]; then
 else
 	echo "Starship has been installed."
 	# Symlink the .tmux.conf file that makes sure the config works
-	ln -s $DOTFILES/zsh/prompt/starship.toml $HOME/.config/starship.toml
+	ln -s $DOTFILES/tools/prompt/starship_nf.toml $HOME/.config/starship.toml
 fi
 
 #=======================================
@@ -108,7 +108,7 @@ else
 	#  echo "$FILE File created"
 	echo "Tmux.conf has been installed."
 	# Symlink the .tmux.conf file that makes sure the config works
-	ln -s $DOTFILES/tmux/.tmux.conf $HOME
+	ln -s $DOTFILES/tools/multiplex/tmux/.tmux.conf $HOME
 fi
 
 echo '________          __    _____.__.__                 '
