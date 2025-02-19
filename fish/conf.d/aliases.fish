@@ -1,5 +1,31 @@
+# -------------------------------------------------------------------
+# fish
+# -------------------------------------------------------------------
+alias reload='exec fish'
 
+# -------------------------------------------------------------------
+# Config
+# -------------------------------------------------------------------
+alias dotc="vim ~/.dotfiles/"
+alias sshc="vim ~/.ssh/config"
+alias buuc='brew update && brew upgrade && brew cleanup'
+alias bbd='brew bundle dump --describe -f'
 alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
+
+# -------------------------------------------------------------------
+# System
+# -------------------------------------------------------------------
+alias myip='wget http://ipinfo.io/ip -qO -'
+alias size='du -sh * | sort -r -n | ack "[0-9][G|M]"'
+alias ifa="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+alias ifi="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: inactive'"
+alias ifip="ifconfig | ack 'inet.*broadcast'"
+alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
+
+# -------------------------------------------------------------------
+# Misc alias
+# -------------------------------------------------------------------
+alias ytmp3="youtube-dl -x --audio-format mp3 $1"
 
 # -------------------------------------------------------------------
 # Git alias
@@ -86,13 +112,13 @@ alias grba='git rebase --abort'
 alias gstash='git stash'
 
 # -------------------------------------------------------------------
-# for fun and games
+# for fun and games (Here be dragons)
 # -------------------------------------------------------------------
 alias darth='gp --force'
 alias yolo='gaa && git commit -m "$(curl -s https://whatthecommit.com/index.txt)" && darth'
 
 # -------------------------------------------------------------------
-# Composer artisan
+# Composer
 # -------------------------------------------------------------------
 alias cigr="composer info | ack"
 alias ciggr="composer global info | ack"
@@ -100,6 +126,19 @@ alias symsec="symfony security:check"
 alias ci='composer install'
 alias cu='composer update'
 alias cda="composer dump-autoload"
+
+# -------------------------------------------------------------------
+# Docker
+# -------------------------------------------------------------------
+alias dockers='open -a Docker'
+alias dcrm='docker rm $(docker ps -a -q)'
+alias dcirm='docker rmi $(docker images -q)'
+alias dcw='docker compose exec workspace bash'
+alias dcs='docker compose stop'
+alias dcu='docker compose up -d'
+alias dcuv='docker compose up'
+alias dcb='docker compose build'
+alias dcrn='docker exec -it crb_dock_nginx bash -c "nginx -s reload"'
 
 # -------------------------------------------------------------------
 # Laravel artisan
