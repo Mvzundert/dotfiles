@@ -92,9 +92,9 @@ alias gcount=" git shortlog -n -s -e"
 # -------------------------------------------------------------------
 # Checkout branches
 # -------------------------------------------------------------------
-alias gcd='git checkout develop'
-alias gcs='git checkout staging'
-alias gcm='git checkout master'
+alias gcod='git checkout develop'
+alias gcos='git checkout staging'
+alias gcom='git checkout master'
 
 # -------------------------------------------------------------------
 # Rebase all the things
