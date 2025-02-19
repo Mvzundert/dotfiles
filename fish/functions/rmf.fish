@@ -1,29 +1,40 @@
-function rmf
-    if test (count $argv) -ne 1
-        echo "Usage: rmf <folder>"
+function rmrf
+    if not set -q argv[1]
+        echo "Usage: rmrf <directory> [directory...]"
         return 1
     end
 
-    # Ensure folder path is properly formatted (remove trailing slashes)
-    set -l folder (string trim --right --chars=/ -- $argv[1])
+    set -l delete_all false
 
-    if not test -d "$folder"
-        echo "Error: '$folder' is not a directory!"
-        return 1
-    end
+    for directory in $argv
+        if not test -e "$directory"
+            echo "Error: '$directory' does not exist"
+            continue
+        end
 
-    # Check if the folder is empty
-    if test (count (ls -A "$folder" 2>/dev/null)) -eq 0
-        rmdir "$folder"
-        echo "Removed empty folder: $folder"
-    else
-        read --prompt-str "'$folder' is not empty. Are you sure you want to delete it? (y/N) " confirm
-        if test "$confirm" = "y" -o "$confirm" = "Y"
-            rm -rf "$folder"
-            echo "Deleted '$folder'."
+        # Use fd to check if directory has contents (including hidden files)
+        if test -n (fd --hidden --no-ignore --min-depth 1 --max-depth 1 . "$directory" -1)
+            if test "$delete_all" = true
+                rm -rf "$directory"
+                echo "Deleted '$directory'"
+            else
+                echo "Directory '$directory' is not empty"
+                read -P "Delete '$directory'? (y/n/a): " -l response
+                switch (string lower $response)
+                    case y
+                        rm -rf "$directory"
+                        echo "Deleted '$directory'"
+                    case a
+                        rm -rf "$directory"
+                        echo "Deleted '$directory'"
+                        set delete_all true
+                    case '*'
+                        echo "Skipped '$directory'"
+                end
+            end
         else
-            echo "Aborted."
+            rm -rf "$directory"
+            echo "Deleted '$directory'"
         end
     end
 end
-
