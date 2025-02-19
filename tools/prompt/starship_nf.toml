@@ -43,10 +43,10 @@ disabled = false
 format = '[🎁 $version](208 bold) '
 
 [git_branch]
-symbol = " "
+symbol = ""
 truncation_length = 10
 truncation_symbol = "…/"
-style = 'bold dimmed red'
+style = 'bold purple'
 format = '[$symbol $branch ]($style)'
 disabled = false
 
@@ -71,7 +71,7 @@ commit_hash_length = 5
 tag_symbol = ' 🏷  '
 only_detached = false
 tag_disabled = false
-style = 'bold dimmed purple'
+style = 'bold red'
 format = '[\($hash$tag\)]($style) '
 disabled = false
 
@@ -93,7 +93,7 @@ disabled = true
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = false
-style = 'yellow'
+style = 'bold blue'
 read_only_style = "197"
 read_only = "  "
 format = "[$path]($style)[$read_only]($read_only_style) "
