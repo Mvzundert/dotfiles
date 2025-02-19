@@ -63,28 +63,24 @@ bind-key "T" run-shell "sesh connect \"$(
     --preview 'sesh preview {}' \
 )\""
 
-# Open tmux session swapping in a popup window
 unbind w
-bind w display-popup -E -w "90%" -h "90%" "\
-  tmux list-sessions -F '#{?session_attached,,#{session_name}} ' |\
-  sed '/^\s*$/d' |\
-  fzf --reverse --header 'jump-to-session' --exit-0 --preview='tmux list-windows -t {1} -F \"#{window_index}: #{window_name}\" | while read -r line; do tmux capture-pane -peJ -t {1}:$(echo $line | cut -d\":\" -f1) | sed \"s/^/$(echo $line | cut -d\":\" -f2): /\"; done' |\
-  xargs tmux switch-client -t"
-
 bind w display-popup -E -w "90%" -h "90%" "\
   tmux list-sessions -F '#{session_name} ' |\
   sed '/^\s*$/d' |\
-  fzf --reverse --header 'jump-to-session' --exit-0 --preview='tmux list-windows -t {1} -F \"#{window_index}: #{window_name}\" | while read -r line; do tmux capture-pane -peJ -t {1}:$(echo $line | cut -d\":\" -f1) | sed \"s/^/$(echo $line | cut -d\":\" -f2): /\"; done' |\
+  fzf --reverse --header 'jump-to-session' --exit-0 --preview='
+    tmux list-windows -t {1} -F \"#{window_index}: #{window_name}\" | while read -l line
+      set pane_index (echo $line | cut -d\":\" -f1)
+      set prefix (echo $line | cut -d\":\" -f2)
+      tmux capture-pane -peJ -t {1}:$pane_index | sed \"s/^/$prefix: /\"
+    end
+  ' |\
   xargs tmux switch-client -t"
-
-# Open gh issues and pr's for the current dir for the user. (Requires GH CLI)
-#bind-key s display-popup -w "90%" -h "90%" -E "$DOTFILES/tools/multiplex/tmux/config/scripts/gh_status.sh"
 
 # Open lazygit in a new window
 bind-key g display-popup -w "90%" -h "90%" -d "#{pane_current_path}" -E "lazygit"
 
 # Open lazydocker in a new window
-bind-key d display-popup -w "90%" -h "90%" -E "lazydocker"
+bind-key O display-popup -w "90%" -h "90%" -E "lazydocker"
 
 # Open GH dash in a new window
 bind-key P display-popup -w "90%" -h "90%" -E "gh dash"
