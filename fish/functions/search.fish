@@ -10,4 +10,3 @@ function search_abbr_alias
             functions | fzf --height=15 --border --reverse
     end
 end
-
