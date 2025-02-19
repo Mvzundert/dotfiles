@@ -34,17 +34,18 @@ the same setup and because I want to be able to recreate it on new machines I've
 Feel free to use this as you see fit, install the entire thing or just grab stuff from all the seperate configs
 Just realize you'll need to manage all dependencies yourself when grabbing stuff without the full installer.
 
-# ZSH
+# Shells
 
-- Zshconfig (Alias, Config options, Function, Paths, Widgets)
+## ZSH
+Opiniated config because Oh-My-Zsh is too slow and bloated for my taste. 
+I started building this and never looked back, does contain some functions and aliasess that could be deprecated.
 
-- Zshrc (Bundles all the config files)
+## Fish
+Opiniated config because I was experimenting with it, most of ZSH functions and aliases are also available in Fish.
 
 # Tmux:
-
-- tmux_config (Bindings, Config options)
-
-- tmux.conf (Bundles all the config files)
+I use tmux as my terminal multiplexer, it's a great tool to manage multiple terminal windows and panes. 
+I also use sesh to manage my tmux sessions, which get super powered by fzf.
 
 # Neovim
 
@@ -57,10 +58,6 @@ NeoVim gets installed when on OSX using brew after that we set the config in
 - `git clone https://github.com/Mvzundert/dotfiles.git`
 - `cd ~/dotfiles/tools/install`
 - `./install.sh`
-
-# Overwrite tmux configuration
-
-- Copy `tools/multiplex/tmux/custom/config.local.example` to `tools/multiplex/tmux/custom/config.local`
 
 # Usefull tmux commands
 
