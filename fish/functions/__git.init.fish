@@ -43,7 +43,7 @@ function __git.init
   __git.create_abbr gcv        git commit -v --no-verify
   __git.create_abbr gcav       git commit -a -v --no-verify
   __git.create_abbr gcav!      git commit -a -v --no-verify --amend
-  __git.create_abbr gcm        git commit -m
+  __git.create_abbr gcmsg      git commit -m
   __git.create_abbr gcam       git commit -a -m
   __git.create_abbr gcs        git commit -S
   __git.create_abbr gscam      git commit -S -a -m
@@ -159,7 +159,7 @@ function __git.init
   __git.create_abbr gco        git checkout
   __git.create_abbr gcb        git checkout -b
   __git.create_abbr gcod       git checkout develop
-  __git.create_abbr gcom       git checkout \(__git.default_branch\)
+  __git.create_abbr gcm        git checkout \(__git.default_branch\)
 
   # git flow abbreviations
   __git.create_abbr gfb        git flow bugfix
