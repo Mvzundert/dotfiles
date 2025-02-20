@@ -1,4 +1,4 @@
-function rmrf
+function rmf
     if not set -q argv[1]
         echo "Usage: rmrf <directory> [directory...]"
         return 1
