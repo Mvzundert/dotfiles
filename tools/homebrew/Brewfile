@@ -33,8 +33,6 @@ brew "autoconf"
 brew "automake"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# C library of Git core methods that is re-entrant and linkable
-brew "libgit2@1.7"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Platform built on V8 to build network applications
@@ -81,12 +79,16 @@ brew "exploitdb"
 brew "eza"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # VP8/VP9 video codec
 brew "libvpx"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Fast web fuzzer written in Go
 brew "ffuf"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
 # Fast and simple Node.js version manager
 brew "fnm"
 # Monitor a directory for changes and run a shell command
@@ -127,6 +129,8 @@ brew "gulp-cli"
 brew "htop"
 # Apache HTTP server
 brew "httpd"
+# Configurable static site generator
+brew "hugo"
 # Network logon cracker which supports many services
 brew "hydra"
 # GNU utilities for networking
@@ -139,6 +143,8 @@ brew "jpeg"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
+# C library of Git core methods that is re-entrant and linkable
+brew "libgit2@1.7"
 # Conversion library
 brew "libiconv"
 # YAML Parser
@@ -169,18 +175,20 @@ brew "openjdk"
 brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
+# General-purpose scripting language
+brew "php@8.3", restart_service: :changed
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@8.1"
 # General-purpose scripting language
-brew "php@8.2", restart_service: true, link: true
+brew "php@8.2", restart_service: :changed, link: true
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Object-relational database system
-brew "postgresql@14"
+brew "postgresql@14", restart_service: :changed
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Hook preloader
@@ -207,6 +215,8 @@ brew "sqlmap"
 brew "starship"
 # Simplified and community-driven man pages
 brew "tldr"
+# Instant terminal sharing
+brew "tmate"
 # Terminal multiplexer
 brew "tmux"
 # Anonymizing overlay network for TCP
@@ -221,6 +231,8 @@ brew "wget"
 brew "wp-cli"
 # Bash completion for Wpcli
 brew "wp-cli-completion"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # Programming language designed for robustness, optimality, and clarity
