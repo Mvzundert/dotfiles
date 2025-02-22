@@ -119,18 +119,6 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-        intelephense = {
-          filetypes = { 'php', 'blade', 'php_only' },
-          settings = {
-            intelephense = {
-              filetypes = { 'php', 'blade', 'php_only' },
-              files = {
-                associations = { '*.php', '*.blade.php' }, -- Associating .blade.php files as well
-                maxSize = 5000000,
-              },
-            },
-          },
-        },
 
         lua_ls = {
           -- cmd = {...},
@@ -162,17 +150,7 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'blade-formatter',
-        'docker-compose-language-service',
-        'dockerfile-language-server',
-        'dot-language-server',
-        'html-lsp',
-        'intelephense',
-        'phpstan',
-        'pint',
-        'shfmt',
-        'stylua',
-        'rustywind',
+        'stylua', -- Used to format Lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
