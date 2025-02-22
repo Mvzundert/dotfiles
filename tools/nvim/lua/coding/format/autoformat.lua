@@ -33,5 +33,45 @@ return { -- Autoformat
       python = { 'black' },
       rust = { 'rustfmt' },
     },
+    formatters = {
+      pint = {
+        command = 'pint',
+        stdin = false, -- Important: Pint operates on files directly
+        args = function(self, ctx)
+          local filename = ctx.filename or vim.api.nvim_buf_get_name(ctx.buf)
+
+          -- Handle unsaved buffers
+          if filename == '' then
+            vim.notify('Please save the file before formatting', vim.log.levels.WARN)
+            return {}
+          end
+
+          -- Find project-specific config
+          local function find_pint_config()
+            local dir = vim.fs.dirname(filename)
+            return vim.fs.find('pint.json', {
+              path = dir,
+              upward = true,
+              stop = vim.loop.os_homedir(),
+            })[1]
+          end
+
+          local project_config = find_pint_config()
+          local default_config = vim.fn.expand '~/code/cerberos/internal/coding_standards/pint/pint.json'
+
+          -- Build arguments
+          local args = { filename }
+          if project_config then
+            table.insert(args, 1, '--config')
+            table.insert(args, 2, project_config)
+          else
+            table.insert(args, 1, '--config')
+            table.insert(args, 2, default_config)
+          end
+
+          return args
+        end,
+      },
+    },
   },
 }
