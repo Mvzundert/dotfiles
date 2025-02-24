@@ -1,0 +1,201 @@
+command_timeout = 5000
+
+format = """
+ $directory\
+ $git_branch\
+ $git_commit\
+ $git_status\
+ $docker_context\
+ $package\
+ $elixir\
+ $golang\
+ $lua\
+ $ocaml\
+ $php\
+ $python\
+ $ruby\
+ $rust\
+ $zig\
+ $nodejs\
+ $cmd_duration\
+ $line_break\
+ $status\
+ $shell\
+ $character"""
+
+right_format = """
+$localip\
+$battery\
+$memory_usage\
+$line_break\
+"""
+
+[character]
+success_symbol = '[](bold #b7bdf8)'            # Lavender
+error_symbol = '[](bold #ed8796)'              # Red
+vimcmd_symbol = '[](bold #a6da95)'             # Green
+vimcmd_replace_one_symbol = '[](bold #ee99a0)' # Maroon
+vimcmd_replace_symbol = '[](bold #ee99a0)'     # Maroon
+vimcmd_visual_symbol = '[](bold #eed49f)'      # Yellow
+disabled = false
+
+[package]
+format = '[🎁 $version](bold #f5a97f)' # Peach
+
+[git_branch]
+symbol = ""
+truncation_length = 10
+truncation_symbol = "…/"
+style = 'bold #c6a0f6'                # Mauve
+format = '[$symbol $branch ]($style)'
+disabled = false
+
+[git_status]
+conflicted = '⚔️ x ${count} '
+ahead = '🏎💨 x ${count} '
+behind = '🐢 x ${count} '
+diverged = '😵 x ${count} '
+up_to_date = '✓ '
+untracked = '🤷x ${count} '
+stashed = '📦 '
+modified = '🎯x ${count} '
+staged = '😵x ${count} '
+renamed = '👅 '
+deleted = '🗑 x ${count} '
+style = 'bold #ed8796'                        # Red
+format = '[$all_status$ahead_behind]($style)'
+disabled = false
+
+[git_commit]
+commit_hash_length = 5
+tag_symbol = ' 🏷  '
+only_detached = false
+tag_disabled = false
+style = 'bold #ed8796'              # Red
+format = '[\($hash$tag\)]($style) '
+disabled = false
+
+[localip]
+ssh_only = false
+format = '[$localipv4](bold #a6da95)' # Green
+disabled = true
+
+[line_break]
+disabled = false
+
+[cmd_duration]
+min_time = 1000
+format = ' underwent [$duration](bold #eed49f)' # Yellow
+disabled = true
+
+# Configure Directory Path
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = false
+style = 'bold #7dc4e4'                                    # Sapphire
+read_only_style = 'bold #f4dbd6'                          # Rosewater
+read_only = "  "
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[memory_usage]
+symbol = "󰍛 "
+disabled = true
+threshold = -1
+style = 'bold #a6da95' # Green
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+disabled = true
+
+[[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 20%
+threshold = 20
+style = 'bold #ed8796'    # Red
+discharging_symbol = '💀 '
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 50%
+threshold = 50
+style = 'bold #eed49f'    # Yellow
+discharging_symbol = '💦 '
+
+[[battery.display]] # 'bold dimmed green' style and 💦 symbol when capacity is between 50% and 100%
+threshold = 100
+style = 'bold #a6da95'    # Green
+discharging_symbol = '💦 '
+
+[shell]
+zsh_indicator = '🐚'
+fish_indicator = '🐟'
+style = 'bold #c6a0f6' # Mauve
+disabled = false
+
+[docker_context]
+style = 'bold #7dc4e4'                 # Sapphire
+symbol = "🐳"
+format = '[$symbol $context]($style) '
+disabled = false
+
+[elixir]
+style = 'bold #ee99a0'                # Maroon
+format = '[$symbol$version]($style) '
+symbol = "💧 "
+disabled = false
+
+[golang]
+style = 'bold #7dc4e4'                # Sapphire
+format = '[$symbol$version]($style) '
+symbol = "🐹 "
+disabled = false
+
+[lua]
+style = 'bold #8bd5ca'                # Teal
+format = '[$symbol$version]($style) '
+symbol = "🌙 "
+disabled = false
+
+[nodejs]
+style = 'bold #a6da95'                                       # Green
+symbol = " "
+version_format = 'v${raw}'
+detect_extensions = ['js', 'mjs', 'cjs', 'ts', 'mts', 'cts']
+detect_files = ['package.json', '.node-version']
+detect_folders = ['node_modules']
+format = '[$symbol$version]($style) '
+disabled = false
+
+[ocaml]
+style = 'bold #eed49f'                # Yellow
+symbol = "🐫 "
+format = '[$symbol$version]($style) '
+disabled = false
+
+[php]
+style = 'bold #c6a0f6'                # Mauve
+symbol = "🐘 "
+format = '[$symbol$version]($style) '
+disabled = false
+
+[python]
+style = 'bold #8bd5ca'                # Teal
+format = '[$symbol$version]($style) '
+symbol = "🐍 "
+disabled = false
+
+[ruby]
+style = 'bold #ed8796'                # Red
+format = '[$symbol$version]($style) '
+symbol = "💎 "
+disabled = false
+
+[rust]
+style = 'bold #ed8796'                # Red
+format = '[$symbol$version]($style) '
+symbol = "🦀 "
+disabled = false
+
+[zig]
+style = 'bold #eed49f'                # Yellow
+format = '[$symbol$version]($style) '
+symbol = " "
+disabled = false
