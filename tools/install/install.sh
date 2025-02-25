@@ -32,7 +32,7 @@ git submodule update --init --recursive
 #=======================================
 #========= Dotfiles +===================
 #=======================================
-DIR="$HOME/.dotfiles"
+DIR="$HOME/code/dotfiles"
 
 if [ ! -d $DIR ]; then
 	echo "set symlink for dotfiles"
