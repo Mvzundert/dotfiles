@@ -7,8 +7,8 @@ export LC_ALL=en_US.UTF-8
 # -------------------------------------------------------------------
 # Set dotfile paths for easier editing.
 # -------------------------------------------------------------------
-export DOTFILES=$HOME/.dotfiles
-export ZSH=$DOTFILES/zsh
+export DOTFILES=$HOME/code/dotfiles
+export ZSH=$DOTFILES/shells/zsh
 export MODULES=$ZSH/modules
 
 # -------------------------------------------------------------------
