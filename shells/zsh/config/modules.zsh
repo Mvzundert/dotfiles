@@ -47,7 +47,7 @@ done
 
 # source "$ZSH"/plugins/z.sh
 # shellcheck disable=SC1090
-source ~/.dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/code/dotfiles/shells/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # -------------------------------------------------------------------
 # Optional Modules

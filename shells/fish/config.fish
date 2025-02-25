@@ -4,7 +4,7 @@
 starship init fish | source
 
 # make the DOFILES variable available to all fish scripts
-set -gx DOTFILES $HOME/.dotfiles
+set -gx DOTFILES $HOME/code/dotfiles/
 
 # Disable welcome message
 set -g fish_greeting ""
