@@ -1,0 +1,200 @@
+command_timeout = 5000
+
+format = """
+ $directory\
+ $git_branch\
+ $git_commit\
+ $git_status\
+ $docker_context\
+ $package\
+ $elixir\
+ $golang\
+ $lua\
+ $ocaml\
+ $php\
+ $python\
+ $ruby\
+ $rust\
+ $zig\
+ $nodejs\
+ $cmd_duration\
+ $line_break\
+ $status\
+ $shell\
+ $character"""
+
+right_format = """
+$localip\
+$battery\
+$memory_usage\
+$line_break\
+"""
+
+[character]
+success_symbol = '[🐾](bold #D3A560)'           # Golden Dog Paw
+error_symbol = '[❌](bold #B25E48)'             # Reddish-Brown Error
+vimcmd_symbol = '[☕](bold #7B6E46)'            # Green Coffee Mug
+vimcmd_replace_one_symbol = '[☕](bold purple)'
+vimcmd_replace_symbol = '[☕](bold purple)'
+vimcmd_visual_symbol = '[☕](bold yellow)'
+disabled = false
+
+[package]
+format = '[🎁 $version](208 bold) '
+
+[git_branch]
+symbol = ""
+truncation_length = 10
+truncation_symbol = "…/"
+style = 'bold #D3A560'                # Golden Brown for contrast
+format = '[$symbol $branch ]($style)'
+disabled = false
+
+[git_status]
+conflicted = '[🐶⚔️ x ${count}](bold #B25E48) '
+ahead = '[🐕 💨 x ${count}](bold #D3A560) '
+behind = '[💤 🐶 x ${count}](bold #9D8655) '
+diverged = '[🐕 🔀 x ${count}](bold red) '
+up_to_date = '[☕ ✅ ](bold #7B6E46)'            # Green coffee check for "good state"
+untracked = '[🦴 ❓ x ${count}](bold #C86B55) '
+stashed = '[🏺 🐕 ](bold #D3A560) '
+modified = '[☕✏️ x ${count}](bold #B25E48) '
+staged = '[🐕 ☕ x ${count}](bold #E4B87A) '
+renamed = '[🏷 🐕 ](bold purple) '
+deleted = '[🦴 🚫 x ${count}](bold red) '
+style = 'bold'
+format = '[$all_status$ahead_behind]($style)'
+disabled = false
+
+[git_commit]
+commit_hash_length = 5
+tag_symbol = ' 🏷 '
+only_detached = false
+tag_disabled = false
+style = 'bold #D1765C'
+format = '[\($hash$tag\)]($style) '
+disabled = false
+
+[localip]
+ssh_only = false
+format = '[$localipv4](bold dimmed green) '
+disabled = true
+
+[line_break]
+disabled = false
+
+[cmd_duration]
+min_time = 1000
+format = ' underwent [$duration](bold yellow)'
+disabled = true
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = false
+style = 'bold #B25E48'                                    # Espresso Brown instead of Blue
+read_only_style = "197"
+read_only = "  "
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[memory_usage]
+symbol = "󰍛 "
+disabled = true
+threshold = -1
+style = 'bold dimmed green'
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+disabled = true
+
+[[battery.display]]
+threshold = 20
+style = 'bold red'
+discharging_symbol = '💀 '
+
+[[battery.display]]
+threshold = 50
+style = 'bold yellow'
+discharging_symbol = '💦 '
+
+[[battery.display]]
+threshold = 100
+style = 'bold dimmed green'
+discharging_symbol = '💦 '
+
+[shell]
+zsh_indicator = '🐚'
+fish_indicator = '🐟'
+style = 'bold purple'
+disabled = true
+
+[docker_context]
+style = 'bold blue'
+symbol = "🐳"
+format = '[$symbol $context]($style) '
+disabled = false
+
+[elixir]
+style = 'bold red'
+format = '[$symbol$version]($style) '
+symbol = "💧 "
+disabled = false
+
+[golang]
+style = 'bold blue'
+format = '[$symbol$version]($style) '
+symbol = "🐹 "
+disabled = false
+
+[lua]
+style = 'bold cyan'
+format = '[$symbol$version]($style) '
+symbol = "🌙 "
+disabled = false
+
+[nodejs]
+style = 'bold green'
+symbol = " "
+version_format = 'v${raw}'
+detect_extensions = ['js', 'mjs', 'cjs', 'ts', 'mts', 'cts']
+detect_files = ['package.json', '.node-version']
+detect_folders = ['node_modules']
+format = '[$symbol$version]($style) '
+disabled = false
+
+[ocaml]
+style = 'bold yellow'
+symbol = "🐫 "
+format = '[$symbol$version]($style) '
+disabled = false
+
+[php]
+style = 'bold purple'
+symbol = "🐘 "
+format = '[$symbol$version]($style) '
+disabled = false
+
+[python]
+style = 'bold green'
+format = '[$symbol$version]($style) '
+symbol = "🐍 "
+disabled = false
+
+[ruby]
+style = 'bold red'
+format = '[$symbol$version]($style) '
+symbol = "💎 "
+disabled = false
+
+[rust]
+style = 'bold red'
+format = '[$symbol$version]($style) '
+symbol = "🦀 "
+disabled = false
+
+[zig]
+style = 'bold yellow'
+format = '[$symbol$version]($style) '
+symbol = " "
+disabled = false
