@@ -49,6 +49,7 @@ add_to_path "/usr/local/opt/mysql-client/bin"
 add_to_path "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin"
 add_to_path "$HOME/.cargo/bin"
 add_to_path "/usr/local/go/bin"
+add_to_path "$HOME/.emacs.d/bin"
 
 # Initialize OPAM if its init file exists
 if test -r "$HOME/.opam/opam-init/init.fish"
