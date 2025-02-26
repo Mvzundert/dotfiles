@@ -2,11 +2,11 @@
 confirm-close-surface=false
 
 # Theme for Dark and Light
-theme = dark:Dogspresso-Black-Eye, light:Dogspresso-Con-Panna
+theme = dark:catppuccin-mocha, light:catppuccin-latte
 
 # Background opacity and blur radius
-# background-opacity=0.9
-# background-blur-radius=40
+background-opacity=0.9
+background-blur-radius=40
 
 # Hide the title
 title = " "
