@@ -71,6 +71,8 @@ brew "docker"
 brew "snappy"
 # Functional metaprogramming aware language built on Erlang VM
 brew "elixir"
+# GNU Emacs text editor
+brew "emacs"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Database of public exploits and corresponding vulnerable software
@@ -176,13 +178,13 @@ brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
 # General-purpose scripting language
-brew "php@8.3", restart_service: :changed
+brew "php@8.3", restart_service: :changed, link: true
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@8.1"
 # General-purpose scripting language
-brew "php@8.2", restart_service: :changed, link: true
+brew "php@8.2", restart_service: :changed
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
@@ -304,6 +306,8 @@ cask "raspberry-pi-imager"
 cask "sequel-ace"
 # Instant messaging application focusing on security
 cask "signal"
+# Music streaming service
+cask "spotify"
 # Native GUI tool for relational databases
 cask "tableplus"
 # Web browser focusing on security
@@ -318,3 +322,5 @@ cask "wezterm"
 cask "whatsapp"
 # Network protocol analyzer
 cask "wireshark"
+# Multiplayer code editor
+cask "zed"
