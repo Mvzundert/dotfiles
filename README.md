@@ -52,13 +52,6 @@ I also use sesh to manage my tmux sessions, which get super powered by fzf.
 NeoVim gets installed when on OSX using brew after that we set the config in
 ~/.config/nvim
 
-# To setup everything like i have it currently:
-
-- `cd ~/`
-- `git clone https://github.com/Mvzundert/dotfiles.git`
-- `cd ~/dotfiles/tools/install`
-- `./install.sh`
-
 # Usefull tmux commands
 
 - `prefix + z`: zoom in on current pane (again to switch back).
