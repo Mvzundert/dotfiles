@@ -125,8 +125,8 @@ style = 'bold #a6da95'    # Green
 discharging_symbol = '💦 '
 
 [shell]
-zsh_indicator = '🐚'
-fish_indicator = '🐟'
+zsh_indicator = ' 🐚'
+fish_indicator = ' 🐟'
 style = 'bold #c6a0f6' # Mauve
 disabled = false
 
