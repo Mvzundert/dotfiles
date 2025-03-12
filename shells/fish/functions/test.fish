@@ -1,4 +1,4 @@
-function phpunit
+function phptest
     set -l vendor_dir "vendor"
 
     # Check if vendor directory exists
