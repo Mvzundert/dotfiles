@@ -2,7 +2,7 @@
 confirm-close-surface=false
 
 # Theme for Dark and Light
-theme = dark:catppuccin-macchiato, light:catppuccin-latte
+theme = dark:Builtin Pastel Dark, light:Builtin Light
 
 # Background opacity and blur radius
 background-opacity=0.9
