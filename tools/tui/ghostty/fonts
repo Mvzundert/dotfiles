@@ -1,5 +1,5 @@
 # Font size
-font-size=20
+font-size=14
 font-family="IBM Plex Mono"
 font-feature = +liga
 cursor-style = block
