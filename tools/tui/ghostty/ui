@@ -5,7 +5,7 @@ confirm-close-surface=false
 theme = dark:Builtin Pastel Dark, light:Builtin Pastel Dark
 
 # Background opacity and blur radius
-background-opacity=0.9
+background-opacity=0.7
 background-blur-radius=40
 
 # Hide the title
