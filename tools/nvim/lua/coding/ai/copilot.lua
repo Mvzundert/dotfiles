@@ -8,8 +8,20 @@ return {
     opts = {
       suggestion = { enabled = false },
       panel = { enabled = false },
-      -- @ToDo: add $HOME/.local/share/fnm when on linux check
-      copilot_node_command = vim.fn.expand '$HOME' .. '/Library/ApplicationSupport/fnm/node-versions/v20.18.0/installation/bin/Node', -- Node.js version must be > 20.x
+      -- Add $HOME/.local/share/fnm when on linux check
+      copilot_node_command = (function()
+        local os_name = vim.loop.os_uname().sysname
+        if os_name == 'Darwin' then
+          -- macOS
+          return vim.fn.expand '$HOME' .. '/Library/ApplicationSupport/fnm/node-versions/v20.18.0/installation/bin/Node'
+        elseif os_name == 'Linux' then
+          -- Linux
+          return vim.fn.expand '$HOME' .. '/.fnm/node-versions/v22.14.0/installation/bin/node'
+        else
+          -- Default or unsupported OS
+          return 'node' -- Fallback to just 'node' command
+        end
+      end)(),
       filetypes = {
         markdown = true,
         help = true,
