@@ -1,6 +1,0 @@
-# Font size
-font-size=18
-font-family="IBM Plex Mono"
-font-feature = +liga
-cursor-style = block
-adjust-underline-position = 4
