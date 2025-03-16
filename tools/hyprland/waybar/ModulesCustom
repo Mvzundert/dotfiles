@@ -1,0 +1,132 @@
+{
+    "custom/file_manager": {
+        "format": " ",
+        "on-click": "dolphin . &",
+        "tooltip": true,
+        "tooltip-format": "File Manager",
+    },
+
+    "custom/tty": {
+        "format": " ",
+        "on-click": "ghostty &",
+        "tooltip": true,
+        "tooltip-format": "Launch Terminal",
+    },
+
+    "custom/browser": {
+        "format": " ",
+        "on-click": "google-chrome-stable https://",
+        "tooltip": true,
+        "tooltip-format": "Launch Browser",
+    },
+
+    // Hypridle inhibitor
+    "custom/hypridle": {
+        "format": "󱫗 ",
+        "return-type": "json",
+        "escape": true,
+        "exec-on-event": true,
+        "interval": 60,
+        "exec": "$HOME/.config/hypr/scripts/Hypridle.sh status",
+        "on-click": "$HOME/.config/hypr/scripts/Hypridle.sh toggle",
+        "on-click-right": "hyprlock"
+    },
+
+    "custom/music": {
+        "format": " 🎵 {} ",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }} - {{ artist }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+
+    "custom/power": {
+        "format": " ⏻ ",
+        "on-click": "~/.config/rofi/powermenu/type-1/powermenu.sh",
+        "tooltip": true,
+        "tooltip-format": "Left Click: Logout Menu",
+    },
+
+    // Separators
+    "custom/separator#dot": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#dot-line": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#line": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#blank": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#blank_2": {
+        "format": "  ",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#blank_3": {
+        "format": "   ",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/arrow1": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow6": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow7": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow8": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow9": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow10": {
+        "format": "",
+        "tooltip": false
+    }
+}
