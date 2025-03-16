@@ -14,3 +14,4 @@ nvim/.netrwhist
 nvim/lazy-lock.json
 tools/hyprland/ml4w/cache/
 tools/hyprland/waypaper/config.ini
+tools/tui/ghostty/fonts
