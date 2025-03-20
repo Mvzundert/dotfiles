@@ -66,7 +66,7 @@ alias gsur="git submodule update --recursive --remote"
 # -------------------------------------------------------------------
 # for fun and games (Here be dragons)
 # -------------------------------------------------------------------
-alias darth='gp --force'
+alias darth='git push --force'
 alias yolo='git add --all && git commit -m "$(curl -s https://whatthecommit.com/index.txt)" && darth'
 
 # -------------------------------------------------------------------
