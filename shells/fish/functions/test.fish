@@ -15,18 +15,17 @@ function phptest
     # Run Pest if it's found
     if test "$has_pest" = "true"
         echo "Running Pest..."
-        "$vendor_dir/bin/pest"
+        "$vendor_dir/bin/pest" $argv
     # Otherwise, run ParaTest if it's found
     else if test "$has_paratest" = "true"
         echo "Running ParaTest (parallel testing)..."
-        "$vendor_dir/bin/paratest"
+        "$vendor_dir/bin/paratest" $argv
     # Otherwise, run PHPUnit if it's found
     else if test "$has_phpunit" = "true"
         echo "Running PHPUnit..."
-        "$vendor_dir/bin/phpunit"
+        "$vendor_dir/bin/phpunit" $argv
     else
         echo "Error: PHPUnit, ParaTest, or Pest not found in the vendor directory!"
         return 1
     end
 end
-
