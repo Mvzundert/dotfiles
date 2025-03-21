@@ -6,8 +6,8 @@ alias reload='exec fish'
 # -------------------------------------------------------------------
 # Config
 # -------------------------------------------------------------------
-alias dotc="vim ~/dotfiles/"
-alias sshc="vim ~/.ssh/config"
+alias dotc="nvim ~/dotfiles/"
+alias sshc="nvim ~/.ssh/config"
 alias buuc='brew update && brew upgrade && brew cleanup'
 alias bbd='brew bundle dump --describe -f'
 alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
