@@ -39,6 +39,9 @@ function add_to_path
     end
 end
 
+# Remove composer memory limit
+set -x COMPOSER_MEMORY_LIMIT -1
+
 # Add common bin directories to PATH
 add_to_path "$HOME/bin"
 add_to_path "/usr/bin"
