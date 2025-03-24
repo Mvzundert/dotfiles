@@ -2,10 +2,10 @@ local opt = vim.opt
 local g = vim.g
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = true
+g.have_nerd_font = true
 
 -- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
+g.markdown_recommended_style = 0
 
 -- Make vim background transparent to work alongside transparent terminal backgrounds
 g.base16_background_transparent = 1
@@ -15,6 +15,7 @@ g.base16_colorspace = 256
 
 -- Make line numbers default
 opt.number = true
+
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 opt.relativenumber = true
