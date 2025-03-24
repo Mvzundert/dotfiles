@@ -12,7 +12,7 @@ Linux)
     FONT_SIZE=14
     ;;
 Darwin)
-    FONT_SIZE=20
+    FONT_SIZE=18
     ;;
 *)
     FONT_SIZE=18
