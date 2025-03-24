@@ -1,15 +1,11 @@
 tap "adoptopenjdk/openjdk"
 tap "filosottile/musl-cross"
-tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "homebrew/services"
 tap "jesseduffield/lazydocker"
 tap "joshmedeski/sesh"
-tap "kevwil/patches"
 tap "libsql/sqld"
 tap "neovim/neovim"
-tap "nickolasburr/pfa"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
 tap "romkatv/powerlevel10k"
@@ -35,12 +31,6 @@ brew "automake"
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Platform built on V8 to build network applications
-brew "node"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# Package manager for the web
-brew "bower"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
 # OpenType text shaping engine
@@ -123,6 +113,8 @@ brew "pkgconf"
 brew "gobject-introspection"
 # Directory/file & DNS busting tool written in Go
 brew "gobuster"
+# Platform built on V8 to build network applications
+brew "node"
 # JavaScript Task Runner
 brew "grunt-cli"
 # Command-line utility for Gulp
@@ -137,8 +129,6 @@ brew "hugo"
 brew "hydra"
 # GNU utilities for networking
 brew "inetutils"
-# Enhanced version of john, a UNIX password cracker
-brew "john-jumbo"
 # Image manipulation library
 brew "jpeg"
 # Lightweight and flexible command-line JSON processor
@@ -178,13 +168,13 @@ brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
 # General-purpose scripting language
-brew "php@8.3", restart_service: :changed, link: true
+brew "php@8.3", restart_service: :changed
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@8.1"
 # General-purpose scripting language
-brew "php@8.2", restart_service: :changed
+brew "php@8.2", restart_service: :changed, link: true
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
@@ -215,8 +205,6 @@ brew "rustup"
 brew "sqlmap"
 # Cross-shell prompt for astronauts
 brew "starship"
-# Simplified and community-driven man pages
-brew "tldr"
 # Instant terminal sharing
 brew "tmate"
 # Terminal multiplexer
@@ -254,7 +242,7 @@ brew "joshmedeski/sesh/sesh"
 # x86_64 Linux GNU Toolchain
 brew "sergiobenitez/osxct/x86_64-unknown-linux-gnu"
 # General-purpose scripting language
-brew "shivammathur/php/php@7.4", link: true
+brew "shivammathur/php/php@7.4"
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Symfony CLI helps Symfony developers manage projects, from local code to remote infrastructure
@@ -324,3 +312,5 @@ cask "whatsapp"
 cask "wireshark"
 # Multiplayer code editor
 cask "zed"
+# Gecko based web browser
+cask "zen-browser"
