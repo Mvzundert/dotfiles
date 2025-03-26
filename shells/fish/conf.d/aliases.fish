@@ -165,7 +165,7 @@ alias mrs='mix run priv/repo/seeds.exs'
 # -------------------------------------------------------------------
 # Hugo alias 
 # -------------------------------------------------------------------
-alias hsd="hugo server --buildDrafts --disableFastRender --navigateToChanged"
+alias hsd="hugo server --buildDrafts --disableFastRender --navigateToChanged --cleanDestinationDir"
 alias hsw="hugo server --disableFastRender --navigateToChanged --cleanDestinationDir"
 alias hb="hugo build -d public"
 
