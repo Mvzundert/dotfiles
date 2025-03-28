@@ -67,7 +67,7 @@ set('n', '<leader>-', require('oil').toggle_float, { desc = 'Open Oil' })
 -- Easier exit terminal mode
 set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 -- quit
-set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+set('n', '<leader>qa', '<cmd>qa<cr>', { desc = 'Quit All' })
 -- save file
 set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
@@ -101,16 +101,14 @@ set('n', '<leader>sg', function()
 end, { desc = '[S]earch [G]rep' })
 
 set('n', '<leader>/', function()
-  Snacks.picker.grep()
-end, { desc = 'Search using grep in current buffer ' })
+  Snacks.picker.grep_buffers()
+end, { desc = 'Search using grep in open buffers' })
 
 set('n', '<leader>gr', '<cmd>:GrugFar<cr>', { desc = 'Search with Grug' })
 
 -- =====================================================================
 -- Git
 -- =====================================================================
---{ "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-
 set('n', '<leader>lg', function()
   Snacks.lazygit()
 end, { desc = 'Open [L]azy [G]it' })
@@ -135,7 +133,7 @@ set('n', '<leader>gf', function()
   Snacks.picker.git_log_file()
 end, { desc = 'Search [G]it log for current [F]ile' })
 
-set('n', '<leader>glb', function()
+set('n', '<leader>gbl', function()
   require('gitsigns').toggle_current_line_blame()
 end, { desc = 'Toggle [G]it [L]ine [B]lame' })
 
@@ -163,11 +161,13 @@ set('n', '<leader>gt', function()
 end, { desc = '[G]oto [T]ype Definitions' })
 
 -- =====================================================================
--- Todo
+-- Todo, Trouble
 -- =====================================================================
 set('n', '<leader>ct', function()
   Snacks.picker.todo_comments()
 end, { desc = '[C]heck [T]odo' })
+
+set('n', '<leader>dt', '<cmd>Trouble diagnostics toggle<cr>', { desc = '[D]iagnostics [T]rouble)' })
 
 -- =====================================================================
 -- Test
@@ -209,8 +209,3 @@ end, { desc = '[S]earch [D]iagnostics' })
 set('n', '<leader>sD', function()
   Snacks.picker.diagnostics_buffer()
 end, { desc = '[S]earch Buffer [D]iagnostics' })
-
-set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-set('n', '<leader>em', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
