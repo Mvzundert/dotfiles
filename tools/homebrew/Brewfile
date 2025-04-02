@@ -8,6 +8,7 @@ tap "libsql/sqld"
 tap "neovim/neovim"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
+tap "rbenv/tap"
 tap "romkatv/powerlevel10k"
 tap "sergiobenitez/osxct"
 tap "shivammathur/php"
@@ -168,13 +169,13 @@ brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
 # General-purpose scripting language
-brew "php@8.3", restart_service: :changed
+brew "php@8.3", restart_service: :changed, link: true
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@8.1"
 # General-purpose scripting language
-brew "php@8.2", restart_service: :changed, link: true
+brew "php@8.2", restart_service: :changed
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
@@ -205,6 +206,8 @@ brew "rustup"
 brew "sqlmap"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Simplified and community-driven man pages
+brew "tldr"
 # Instant terminal sharing
 brew "tmate"
 # Terminal multiplexer
@@ -239,6 +242,8 @@ brew "filosottile/musl-cross/musl-cross"
 brew "jesseduffield/lazydocker/lazydocker"
 # Smart terminal session manager
 brew "joshmedeski/sesh/sesh"
+# Cryptography and SSL/TLS Toolkit
+brew "rbenv/tap/openssl@1.1"
 # x86_64 Linux GNU Toolchain
 brew "sergiobenitez/osxct/x86_64-unknown-linux-gnu"
 # General-purpose scripting language
