@@ -7,8 +7,8 @@ return {
   -- Optional; default configuration will be used if setup isn't called.
   config = function()
     require('rose-pine').setup {
-      variant = 'auto', -- auto, main, moon, or dawn
-      dark_variant = 'main', -- main, moon, or dawn
+      variant = 'moon', -- auto, main, moon, or dawn
+      dark_variant = 'moon', -- main, moon, or dawn
       dim_inactive_windows = false,
       extend_background_behind_borders = true,
 
@@ -54,32 +54,6 @@ return {
         h5 = 'pine',
         h6 = 'foam',
       },
-
-      palette = {
-        -- Override the builtin palette per variant
-        -- moon = {
-        --     base = '#18191a',
-        --     overlay = '#363738',
-        -- },
-      },
-
-      -- highlight_groups = {
-      --   Title = { fg = 'Iris' },
-      --   Directory = { fg = 'Text' },
-      --   Comment = { fg = 'Subtle' },
-      -- },
-
-      before_highlight = function(group, highlight, palette)
-        -- Disable all undercurls
-        -- if highlight.undercurl then
-        --     highlight.undercurl = false
-        -- end
-        --
-        -- Change palette colour
-        -- if highlight.fg == palette.pine then
-        --     highlight.fg = palette.foam
-        -- end
-      end,
     }
   end,
 }
