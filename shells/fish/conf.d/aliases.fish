@@ -14,6 +14,12 @@ alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
 alias cat='bat'
 
 # -------------------------------------------------------------------
+# Darwin only show and hide files
+# -------------------------------------------------------------------
+alias showFiles "defaults write com.apple.finder AppleShowAllFiles YES; and killall Finder"
+alias hideFiles "defaults write com.apple.finder AppleShowAllFiles NO; and killall Finder"
+
+# -------------------------------------------------------------------
 # System
 # -------------------------------------------------------------------
 alias myip='wget http://ipinfo.io/ip -qO -'
