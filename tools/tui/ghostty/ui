@@ -5,7 +5,7 @@ confirm-close-surface=false
 theme = rose-pine
 
 # Background opacity and blur radius
-background-opacity=0.95
+background-opacity=0.9
 background-blur-radius=40
 
 # Hide the title
