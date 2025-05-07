@@ -18,6 +18,10 @@ return {
   }, -- Add custom configuration here
   config = function(_, opts)
     require('nightfall').setup(opts)
-    vim.cmd 'colorscheme deeper-night' -- Choose from: nightfall, deeper-night, maron, nord
+    -- Choose from: nightfall, deeper-night, maron, nord
+    vim.cmd 'colorscheme nightfall'
+    -- vim.cmd 'colorscheme deeper-night'
+    -- vim.cmd 'colorscheme maron'
+    -- vim.cmd 'colorscheme nord'
   end,
 }

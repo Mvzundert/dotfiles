@@ -6,6 +6,6 @@ local cmd = vim.cmd
 -- Load the colorscheme here, when Autodark is not active
 -- Like many other themes, this one has different styles, and you could load
 -- any other, such as 'tokyonight', 'rose-pine', 'everforest', 'moonfly', 'nightfly', 'vague'or 'catppuccin'.
-cmd.colorscheme 'rose-pine'
+cmd.colorscheme 'nightfall'
 
 cmd.hi 'Comment gui=none'
