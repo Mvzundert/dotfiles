@@ -2,11 +2,14 @@
 confirm-close-surface=false
 
 # Theme for Dark and Light
-theme = rose-pine
+ theme = rose-pine
+# theme = RetroLegends
+# theme = synthwave-everything
+# theme = SynthwaveAlpha
 
 # Background opacity and blur radius
 background-opacity=0.8
-background-blur-radius=30
+# background-blur-radius=30
 
 # Hide the title
 title = " "
