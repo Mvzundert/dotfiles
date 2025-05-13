@@ -44,7 +44,7 @@ format = '[🎁 $version](208 bold) '
 
 [git_branch]
 symbol = ""
-truncation_length = 10
+truncation_length = 20
 truncation_symbol = "…/"
 style = 'bold dimmed purple'
 format = '[$symbol $branch ]($style)'
