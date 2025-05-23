@@ -30,7 +30,7 @@ return {
       ---end of the buffer will only be hidden inside the active window. Inside
       ---inactive windows, the end of buffer filler characters will be visible in
       ---dimmed symbols. This is due to the way Vim and Neovim handle `EndOfBuffer`.
-      dim_inactive_windows = false,
+      dim_inactive_windows = true,
       ---Some plugins support highlighting error/warning/info/hint texts, by
       ---default these texts are only underlined, but you can use this option to
       ---also highlight the background of them.
@@ -56,7 +56,7 @@ return {
       ---
       ---NB: This is only significant for dark backgrounds as the light palettes
       ---have the same colour for both values in the switch.
-      float_style = 'bright',
+      float_style = 'dim',
       ---Inlay hints are special markers that are displayed inline with the code to
       ---provide you with additional information. You can use this option to customize
       ---the background color of inlay hints.
@@ -67,7 +67,10 @@ return {
       ---This function will be called with the highlights and colour palette tables.
       ---@param highlight_groups Highlights
       ---@param palette Palette
-      on_highlights = function(highlight_groups, palette) end,
+      on_highlights = function(highlight_groups, palette)
+        highlight_groups.NormalFloat = { bg = 'none' }
+        highlight_groups.FloatBorder = { bg = 'none' }
+      end,
       ---You can override colours in the palette to use different hex colours.
       ---This function will be called once the base and background colours have
       ---been mixed on the palette.
