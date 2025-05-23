@@ -9,12 +9,17 @@ local cmd = vim.cmd
 -- 'tokyonight',
 -- 'rose-pine',
 -- 'everforest',
--- 'moonfly',
--- 'nightfly',
+-- 'gruvebox',
 -- 'nightfall',
 -- 'vague',
--- 'fluoromachine'
 -- 'catppuccin'.
-cmd.colorscheme 'rose-pine'
+cmd.colorscheme 'everforest'
 
 cmd.hi 'Comment gui=none'
+
+cmd [[
+  hi Normal      guibg=NONE ctermbg=NONE
+  hi NormalNC    guibg=NONE ctermbg=NONE
+  hi TermNormal  guibg=NONE ctermbg=NONE
+  hi TermNormalNC guibg=NONE ctermbg=NONE
+]]
