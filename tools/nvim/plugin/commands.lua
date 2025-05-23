@@ -13,7 +13,7 @@ local cmd = vim.cmd
 -- 'nightfall',
 -- 'vague',
 -- 'catppuccin'.
-cmd.colorscheme 'catppuccin'
+cmd.colorscheme 'everforest'
 
 cmd.hi 'Comment gui=none'
 
