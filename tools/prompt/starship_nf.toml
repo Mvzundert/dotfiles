@@ -131,32 +131,32 @@ style = 'bold purple'
 disabled = false
 
 [docker_context]
-style = 'bold blue'
 symbol = "🐳"
+style = 'bold blue'
 format = '[$symbol $context]($style) '
 disabled = false
 
 [elixir]
+symbol = "💧 "
 style = 'bold red'
 format = '[$symbol$version]($style) '
-symbol = "💧 "
 disabled = false
 
 [golang]
+symbol = "🐹 "
 style = 'bold blue'
 format = '[$symbol$version]($style) '
-symbol = "🐹 "
 disabled = false
 
 [lua]
+symbol = "🌙 "
 style = 'bold cyan'
 format = '[$symbol$version]($style) '
-symbol = "🌙 "
 disabled = false
 
 [nodejs]
-style = 'bold green'
 symbol = " "
+style = 'bold green'
 version_format = 'v${raw}'
 detect_extensions = ['js', 'mjs', 'cjs', 'ts', 'mts', 'cts']
 detect_files = ['package.json', '.node-version']
@@ -165,37 +165,37 @@ format = '[$symbol$version]($style) '
 disabled = false
 
 [ocaml]
-style = 'bold yellow'
 symbol = "🐫 "
+style = 'bold yellow'
 format = '[$symbol$version]($style) '
 disabled = false
 
 [php]
-style = 'bold purple'
 symbol = "🐘 "
+style = 'bold purple'
 format = '[$symbol$version]($style) '
 disabled = false
 
 [python]
+symbol = "🐍 "
 style = 'bold green'
 format = '[$symbol$version]($style) '
-symbol = "🐍 "
 disabled = false
 
 [ruby]
+symbol = "💎 "
 style = 'bold red'
 format = '[$symbol$version]($style) '
-symbol = "💎 "
 disabled = false
 
 [rust]
+symbol = "🦀 "
 style = 'bold red'
 format = '[$symbol$version]($style) '
-symbol = "🦀 "
 disabled = false
 
 [zig]
+symbol = " "
 style = 'bold yellow'
 format = '[$symbol$version]($style) '
-symbol = " "
 disabled = false
