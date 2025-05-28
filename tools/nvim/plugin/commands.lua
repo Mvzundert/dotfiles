@@ -9,10 +9,10 @@ local cmd = vim.cmd
 -- 'tokyonight',
 -- 'rose-pine',
 -- 'everforest',
--- 'gruvebox',
--- 'nightfall',
+-- 'gruvbox',
 -- 'vague',
 -- 'catppuccin'.
+-- 'eldritch'.
 cmd.colorscheme 'everforest'
 
 cmd.hi 'Comment gui=none'
