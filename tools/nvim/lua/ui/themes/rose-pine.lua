@@ -7,7 +7,7 @@ return {
   -- Optional; default configuration will be used if setup isn't called.
   config = function()
     require('rose-pine').setup {
-      variant = 'moon', -- auto, main, moon, or dawn
+      variant = 'main', -- auto, main, moon, or dawn
       dark_variant = 'moon', -- main, moon, or dawn
       dim_inactive_windows = false,
       extend_background_behind_borders = true,
