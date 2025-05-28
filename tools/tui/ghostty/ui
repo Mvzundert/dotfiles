@@ -3,7 +3,6 @@ confirm-close-surface=false
 
 # Theme for Dark and Light
 # theme = rose-pine
-# theme =catppuccin-macchiato
 theme = Everforest Dark - Hard
 
 # Background opacity and blur radius
