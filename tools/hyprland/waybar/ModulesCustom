@@ -44,7 +44,7 @@
 
     "custom/power": {
         "format": " ⏻ ",
-        "on-click": "~/.config/rofi/powermenu/type-1/powermenu.sh",
+        "on-click": "~/.config/rofi/powermenu/powermenu.sh",
         "tooltip": true,
         "tooltip-format": "Left Click: Logout Menu",
     },
