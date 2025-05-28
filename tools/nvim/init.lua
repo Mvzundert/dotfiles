@@ -30,6 +30,9 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 
+-- Create temporary cache directory for phpactor, each session gets its own
+vim.env.XDG_CACHE_HOME = '/tmp/phpactor-cache-' .. tostring(vim.fn.getpid())
+
 ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
