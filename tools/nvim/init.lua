@@ -1,20 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
-
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -57,15 +43,20 @@ require('lazy').setup({
     },
   },
 
+  -- load the coding plugins
   { import = 'coding.ai' },
   { import = 'coding.cmp' },
   { import = 'coding.format' },
   { import = 'coding.git' },
   { import = 'coding.lsp' },
-  { import = 'coding.search' },
-  { import = 'coding.test' },
   { import = 'coding.todo' },
 
+  -- Load the System plugins
+  { import = 'system.organisation' },
+  { import = 'system.typing' },
+  { import = 'system.search' },
+
+  -- Load the Looks and Feels
   { import = 'ui.filetree' },
   { import = 'ui.menu' },
   { import = 'ui.snacks' },
