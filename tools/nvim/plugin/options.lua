@@ -72,7 +72,7 @@ opt.scrolloff = 10
 
 opt.autowrite = true -- Enable auto write
 opt.completeopt = 'menu,menuone,noselect'
-opt.conceallevel = 3 -- Hide * markup for bold and italic
+opt.conceallevel = 0 -- Hide * markup for bold and italic
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
 opt.colorcolumn = '180'
