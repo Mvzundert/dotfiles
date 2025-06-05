@@ -7,8 +7,8 @@
     // - "dark": Use the theme indicated by the "dark" field
     "theme": {
         "mode": "system",
-        "light": "Catppuccin Latte",
-        "dark": "Catppuccin Mocha"
+        "light": "Gruvbox Light Soft",
+        "dark": "Gruvbox Dark Soft"
     },
     "icon_theme": "Zed (Default)",
     // The name of a base set of key bindings to use.
@@ -540,7 +540,7 @@
         // Default width of the notification panel.
         "default_width": 380
     },
-    "assistant": {
+    "agent": {
         // Version of this setting.
         "version": "2",
         // Whether the assistant is enabled.
@@ -617,7 +617,7 @@
         // Whether to show the file icon for a tab.
         "file_icons": true,
         // Whether to always show the close button on tabs.
-        "always_show_close_button": false,
+        "show_close_button": "hover",
         // What to do after closing the current tab.
         //
         // 1. Activate the tab that was open previously (default)
