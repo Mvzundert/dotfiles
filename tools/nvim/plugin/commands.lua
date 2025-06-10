@@ -62,11 +62,15 @@ api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Create keymappings only when in norg files
+-- Create keymappings only when in norg files to prevent conflicts
 api.nvim_create_autocmd('Filetype', {
   pattern = 'norg',
   callback = function()
+    -- Normal mode mappings
     set('n', '<leader>on', '<Plug>(neorg.dirman.new-note)', { buffer = true }, { desc = '[O]rganise [N]ew note' })
+    set('n', '<leader><CR>', '<Plug>(neorg.qol.todo-items.todo.task-cycle)', { desc = '[O]rganisation Task [T]oggle' })
+    set('n', '<CR>', '<Plug>(neorg.esupports.hop.hop-link)', { desc = '[O]rganisation [F]ollow Link' })
+    set('n', '<leader>li', '<Plug>(neorg.pivot.list.invert)', { desc = '[L]ist [I]nvert' })
   end,
 })
 
