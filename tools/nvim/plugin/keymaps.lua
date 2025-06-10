@@ -193,8 +193,8 @@ set('n', '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', { desc = '[B]u
 set('n', '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', { desc = '[B]uffer Delete [O]thers' })
 set('n', '<leader>br', '<Cmd>BufferLineCloseRight<CR>', { desc = '[B]uffer Delete to the [R]ight' })
 set('n', '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', { desc = '[B]uffer Delete to the [L]eft' })
-set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
-set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
+set('n', '<S-h>', '<Cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
+set('n', '<S-l>', '<Cmd>BufferLineCycleNext<CR>', { desc = 'Next Buffer' })
 
 -- =====================================================================
 -- Git
