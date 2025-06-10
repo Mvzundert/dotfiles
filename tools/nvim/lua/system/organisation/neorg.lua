@@ -11,6 +11,7 @@ return {
         ['core.defaults'] = {},
         ['core.concealer'] = {},
         ['core.summary'] = {},
+        ['core.export'] = {},
         ['core.integrations.treesitter'] = {},
         ['core.integrations.nvim-cmp'] = {},
 
