@@ -13,7 +13,8 @@ local set = vim.keymap.set
 -- any other, such as
 -- 'rose-pine',
 -- 'everforest',
-cmd.colorscheme 'everforest'
+-- 'catppuccin',
+cmd.colorscheme 'catppuccin'
 
 cmd.hi 'Comment gui=none'
 
