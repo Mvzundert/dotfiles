@@ -3,7 +3,8 @@ confirm-close-surface=false
 
 # Theme for Dark and Light
 # theme = rose-pine-moon
-theme = Everforest Dark - Hard
+theme = Kanagawa Wave
+# theme = Everforest Dark - Hard
 
 # Background opacity and blur radius
 background-opacity=0.8
