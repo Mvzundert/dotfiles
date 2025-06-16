@@ -14,7 +14,7 @@ local set = vim.keymap.set
 -- 'rose-pine',
 -- 'everforest',
 -- 'catppuccin',
-cmd.colorscheme 'everforest'
+cmd.colorscheme 'kanagawa'
 
 cmd.hi 'Comment gui=none'
 
