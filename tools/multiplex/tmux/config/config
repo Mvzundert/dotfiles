@@ -57,9 +57,6 @@ bind-key x kill-pane
 # don't exit from tmux when closing a session
 set -g detach-on-destroy off  
 
-# Move the status bar to top (or bottom)
-set-option -g status-position top
-
 # only works with Nerd Font
 set -g @t-fzf-prompt '🛸 '
 
