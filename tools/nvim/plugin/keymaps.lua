@@ -158,8 +158,6 @@ set('n', '<leader>/', function()
   Snacks.picker.grep_buffers()
 end, { desc = '[S]earch using grep in open buffers' })
 
-set('n', '<leader>sr', '<cmd>:GrugFar<cr>', { desc = '[S]earch with G[R]ug' })
-
 set('n', '<leader>sd', function()
   Snacks.picker.diagnostics()
 end, { desc = '[S]earch [D]iagnostics' })
