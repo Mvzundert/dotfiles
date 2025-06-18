@@ -25,6 +25,7 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
   {},
+  install = { colorscheme = { 'kanagawa' } },
   -- automatically check for plugin updates
   checker = { enabled = true },
   performance = {
