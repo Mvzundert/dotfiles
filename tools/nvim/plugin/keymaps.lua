@@ -17,6 +17,7 @@ set('n', '<leader>p', '', { desc = '+[P]review' })
 set('n', '<leader>r', '', { desc = '+[R]ename' })
 set('n', '<leader>c', '', { desc = '+[C]ode and [C]heck' })
 set('n', '<leader>t', '', { desc = '+[T]oggle' })
+set('n', '<leader>m', '', { desc = '+[M]arkdown' })
 set('n', '<leader>q', '', { desc = '+[Q]uit' })
 
 -- =====================================================================
@@ -254,3 +255,30 @@ end, { desc = '[C]heck [T]odo' })
 set('n', '<leader>cd', '<cmd>Trouble diagnostics toggle<cr>', { desc = '[C]heck [D]iagnostics' })
 
 set('n', '<leader>cm', '<Cmd>Mason<CR>', { desc = '[C]heck [M]ason' })
+
+-- =====================================================================
+-- export
+-- =====================================================================
+set('n', '<leader>mp', function() -- Using <leader>mp for Markdown to PDF
+  local current_file_path = vim.api.nvim_buf_get_name(0)
+
+  if current_file_path == '' or not current_file_path:match '%.md$' then
+    vim.notify('Cannot export: Current buffer is not a saved Markdown (.md) file.', vim.log.levels.WARN)
+    return
+  end
+
+  local output_pdf_root_name = vim.fn.fnamemodify(current_file_path, ':r')
+  local output_pdf_path = output_pdf_root_name .. '.pdf'
+
+  local escaped_input_path = vim.fn.fnameescape(current_file_path)
+  local escaped_output_path = vim.fn.fnameescape(output_pdf_path)
+
+  local command_to_execute = 'md_to_pdf ' .. escaped_input_path .. ' ' .. escaped_output_path
+
+  -- For debugging: use 'vertical terminal ' (shows output in a split window)
+  -- vim.cmd('vertical terminal ' .. command_to_execute)
+  vim.cmd('!' .. command_to_execute)
+
+  vim.notify('Attempting to export ' .. current_file_path .. ' to ' .. output_pdf_path .. '...', vim.log.levels.INFO)
+  vim.notify('Attempting to export ' .. current_file_path .. ' to ' .. output_pdf_path .. '...', vim.log.levels.INFO)
+end, { desc = 'Export [M]arkdown to [P]DF' })
