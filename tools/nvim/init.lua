@@ -1,6 +1,13 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Set Neovim's default shell to Fish
+vim.o.shell = 'fish'
+
+-- Tell Fish to act as a login shell and execute commands.
+-- This ensures it sources your ~/.config/fish/config.fish
+vim.o.shellcmdflag = '-lc'
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
