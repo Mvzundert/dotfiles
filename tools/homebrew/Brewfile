@@ -1,4 +1,5 @@
 tap "adoptopenjdk/openjdk"
+tap "d12frosted/emacs-plus"
 tap "filosottile/musl-cross"
 tap "homebrew/cask"
 tap "homebrew/core"
@@ -34,10 +35,8 @@ brew "bash"
 brew "bat"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
-# OpenType text shaping engine
-brew "harfbuzz"
-# Versatile and fast Unicode/ASCII/ANSI graphics renderer
-brew "chafa"
+# Statistics utility to count lines of code
+brew "cloc"
 # Cross-platform make
 brew "cmake"
 # Console Matrix
@@ -56,14 +55,10 @@ brew "coreutils"
 brew "ctags"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
-# Pack, ship and run any application as a lightweight container
-brew "docker"
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Functional metaprogramming aware language built on Erlang VM
 brew "elixir"
-# GNU Emacs text editor
-brew "emacs"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Database of public exploits and corresponding vulnerable software
@@ -74,6 +69,8 @@ brew "eza"
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# OpenType text shaping engine
+brew "harfbuzz"
 # VP8/VP9 video codec
 brew "libvpx"
 # Play, record, convert, and stream audio and video
@@ -108,6 +105,8 @@ brew "libksba"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Converts markdown into roff (man pages)
+brew "go-md2man"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Generate introspection data for GObject libraries
@@ -144,6 +143,8 @@ brew "libiconv"
 brew "libyaml"
 # Curses-based tool for viewing and analyzing log files
 brew "lnav"
+# Package manager for the Lua programming language
+brew "luarocks"
 # Open source relational database management system
 brew "mysql-client"
 # NCurses Disk Usage
@@ -162,8 +163,6 @@ brew "nowplaying-cli"
 brew "onefetch"
 # OCaml package manager
 brew "opam"
-# Development kit for the Java programming language
-brew "openjdk"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Highly capable, feature-rich programming language
@@ -206,8 +205,6 @@ brew "rustup"
 brew "sqlmap"
 # Cross-shell prompt for astronauts
 brew "starship"
-# Simplified and community-driven man pages
-brew "tldr"
 # Instant terminal sharing
 brew "tmate"
 # Terminal multiplexer
@@ -247,22 +244,22 @@ brew "rbenv/tap/openssl@1.1"
 # x86_64 Linux GNU Toolchain
 brew "sergiobenitez/osxct/x86_64-unknown-linux-gnu"
 # General-purpose scripting language
-brew "shivammathur/php/php@7.4"
+brew "shivammathur/php/php@7.4", link: true
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Symfony CLI helps Symfony developers manage projects, from local code to remote infrastructure
 brew "symfony-cli/tap/symfony-cli"
 brew "tursodatabase/tap/turso"
-# Black box WordPress vulnerability scanner
-brew "wpscanteam/tap/wpscan"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
+# Compact TeX distribution as alternative to the full TeX Live / MacTeX
+cask "basictex"
 # Web security testing toolkit
 cask "burp-suite"
 # Server and cloud storage browser
 cask "cyberduck"
 # App to build and share containerised applications and microservices
-cask "docker"
+cask "docker-desktop"
 # Launcher for *Epic Games* games
 cask "epic-games"
 # Collaborative team software
@@ -277,6 +274,8 @@ cask "insomnia"
 cask "jetbrains-toolbox"
 # Open-source keystroke visualiser
 cask "keycastr"
+# ZSA keyboard firmware flasher
+cask "keymapp"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
 # Penetration testing framework
@@ -303,6 +302,8 @@ cask "signal"
 cask "spotify"
 # Native GUI tool for relational databases
 cask "tableplus"
+# Remote access and connectivity software focused on security
+cask "teamviewer"
 # Web browser focusing on security
 cask "tor-browser"
 # Virtualiser for x86 hardware
@@ -314,8 +315,6 @@ cask "wezterm"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Network protocol analyzer
-cask "wireshark"
+cask "wireshark-app"
 # Multiplayer code editor
 cask "zed"
-# Gecko based web browser
-cask "zen-browser"
