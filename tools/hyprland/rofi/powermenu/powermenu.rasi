@@ -10,14 +10,14 @@ configuration {
 }
 
 * {
-	transparent: #00000000;
-	foreground: #F2F2F2EE;
-	background-selected: #F2F2F245;
-	background-active: #F2F2F230;
-	background-white: #F2F2F211;
-	background-black: #00000066;
-	urgent: #E91E6366;
-	urgent-selected: #E91E6377;
+	transparent:         #00000000;
+	foreground:          #C5C9C5;   /* dragonWhite */
+	background-selected: #658594;   /* dragonBlue2 */
+	background-active:   #8A9A7B;   /* dragonGreen2 */
+	background-white:    #C5C9C5;   /* dragonWhite */
+	background-black:    #181616;   /* dragonBlack0 */
+	urgent:              #C4746E;   /* dragonRed */
+	urgent-selected:     #E46876CC; /* slightly transparent urgent variant */
 }
 
 window {
@@ -46,7 +46,7 @@ listview {
 mainbox {
 	background-color: @background-black;
 	children: [ inputbar, listview ];
-    padding: calc(50% - 70px) 0% 0% 15%;
+	padding: calc(50% - 70px) 0% 0% 15%;
 }
 
 element {
@@ -54,8 +54,8 @@ element {
 	text-color: @foreground;
 	orientation: horizontal;
 	border-radius: 10px;
-    padding: 30px;
-    vertical: 0.5;
+	padding: 30px;
+	vertical: 0.5;
 }
 
 element-text {
@@ -78,8 +78,8 @@ element alternate.active {
 }
 
 element selected {
-	background-color: #29B6F6;
-	text-color: #212121;
+	background-color: @background-selected;
+	text-color: @background-black;
 }
 
 element selected.urgent {
@@ -89,5 +89,6 @@ element selected.urgent {
 
 element selected.active {
 	background-color: @background-active;
-	color: @foreground-selected;
+	color: @foreground;
 }
+

@@ -1,3 +1,3 @@
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/colors/everforest.rasi"
+@import "~/.config/rofi/colors/kanagawa-dragon.rasi"
