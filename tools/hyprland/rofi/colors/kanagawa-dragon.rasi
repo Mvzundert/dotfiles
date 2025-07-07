@@ -1,0 +1,16 @@
+/**
+ *
+ * Author : M. van Zundert (marzun)
+ * Theme  : Kanagawa Dragon
+ * 
+ * Colors
+ **/
+
+* {
+    background:     #181616;   /* dragonBlack0 */
+    background-alt: #1F1F1F;   /* dragonBlack2 */
+    foreground:     #C5C9C5;   /* dragonWhite */
+    selected:       #658594;   /* dragonBlue2 */
+    active:         #8A9A7B;   /* dragonGreen2 */
+    urgent:         #C4746E;   /* dragonRed */
+}
