@@ -19,14 +19,14 @@
         "idle_inhibitor", 
         "group/app_drawer",
         "group/connections",
-        "group/motherboard",
+        "hyprland/window",  
         "custom/music",
         ],
     "modules-center": [
         "hyprland/workspaces#pacman",
         ],
     "modules-right": [
-        "hyprland/window",  
+        "group/motherboard",
         "battery",
         "group/audio", 
         "clock",
