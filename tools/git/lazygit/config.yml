@@ -190,7 +190,7 @@ gui:
 
   # Whether to show the divergence from the base branch in the branches view.
   # One of: 'none' | 'onlyArrow'  | 'arrowAndNumber'
-  showDivergenceFromBaseBranch: none
+  showDivergenceFromBaseBranch: arrowAndNumber
 
   # Height of the command log view
   commandLogSize: 8
@@ -217,7 +217,7 @@ gui:
 
   # How things are filtered when typing '/'.
   # One of 'substring' (default) | 'fuzzy'
-  filterMode: substring
+  filterMode: fuzzy
 
   # Config relating to the spinner.
   spinner:
@@ -340,7 +340,7 @@ git:
   # Config for showing the log in the commits view
   log:
     # displays the whole git graph by default in the commits view (equivalent to passing the `--all` argument to `git log`)
-    showWholeGraph: false
+    showWholeGraph: true
 
   # When copying commit hashes to the clipboard, truncate them to this
   # length. Set to 40 to disable truncation.
@@ -368,7 +368,7 @@ refresher:
 confirmOnQuit: false
 
 # If true, exit Lazygit when the user presses escape in a context where there is nothing to cancel/close
-quitOnTopLevelReturn: false
+quitOnTopLevelReturn: true
 
 # Config relating to things outside of Lazygit like how files are opened, copying to clipboard, etc
 os:
