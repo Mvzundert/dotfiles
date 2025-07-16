@@ -7,8 +7,8 @@ theme = Kanagawa Wave
 # theme = Everforest Dark - Hard
 
 # Background opacity and blur radius
-background-opacity=0.8
-background-blur-radius=30
+# background-opacity=0.8
+# background-blur-radius=30
 
 # Hide the title
 title = " "
@@ -24,9 +24,9 @@ window-height=34
 window-width=127
 
 window-padding-color = background
-window-padding-x = 0
-window-padding-y = 0
-window-padding-balance = false
+window-padding-x = 20
+window-padding-y = 20
+window-padding-balance = true
 adjust-cell-height = 10%
 
 cursor-invert-fg-bg = true
