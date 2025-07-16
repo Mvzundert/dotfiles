@@ -145,6 +145,8 @@ brew "libyaml"
 brew "lnav"
 # Package manager for the Lua programming language
 brew "luarocks"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
 # Open source relational database management system
 brew "mysql-client"
 # NCurses Disk Usage
@@ -157,8 +159,6 @@ brew "netcat"
 brew "nikto"
 # Port scanning utility for large networks
 brew "nmap"
-# Retrieves currently playing media, and simulates media actions
-brew "nowplaying-cli"
 # Command-line Git information tool
 brew "onefetch"
 # OCaml package manager
@@ -167,22 +167,20 @@ brew "opam"
 brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
-# General-purpose scripting language
-brew "php@8.3", restart_service: :changed, link: true
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@8.1"
 # General-purpose scripting language
 brew "php@8.2", restart_service: :changed
+# General-purpose scripting language
+brew "php@8.3", restart_service: :changed, link: true
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Object-relational database system
 brew "postgresql@14", restart_service: :changed
-# Framework for managing multi-language pre-commit hooks
-brew "pre-commit"
 # Hook preloader
 brew "proxychains-ng"
 # Interpreted, interactive, object-oriented programming language
@@ -221,6 +219,8 @@ brew "wget"
 brew "wp-cli"
 # Bash completion for Wpcli
 brew "wp-cli-completion"
+# JavaScript package manager
+brew "yarn"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # Feature-rich command-line audio/video downloader
