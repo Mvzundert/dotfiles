@@ -63,13 +63,6 @@ alias ghwf="gh workflow list"
 alias ghr="gh workflow run"
 
 # -------------------------------------------------------------------
-# Submodule
-# -------------------------------------------------------------------
-alias gsum="git submodule update --remote --merge"
-alias gprs="git pull --recurse-submodules"
-alias gsur="git submodule update --recursive --remote"
-
-# -------------------------------------------------------------------
 # for fun and games (Here be dragons)
 # -------------------------------------------------------------------
 alias darth='git push --force'
