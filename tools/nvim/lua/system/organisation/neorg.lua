@@ -25,7 +25,7 @@ return {
         ['core.dirman'] = {
           config = {
             workspaces = {
-              notes = '~/documents/marzun_obsidian/Marzun/neorg/',
+              notes = '~/documents/notes/neorg/',
             },
             default_workspace = 'notes',
           },
