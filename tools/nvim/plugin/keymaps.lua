@@ -130,7 +130,7 @@ end, { desc = '[S]earch [U]ndo History' })
 
 -- @TODO: Fix this location being hardcoded
 set('n', '<leader>so', function()
-  local org_dir = vim.fn.expand '~/Documents/marzun_obsidian'
+  local org_dir = vim.fn.expand '~/Documents/notes'
   require('snacks.picker').files {
     cwd = org_dir,
     show_empty = true,
