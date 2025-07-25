@@ -6,6 +6,11 @@ path = "~/code/dotfiles/"
 startup_command = "vim"
 
 [[session]]
+name = "Notes"
+path = "~/Documents/notes/"
+startup_command = "vim"
+
+[[session]]
 name = "Cerberos"
 path = "~/code/cerberos/"
 
