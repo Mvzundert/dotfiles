@@ -23,10 +23,10 @@ alias hideFiles "defaults write com.apple.finder AppleShowAllFiles NO; and killa
 # System
 # -------------------------------------------------------------------
 alias myip='wget http://ipinfo.io/ip -qO -'
-alias size='du -sh * | sort -r -n | ack "[0-9][G|M]"'
+alias size='du -sh * | sort -r -n | grep "[0-9][G|M]"'
 alias ifa="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 alias ifi="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: inactive'"
-alias ifip="ifconfig | ack 'inet.*broadcast'"
+alias ifip="ifconfig | grep 'inet.*broadcast'"
 alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
 
 # -------------------------------------------------------------------
@@ -71,8 +71,8 @@ alias yolo='git add --all && git commit -m "$(curl -s https://whatthecommit.com/
 # -------------------------------------------------------------------
 # Composer
 # -------------------------------------------------------------------
-alias cigr="composer info | ack"
-alias ciggr="composer global info | ack"
+alias cigr="composer info | grep"
+alias ciggr="composer global info | grep"
 alias symsec="symfony security:check"
 alias ci='composer install'
 alias cu='composer update'
@@ -94,9 +94,9 @@ alias dcrn='docker exec -it crb_dock_nginx bash -c "nginx -s reload"'
 # -------------------------------------------------------------------
 # Laravel artisan
 # -------------------------------------------------------------------
-alias artg="art list | ack"
+alias artg="art list | grep"
 alias artr="art route:list"
-alias artrg="art route:list | ack"
+alias artrg="art route:list | grep"
 alias artmr="art migrate:fresh"
 alias artmrs="art migrate:refresh --seed"
 # Get all translations from app and resourses
@@ -122,9 +122,9 @@ alias sdcd="sail up"
 # -------------------------------------------------------------------
 # Artisan shortcuts when using Sail
 # -------------------------------------------------------------------
-alias sartg="sart list | ack"
+alias sartg="sart list | grep"
 alias sartr="sart route:list"
-alias sartrg="sart route:list | ack"
+alias sartrg="sart route:list | grep"
 alias sartmr="sart migrate:refresh"
 alias sartmrs="sart migrate:refresh --seed"
 alias sartqw="sart queue:work --once"
@@ -179,4 +179,4 @@ alias pip="pip3"
 # Some default commands
 # -------------------------------------------------------------------
 alias pserve="python -m http.server 80"   # Start a webserver with the current Dir as root.
-alias pup="pip3 install --user --upgrade" # to upgrade installed packages.
+alias pup="pip3 install --user --upgrade" # to upgrade installed pgrepages.
