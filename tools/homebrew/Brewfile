@@ -17,8 +17,6 @@ tap "stripe/stripe-cli"
 tap "symfony-cli/tap"
 tap "tursodatabase/tap"
 tap "wpscanteam/tap"
-# Search tool like grep, but optimized for programmers
-brew "ack"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Library for command-line editing
@@ -172,9 +170,9 @@ brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@8.1"
 # General-purpose scripting language
-brew "php@8.2", restart_service: :changed
+brew "php@8.2", restart_service: :changed, link: true
 # General-purpose scripting language
-brew "php@8.3", restart_service: :changed, link: true
+brew "php@8.3", restart_service: :changed
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
@@ -278,8 +276,6 @@ cask "keycastr"
 cask "keymapp"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
-# Penetration testing framework
-cask "metasploit"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # VPN client for secure internet access and private browsing

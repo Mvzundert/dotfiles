@@ -1,7 +1,7 @@
 alias art='run_laravel_artisan'
-alias artg="art list | ack"
+alias artg="art list | grep"
 alias artr="art route:list"
-alias artrg="art route:list | ack"
+alias artrg="art route:list | grep"
 alias artmr="art migrate:fresh"
 alias artmrs="art migrate:refresh --seed"
 # Do building magic of project with actual dependency checks
@@ -31,9 +31,9 @@ alias sdcd="sail up"
 # -------------------------------------------------------------------
 # Artisan shortcuts when using Sail
 # -------------------------------------------------------------------
-alias sartg="sart list | ack"
+alias sartg="sart list | grep"
 alias sartr="sart route:list"
-alias sartrg="sart route:list | ack"
+alias sartrg="sart route:list | grep"
 alias sartmr="sart migrate:refresh"
 alias sartmrs="sart migrate:refresh --seed"
 alias sartqw="sart queue:work --once"
