@@ -45,7 +45,7 @@ return {
         }
       end,
       background = {
-        dark = 'dragon',
+        dark = 'wave',
         light = 'lotus',
       },
     }
