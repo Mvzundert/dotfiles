@@ -5,15 +5,6 @@ local api = vim.api
 local diagnostic = vim.diagnostic
 local set = vim.keymap.set
 
--- If you want to see what colorschemes are already installed,
--- you can use ``.
---
--- Load the colorscheme here, when Autodark is not active
--- Like many other themes, this one has different styles, and you could load
--- any other, such as
--- 'rose-pine',
--- 'everforest',
--- 'catppuccin',
 cmd.colorscheme 'kanagawa'
 
 cmd.hi 'Comment gui=none'
@@ -36,21 +27,6 @@ diagnostic.config {
     prefix = '',
   },
 }
-
--- Auto-show diagnostics on hover
-api.nvim_create_autocmd('CursorHold', {
-  callback = function()
-    local opts = {
-      focusable = false,
-      close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
-      border = 'rounded',
-      source = 'always',
-      prefix = ' ',
-      scope = 'cursor',
-    }
-    diagnostic.open_float(nil, opts)
-  end,
-})
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

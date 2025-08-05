@@ -128,33 +128,6 @@ set('n', '<leader>su', function()
   Snacks.picker.undo()
 end, { desc = '[S]earch [U]ndo History' })
 
--- @TODO: Fix this location being hardcoded
-set('n', '<leader>so', function()
-  local org_dir = vim.fn.expand '~/Documents/notes'
-  require('snacks.picker').files {
-    cwd = org_dir,
-    show_empty = true,
-    hidden = false,
-    ignored = true,
-    actions = {
-      g = {
-        action = function(picker_api, _)
-          picker_api.close()
-          require('snacks.picker').grep {
-            cwd = picker_api.cwd, -- Search in the directory currently displayed by the files picker
-            cmd = 'rg', -- Use ripgrep for fast recursive search. Make sure 'rg' is installed.
-            show_empty = true,
-            hidden = true,
-            ignored = true,
-            follow = false,
-            supports_live = true,
-          }
-        end,
-      },
-    },
-  }
-end, { desc = '[S]earch [O]rganisation Notes' })
-
 set('n', '<leader>/', function()
   Snacks.picker.grep_buffers()
 end, { desc = '[S]earch using grep in open buffers' })

@@ -1,9 +1,6 @@
 return {
   'echasnovski/mini.nvim',
   config = function()
-    -- Animate stuff in vim
-    -- require('mini.animate').setup()
-
     -- Highlight the current word under the cursor
     require('mini.cursorword').setup()
 
