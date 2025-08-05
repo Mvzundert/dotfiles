@@ -64,9 +64,6 @@ opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- Preview substitutions live, as you type!
 opt.inccommand = 'split'
 
--- Show which line your cursor is on
-opt.cursorline = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 opt.scrolloff = 10
 
@@ -81,11 +78,9 @@ opt.formatoptions = 'jcroqlnt' -- tcqj
 opt.grepformat = '%f:%l:%c:%m'
 opt.grepprg = 'rg --vimgrep'
 opt.ignorecase = true -- Ignore case
-opt.inccommand = 'nosplit' -- preview incremental substitute
 opt.laststatus = 0
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
-opt.scrolloff = 8 -- Lines of context
 opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize' }
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 4 -- Size of an indent
