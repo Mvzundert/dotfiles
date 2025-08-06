@@ -30,7 +30,7 @@ set -gx EDITOR nvim
 set -gx LANG en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
 set -Ux COMPOSER_MEMORY_LIMIT -1 # Remove composer memory limit
-set -Ux HOMEBREW_NO_ENV_HINTS
+set -Ux HOMEBREW_NO_ENV_HINTS 1
 
 # Function to add a directory to PATH if it exists and isn't already in PATH
 function add_to_path
