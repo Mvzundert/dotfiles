@@ -7,7 +7,7 @@
     // - "dark": Use the theme indicated by the "dark" field
     "theme": {
         "mode": "system",
-        "light": "Gruvbox Light Soft",
+        "light": "Kanagawa Wave",
         "dark": "Gruvbox Dark Soft"
     },
     "icon_theme": "Zed (Default)",
@@ -542,7 +542,6 @@
     },
     "agent": {
         // Version of this setting.
-        "version": "2",
         // Whether the assistant is enabled.
         "enabled": false,
         // Whether to show the assistant panel button in the status bar.
@@ -1186,7 +1185,6 @@
     // Different settings for specific language models.
     "language_models": {
         "anthropic": {
-            "version": "1",
             "api_url": "https://api.anthropic.com"
         },
         "google": {
@@ -1196,7 +1194,6 @@
             "api_url": "http://localhost:11434"
         },
         "openai": {
-            "version": "1",
             "api_url": "https://api.openai.com/v1"
         },
         "lmstudio": {
