@@ -29,6 +29,8 @@ fnm env --use-on-cd | source
 set -gx EDITOR nvim
 set -gx LANG en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
+set -Ux COMPOSER_MEMORY_LIMIT -1 # Remove composer memory limit
+set -Ux HOMEBREW_NO_ENV_HINTS
 
 # Function to add a directory to PATH if it exists and isn't already in PATH
 function add_to_path
@@ -38,9 +40,6 @@ function add_to_path
         end
     end
 end
-
-# Remove composer memory limit
-set -Ux COMPOSER_MEMORY_LIMIT -1
 
 # Add common bin directories to PATH
 add_to_path "$HOME/bin"
