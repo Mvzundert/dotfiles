@@ -170,9 +170,9 @@ brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@8.1"
 # General-purpose scripting language
-brew "php@8.2", restart_service: :changed, link: true
+brew "php@8.2", restart_service: :changed
 # General-purpose scripting language
-brew "php@8.3", restart_service: :changed
+brew "php@8.3", restart_service: :changed, link: true
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
