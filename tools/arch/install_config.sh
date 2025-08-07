@@ -27,7 +27,8 @@ fi
 echo "Creating symbolic links from $DOTFILES_DIR to $CONFIG_DIR..."
 
 # Define an array of files and directories to link.
-# IMPORTANT: The commas have been removed. Array elements are space-separated in Bash.
+# Add the names of the files and folders you want to link from the DOTFILES_DIR.
+# Example: ( "nvim" "tmux" "alacritty" )
 FILES_TO_LINK=(
     "nvim"
     "bat"
@@ -44,13 +45,11 @@ FILES_TO_LINK=(
 
 # Loop through the defined list of files and directories
 for file in "${FILES_TO_LINK[@]}"; do
-    # Define the source and destination paths
+    # Define the source path
     SOURCE_PATH="$DOTFILES_DIR/$file"
-    DEST_PATH="$CONFIG_DIR/$file"
 
-    # --- DEBUGGING: Print the paths before the check fails ---
-    echo "DEBUG: Checking existence of source path: $SOURCE_PATH"
-    # --- END DEBUGGING ---
+    # Define the destination path, using basename to get only the filename
+    DEST_PATH="$CONFIG_DIR/$(basename "$file")"
 
     # Check if the source file actually exists before linking
     if [ ! -e "$SOURCE_PATH" ]; then
