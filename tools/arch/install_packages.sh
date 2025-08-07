@@ -4,10 +4,10 @@
 #
 # Usage:
 #   1. To GENERATE the package lists on your current system:
-#      ./package_manager.sh generate
+#      ./install_packages.sh generate
 #
 #   2. To INSTALL the packages on a new system:
-#      ./package_manager.sh install
+#      ./install_packages.sh install
 #
 #   3. The script will automatically install 'yay' if it's not found in the PATH.
 

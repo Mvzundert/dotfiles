@@ -10,7 +10,7 @@
 #
 # Usage:
 #   1. Make this script executable: chmod +x setup_system.sh
-#   2. Run the script: ./setup_system.sh
+#   2. Run the script: ./full_setup_system.sh
 
 # Exit on any error
 # set -e
