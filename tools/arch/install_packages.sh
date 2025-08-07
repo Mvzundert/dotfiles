@@ -9,7 +9,7 @@
 #   2. To INSTALL the packages on a new system:
 #      ./package_manager.sh install
 #
-#   3. You must have an AUR helper (like yay or paru) installed for the 'install' command to work.
+#   3. The script will automatically install 'yay' if it's not found in the PATH.
 
 # Exit on any error
 set -e
@@ -31,6 +31,28 @@ generate_lists() {
     echo "AUR package list saved to $AUR_PKG_LIST"
 }
 
+# --- Function to install yay from AUR ---
+install_yay() {
+    echo "--- 'yay' not found. Installing yay from AUR... ---"
+
+    # Check if git and base-devel are installed (prerequisites for yay)
+    if ! pacman -Qs git &>/dev/null || ! pacman -Qs base-devel &>/dev/null; then
+        echo "Prerequisites 'git' and 'base-devel' are not installed. Installing now..."
+        sudo pacman -S --needed --noconfirm base-devel git
+    fi
+
+    # Clone, build, and install yay
+    git clone https://aur.archlinux.org/yay.git /tmp/yay-temp
+    cd /tmp/yay-temp
+    makepkg -si --noconfirm
+
+    # Clean up the temporary directory
+    cd - >/dev/null
+    rm -rf /tmp/yay-temp
+
+    echo "--- 'yay' installed successfully! ---"
+}
+
 # --- Function to install packages ---
 install_packages() {
     # Check if the package list files exist before trying to install
@@ -40,19 +62,20 @@ install_packages() {
         exit 1
     fi
 
+    # --- Install official packages first ---
     echo "--- Installing official packages... ---"
-    # -S: Sync packages from the official repos
-    # -u: Upgrade packages
-    # --needed: Only install packages that are not already installed
-    # --noconfirm: Skip confirmation prompts
-    # sed removes the version numbers from the text file
     sudo pacman -Syu --needed --noconfirm $(sed 's| .*||' "$OFFICIAL_PKG_LIST")
 
+    # --- Check for and install yay if it's not in the PATH ---
+    if ! command -v yay &>/dev/null; then
+        install_yay
+    fi
+
+    # --- Install AUR packages (now that yay is guaranteed to be installed) ---
     echo "--- Installing AUR packages... ---"
-    # Assuming 'yay' is installed for AUR packages
-    # If not, you'll need to install it first
-    # yay -S --needed --noconfirm $(sed 's| .*||' "$AUR_PKG_LIST")
-    sudo yay -S --needed --noconfirm $(sed 's| .*||' "$AUR_PKG_LIST")
+    # Filter 'yay' from the AUR list to prevent the script from trying to install it again
+    # The grep -v '^yay' part is the fix for your issue
+    yay -S --needed --noconfirm $(sed 's| .*||' "$AUR_PKG_LIST" | grep -v '^yay')
 
     echo "--- Package installation complete! ---"
 }
