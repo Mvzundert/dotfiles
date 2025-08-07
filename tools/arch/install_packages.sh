@@ -62,24 +62,27 @@ install_packages() {
         exit 1
     fi
 
-    # --- Install official packages first ---
+    # --- Check for and install yay if it's not in the PATH ---
+    # This must be done first before we can install AUR packages
+    if ! command -v yay &>/dev/null; then
+        install_yay
+    fi
+
+    # --- Install official packages first (and filter out AUR packages) ---
     echo "--- Installing official packages from pacman... ---"
-    # We now filter out the 'yay' package from the official list
-    official_packages_to_install=$(sed 's| .*||' "$OFFICIAL_PKG_LIST" | grep -v '^yay$')
+    # We strip the version numbers and then use grep -v -f to filter out
+    # any packages that also appear in our AUR package list.
+    aur_package_names=$(sed 's| .*||' "$AUR_PKG_LIST")
+    official_packages_to_install=$(sed 's| .*||' "$OFFICIAL_PKG_LIST" | grep -v -F -x -f <(echo "$aur_package_names"))
 
     if [ ! -z "$official_packages_to_install" ]; then
         sudo pacman -Syu --needed --noconfirm $official_packages_to_install
     fi
 
-    # --- Check for and install yay if it's not in the PATH ---
-    if ! command -v yay &>/dev/null; then
-        install_yay
-    fi
-
-    # --- Install AUR packages (now that yay is guaranteed to be installed) ---
+    # --- Install AUR packages (now that yay is installed) ---
     echo "--- Installing AUR packages using yay... ---"
-    # Filter 'yay' from the AUR list to prevent the script from trying to install it again
-    yay_packages_to_install=$(sed 's| .*||' "$AUR_PKG_LIST" | grep -v '^yay$')
+    # We just strip the version numbers from the AUR list and let yay handle it.
+    yay_packages_to_install=$(sed 's| .*||' "$AUR_PKG_LIST")
 
     # Now, install the remaining AUR packages
     if [ ! -z "$yay_packages_to_install" ]; then
