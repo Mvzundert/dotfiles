@@ -7,8 +7,8 @@ theme = Kanagawa Wave
 # theme = Everforest Dark - Hard
 
 # Background opacity and blur radius
-# background-opacity=0.8
-# background-blur-radius=30
+background-opacity=0.8
+background-blur-radius=30
 
 # Hide the title
 title = " "

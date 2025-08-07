@@ -23,7 +23,7 @@ esac
 cat <<EOL >$DOTFILES/tools/tui/ghostty/fonts
 # Font size
 font-size=$FONT_SIZE
-font-family="IBM Plex Mono"
+font-family="JetBrains Mono Nerd Font"
 font-feature=+liga
 cursor-style=block
 adjust-underline-position=4
