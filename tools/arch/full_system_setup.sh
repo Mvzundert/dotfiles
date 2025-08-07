@@ -37,7 +37,7 @@ if [ ! -x "$INSTALL_PACKAGES_SCRIPT" ]; then
     exit 1
 fi
 
-bash "$INSTALL_PACKAGES_SCRIPT"
+bash "$INSTALL_PACKAGES_SCRIPT" install
 
 # --- Step 2: Clone the dotfiles repository ---
 echo "--- Cloning dotfiles repository from $DOTFILES_REPO... ---"
