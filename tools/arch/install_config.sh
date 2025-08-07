@@ -3,7 +3,7 @@
 # A script to create symbolic links for configuration files.
 # This is useful for managing dotfiles in a Git repository.
 #
-# Usage: ./link_configs.sh
+# Usage: ./install_config.sh
 #
 # NOTE: This script will overwrite existing files or symlinks in your ~/.config directory.
 
@@ -57,9 +57,10 @@ for file in "${FILES_TO_LINK[@]}"; do
         continue
     fi
 
-    if [ -L "$SOURCE_PATH" ]; then
-        echo "Found a symlink at the source location: $SOURCE_PATH. Removing it to prevent recursion."
-        rm "$SOURCE_PATH"
+    # --- Check for and remove existing symlink at destination location ---
+    if [ -L "$DEST_PATH" ]; then
+        echo "Found existing symlink at destination: $DEST_PATH. Removing it."
+        rm "$DEST_PATH"
     fi
 
     # Create the symbolic link
