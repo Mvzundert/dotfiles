@@ -10,7 +10,7 @@
 # --- Configuration ---
 # Set the directory where your configuration files (dotfiles) are stored.
 # This should be the path to your cloned Git repository.
-DOTFILES_DIR="$HOME/dotfiles/tools"
+DOTFILES_DIR="$HOME/code/dotfiles/tools"
 
 # Set the destination directory where the symlinks will be created.
 CONFIG_DIR="$HOME/.config"
