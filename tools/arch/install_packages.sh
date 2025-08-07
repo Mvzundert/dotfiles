@@ -51,7 +51,8 @@ install_packages() {
     echo "--- Installing AUR packages... ---"
     # Assuming 'yay' is installed for AUR packages
     # If not, you'll need to install it first
-    yay -S --needed --noconfirm $(sed 's| .*||' "$AUR_PKG_LIST")
+    # yay -S --needed --noconfirm $(sed 's| .*||' "$AUR_PKG_LIST")
+    sudo yay -S --needed --noconfirm $(sed 's| .*||' "$AUR_PKG_LIST")
 
     echo "--- Package installation complete! ---"
 }
