@@ -64,7 +64,12 @@ install_packages() {
 
     # --- Install official packages first ---
     echo "--- Installing official packages from pacman... ---"
-    sudo pacman -Syu --needed --noconfirm $(sed 's| .*||' "$OFFICIAL_PKG_LIST")
+    # We now filter out the 'yay' package from the official list
+    official_packages_to_install=$(sed 's| .*||' "$OFFICIAL_PKG_LIST" | grep -v '^yay$')
+
+    if [ ! -z "$official_packages_to_install" ]; then
+        sudo pacman -Syu --needed --noconfirm $official_packages_to_install
+    fi
 
     # --- Check for and install yay if it's not in the PATH ---
     if ! command -v yay &>/dev/null; then
@@ -73,7 +78,7 @@ install_packages() {
 
     # --- Install AUR packages (now that yay is guaranteed to be installed) ---
     echo "--- Installing AUR packages using yay... ---"
-    # We strip the version numbers and then remove the 'yay' package from the list
+    # Filter 'yay' from the AUR list to prevent the script from trying to install it again
     yay_packages_to_install=$(sed 's| .*||' "$AUR_PKG_LIST" | grep -v '^yay$')
 
     # Now, install the remaining AUR packages
