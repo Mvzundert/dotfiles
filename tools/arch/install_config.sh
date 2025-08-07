@@ -57,6 +57,11 @@ for file in "${FILES_TO_LINK[@]}"; do
         continue
     fi
 
+    if [ -L "$SOURCE_PATH" ]; then
+        echo "Found a symlink at the source location: $SOURCE_PATH. Removing it to prevent recursion."
+        rm "$SOURCE_PATH"
+    fi
+
     # Create the symbolic link
     # -s: create a symbolic link (not a hard link)
     # -f: force overwrite if a file or symlink already exists at the destination
