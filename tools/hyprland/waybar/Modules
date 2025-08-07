@@ -13,7 +13,7 @@
         "format-icons": [
             "󰈸"
         ],
-        "on-click-right": "ghostty --title nvtop sh -c 'nvtop'"
+        "on-click-right": "alacritty --class=btop -e btop"
     },
 
     "battery": {
@@ -40,9 +40,7 @@
         ],
         "format-time": "{H}h {M}min",
         "tooltip": true,
-        "tooltip-format": "{timeTo} {power}w",
-        "on-click-middle": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
-        "on-click-right": "$HOME/.config/hypr/scripts/Wlogout.sh",
+        "tooltip-format": "{timeTo} {power}w"
     },
 
     "bluetooth": {
@@ -53,7 +51,7 @@
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
         "tooltip": true,
-        "on-click": "blueman-manager",
+        "on-click": "blueberry",
     },
 
     "clock": {
@@ -84,7 +82,6 @@
         "format-icons": [
             "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
         ],
-        "on-click-right": "gnome-system-monitor",
     },
 
     "disk": {
@@ -114,8 +111,7 @@
         "format-alt": "{percentage}% 󰾆",
         "format-alt-click": "click",
         "tooltip": true,
-        "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
-        "on-click-right": "ghostty --title btop sh -c 'btop'"
+        "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
     },
 
     "network": {
@@ -132,7 +128,7 @@
         "format-icons": [
             "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
         ],
-        "on-click": "nm-connection-editor",
+        "on-click-right": "alacritty --class=impala -e impala"
     },
 
     "network#speed": {

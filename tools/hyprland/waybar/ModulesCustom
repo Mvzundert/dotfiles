@@ -15,7 +15,7 @@
 
     "custom/browser": {
         "format": " ",
-        "on-click": "google-chrome-stable https://",
+        "on-click": "chromium https://",
         "tooltip": true,
         "tooltip-format": "Launch Browser",
     },

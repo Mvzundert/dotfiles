@@ -19,8 +19,8 @@
         "idle_inhibitor", 
         "group/app_drawer",
         "group/connections",
-        "hyprland/window",  
-        "custom/music",
+        "hyprland/window"
+        //"custom/music",
         ],
     "modules-center": [
         "hyprland/workspaces#pacman",

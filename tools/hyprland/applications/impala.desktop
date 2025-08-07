@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Impala Terminal
+Comment=Open Impala in a dedicated terminal window
+Exec=alacritty --class "impala" -e impala
+Icon=applications-development
+Terminal=false
+Type=Application
+StartupWMClass=impala

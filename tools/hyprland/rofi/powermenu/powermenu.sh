@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-## Author : Aditya Shakya (adi1090x)
-## Github : @adi1090x
-#
-## Rofi   : Power Menu
-#
-## Available Styles
-#
-## style-1   style-2   style-3   style-4   style-5
-
 # Current Theme
 dir="$HOME/.config/rofi/powermenu"
 theme='style'
@@ -70,17 +61,7 @@ run_cmd() {
 			amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
-				openbox --exit
-			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
-				bspc quit
-			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
-				i3-msg exit
-			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
-				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
-			elif [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
-				hyprctl dispatch exit
-			fi
+			uwsm stop
 		fi
 	else
 		exit 0
