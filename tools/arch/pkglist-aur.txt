@@ -1,0 +1,9 @@
+fnm 1.38.1-1
+fnm-debug 1.38.1-1
+python-imageio-ffmpeg 0.6.0-2
+python-screeninfo 0.8.1-2
+walker 0.13.22-1
+walker-debug 0.13.22-1
+waypaper 2.6-1
+yay 12.5.0-1
+yay-debug 12.5.0-1
