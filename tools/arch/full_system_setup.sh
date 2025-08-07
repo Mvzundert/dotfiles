@@ -13,7 +13,7 @@
 #   2. Run the script: ./setup_system.sh
 
 # Exit on any error
-set -e
+# set -e
 
 # --- Configuration ---
 DOTFILES_REPO="https://github.com/mariusvanzundert/dotfiles.git"
@@ -99,16 +99,5 @@ fi
 
 bash "$LINK_CONFIGS_SCRIPT"
 
-echo "--- System setup complete! ---"
-
 echo ""
 echo "🎉 Setup Finished! Your Arch Linux machine is ready to go. 🎉"
-echo "
-    .--.
-   |o_o |
-   |:_/ |
-  //   \ \
- (|     | )
-/`\_   _/\`
-\___)=(___/
-"
