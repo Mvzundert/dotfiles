@@ -49,6 +49,10 @@ for file in "${FILES_TO_LINK[@]}"; do
     SOURCE_PATH="$DOTFILES_DIR/$file"
     DEST_PATH="$CONFIG_DIR/$file"
 
+    # --- DEBUGGING: Print the paths before the check fails ---
+    echo "DEBUG: Checking existence of source path: $SOURCE_PATH"
+    # --- END DEBUGGING ---
+
     # Check if the source file actually exists before linking
     if [ ! -e "$SOURCE_PATH" ]; then
         echo "Warning: Source file/directory not found at $SOURCE_PATH. Skipping."
