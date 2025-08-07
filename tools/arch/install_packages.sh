@@ -12,7 +12,7 @@
 #   3. The script will automatically install 'yay' if it's not found in the PATH.
 
 # Exit on any error
-set -e
+# set -e
 
 # Define the filenames for the package lists
 OFFICIAL_PKG_LIST="pkglist-official.txt"
