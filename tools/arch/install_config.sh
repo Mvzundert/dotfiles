@@ -27,20 +27,19 @@ fi
 echo "Creating symbolic links from $DOTFILES_DIR to $CONFIG_DIR..."
 
 # Define an array of files and directories to link.
-# Add the names of the files and folders you want to link from the DOTFILES_DIR.
-# Example: ( "nvim" "tmux" "alacritty" )
+# IMPORTANT: The commas have been removed. Array elements are space-separated in Bash.
 FILES_TO_LINK=(
-    "nvim",
-    "bat",
-    "tui/ghostty",
-    "tui/alacritty",
-    "tui/fastfetch",
-    "prompt/starship.toml",
-    "git/lazygit",
-    "hyprland/hypr",
-    "hyprland/rofi",
-    "hyprland/waybar",
-    "hyprland/dunst",
+    "nvim"
+    "bat"
+    "tui/ghostty"
+    "tui/alacritty"
+    "tui/fastfetch"
+    "prompt/starship.toml"
+    "git/lazygit"
+    "hyprland/hypr"
+    "hyprland/rofi"
+    "hyprland/waybar"
+    "hyprland/dunst"
 )
 
 # Loop through the defined list of files and directories
