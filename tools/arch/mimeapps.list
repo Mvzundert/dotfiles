@@ -1,0 +1,12 @@
+[Added Associations]
+application/pdf=chromium.desktop
+image/png=feh-6.desktop
+
+[Default Applications]
+application/pdf=chromium.desktop
+image/jpeg=feh-6.desktop
+image/png=feh-6.desktop
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
