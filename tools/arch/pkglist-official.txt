@@ -11,7 +11,6 @@ chromium 139.0.7258.66-1
 cliphist 1:0.6.1-1
 composer 2.8.10-1
 discord 1:0.0.104-1
-dolphin 25.04.3-1
 dunst 1.12.2-1
 efibootmgr 18-3
 eza 0.23.0-1
@@ -39,6 +38,7 @@ libpulse 17.0+r43+g3e2bb8a1e-1
 linux 6.15.9.arch1-1
 linux-firmware 20250708-1
 man-db 2.13.1-1
+nautilus 48.3-1
 neovim 0.11.3-1
 nm-connection-editor 1.36.0-1
 noto-fonts 1:2025.08.01-1
