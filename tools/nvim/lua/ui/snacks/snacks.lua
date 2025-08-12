@@ -19,7 +19,7 @@ return {
         Snacks.toggle.option('relativenumber', { name = 'Relative Number' }):map '<leader>tr'
         Snacks.toggle.line_number():map '<leader>tl'
         Snacks.toggle.treesitter():map '<leader>tT'
-        Snacks.toggle.inlay_hints():map '<leader>th'
+        Snacks.toggle.inlay_hints():map '<leader>ti'
 
         -- Dimming
         Snacks.toggle.dim():map '<leader>td'

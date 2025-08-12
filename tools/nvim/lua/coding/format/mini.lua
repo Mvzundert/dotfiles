@@ -4,6 +4,15 @@ return {
     -- Highlight the current word under the cursor
     require('mini.cursorword').setup()
 
+    -- Show the indent lines
+    require('mini.indentscope').setup()
+
+    -- Add/delete/replace surroundings (brackets, quotes, etc.)
+    -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+    -- - sd'   - [S]urround [D]elete [']quotes
+    -- - sr)'  - [S]urround [R]eplace [)] [']
+    require('mini.surround').setup()
+
     -- Better Around/Inside textobjects
     -- Examples:
     --  - va)  - [V]isually select [A]round [)]paren
@@ -19,12 +28,6 @@ return {
         right = '<A-Right>',
         down = '<A-Down>',
         up = '<A-Up>',
-
-        -- Move current line in Normal mode using Option + Arrow keys
-        line_left = '<A-Left>',
-        line_right = '<A-Right>',
-        line_down = '<A-Down>',
-        line_up = '<A-Up>',
       },
 
       -- Options which control moving behavior
@@ -33,14 +36,5 @@ return {
         reindent_linewise = true,
       },
     }
-
-    -- Add/delete/replace surroundings (brackets, quotes, etc.)
-    -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-    -- - sd'   - [S]urround [D]elete [']quotes
-    -- - sr)'  - [S]urround [R]eplace [)] [']
-    require('mini.surround').setup()
-
-    -- Show the indent lines
-    require('mini.indentscope').setup()
   end,
 }
