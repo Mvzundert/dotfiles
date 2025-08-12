@@ -1,4 +1,9 @@
 {
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+    },
+
     "temperature": {
         "interval": 10,
         "tooltip": true,
@@ -17,11 +22,8 @@
     },
 
     "battery": {
-        //"interval": 5,
         "align": 0,
         "rotate": 0,
-        //"bat": "BAT1",
-        //"adapter": "ACAD",
         "full-at": 100,
         "design-capacity": false,
         "states": {
@@ -86,23 +88,9 @@
 
     "disk": {
         "interval": 30,
-        //"format": "󰋊",
         "path": "/",
-        //"format-alt-click": "click",
         "format": "{percentage_used}% 󰋊",
-        //"tooltip": true,
         "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
-    },
-
-    "idle_inhibitor": {
-        "tooltip": true,
-        "tooltip-format-activated": "Idle_inhibitor active",
-        "tooltip-format-deactivated": "Idle_inhibitor not active",
-        "format": "{icon}",
-        "format-icons": {
-            "activated": " ",
-            "deactivated": " ",
-        }
     },
 
     "memory": {
@@ -114,27 +102,10 @@
         "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
     },
 
-    "network": {
-        "format": "{ifname}",
-        "format-wifi": "{icon}",
-        "format-ethernet": "󰌘",
-        "format-disconnected": "󰌙",
-        "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
-        "format-linked": "󰈁 {ifname} (No IP)",
-        "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-        "tooltip-format-ethernet": "{ifname} 󰌘",
-        "tooltip-format-disconnected": "󰌙 Disconnected",
-        "max-length": 30,
-        "format-icons": [
-            "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
-        ],
-        "on-click-right": "alacritty --class=impala -e impala"
-    },
-
     "network#speed": {
         "interval": 1,
         "format": "{ifname}",
-        "format-wifi": "{icon}   {bandwidthUpBytes}   {bandwidthDownBytes}",
+        "format-wifi": "{icon}    {bandwidthUpBytes}   {bandwidthDownBytes}",
         "format-ethernet": "󰌘   {bandwidthUpBytes}   {bandwidthDownBytes}",
         "format-disconnected": "󰌙",
         "tooltip-format": "{ipaddr}",
@@ -146,22 +117,11 @@
         "max-length": 24,
         "format-icons": [
             "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
-        ]
+        ],
+        "on-click-right": "alacritty --class=impala -e impala"
     },
 
-    "power-profiles-daemon": {
-    "format": "{icon} ",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-    }
-    },
-
-    "pulseaudio": {
+   "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} 󰂰 {volume}%",
         "format-muted": "󰖁",
