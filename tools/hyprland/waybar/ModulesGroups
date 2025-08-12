@@ -1,51 +1,18 @@
 {
     // GROUPS
-    "group/app_drawer": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "transition-left-to-right": true
-            },
-        "modules": [
-            "custom/file_manager",
-            "custom/tty",
-            "custom/browser",
-        ]
-    },
-    "group/motherboard": {
+        "group/systemstats": {
         "orientation": "horizontal",
         "modules": [
             "cpu",
-            "power-profiles-daemon",
             "memory",
             "temperature",
             "disk",
-        ]
-    },
-
-    "group/mobo_drawer": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "cpu",
-            "transition-left-to-right": true
-            },
-        "modules": [
-            "temperature",		
-            "cpu",
-            "power-profiles-daemon",	
-            "memory",
-            "disk",
+            "battery",
         ]
     },
 
     "group/audio": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "pulseaudio",
-            "transition-left-to-right": true
-            },
+        "orientation": "horizontal",
         "modules": [
             "pulseaudio",
             "pulseaudio#microphone",
@@ -53,25 +20,15 @@
     },
 
     "group/connections": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "bluetooth",
-            "transition-left-to-right": true
-            },
+        "orientation": "horizontal",
         "modules": [
-            "network",
+            "network#speed",
             "bluetooth",
         ]
     },
 
     "group/power": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "drawer-child",
-            "transition-left-to-right": false
-        },
+        "orientation": "horizontal",
         "modules": [
             "custom/power",
         ]

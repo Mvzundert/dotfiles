@@ -1,0 +1,33 @@
+{
+    "hyprland/window": {
+        "format": "👉 {title}",
+        "separate-outputs": true
+    },
+
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "show-special": false,
+        "persistent-workspaces": {
+        "*": 5
+        },
+        "format": "{icon}",
+        "format-icons": {
+                "active": "<span font='12'>󰮯</span>",
+                "empty": "<span font='8'></span>",
+                "default": "󰊠",
+        },
+    },
+
+    "hyprland/windowcount": {
+        "format": "[{}]",
+        "format-empty": "[X]",
+        "format-windowed": "[T]",
+        // "format-fullscreen": "[{}]",
+        "separate-outputs": true
+    },
+}

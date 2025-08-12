@@ -1,35 +1,31 @@
 {
     "include": [
-    "$HOME/.config/waybar/Modules",
-    "$HOME/.config/waybar/ModulesWorkspaces",
-    "$HOME/.config/waybar/ModulesCustom",
-    "$HOME/.config/waybar/ModulesGroups",
+        "$HOME/.config/waybar/Modules",
+        "$HOME/.config/waybar/ModulesHyprland",
+        "$HOME/.config/waybar/ModulesCustom",
+        "$HOME/.config/waybar/ModulesGroups",
     ],
     "layer": "top", 
     "position": "top", 
-    //"mode": "dock",
+    "mode": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "margin-left": 6,
-    "margin-right": 6,
-    "margin-top": 2,
+    "margin-left": 4,
+    "margin-right": 4,
+    "margin-top": 1,
 
     "modules-left": [	
-        "idle_inhibitor", 
-        "group/app_drawer",
-        "group/connections",
-        "hyprland/window"
-        //"custom/music",
-        ],
-    "modules-center": [
-        "hyprland/workspaces#pacman",
-        ],
-    "modules-right": [
-        "group/motherboard",
-        "battery",
-        "group/audio", 
+        "tray",
         "clock",
+        "hyprland/window",
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+    ],
+    "modules-right": [
+        "group/connections",
+        "group/systemstats",
         "custom/power",
-        ],
+    ],
 }

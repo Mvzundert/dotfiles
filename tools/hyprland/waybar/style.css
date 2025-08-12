@@ -104,11 +104,6 @@ tooltip {
 #tray,
 #window,
 #workspaces,
-#custom-browser,
-#custom-file_manager,
-#custom-power,
-#custom-spotify,
-#custom-tty,
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
