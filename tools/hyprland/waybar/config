@@ -26,6 +26,7 @@
     "modules-right": [
         "group/connections",
         "group/systemstats",
+        "group/audio",
         "custom/power",
     ],
 }
