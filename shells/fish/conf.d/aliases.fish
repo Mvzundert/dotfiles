@@ -12,6 +12,7 @@ alias buuc='brew update && brew upgrade && brew cleanup'
 alias bbd='brew bundle dump --describe -f'
 alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
 alias cat='bat'
+alias grep='rg'
 
 # -------------------------------------------------------------------
 # Darwin only show and hide files
