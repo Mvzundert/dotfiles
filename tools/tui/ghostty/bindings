@@ -5,3 +5,4 @@ mouse-hide-while-typing = true
 # Sent clear followed by the enter key to the terminal.
 # Used to clear scrollback when using Tmux
 keybind = cmd+k=text:clear\u{20}\n
+keybind = alt+k=text:clear\u{20}\n
