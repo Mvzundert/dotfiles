@@ -1,7 +1,7 @@
 {
     "custom/power": {
         "format": " ⏻ ",
-        "on-click": "~/.config/rofi/powermenu/powermenu.sh",
+        "on-click": "~/.config/scripts/powermenu.sh",
         "tooltip": true,
         "tooltip-format": "Left Click: Logout Menu",
     },
