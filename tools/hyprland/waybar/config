@@ -5,6 +5,7 @@
         "$HOME/.config/waybar/ModulesCustom",
         "$HOME/.config/waybar/ModulesGroups",
     ],
+    "output": "DP-3",
     "layer": "top", 
     "position": "top", 
     "mode": "dock",
