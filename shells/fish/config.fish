@@ -61,3 +61,5 @@ if test -r "$HOME/.opam/opam-init/init.fish"
     source "$HOME/.opam/opam-init/init.fish" > /dev/null 2> /dev/null
 end
 
+# Added by `rbenv init` on Thu Aug 28 10:01:45 PM CEST 2025
+status --is-interactive; and rbenv init - --no-rehash fish | source
