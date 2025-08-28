@@ -1,0 +1,47 @@
+/* Kanagawa Wave Wofi Theme */
+
+window {
+    background-color: #1f1f28; /* Deep blue-grey background */
+    border: 1px solid #5a5a73; /* Subtle border */
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#input {
+    background-color: #292934; /* Slightly lighter input bar */
+    color: #c8c093; /* Warm text color */
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#outer-box {
+    margin: 0px;
+}
+
+#scroll {
+    border: none;
+}
+
+#entry {
+    color: #dcd7ba; /* Default entry text color */
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 6px;
+    margin: 2px;
+}
+
+#entry:selected {
+    background-color: #5a5a73; /* Selected entry background */
+    color: #e6e0e0; /* Selected entry text color */
+    border: 1px solid #7a73a2;
+}
+
+#entry:selected label {
+    font-weight: bold;
+}
+
+#img {
+    margin-right: 8px;
+}
