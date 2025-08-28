@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Options for the menu
-options="Shutdown\nReboot\nSuspend\nLogout"
+options="Lock\nReboot\nShutdown\nSuspend\nLogout"
 
 # Get the selected option using wofi
 selected_option=$(echo -e "$options" | wofi --show dmenu --prompt "Power Menu")
@@ -13,6 +13,9 @@ case "$selected_option" in
     ;;
 "Reboot")
     systemctl reboot
+    ;;
+"Lock")
+    hyprlock
     ;;
 "Suspend")
     systemctl suspend
