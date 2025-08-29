@@ -2,11 +2,16 @@
     // GROUPS
         "group/systemstats": {
         "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+        },
         "modules": [
+            "temperature",
             "cpu",
             "memory",
-            "temperature",
             "disk",
+            "network#speed",
             "battery",
         ]
     },
@@ -16,13 +21,6 @@
         "modules": [
             "pulseaudio",
             "pulseaudio#microphone",
-        ]
-    },
-
-    "group/connections": {
-        "orientation": "horizontal",
-        "modules": [
-            "network#speed",
         ]
     },
 
