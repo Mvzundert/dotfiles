@@ -36,7 +36,7 @@ unbind %
 bind e setw synchronize-panes on
 bind E setw synchronize-panes off
 
-# Use CTRL+Shift+direction to resize tmux panes a certain with / height
+# Use alt+direction / opt+direction to resize tmux panes in steps of 5 cells
 bind-key -n M-Up resize-pane -U 5
 bind-key -n M-Down resize-pane -D 5
 bind-key -n M-Left resize-pane -L 5
