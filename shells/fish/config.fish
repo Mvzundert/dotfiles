@@ -50,6 +50,7 @@ add_to_path "/usr/local/sbin"
 add_to_path "/usr/sbin"
 add_to_path "$HOME/.composer/vendor/bin"
 add_to_path "$HOME/.rbenv/bin"
+add_to_path "$HOME/.phpenv/bin"
 add_to_path "/usr/local/opt/mysql-client/bin"
 add_to_path "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin"
 add_to_path "$HOME/.cargo/bin"
@@ -60,6 +61,9 @@ add_to_path "$HOME/.emacs.d/bin"
 if test -r "$HOME/.opam/opam-init/init.fish"
     source "$HOME/.opam/opam-init/init.fish" > /dev/null 2> /dev/null
 end
+
+# Init phpenv to make sure it gets used
+eval "$(phpenv init -)"
 
 # Added by `rbenv init` on Thu Aug 28 10:01:45 PM CEST 2025
 status --is-interactive; and rbenv init - --no-rehash fish | source
