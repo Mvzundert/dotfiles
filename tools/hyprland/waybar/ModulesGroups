@@ -23,7 +23,6 @@
         "orientation": "horizontal",
         "modules": [
             "network#speed",
-            "bluetooth",
         ]
     },
 
