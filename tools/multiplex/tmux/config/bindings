@@ -17,8 +17,6 @@ bind C-a send-prefix
 bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 
 # smart pane switching with awareness of vim splits
-# need to pair this with Plugin 'christoomey/vim-tmux-navigator' for vim
-# makes a ton of sense once used to it.
 bind -n C-h select-pane -L
 bind -n C-j select-pane -D
 bind -n C-k select-pane -U
@@ -34,18 +32,15 @@ bind - split-window -v -c "#{pane_current_path}"
 unbind '"'
 unbind %
 
-bind -r C-h select-window -t :-
-bind -r C-l select-window -t :+
-
 # Synchonize panes on/off
 bind e setw synchronize-panes on
 bind E setw synchronize-panes off
 
 # Use CTRL+Shift+direction to resize tmux panes a certain with / height
-bind-key -n C-S-Up resize-pane -U 5
-bind-key -n C-S-Down resize-pane -D 5
-bind-key -n C-S-Left resize-pane -L 5
-bind-key -n C-S-Right resize-pane -R 5
+bind-key -n M-Up resize-pane -U 5
+bind-key -n M-Down resize-pane -D 5
+bind-key -n M-Left resize-pane -L 5
+bind-key -n M-Right resize-pane -R 5
 
 # Open tmux session spawning and search in a popup window using sesh and fzf
 bind-key "T" run-shell "sesh connect \"$(
