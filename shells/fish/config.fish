@@ -63,7 +63,9 @@ if test -r "$HOME/.opam/opam-init/init.fish"
 end
 
 # Init phpenv to make sure it gets used
-eval "$(phpenv init -)"
+if test -r "$HOME/.phpenv/bin/phpenv"
+    eval "$(phpenv init -)"
+end
 
 # Added by `rbenv init` on Thu Aug 28 10:01:45 PM CEST 2025
 status --is-interactive; and rbenv init - --no-rehash fish | source
