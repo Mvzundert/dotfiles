@@ -48,24 +48,48 @@ add_to_path "/usr/local/bin"
 add_to_path "$HOME/.local/bin"
 add_to_path "/usr/local/sbin"
 add_to_path "/usr/sbin"
-add_to_path "$HOME/.composer/vendor/bin"
-add_to_path "$HOME/.rbenv/bin"
-add_to_path "$HOME/.phpenv/bin"
-add_to_path "/usr/local/opt/mysql-client/bin"
-add_to_path "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin"
-add_to_path "$HOME/.cargo/bin"
 add_to_path "/usr/local/go/bin"
-add_to_path "$HOME/.emacs.d/bin"
 
 # Initialize OPAM if its init file exists
 if test -r "$HOME/.opam/opam-init/init.fish"
     source "$HOME/.opam/opam-init/init.fish" > /dev/null 2> /dev/null
 end
 
+# Init Compioser to make sure it gets used
+if test -r "$HOME/.composer/vendor/bin"
+    add_to_path "$HOME/.composer/vendor/bin"
+end
+
+# Init Mysql-client to make sure it gets used
+if test -r "/usr/local/opt/mysql-client/bin"
+    add_to_path "/usr/local/opt/mysql-client/bin"
+end
+
+# Init Python3 to make sure it gets used
+if test -r "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin"
+    add_to_path "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin"
+end
+
+# Init Cargo to make sure it gets used
+if test -r "$HOME/.cargo/bin"
+    add_to_path "$HOME/.cargo/bin"
+end
+
+# Init Go to make sure it gets used
+if test -r "/usr/local/go/bin"
+    add_to_path "/usr/local/go/bin"
+end
+
 # Init phpenv to make sure it gets used
+if test -r "$HOME/.rbenv/bin/"
+    add_to_path "$HOME/.rbenv/bin"
+    # Added by `rbenv init` on Thu Aug 28 10:01:45 PM CEST 2025
+    status --is-interactive; and rbenv init - --no-rehash fish | source
+end
+
+# Init rbenv to make sure it gets used
 if test -r "$HOME/.phpenv/bin/phpenv"
+    add_to_path "$HOME/.phpenv/bin"
     eval "$(phpenv init -)"
 end
 
-# Added by `rbenv init` on Thu Aug 28 10:01:45 PM CEST 2025
-status --is-interactive; and rbenv init - --no-rehash fish | source
