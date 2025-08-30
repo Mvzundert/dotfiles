@@ -19,7 +19,7 @@ docker-compose 2.39.2-1
 dunst 1.12.2-1
 efibootmgr 18-3
 eza 0.23.0-1
-fastfetch 2.50.2-1
+fastfetch 2.51.1-1
 fd 10.3.0-1
 feh 3.10.3-1
 fish 4.0.2-1
@@ -32,8 +32,8 @@ github-cli 2.78.0-1
 glib2-devel 2.84.4-2
 goxlr-utility 1.2.2-2
 gst-plugin-pipewire 1:1.4.7-1
-hugo 0.148.2-2
-hypridle 0.1.6-6
+hugo 0.149.0-1
+hypridle 0.1.7-1
 hyprland 0.50.1-1
 hyprlock 0.9.1-1
 hyprpaper 0.7.5-3
@@ -47,10 +47,10 @@ lazygit 0.54.2-1
 libappindicator-gtk3 12.10.0.r298-4
 libnewt 0.52.25-1
 libpulse 17.0+r43+g3e2bb8a1e-1
-linux 6.16.3.arch1-1
+linux 6.16.4.arch1-1
 linux-firmware 20250808-1
-linux-headers 6.16.3.arch1-1
-linux-zen-headers 6.16.3.zen1-1
+linux-headers 6.16.4.arch1-1
+linux-zen-headers 6.16.4.zen1-1
 lutris 0.5.19-6
 man-db 2.13.1-1
 meson 1.9.0-1
@@ -85,7 +85,7 @@ steam 1.0.0.82-2
 thunderbird 141.0-1
 tmux 3.5_a-1
 ttf-jetbrains-mono-nerd 3.4.0-1
-uwsm 0.23.2-1
+uwsm 0.23.3-1
 waybar 0.14.0-1
 waypaper 2.6-1
 wget 1.25.0-2
