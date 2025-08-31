@@ -1,8 +1,9 @@
 c-client 2007f-21
 c-client-debug 2007f-21
-chatterino2-bin 2.5.3-18
+chatterino2-bin 2.5.3-19
 fnm 1.38.1-1
 fnm-debug 1.38.1-1
+google-chrome 139.0.7258.154-1
 goxlr-utility 1.2.2-2
 goxlr-utility-debug 1.2.2-2
 goxlr-utility-ui-debug 0.0.6-4
