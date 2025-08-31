@@ -11,8 +11,11 @@ image/jpeg=feh-6.desktop
 image/png=feh-6.desktop
 video/mp4=mpv.desktop
 video/x-matroska=mpv.desktop
-x-scheme-handler/http=chromium.desktop
-x-scheme-handler/https=chromium.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-XK6RB3.desktop;
