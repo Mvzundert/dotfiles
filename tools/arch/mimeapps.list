@@ -1,13 +1,7 @@
 [Default Applications]
-x-scheme-handler/mailto=userapp-Thunderbird-XK6RB3.desktop
-message/rfc822=userapp-Thunderbird-XK6RB3.desktop
-x-scheme-handler/mid=userapp-Thunderbird-XK6RB3.desktop
-x-scheme-handler/webcal=userapp-Thunderbird-62KWB3.desktop
-text/calendar=userapp-Thunderbird-62KWB3.desktop
-application/x-extension-ics=userapp-Thunderbird-62KWB3.desktop
-x-scheme-handler/webcals=userapp-Thunderbird-62KWB3.desktop
-application/pdf=chromium.desktop
+application/pdf=google-chrome.desktop
 image/jpeg=feh-6.desktop
+image/jpg=feh-6.desktop
 image/png=feh-6.desktop
 video/mp4=mpv.desktop
 video/x-matroska=mpv.desktop
@@ -16,12 +10,3 @@ x-scheme-handler/https=google-chrome.desktop
 text/html=google-chrome.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
-
-[Added Associations]
-x-scheme-handler/mailto=userapp-Thunderbird-XK6RB3.desktop;
-x-scheme-handler/mid=userapp-Thunderbird-XK6RB3.desktop;
-x-scheme-handler/webcal=userapp-Thunderbird-62KWB3.desktop;
-x-scheme-handler/webcals=userapp-Thunderbird-62KWB3.desktop;
-application/pdf=chromium.desktop
-image/png=feh-6.desktop
-
