@@ -5,7 +5,6 @@
         "$HOME/.config/waybar/ModulesCustom",
         "$HOME/.config/waybar/ModulesGroups",
     ],
-    "output": "DP-3",
     "layer": "top", 
     "position": "top", 
     "mode": "dock",
@@ -18,7 +17,6 @@
 
     "modules-left": [	
         "tray",
-        "clock",
         "hyprland/window",
     ],
     "modules-center": [
@@ -27,6 +25,7 @@
     "modules-right": [
         "group/systemstats",
         "group/audio",
+        "clock",
         "custom/power",
     ],
 }
