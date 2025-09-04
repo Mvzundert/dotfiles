@@ -19,8 +19,8 @@
     "group/audio": {
         "orientation": "horizontal",
         "modules": [
-            "pulseaudio",
-            "pulseaudio#microphone",
+            "wireplumber",
+            "wireplumber#microphone",
         ]
     },
 
