@@ -43,14 +43,13 @@ add_to_path "/usr/local/bin"
 add_to_path "$HOME/.local/bin"
 add_to_path "/usr/local/sbin"
 add_to_path "/usr/sbin"
-add_to_path "/usr/local/go/bin"
 
 # Initialize OPAM if its init file exists
 if test -r "$HOME/.opam/opam-init/init.fish"
     source "$HOME/.opam/opam-init/init.fish" > /dev/null 2> /dev/null
 end
 
-# Init Compioser to make sure it gets used
+# Init Composer to make sure it gets used
 if test -r "$HOME/.composer/vendor/bin"
     add_to_path "$HOME/.composer/vendor/bin"
 end
