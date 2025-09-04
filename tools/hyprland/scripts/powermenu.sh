@@ -21,7 +21,7 @@ case "$selected_option" in
     systemctl suspend
     ;;
 "Logout")
-    hyprctl exit
+    hyprctl dispatch exit
     ;;
 *)
     # Do nothing if the user cancels or selects an invalid option
