@@ -1,6 +1,7 @@
 [Unit]
 Description=GoXLR Daemon
 After=network.target sound.target
+Requires=sound.target
 
 [Service]
 ExecStart=/usr/sbin/goxlr-daemon
@@ -9,4 +10,4 @@ Restart=always
 RestartSec=3
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
