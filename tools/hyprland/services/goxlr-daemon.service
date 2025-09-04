@@ -1,0 +1,12 @@
+[Unit]
+Description=GoXLR Daemon
+After=network.target sound.target
+
+[Service]
+ExecStart=/usr/sbin/goxlr-daemon
+Type=simple
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=graphical-session.target
