@@ -1,7 +1,7 @@
 {
     "tray": {
-        "icon-size": 21,
-        "spacing": 10,
+        "icon-size": 5,
+        "spacing": 5,
     },
 
     "temperature": {
