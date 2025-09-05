@@ -54,6 +54,10 @@ if test -r "$HOME/.composer/vendor/bin"
     add_to_path "$HOME/.composer/vendor/bin"
 end
 
+if test -r "$HOME/.config/composer/vendor/bin"
+    add_to_path "$HOME/.config/composer/vendor/bin"
+end
+
 # Init Mysql-client to make sure it gets used
 if test -r "/usr/local/opt/mysql-client/bin"
     add_to_path "/usr/local/opt/mysql-client/bin"
