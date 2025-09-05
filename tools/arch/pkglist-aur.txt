@@ -1,6 +1,8 @@
 c-client 2007f-21
 c-client-debug 2007f-21
 chatterino2-bin 2.5.3-19
+docker-desktop 4.45.0-1
+docker-desktop-debug 4.45.0-1
 fnm 1.38.1-1
 fnm-debug 1.38.1-1
 google-chrome 139.0.7258.154-1

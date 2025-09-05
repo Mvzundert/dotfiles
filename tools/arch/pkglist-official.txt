@@ -4,6 +4,7 @@ base-devel 1-2
 bat 0.25.0-4
 bind 9.20.12-1
 bitwarden 2025.8.0-1
+breeze 6.4.4-1
 btop 1.4.4-1
 btrfs-progs 6.16-1
 c-client 2007f-21
@@ -13,8 +14,7 @@ cmatrix 2.0-4
 composer 2.8.11-1
 cronie 1.7.2-1
 discord 1:0.0.108-1
-docker 1:28.3.3-1
-docker-compose 2.39.2-1
+docker-desktop 4.45.0-1
 dunst 1.13.0-1
 efibootmgr 18-3
 eza 0.23.1-1
@@ -35,6 +35,7 @@ hypridle 0.1.7-1
 hyprland 0.50.1-1
 hyprlock 0.9.1-1
 hyprpaper 0.7.5-3
+hyprpolkitagent 0.1.3-1
 hyprshot 1.3.0-4
 impala 0.3.0-1
 intel-ucode 20250812-1
@@ -48,6 +49,7 @@ nautilus 48.3-1
 neovim 0.11.4-1
 npm 11.6.0-1
 nvidia-dkms 580.76.05-4
+nwg-look 1.0.6-1
 obs-studio-git 31.1.2.r139.g1eb6bde-1
 otf-aurulent-nerd 3.4.0-1
 otf-codenewroman-nerd 3.4.0-1
