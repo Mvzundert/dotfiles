@@ -1,0 +1,128 @@
+# This section defines the different sections for pull requests.
+# Each section is a separate tab in the dashboard's PR view.
+prSections:
+  # Section 1: My Open Pull Requests
+  - title: My Pull Requests
+    # The 'filters' field uses GitHub search syntax to query for PRs.
+    # This filter finds open pull requests where you are the author.
+    filters: is:open author:@me
+    # You can customize the layout of columns for this specific section.
+    layout:
+      # You can hide a column.
+      author:
+        hidden: true
+      # You can set the width of a column.
+      state:
+        width: 15
+      # You can set a column to grow and take up available space.
+      title:
+        grow: true
+    # You can set a limit on the number of PRs to show in this section.
+    limit: 20
+
+  # Section 2: PRs Needing My Review
+  - title: Needs My Review
+    # This filter finds open pull requests where a review is requested from you.
+    filters: is:open review-requested:@me
+
+  # Section 3: Involved in
+  - title: Involved
+    # This filter finds open PRs where you are involved but not the author.
+    filters: is:open involves:@me -author:@me
+
+# This section is for issues and is structured the same way as prSections.
+issueSections:
+  # Section 1: My Assigned Issues
+  - title: Assigned
+    # This filter finds open issues assigned to you.
+    filters: is:open assignee:@me
+
+  # Section 2: Issues I've Created
+  - title: My Issues
+    # This filter finds open issues you have authored.
+    filters: is:open author:@me
+
+# The 'defaults' section defines global settings that apply to all sections unless overridden.
+defaults:
+  prs:
+    # Set the default limit for PR sections.
+    limit: 30
+    # Define the default column layout for PRs.
+    layout:
+      state:
+        width: 12
+      updatedAt:
+        width: 12
+      commentsCount:
+        width: 4
+      assignees:
+        width: 16
+      repository:
+        width: 20
+      author:
+        width: 16
+      title:
+        grow: true
+      # You can specify the order of columns.
+      order: [repository, state, author, title, assignees, commentsCount, updatedAt]
+  issues:
+    limit: 30
+    layout:
+      state:
+        width: 12
+      updatedAt:
+        width: 12
+      commentsCount:
+        width: 4
+      assignees:
+        width: 16
+      repository:
+        width: 20
+      author:
+        width: 16
+      title:
+        grow: true
+      order: [repository, state, author, title, assignees, commentsCount, updatedAt]
+
+# This section allows you to customize the color scheme.
+# All colors must be in hex format. You can use a tool like color-hex.com.
+theme:
+  # Accent colors for highlighting and borders.
+  primary: "#61afef"
+  secondary: "#98c379"
+  # Text colors.
+  text: "#c5c5c5"
+  subtle: "#5c6370"
+  # Background and border colors.
+  background: "#282c34"
+  border: "#5c6370"
+  # Icons and status colors.
+  merged: "#62c453"
+  closed: "#a9a9a9"
+  draft: "#6e6d73"
+
+# This section defines custom keybindings.
+keybindings:
+  # Keybindings specific to the PR view.
+  prs:
+    # A keybinding to checkout a PR and then open a diff view in Neovim.
+    # The 'command' field uses Go Templates to access data about the selected PR.
+    # You can use placeholders like {{.RepoPath}}, {{.PrNumber}}, etc.
+    - key: d
+      command: >
+        tmux new-window -c {{.RepoPath}} "gh pr checkout {{.PrNumber}} && nvim -c \":DiffviewOpen master...{{.HeadRefName}}\""
+  # Keybindings specific to the Issues view.
+  issues:
+    # A custom keybinding to pin an issue.
+    - key: P
+      command: gh issue pin {{.IssueNumber}} --repo {{.RepoName}}
+      
+# You can define a mapping from a repository name to its local file path.
+# This is useful for custom keybindings that need to operate on the local repository.
+repoPaths:
+#  "dlvhdr/gh-dash": ~/code/gh-dash
+#  "my-org/my-project": /Users/username/work/my-project
+
+# You can configure the dashboard to automatically refresh at a given interval (in seconds).
+# If this is not set, the default is 30 seconds.
+refreshRate: 60
