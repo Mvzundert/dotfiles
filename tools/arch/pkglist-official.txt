@@ -13,10 +13,13 @@ cliphist 1:0.6.1-1
 cmatrix 2.0-4
 composer 2.8.11-1
 cronie 1.7.2-1
+dbeaver 25.1.5-1
 discord 1:0.0.108-1
+dnsmasq 2.91-1
 docker-desktop 4.45.0-1
 dunst 1.13.0-1
 efibootmgr 18-3
+evolution 3.56.2-2
 eza 0.23.1-1
 fastfetch 2.51.1-1
 fd 10.3.0-1
@@ -45,6 +48,7 @@ linux 6.16.4.arch1-1
 linux-firmware 20250808-1
 linux-headers 6.16.4.arch1-1
 man-db 2.13.1-1
+mariadb 12.0.2-1
 nautilus 48.3-1
 neovim 0.11.4-1
 npm 11.6.0-1
