@@ -135,6 +135,7 @@ function __git.init
   __git.create_abbr gco        git checkout
   __git.create_abbr gcb        git checkout -b
   __git.create_abbr gcm        git checkout \(__git.default_branch\)
+  __git.create_abbr gbc        clone_bare_repo 
 
     # git worktree abbreviations
   __git.create_abbr gwt        git worktree
