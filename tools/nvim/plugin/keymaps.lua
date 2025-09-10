@@ -253,5 +253,4 @@ set('n', '<leader>mp', function() -- Using <leader>mp for Markdown to PDF
   vim.cmd('!' .. command_to_execute)
 
   vim.notify('Attempting to export ' .. current_file_path .. ' to ' .. output_pdf_path .. '...', vim.log.levels.INFO)
-  vim.notify('Attempting to export ' .. current_file_path .. ' to ' .. output_pdf_path .. '...', vim.log.levels.INFO)
 end, { desc = 'Export [M]arkdown to [P]DF' })
