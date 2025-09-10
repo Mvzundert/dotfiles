@@ -5,7 +5,10 @@ function md_to_pdf
         return 1
     end
 
-    # Perform the pandoc conversion
-    pandoc $argv[1] -o $argv[2] --pdf-engine=xelatex -s
-    echo "Converted $argv[1] to $argv[2]"
+    # Check for pandoc and xelatex
+    if command -v pandoc >/dev/null 2>&1
+        # Perform the pandoc conversion
+        pandoc $argv[1] -o $argv[2] 
+        echo "Converted $argv[1] to $argv[2]"
+    end
 end
