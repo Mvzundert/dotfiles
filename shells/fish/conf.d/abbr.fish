@@ -18,6 +18,8 @@ abbr -a .. 'cd ..'
 abbr -a ... 'cd ../..'
 abbr -a .... 'cd ../../..'
 
+abbr -a saa 'search_abbr_alias'
+
 # --- Useful Tmux Abbreviations ---
 abbr tl 'tmux ls' # List all current tmux sessions
 abbr trs 'tmux rename-session' # Rename the current tmux session (you already have this one, included for completeness)
