@@ -1,0 +1,81 @@
+# remap prefix to Control + a which is just
+# more sensible then Control + b.
+# we set ctrl+a as the a new prefix
+set -g prefix C-a
+
+# we unbind ctrl+b
+unbind C-b
+
+# we set ctrl+a as the new prefix
+bind C-a send-prefix
+
+# tile all windows
+ unbind =
+ bind = select-layout tiled
+
+# reload config file
+bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
+
+# smart pane switching with awareness of vim splits
+bind -n C-h select-pane -L
+bind -n C-j select-pane -D
+bind -n C-k select-pane -U
+bind -n C-l select-pane -R
+
+# kill current pane/window
+bind-key q kill-pane
+bind-key Q confirm-before kill-window
+
+# split panes using | and -
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+unbind '"'
+unbind %
+
+# Synchonize panes on/off
+bind e setw synchronize-panes on
+bind E setw synchronize-panes off
+
+# Use alt+direction / opt+direction to resize tmux panes in steps of 5 cells
+bind-key -n C-S-Up resize-pane -U 5
+bind-key -n C-S-Down resize-pane -D 5
+bind-key -n C-S-Left resize-pane -L 5
+bind-key -n C-S-Right resize-pane -R 5
+
+# Open tmux session spawning and search in a popup window using sesh and fzf
+bind-key "T" run-shell "sesh connect \"$(
+  sesh list --icons | fzf-tmux -p 90%,90% \
+    --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+    --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
+    --bind 'tab:down,btab:up' \
+    --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list --icons)' \
+    --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t --icons)' \
+    --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c --icons)' \
+    --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z --icons)' \
+    --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+    --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \
+    --preview-window 'right:60%' \
+    --preview 'sesh preview {}' \
+)\""
+
+unbind w
+bind w display-popup -E -w "90%" -h "90%" "\
+  tmux list-sessions -F '#{session_name} ' |\
+  sed '/^\s*$/d' |\
+  fzf --reverse --header 'jump-to-session' --exit-0 --preview='
+    tmux list-windows -t {1} -F \"#{window_index}: #{window_name}\" | while read -l line
+      set pane_index (echo $line | cut -d\":\" -f1)
+      set prefix (echo $line | cut -d\":\" -f2)
+      tmux capture-pane -peJ -t {1}:$pane_index | sed \"s/^/$prefix: /\"
+    end
+  ' |\
+  xargs tmux switch-client -t"
+
+# Open lazygit in a new window
+bind-key g display-popup -w "90%" -h "90%" -d "#{pane_current_path}" -E "lazygit"
+
+# Open lazydocker in a new window
+bind-key O display-popup -w "90%" -h "90%" -E "lazydocker"
+
+# Open GH dash in a new window
+bind-key P display-popup -w "90%" -h "90%" -E "cd ~ && gh dash"
