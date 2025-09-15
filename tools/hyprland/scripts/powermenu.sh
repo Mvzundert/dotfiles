@@ -4,7 +4,7 @@
 options="Lock\nReboot\nShutdown\nSuspend\nLogout"
 
 # Get the selected option using wofi
-selected_option=$(echo -e "$options" | wofi --show dmenu --prompt "Power Menu")
+selected_option=$(echo -e "$options" | wofi --show dmenu --prompt "Power Menu" --insensitive --sort-method=no-sort)
 
 # Execute the action based on the selected option
 case "$selected_option" in
