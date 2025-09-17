@@ -1,11 +1,10 @@
--- Added git branch information to the statusline
+-- The functions at the top of the file remain unchanged
 local function get_branch()
   require('lualine.components.branch.git_branch').init()
   local branch = require('lualine.components.branch.git_branch').get_branch()
   return string.sub(branch, 1, 42)
 end
 
--- Fixed recording not showing in status line
 local function macro_recording()
   local mode = require('noice').api.statusline.mode.get()
   if mode then
@@ -21,7 +20,7 @@ return {
     event = 'VeryLazy',
     opts = {
       options = {
-        theme = 'auto', -- auto(detects automatically), gruvbox, everforest, eldritch
+        theme = 'auto',
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -43,22 +42,25 @@ return {
           get_branch,
           {
             'diff',
-            colored = true, -- Displays a colored diff status if set to true
+            colored = true,
             diff_color = {
-              -- Same color values as the general color option can be used here.
-              added = 'LuaLineDiffAdd', -- Changes the diff's added color
-              modified = 'LuaLineDiffChange', -- Changes the diff's modified color
-              removed = 'LuaLineDiffDelete', -- Changes the diff's removed color you
+              added = 'LuaLineDiffAdd',
+              modified = 'LuaLineDiffChange',
+              removed = 'LuaLineDiffDelete',
             },
-            symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
-            source = nil, -- A function that works as a data source for diff.
-            -- It must return a table as such:
-            --   { added = add_count, modified = modified_count, removed = removed_count }
-            -- or nil on failure. count <= 0 won't be displayed.
+            symbols = { added = '+', modified = '~', removed = '-' },
+            source = nil,
           },
           'diagnostics',
         },
-        lualine_c = { 'filename', macro_recording },
+        lualine_c = {
+          {
+            'filename',
+            path = 2, -- 1 for relative path, 2 for absolute path.
+            -- You can also add other options here, like file_status = true.
+          },
+          macro_recording,
+        },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
