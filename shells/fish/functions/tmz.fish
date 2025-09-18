@@ -16,8 +16,14 @@
 
     # 4. Check if a tmux session with that name already exists
     if tmux has-session -t "$session_name" &>/dev/null
-      # Session exists, so attach to it. This command works in both contexts.
-      tmux attach-session -t "$session_name"
+      # Check if we are currently inside a tmux session
+      if [ -z "$TMUX" ]
+        # We are OUTSIDE of a tmux session, so we can attach.
+        tmux attach-session -t "$session_name"
+      else
+        # We are ALREADY INSIDE of a tmux session, so we must switch.
+        tmux switch-client -t "$session_name"
+      end
     else
       # Session does not exist, so create a new one.
       # The command used depends on whether we are already in a tmux session.
@@ -28,6 +34,7 @@
       else
         # We are ALREADY INSIDE of a tmux session.
         # Create the new session in the background and switch the client to it.
+        echo "Creating and switching to new session: $session_name in directory: $selected_directory"
         tmux new-session -d -s "$session_name" -c "$selected_directory"
         tmux switch-client -t "$session_name"
       end
