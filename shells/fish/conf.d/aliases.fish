@@ -10,7 +10,6 @@ alias dotc="nvim ~/dotfiles/"
 alias sshc="nvim ~/.ssh/config"
 alias buuc='brew update && brew upgrade && brew cleanup'
 alias bbd='brew bundle dump --describe -f'
-alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
 alias cat='bat'
 alias grep='rg'
 
@@ -28,7 +27,7 @@ alias size='du -sh * | sort -r -n | grep "[0-9][G|M]"'
 alias ifa="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 alias ifi="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: inactive'"
 alias ifip="ifconfig | grep 'inet.*broadcast'"
-alias t='sesh connect $(sesh list -c | fzf --height 40% --border)'
+alias t='tmz'
 
 # -------------------------------------------------------------------
 # Misc alias
