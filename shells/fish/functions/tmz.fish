@@ -34,7 +34,6 @@
       else
         # We are ALREADY INSIDE of a tmux session.
         # Create the new session in the background and switch the client to it.
-        echo "Creating and switching to new session: $session_name in directory: $selected_directory"
         tmux new-session -d -s "$session_name" -c "$selected_directory"
         tmux switch-client -t "$session_name"
       end
