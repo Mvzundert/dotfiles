@@ -42,10 +42,13 @@ TERM = "xterm-256color"
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
-size = 9
+size = 12
 
 [window]
 padding.x = 14
 padding.y = 14
 decorations = "None"
-opacity = 0.98
+opacity = 0.9
+
+[keyboard]
+bindings = [{ key = "K", mods = "Alt", chars = "\u000c" }]
