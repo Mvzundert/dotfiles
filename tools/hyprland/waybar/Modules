@@ -107,7 +107,6 @@
         "format-icons": [
             "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
         ],
-        "on-click-right": "alacritty --class=impala -e impala"
     },
 
    "wireplumber": {
