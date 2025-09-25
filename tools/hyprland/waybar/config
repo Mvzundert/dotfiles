@@ -26,6 +26,7 @@
         "group/systemstats",
         "group/audio",
         "clock",
+        "custom/caffeine",
         "custom/power",
     ],
 }
