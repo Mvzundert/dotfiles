@@ -1,5 +1,8 @@
 {
     "diagnostics.disable": [
-        "undefined-global"
+        "undefined-global",
+        "undefined-doc-name",
+        "assign-type-mismatch",
+        "deprecated"
     ]
 }
