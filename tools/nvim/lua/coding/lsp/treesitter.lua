@@ -8,6 +8,7 @@ return {
         'php',
         'python',
         'rust',
+        'go',
         'javascript',
         'lua',
         'luadoc',
