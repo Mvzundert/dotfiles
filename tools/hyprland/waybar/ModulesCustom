@@ -5,4 +5,12 @@
         "tooltip": true,
         "tooltip-format": "Left Click: Logout Menu",
     },
+
+    "custom/caffeine": {
+        "format": "☕ {}",
+        "exec": "pidof hypridle > /dev/null && echo 'OFF' || echo 'ON'",
+        "on-click": "~/.config/scripts/hypridle.sh",
+        "tooltip": true,
+        "interval": 1
+    }
 }
