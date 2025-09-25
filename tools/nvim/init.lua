@@ -53,7 +53,6 @@ require('lazy').setup({
   },
 
   -- load the coding plugins
-  -- { import = 'coding.ai' },
   { import = 'coding.cmp' },
   { import = 'coding.format' },
   { import = 'coding.git' },
