@@ -1,6 +1,6 @@
 {
     // GROUPS
-        "group/systemstats": {
+    "group/systemstats": {
         "orientation": "horizontal",
         "drawer": {
             "transition-duration": 500,
