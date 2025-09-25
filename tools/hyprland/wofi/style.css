@@ -1,18 +1,18 @@
-/* Kanagawa Wave Wofi Theme */
+/* Marske Wallpaper Wofi Theme */
 
 window {
-    background-color: #1f1f28; /* Deep blue-grey background */
-    border: 1px solid #5a5a73; /* Subtle border */
+    background-color: #141e28; /* Very dark blue/teal (creature's body) */
+    border: 1px solid #46788c; /* Vibrant teal/blue border (outer glow) */
     border-radius: 8px;
     padding: 5px;
 }
 
 #input {
-    background-color: #292934; /* Slightly lighter input bar */
-    color: #c8c093; /* Warm text color */
+    background-color: #1e3c4a; /* Darker blue/teal input bar */
+    color: #b4d8e8; /* Light, desaturated blue text */
     border: none;
     padding: 8px;
-    border-radius: 8px;
+    border-radius: 0px;
     margin-bottom: 10px;
 }
 
@@ -25,7 +25,7 @@ window {
 }
 
 #entry {
-    color: #dcd7ba; /* Default entry text color */
+    color: #b4d8e8; /* Default entry text color */
     background-color: transparent;
     border-radius: 8px;
     padding: 6px;
@@ -33,9 +33,9 @@ window {
 }
 
 #entry:selected {
-    background-color: #5a5a73; /* Selected entry background */
+    background-color: #7a0000; /* Vibrant Deep Red accent (eyes/flare) */
     color: #e6e0e0; /* Selected entry text color */
-    border: 1px solid #7a73a2;
+    border: 1px solid #ff3333;
 }
 
 #entry:selected label {
