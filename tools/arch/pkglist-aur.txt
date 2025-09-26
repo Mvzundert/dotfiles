@@ -3,9 +3,9 @@ chatterino2-bin 2.5.4-1
 docker-desktop 4.46.0-1
 fnm 1.38.1-1
 girara-git 0.4.5.r3.g2f910d9-1
-google-chrome 140.0.7339.185-1
+google-chrome 140.0.7339.207-1
 goxlr-utility 1.2.2-2
-obs-studio-git 31.1.2.r184.gefca325-1
+obs-studio-git 32.0.0.r3.ge35b16c-1
 php-build 0.10.0-5
 phpenv-git r362.adc99a7-1
 python-imageio-ffmpeg 0.6.0-2
@@ -17,4 +17,4 @@ waypaper 2.6-1
 yay 12.5.0-1
 yay-debug 12.5.0-1
 zathura-git 0.5.12.r29.g0ff313f-1
-zen-browser-bin 1.15.5b-1
+zen-browser-bin 1.16.1b-1
