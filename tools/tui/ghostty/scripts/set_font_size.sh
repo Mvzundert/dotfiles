@@ -9,7 +9,7 @@ FONT_SIZE=20
 # Set font size based on the operating system
 case "$OS" in
 Linux)
-    FONT_SIZE=12
+    FONT_SIZE=20
     ;;
 Darwin)
     FONT_SIZE=20
