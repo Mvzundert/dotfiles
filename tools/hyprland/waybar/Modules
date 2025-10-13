@@ -104,6 +104,7 @@
         "tooltip-format-disconnected": "󰌙 Disconnected",
         "min-length": 24,
         "max-length": 24,
+        "on-click": "nm-connection-editor",
         "format-icons": [
             "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
         ],
@@ -137,7 +138,7 @@
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
-        "on-click-right": "pwvucontrol -t 4",
+        "on-click-right": "pwvucontrol",
         "tooltip-format": "{source_desc} | {source_volume}%",
         "scroll-step": 5,
     },
