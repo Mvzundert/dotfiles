@@ -36,6 +36,16 @@ function add_to_path
     end
 end
 
+# Function to safely get the current major.minor PHP version
+function get_active_php_version
+    # Runs the php command only once when the shell starts
+    php -r 'echo PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION;' 2>/dev/null
+end
+
+# Set the global cache variable when the shell loads
+# This sets the initial value to the currently active PHP version.
+set -g __fish_current_php_version (get_active_php_version)
+
 # Add common bin directories to PATH
 add_to_path "$HOME/bin"
 add_to_path "/usr/bin"
