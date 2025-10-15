@@ -12,5 +12,13 @@
         "on-click": "~/.config/scripts/hypridle.sh",
         "tooltip": true,
         "interval": 1
-    }
-}
+    },
+
+    "custom/bluetooth": {
+        	"format": "󰂯 ",
+        	"rotate": 0,
+            "tooltip": true,
+            "tooltip-format": "Open Bluetooth manager",
+        	"on-click": "blueman-manager"
+    	},
+ }

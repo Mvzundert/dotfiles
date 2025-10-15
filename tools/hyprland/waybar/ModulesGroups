@@ -13,6 +13,7 @@
             "disk",
             "network#speed",
             "battery",
+            "custom/bluetooth",
         ]
     },
 
