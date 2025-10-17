@@ -2,7 +2,7 @@
 confirm-close-surface=false
 
 # Theme for Dark and Light
-theme = Kanagawa Wave
+theme = TokyoNight
 
 # Background opacity and blur radius
 # background-opacity=0.9
