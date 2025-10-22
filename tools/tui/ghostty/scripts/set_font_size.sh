@@ -4,18 +4,18 @@
 OS=$(uname)
 
 # Set default font size
-FONT_SIZE=20
+FONT_SIZE=12
 
 # Set font size based on the operating system
 case "$OS" in
 Linux)
-    FONT_SIZE=20
+    FONT_SIZE=12
     ;;
 Darwin)
     FONT_SIZE=20
     ;;
 *)
-    FONT_SIZE=20
+    FONT_SIZE=12
     ;;
 esac
 
