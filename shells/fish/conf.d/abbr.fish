@@ -19,8 +19,8 @@ abbr -a ... 'cd ../..'
 abbr -a .... 'cd ../../..'
 
 abbr -a cy cal -mwy
-abbr -a c3 cal -3
-abbr -a c6 cal -n6
+abbr -a c3 cal -w3
+abbr -a c6 cal -wn6
 
 # --- Useful Tmux Abbreviations ---
 abbr tl 'tmux ls' # List all current tmux sessions
