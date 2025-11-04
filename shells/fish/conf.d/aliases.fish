@@ -12,6 +12,7 @@ alias buuc='brew update && brew upgrade && brew cleanup'
 alias bbd='brew bundle dump --describe -f'
 alias cat='bat'
 alias grep='rg'
+alias sshk='cat ~/.ssh/id_ed25519.pub'
 
 # -------------------------------------------------------------------
 # Darwin only show and hide files
