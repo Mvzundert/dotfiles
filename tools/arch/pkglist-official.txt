@@ -41,7 +41,6 @@ imagemagick 7.1.2.8-1
 iwd 3.10-1
 john 1.9.0.jumbo1-11
 kitty 0.44.0-1
-lastpass 4.137.2-1
 lazygit 0.56.0-1
 libreoffice-fresh 25.8.2-4
 linux 6.17.7.arch1-1
@@ -57,7 +56,6 @@ network-manager-applet 1.36.0-1
 networkmanager 1.54.1-1
 networkmanager-strongswan 1.6.1-1
 nmap 7.98-3
-obs-studio-git 32.0.1.r0.g0b12296-2
 otf-aurulent-nerd 3.4.0-1
 otf-codenewroman-nerd 3.4.0-1
 otf-comicshanns-nerd 3.4.0-1
