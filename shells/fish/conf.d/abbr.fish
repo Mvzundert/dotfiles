@@ -4,6 +4,7 @@ abbr -a vi nvim
 abbr -a vim nvim
 abbr -a nano nvim
 abbr -a emacs nvim
+abbr -a lg lazygit
 
 # -- Zoxide all the things
 abbr --erase z &>/dev/null
