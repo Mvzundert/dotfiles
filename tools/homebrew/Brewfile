@@ -50,13 +50,15 @@ brew "libtool"
 # GNU compiler collection
 brew "gcc"
 # General-purpose scripting language
-brew "php", link: false
+brew "php"
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Reimplementation of ctags(1)
 brew "ctags"
+# DuckDuckGo from the terminal
+brew "ddgr"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq"
 # Compression/decompression library aiming for high speed
@@ -115,7 +117,7 @@ brew "pkgconf"
 brew "gobject-introspection"
 # Directory/file & DNS busting tool written in Go
 brew "gobuster"
-# Platform built on V8 to build network applications
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # JavaScript Task Runner
 brew "grunt-cli"
@@ -174,7 +176,7 @@ brew "php@8.1"
 # General-purpose scripting language
 brew "php@8.2", restart_service: :changed
 # General-purpose scripting language
-brew "php@8.3", restart_service: :changed, link: true
+brew "php@8.3", restart_service: :changed
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
@@ -298,6 +300,8 @@ cask "raspberry-pi-imager"
 cask "sequel-ace"
 # Instant messaging application focusing on security
 cask "signal"
+# Team communication and collaboration software
+cask "slack"
 # Music streaming service
 cask "spotify"
 # Native GUI tool for relational databases
