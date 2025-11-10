@@ -28,3 +28,4 @@ window-padding-balance = true
 adjust-cell-height = 10%
 
 cursor-invert-fg-bg = true
+clipboard-paste-protection = false
