@@ -2,6 +2,7 @@ aide 0.19.2-1
 aide-debug 0.19.2-1
 appmenu-glib-translator-git 25.04.r6.g6665f77-1
 appmenu-glib-translator-git-debug 25.04.r6.g6665f77-1
+burpsuite 2025.10.4-1
 c-client 2007f-21
 c-client-debug 2007f-21
 docker-desktop-debug 4.47.0-1
