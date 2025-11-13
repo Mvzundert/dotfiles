@@ -2,7 +2,7 @@
 confirm-close-surface=false
 
 # Theme for Dark and Light
-theme = TokyoNight
+theme = Vague
 
 # Background opacity and blur radius
 # background-opacity=0.9
