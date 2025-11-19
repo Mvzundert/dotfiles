@@ -88,6 +88,11 @@ if test -r "/usr/local/go/bin"
     add_to_path "/usr/local/go/bin"
 end
 
+# Initialize OPAM if its init file exists
+if test -r "$HOME/go/bin"
+    add_to_path "$HOME/go/bin"
+end
+
 # Init phpenv to make sure it gets used
 if test -r "$HOME/.rbenv/bin/"
     add_to_path "$HOME/.rbenv/bin"
