@@ -6,13 +6,19 @@ abbr -a nano nvim
 abbr -a emacs nvim
 abbr -a lg lazygit
 
+
+# --- Wireguard Abbreviations ---
+abbr -a wgu sudo systemctl start wg-quick@wg0
+abbr -a wgd sudo systemctl stop wg-quick@wg0
+abbr -a wgs sudo systemctl status wg-quick@wg0
+abbr -a wgi sudo wg show wg0
+
 # -- Zoxide all the things
 abbr --erase z &>/dev/null
 alias z=__zoxide_z
 
 abbr --erase zi &>/dev/null
 alias zi=__zoxide_zi
-
 
 # --- Navigation Abbreviations ---
 abbr -a .. 'cd ..'
