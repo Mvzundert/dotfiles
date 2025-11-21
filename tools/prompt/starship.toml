@@ -41,10 +41,8 @@ vimcmd_visual_symbol = '[](bold yellow)'
 disabled = false
 
 [hostname]
-# Always show the hostname on the prompt
-# This will default to the VM's hostname when remote.
 disabled = false
-# Customize the look, e.g., to make it stand out
+ssh_only = true
 style = "bold yellow"
 
 [package]
@@ -86,7 +84,7 @@ disabled = false
 [localip]
 ssh_only = false
 format = '[$localipv4](bold dimmed green) '
-disabled = false
+disabled = true
 
 [line_break]
 disabled = false
