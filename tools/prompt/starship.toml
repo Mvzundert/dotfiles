@@ -82,9 +82,9 @@ format = '[\($hash$tag\)]($style) '
 disabled = false
 
 [localip]
-ssh_only = false
+ssh_only = true
 format = '[$localipv4](bold dimmed green) '
-disabled = true
+disabled = false
 
 [line_break]
 disabled = false
