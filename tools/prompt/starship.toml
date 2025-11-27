@@ -24,6 +24,7 @@ format = """
  $character"""
 
 right_format = """
+$hostname\
 $localip\
 $battery\
 $memory_usage\
@@ -76,9 +77,15 @@ format = '[\($hash$tag\)]($style) '
 disabled = false
 
 [localip]
-ssh_only = false
+ssh_only = true
 format = '[$localipv4](bold dimmed green) '
-disabled = true
+disabled = false
+
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+aliases = { "marzun-archlinux" = "Arch" }
+disabled = false
 
 [line_break]
 disabled = false
