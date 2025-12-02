@@ -2,6 +2,7 @@
 
 # Configuration
 LAPTOP_MONITOR="eDP-1"
+KEYBOARD_NAME="framework-laptop-16-keyboard-module---ansi-keyboard"
 
 # Log file (optional, for debugging the systemd service)
 LOG_FILE="/tmp/hyprland_lid_log.txt"
@@ -20,6 +21,9 @@ if [[ $LID_STATE ]]; then
         # Monitor is currently disabled, enable it
         /usr/bin/hyprctl keyword monitor "$LAPTOP_MONITOR, preferred, auto, 1" >>"$LOG_FILE" 2>&1
         echo "$(date): Lid opened. Monitor ENABLED." >>"$LOG_FILE"
+
+        # Enable the internal keyboard
+        hyprctl keyword input:$KEYBOARD_NAME:events enabled
     fi
 
 # 2. LID IS CLOSED
@@ -31,4 +35,7 @@ else
     # We disable the internal monitor
     /usr/bin/hyprctl keyword monitor "$LAPTOP_MONITOR, disable" >>"$LOG_FILE" 2>&1
     echo "$(date): Lid closed. Monitor DISABLED." >>"$LOG_FILE"
+
+    # Disable the internal keyboard
+    hyprctl keyword input:$KEYBOARD_NAME:events disabled
 fi
