@@ -12,9 +12,10 @@ application/xhtml+xml=zen.desktop
 application/x-extension-xhtml=zen.desktop
 application/x-extension-xht=zen.desktop
 application/pdf=org.gnome.Evince.desktop
-image/png=feh.desktop
+image/png=gimp.desktop
 text/x-log=nvim.desktop
 text/plain=nvim.desktop
+image/jpeg=feh.desktop
 
 [Added Associations]
 x-scheme-handler/http=zen.desktop;
@@ -28,6 +29,7 @@ application/xhtml+xml=zen.desktop;
 application/x-extension-xhtml=zen.desktop;
 application/x-extension-xht=zen.desktop;
 application/pdf=zen.desktop;feh.desktop;org.gnome.Evince.desktop;
-image/png=feh.desktop;
+image/png=feh.desktop;gimp.desktop;
 text/x-log=nvim.desktop;
 text/plain=nvim.desktop;
+image/jpeg=feh.desktop;
