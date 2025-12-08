@@ -35,7 +35,7 @@ alias t='tmz'
 # Misc alias
 # -------------------------------------------------------------------
 alias ytmp3="youtube-dl -x --audio-format mp3 $1"
-
+# Grep for Password from lastpass then add it to clipboard
 alias lpc="grep Password | cut -d ':' -f2- | wl-copy"
 
 # -------------------------------------------------------------------
