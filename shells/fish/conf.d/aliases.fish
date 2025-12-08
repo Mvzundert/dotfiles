@@ -12,7 +12,8 @@ alias buuc='brew update && brew upgrade && brew cleanup'
 alias bbd='brew bundle dump --describe -f'
 alias cat='bat'
 alias grep='rg'
-alias sshk='cat ~/.ssh/id_ed25519.pub'
+alias sshed='cat ~/.ssh/id_ed25519.pub'
+alias sshid='cat ~/.ssh/id_rsa.pub'
 
 # -------------------------------------------------------------------
 # Darwin only show and hide files
@@ -34,6 +35,8 @@ alias t='tmz'
 # Misc alias
 # -------------------------------------------------------------------
 alias ytmp3="youtube-dl -x --audio-format mp3 $1"
+
+alias lpc="grep Password | cut -d ':' -f2- | wl-copy"
 
 # -------------------------------------------------------------------
 # Github CLI
