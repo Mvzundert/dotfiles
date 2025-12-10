@@ -13,6 +13,6 @@ nvim/plugged
 nvim/.netrwhist
 nvim/lazy-lock.json
 tools/hyprland/hypr/monitors.conf
-tools/hyprland/hypr/current_wallpaper.jpg
+tools/hyprland/waypaper/current_wallpaper.jpg
 tools/tui/ghostty/fonts
 tools/multiplex/tmux/plugins
