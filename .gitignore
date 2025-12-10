@@ -12,7 +12,6 @@ nvim/plugged
 .netrwhist
 nvim/.netrwhist
 nvim/lazy-lock.json
-tools/hyprland/waypaper/config.ini
 tools/hyprland/hypr/monitors.conf
 tools/hyprland/hypr/current_wallpaper.jpg
 tools/tui/ghostty/fonts
