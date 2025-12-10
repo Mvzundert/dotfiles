@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the fixed location for the symbolic link
-SYMLINK_PATH="$HOME/.config/hypr/current_wallpaper.jpg"
+SYMLINK_PATH="$HOME/.config/waypaper/current_wallpaper.jpg"
 
 # 1. Get the active wallpaper path from hyprpaper
 # The output is like: 'eDP-1 = /path/to/image.jpg'
