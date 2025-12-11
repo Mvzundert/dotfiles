@@ -36,7 +36,7 @@ alias t='tmz'
 # -------------------------------------------------------------------
 alias ytmp3="youtube-dl -x --audio-format mp3 $1"
 # Grep for Password from lastpass then add it to clipboard
-alias lpc="grep Password | cut -d ':' -f2- | wl-copy"
+alias lpc="grep Password | cut -d ':' -f2- | tr -d '[:cntrl:]\n\r ' | wl-copy"
 
 # -------------------------------------------------------------------
 # Github CLI
