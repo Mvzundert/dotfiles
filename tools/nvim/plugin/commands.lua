@@ -5,7 +5,8 @@ local api = vim.api
 local diagnostic = vim.diagnostic
 local set = vim.keymap.set
 
-cmd.colorscheme 'vague'
+-- cmd.colorscheme 'vague'
+cmd.colorscheme 'tokyonight'
 
 cmd.hi 'Comment gui=none'
 
