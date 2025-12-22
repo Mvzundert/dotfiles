@@ -38,6 +38,8 @@ set('n', '<leader>p?', function()
   require('which-key').show { global = false }
 end, { desc = '[P]review Buffer Local Keymaps (which-key)' })
 
+set('n', '<leader>pm', '<Cmd>Markview toggle<CR>', { desc = '[P]review [M]arkdown' })
+
 -- =====================================================================
 -- Navigation
 -- =====================================================================
