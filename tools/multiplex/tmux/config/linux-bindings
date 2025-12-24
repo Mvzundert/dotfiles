@@ -37,10 +37,10 @@ bind e setw synchronize-panes on
 bind E setw synchronize-panes off
 
 # Use alt+direction / opt+direction to resize tmux panes in steps of 5 cells
-bind-key -n M-Up resize-pane -U 5
-bind-key -n M-Down resize-pane -D 5
-bind-key -n M-Left resize-pane -L 5
-bind-key -n M-Right resize-pane -R 5
+bind-key -n C-S-Up resize-pane -U 5
+bind-key -n C-S-Down resize-pane -D 5
+bind-key -n C-S-Left resize-pane -L 5
+bind-key -n C-S-Right resize-pane -R 5
 
 # Open tmux session spawning and search in a popup window using sesh and fzf
 bind-key 'T' run-shell "fish -c 'tmz'"
