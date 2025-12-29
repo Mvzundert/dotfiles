@@ -26,6 +26,11 @@ set -Ux HOMEBREW_NO_ENV_HINTS 1
 # use fnm to switch node versions
 fnm env --use-on-cd | source
 
+# Start ssh-agent if not already running
+if not set -q SSH_AUTH_SOCK
+    eval (ssh-agent -c) > /dev/null
+end
+
 # =============================================================================
 # Function to add a directory to PATH if it exists and isn't already in PATH
 function add_to_path
