@@ -31,6 +31,29 @@ if not set -q SSH_AUTH_SOCK
     eval (ssh-agent -c) > /dev/null
 end
 
+# Start keychain for your specific SSH key
+if status is-interactive
+    # Identify the Operating System
+    set -l os_type (uname)
+
+    if test "$os_type" = "Darwin"
+        # --- macOS Native Setup ---
+        if not set -q SSH_AUTH_SOCK
+            set -gx SSH_AUTH_SOCK (launchctl getenv SSH_AUTH_SOCK)
+        end
+        # Silently add key to Apple Keychain
+        ssh-add --apple-use-keychain ~/.ssh/id_ed25519 >/dev/null 2>&1
+
+    else if test "$os_type" = "Linux"
+        # --- Linux Setup (using keychain) ---
+        # --quiet: hides the version/status splash
+        # --eval: makes it source-able
+        if type -q keychain
+            keychain --eval --quiet id_ed25519 | source
+        end
+    end
+end
+
 # =============================================================================
 # Function to add a directory to PATH if it exists and isn't already in PATH
 function add_to_path
