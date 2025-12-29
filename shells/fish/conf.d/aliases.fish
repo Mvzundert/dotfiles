@@ -8,6 +8,7 @@ alias reload='exec fish'
 # -------------------------------------------------------------------
 alias dotc="nvim ~/dotfiles/"
 alias sshc="nvim ~/.ssh/config"
+alias sshs='ssh-search'
 alias buuc='brew update && brew upgrade && brew cleanup'
 alias bbd='brew bundle dump --describe -f'
 alias cat='bat'
