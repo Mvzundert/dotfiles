@@ -1,0 +1,75 @@
+# ~/.bashrc - Optimized for AlmaLinux LXC (Root)
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# History Settings
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# Update window size after each command
+shopt -s checkwinsize
+
+# Set colors
+# Note: Using hardcoded escapes to ensure it works even if ncurses/tput is missing
+force_color_prompt=yes
+
+if [ "$force_color_prompt" = yes ]; then
+    prompt_color='\[\033[;32m\]'
+    info_color='\[\033[1;34m\]'
+    prompt_symbol=㉿
+    
+    # Logic for root user (which you are)
+    if [ "$EUID" -eq 0 ]; then
+        prompt_color='\[\033[;94m\]'
+        info_color='\[\033[1;31m\]'
+        prompt_symbol=💀
+    fi
+    
+    PS1=$prompt_color'┌──('$info_color'\u${prompt_symbol}\h'$prompt_color')-[\[\033[0;1m\]\w'$prompt_color']\n'$prompt_color'└─'$info_color'\$\[\033[0m\] '
+else
+    PS1='\u@\h:\w\$ '
+fi
+
+unset force_color_prompt
+
+# Aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias diff='diff --color=auto'
+alias ip='ip --color=auto'
+
+alias ll='ls -all'
+alias la='ls -A'
+alias l='ls -CF'
+alias reload=". ~/.bashrc"
+alias size='du -sh * | sort -r -n | grep "[0-9][G|M]"'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Less colors
+export LESS_TERMCAP_mb=$'\E[1;31m'
+export LESS_TERMCAP_md=$'\E[1;36m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;33m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[1;32m'
+export LESS_TERMCAP_ue=$'\E[0m'
+
+# Enable bash-completion if it exists in the RHEL location
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+fi
+
+# Load custom aliases if they exist
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
