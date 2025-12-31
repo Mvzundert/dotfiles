@@ -16,3 +16,4 @@ tools/hyprland/hypr/monitors.conf
 tools/hyprland/waypaper/current_wallpaper.jpg
 tools/tui/ghostty/fonts
 tools/multiplex/tmux/plugins
+shells/fish/fish_variables
