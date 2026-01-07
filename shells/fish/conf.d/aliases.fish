@@ -16,6 +16,14 @@ alias grep='rg'
 alias sshed='cat ~/.ssh/id_ed25519.pub'
 alias sshid='cat ~/.ssh/id_rsa.pub'
 
+alias cat='bat'
+alias grep='rg'
+
+alias vi="nvim"
+alias vim="nvim"
+alias nano="nvim"
+alias emacs="nvim"
+
 # -------------------------------------------------------------------
 # Darwin only show and hide files
 # -------------------------------------------------------------------
