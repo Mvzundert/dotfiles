@@ -50,10 +50,12 @@ set('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]ename [N]ow' })
 set('n', '<leader>gd', vim.lsp.buf.definition, { desc = '[G]oto [D]efinition' })
 set('n', '<leader>gD', vim.lsp.buf.declaration, { desc = '[G]oto [D]eclaration' })
 set('n', '<leader>gi', vim.lsp.buf.implementation, { desc = '[G]oto [I]mplementation' })
+set('n', '<leader>gr', vim.lsp.buf.references, { desc = '[G]oto [R]eferences' })
 
 -- =====================================================================
 -- Code and Check
 -- =====================================================================
+-- This opens the TODO comments in a Snacks picker
 set('n', '<leader>ct', function() Snacks.picker.todo_comments() end, { desc = '[C]heck [T]odo Comments' })
 -- Visual: Search project for selected text
 set('v', '<leader>cs', function() Snacks.picker.grep_visual() end, { desc = '[C]ode Search Selection' })
@@ -62,6 +64,7 @@ set('v', '<leader>cs', function() Snacks.picker.grep_visual() end, { desc = '[C]
 -- Find & Preview
 -- =====================================================================
 set('n', '<leader>fc', function() Snacks.picker.files { cwd = vim.fn.stdpath 'config' } end, { desc = '[F]ind [C]onfig Files' })
+set('n', '<leader>ff', function() Snacks.picker.files() end, { desc = '[F]ind [F]iles' })
 set('n', '<leader>pC', function() Snacks.picker.colorschemes() end, { desc = '[P]review [C]olor schemes' })
 set('n', '<leader>pm', '<Cmd>Markview toggle<CR>', { desc = '[P]review [M]arkdown' })
 set('n', '<leader>p?', function() require('which-key').show({ global = false }) end, { desc = '[P]review local keymaps' })
@@ -109,14 +112,15 @@ set('n', '<leader>sf', function() Snacks.picker.files() end, { desc = '[S]earch 
 set('n', '<leader>ss', function() Snacks.picker.smart() end, { desc = '[S]earch [S]mart Files' })
 set('n', '<leader>sg', function() Snacks.picker.grep() end, { desc = '[S]earch [G]rep' })
 set('n', '<leader>su', function() Snacks.picker.undo() end, { desc = '[S]earch [U]ndo History' })
+set('n', '<leader>sw', function() Snacks.picker.grep_word() end, { desc = '[S]earch Current [W]ord' })
 
 -- Sorting (Normal)
-set('n', '<leader>ss', '<cmd>%!sort<cr>', { desc = '[S]ort [S]entire file' })
-set('n', '<leader>sS', '<cmd>%!sort -u<cr>', { desc = '[S]ort [S]entire file (Unique)' })
+set('n', '<leader>sS', '<cmd>%!sort<cr>', { desc = '[S]ort [S]entire file' })
+set('n', '<leader>sU', '<cmd>%!sort -u<cr>', { desc = '[S]ort [S]entire file (Unique)' })
 
 -- Sorting (Visual)
 set('v', '<leader>ss', ':sort<cr>', { desc = '[S]ort [S]election' })
-set('v', '<leader>sS', ':sort u<cr>', { desc = '[S]ort [S]election (Unique)' })
+set('v', '<leader>su', ':sort u<cr>', { desc = '[S]ort [S]election (Unique)' })
 
 -- Replace
 set('n', '<leader>sr', ':%s/\\<<C-r><C-w>\\>/', { desc = '[S]earch and [R]eplace word' })
@@ -124,6 +128,8 @@ set('n', '<leader>sr', ':%s/\\<<C-r><C-w>\\>/', { desc = '[S]earch and [R]eplace
 -- =====================================================================
 -- Buffers
 -- =====================================================================
+set('n', '<leader>bb', function() Snacks.picker.buffers() end, { desc = '[B]uffer [B]rowse' })
+set('n', '<leader>bd', function() Snacks.bufdelete() end, { desc = '[B]uffer [D]elete' })
 set('n', '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', { desc = '[B]uffer Pin' })
 set('n', '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', { desc = '[B]uffer Delete Others' })
 set('n', '<S-h>', '<Cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
