@@ -55,7 +55,6 @@ set('n', '<leader>gr', vim.lsp.buf.references, { desc = '[G]oto [R]eferences' })
 -- =====================================================================
 -- Code and Check
 -- =====================================================================
--- This opens the TODO comments in a Snacks picker
 set('n', '<leader>ct', function() Snacks.picker.todo_comments() end, { desc = '[C]heck [T]odo Comments' })
 -- Visual: Search project for selected text
 set('v', '<leader>cs', function() Snacks.picker.grep_visual() end, { desc = '[C]ode Search Selection' })
@@ -65,6 +64,8 @@ set('v', '<leader>cs', function() Snacks.picker.grep_visual() end, { desc = '[C]
 -- =====================================================================
 set('n', '<leader>fc', function() Snacks.picker.files { cwd = vim.fn.stdpath 'config' } end, { desc = '[F]ind [C]onfig Files' })
 set('n', '<leader>ff', function() Snacks.picker.files() end, { desc = '[F]ind [F]iles' })
+set('n', '<leader>fm', function() Snacks.picker.recent { filter = { cwd = true }, cmd = "find . -type f -mmin -1440" } end, { desc = '[F]ind [M]odified (24h)' })
+set('n', '<leader>pk', function() Snacks.picker.keymaps() end, { desc = '[P]review [K]eymaps' })
 set('n', '<leader>pC', function() Snacks.picker.colorschemes() end, { desc = '[P]review [C]olor schemes' })
 set('n', '<leader>pm', '<Cmd>Markview toggle<CR>', { desc = '[P]review [M]arkdown' })
 set('n', '<leader>p?', function() require('which-key').show({ global = false }) end, { desc = '[P]review local keymaps' })
@@ -113,14 +114,16 @@ set('n', '<leader>ss', function() Snacks.picker.smart() end, { desc = '[S]earch 
 set('n', '<leader>sg', function() Snacks.picker.grep() end, { desc = '[S]earch [G]rep' })
 set('n', '<leader>su', function() Snacks.picker.undo() end, { desc = '[S]earch [U]ndo History' })
 set('n', '<leader>sw', function() Snacks.picker.grep_word() end, { desc = '[S]earch Current [W]ord' })
+set('n', '<leader>sc', function() Snacks.picker.command_history() end, { desc = '[S]earch [C]ommand History' })
+set('n', '<leader>sh', function() Snacks.picker.search_history() end, { desc = '[S]earch [H]istory (Regex)' })
 
--- Sorting (Normal)
+-- Sorting (Normal - Entire File)
 set('n', '<leader>sS', '<cmd>%!sort<cr>', { desc = '[S]ort [S]entire file' })
-set('n', '<leader>sU', '<cmd>%!sort -u<cr>', { desc = '[S]ort [S]entire file (Unique)' })
+set('n', '<leader>sU', '<cmd>%!sort -u<cr>', { desc = '[S]ort [U]nique file' })
 
--- Sorting (Visual)
+-- Sorting (Visual - Selection)
 set('v', '<leader>ss', ':sort<cr>', { desc = '[S]ort [S]election' })
-set('v', '<leader>su', ':sort u<cr>', { desc = '[S]ort [S]election (Unique)' })
+set('v', '<leader>su', ':sort u<cr>', { desc = '[S]ort [U]nique selection' })
 
 -- Replace
 set('n', '<leader>sr', ':%s/\\<<C-r><C-w>\\>/', { desc = '[S]earch and [R]eplace word' })
