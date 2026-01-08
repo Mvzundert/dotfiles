@@ -9,10 +9,18 @@ alias reload='exec fish'
 alias dotc="nvim ~/dotfiles/"
 alias sshc="nvim ~/.ssh/config"
 alias sshs='ssh-search'
-alias buuc='brew update && brew upgrade && brew cleanup'
-alias bbd='brew bundle dump --describe -f'
 alias sshed='cat ~/.ssh/id_ed25519.pub'
 alias sshid='cat ~/.ssh/id_rsa.pub'
+
+alias buuc='brew update && brew upgrade && brew cleanup'
+alias bbd='brew bundle dump --describe -f'
+
+# -------------------------------------------------------------------
+# Pacman alias
+# -------------------------------------------------------------------
+alias execute_order_66="sudo pacman -Syu"
+alias pacl="pacman -Rs $(pacman -Qdtq)"
+alias pacc="pacman -Rs $(pacman -Qdtq)"
 
 # -------------------------------------------------------------------
 # Program alias
@@ -23,16 +31,6 @@ alias vi="nvim"
 alias vim="nvim"
 alias nano="nvim"
 alias emacs="nvim"
-
-# -------------------------------------------------------------------
-# Meme 
-# -------------------------------------------------------------------
-alias fucking="sudo"
-alias please="sudo"
-alias love="echo 'not war?'"
-alias execute_order_66="sudo pacman -Syu"
-alias coffee="echo 'Error: Heat death of the universe imminent. Please refill beans.'"
-alias never="echo 'Gonna give you up...'"
 
 # -------------------------------------------------------------------
 # Darwin only show and hide files
@@ -57,6 +55,19 @@ alias ytmp3="youtube-dl -x --audio-format mp3 $1"
 # Grep for Password from lastpass then add it to clipboard
 alias lpc="grep Password | cut -d ':' -f2- | tr -d '[:cntrl:]\n\r ' | wl-copy"
 alias mirror='rev'
+
+# -------------------------------------------------------------------
+# for fun and games (Here be dragons)
+# -------------------------------------------------------------------
+alias darth='git push --force'
+alias yolo='git add --all && git commit -m "$(curl -s https://whatthecommit.com/index.txt)" && git push --force'
+alias fucking="sudo"
+alias please="sudo"
+alias love="echo 'not war?'"
+alias war="echo 'not love?'"
+alias execute_order_66="sudo pacman -Syu"
+alias coffee="echo 'Error: Heat death of the universe imminent. Please refill beans.'"
+alias never="echo 'Gonna give you up...'"
 
 # -------------------------------------------------------------------
 # Github CLI
@@ -85,12 +96,6 @@ alias ghrr="gh run rerun"
 # Github workflows
 alias ghwf="gh workflow list"
 alias ghr="gh workflow run"
-
-# -------------------------------------------------------------------
-# for fun and games (Here be dragons)
-# -------------------------------------------------------------------
-alias darth='git push --force'
-alias yolo='git add --all && git commit -m "$(curl -s https://whatthecommit.com/index.txt)" && git push --force'
 
 # -------------------------------------------------------------------
 # Composer
