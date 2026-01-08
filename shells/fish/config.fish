@@ -134,6 +134,21 @@ if test -r "$HOME/.phpenv/bin/phpenv"
     eval "$(phpenv init -)"
 end
 
+#  Rust Manpage Logic
+if command -q rustup
+    # 1. Get the absolute toolchain path
+    set -l rust_bin (dirname (rustup which rustc))
+    set -l rust_man (realpath "$rust_bin/../share/man")
+
+    # 2. Your custom local man page for rustup
+    set -l local_man "$HOME/.local/share/man"
+
+    # 3. Apply to MANPATH
+    # We include $MANPATH to keep any existing variables
+    # We include "" at the end to trigger the system defaults without the warning
+    set -gx MANPATH $local_man $rust_man $MANPATH ""
+end
+
 # =============================================================================
 # Initialize zoxide
 if type -q zoxide
