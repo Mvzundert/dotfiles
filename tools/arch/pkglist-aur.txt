@@ -4,7 +4,7 @@ c-client 2007f-21
 fnm 1.38.1-1
 girara-git 0.4.5.r48.ge32e36c-1
 girara-git-debug 0.4.5.r48.ge32e36c-1
-google-chrome 143.0.7499.169-1
+google-chrome 143.0.7499.192-1
 hyprlang-git 0.6.7.r0.g0d00dc1-1
 hyprlang-git-debug 0.6.7.r0.g0d00dc1-1
 hyprutils-git 0.11.0.r0.gfe68648-1
