@@ -20,6 +20,8 @@ pwvucontrol 0.5.1-1
 python-imageio-ffmpeg 0.6.0-2
 python-screeninfo 0.8.1-2
 redhat-fonts 4.1.0-1
+rig 1.11-1
+rig-debug 1.11-1
 sddm-silent-theme 1.4.1-1
 slack-desktop 4.47.69-1
 spotify 1:1.2.79.425-1
