@@ -55,6 +55,7 @@ set('n', '<leader>gi', vim.lsp.buf.implementation, { desc = '[G]oto [I]mplementa
 -- Code and Check
 -- =====================================================================
 set('n', '<leader>ct', function() Snacks.picker.todo_comments() end, { desc = '[C]heck [T]odo Comments' })
+-- Visual: Search project for selected text
 set('v', '<leader>cs', function() Snacks.picker.grep_visual() end, { desc = '[C]ode Search Selection' })
 
 -- =====================================================================
@@ -170,7 +171,7 @@ set('v', '<leader>uu', ':!tr "[:lower:]" "[:upper:]"<cr>', { desc = '[U]tils Upp
 -- =====================================================================
 -- Export & Organisation
 -- =====================================================================
-set('n', '<leader>oa', '<cmd>OrgAgenda<cr>', { desc = '[O]rganisation [A]genda' })
+set('n', '<leader>on', '<Cmd>Neorg<CR>', { desc = '[O]pen [N]eorg' })
 set('n', '<leader>mp', function()
   local current_file_path = vim.api.nvim_buf_get_name(0)
   if current_file_path == '' or not current_file_path:match '%.md$' then
@@ -178,5 +179,6 @@ set('n', '<leader>mp', function()
     return
   end
   local output_pdf_path = vim.fn.fnamemodify(current_file_path, ':r') .. '.pdf'
+  -- vim.cmd('MarkdownPreview')
   vim.cmd('!' .. 'md_to_pdf ' .. vim.fn.fnameescape(current_file_path) .. ' ' .. vim.fn.fnameescape(output_pdf_path))
 end, { desc = 'Export Markdown to PDF' })
