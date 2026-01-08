@@ -1,79 +1,102 @@
 -- =====================================================================
 -- For Basic Keymaps See `:help vim.keymap.set()`
 -- =====================================================================
--- Alias vim.keymap.set to set for easier to read syntax
 local set = vim.keymap.set
 
 -- =====================================================================
--- Groups for keymaps only used for which key formatting
+-- Groups for keymaps (Which-Key labels)
 -- =====================================================================
-set('n', '<leader>s', '', { desc = '+[S]earch' })
-set('n', '<leader>b', '', { desc = '+[B]uffers' })
-set('n', '<leader>o', '', { desc = '+[O]rganisation' })
-set('n', '<leader>g', '', { desc = '+[G]it and [G]oto Definitions' })
-set('n', '<leader>l', '', { desc = '+[L]azy Git' })
-set('n', '<leader>f', '', { desc = '+[F]ind' })
-set('n', '<leader>p', '', { desc = '+[P]review' })
-set('n', '<leader>r', '', { desc = '+[R]ename' })
-set('n', '<leader>c', '', { desc = '+[C]ode and [C]heck' })
-set('n', '<leader>t', '', { desc = '+[T]oggle' })
-set('n', '<leader>m', '', { desc = '+[M]arkdown' })
-set('n', '<leader>q', '', { desc = '+[Q]uit' })
+
+-- Normal Mode Groups (Show Everything)
+local n_groups = {
+  { '<leader>s', '+[S]earch and [S]ort' },
+  { '<leader>b', '+[B]uffers' },
+  { '<leader>o', '+[O]rganisation' },
+  { '<leader>g', '+[G]it and [G]oto Definitions' },
+  { '<leader>l', '+[L]azy Git' },
+  { '<leader>f', '+[F]ind' },
+  { '<leader>p', '+[P]review' },
+  { '<leader>r', '+[R]ename' },
+  { '<leader>c', '+[C]ode and [C]heck' },
+  { '<leader>x', '+[X] Diagnostics (Trouble)' },
+  { '<leader>t', '+[T]oggle' },
+  { '<leader>m', '+[M]arkdown' },
+  { '<leader>q', '+[Q]uit' },
+  { '<leader>u', '+[U]tils (System Tools)' },
+  { '<leader>i', '+[I]nspect System' },
+  { '<leader>h', '+[H]ardware & Permissions' },
+}
+
+-- Visual Mode Groups (Only show relevant ones)
+local v_groups = {
+  { '<leader>s', '+[S]earch and [S]ort' },
+  { '<leader>u', '+[U]tils (Data Manipulation)' },
+  { '<leader>c', '+[C]ode' },
+}
+
+for _, group in ipairs(n_groups) do
+  set('n', group[1], '', { desc = group[2] })
+end
+
+for _, group in ipairs(v_groups) do
+  set('v', group[1], '', { desc = group[2] })
+end
 
 -- =====================================================================
--- Find
+-- Git & LazyGit
+-- =====================================================================
+set('n', '<leader>lg', function()
+  Snacks.lazygit()
+end, { desc = '[L]azy [G]it' })
+
+-- =====================================================================
+-- Code and Check
+-- =====================================================================
+set('n', '<leader>ct', function()
+  Snacks.picker.todo_comments()
+end, { desc = '[C]heck [T]odo Comments' })
+-- Visual: Search project for selected text
+set('v', '<leader>cs', function()
+  Snacks.picker.grep_visual()
+end, { desc = '[C]ode Search Selection' })
+
+-- =====================================================================
+-- Find & Preview
 -- =====================================================================
 set('n', '<leader>fc', function()
   Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[F]ind [C]onfig Files' })
-
--- =====================================================================
--- Preview
--- =====================================================================
 set('n', '<leader>pC', function()
   Snacks.picker.colorschemes()
 end, { desc = '[P]review [C]olor schemes' })
-
+set('n', '<leader>pm', '<Cmd>Markview toggle<CR>', { desc = '[P]review [M]arkdown' })
 set('n', '<leader>p?', function()
   require('which-key').show { global = false }
-end, { desc = '[P]review Buffer Local Keymaps (which-key)' })
-
-set('n', '<leader>pm', '<Cmd>Markview toggle<CR>', { desc = '[P]review [M]arkdown' })
+end, { desc = '[P]review local keymaps' })
 
 -- =====================================================================
--- Navigation
+-- Diagnostics (Trouble) - On X
 -- =====================================================================
--- TIP: Disable arrow keys in normal mode
+set('n', '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', { desc = '[X] Diagnostics [D]ocument' })
+set('n', '<leader>xX', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', { desc = '[X] Diagnostics [W]orkspace' })
+set('n', '<leader>xl', '<cmd>Trouble loclist toggle<cr>', { desc = '[X] Diagnostics [L]oclist' })
+set('n', '<leader>xq', '<cmd>Trouble qflist toggle<cr>', { desc = '[X] Diagnostics [Q]uickfix' })
+set('n', '<leader>xr', '<cmd>Trouble lsp_references toggle<cr>', { desc = '[X] Diagnostics [R]eferences' })
+
+-- =====================================================================
+-- Navigation & Files
+-- =====================================================================
 set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
--- Set highlight on search, but clear on pressing <Esc> in normal mode
 set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
--- Open oil file picker
-set('n', '<leader>-', require('oil').toggle_float, { desc = '[-] Open Oil' })
-
--- Easier exit terminal mode
+set('n', '<leader>-', function()
+  require('oil').toggle_float()
+end, { desc = '[-] Open Oil' })
 set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-
--- quit
 set('n', '<leader>qa', '<cmd>qa<cr>', { desc = '[Q]uit [A]ll' })
-
--- save file
 set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
-
--- =====================================================================
--- Formatting
--- =====================================================================
--- better indenting
-set('v', '<', '<gv')
-set('v', '>', '>gv')
-
--- =====================================================================
--- Explorer
--- =====================================================================
 set('n', '<leader>e', function()
   Snacks.explorer()
 end, { desc = '[E]xplorer' })
@@ -81,178 +104,98 @@ end, { desc = '[E]xplorer' })
 -- =====================================================================
 -- Toggles
 -- =====================================================================
--- Toggle cloak for env files
-set('n', '<leader>tc', '<cmd>:CloakToggle<cr>', { desc = '[T]oggle Cloak for Env files' })
-
--- Toggle Hardtime (gives you a hardtime for not using vim correctly)
+set('n', '<leader>tc', '<cmd>CloakToggle<cr>', { desc = '[T]oggle Cloak' })
 set('n', '<leader>th', '<Cmd>Hardtime toggle<CR>', { desc = '[T]oggle [H]ardtime' })
-
 set('n', '<leader>tb', function()
   require('gitsigns').toggle_current_line_blame()
-end, { desc = '[T]oggle Git Line [B]lame' })
-
-set('n', '<leader>tn', function()
-  Snacks.picker.notifications()
-end, { desc = '[T]oggle [N]otifications' })
-
+end, { desc = '[T]oggle Git Blame' })
 set('n', '<leader>tz', function()
   Snacks.zen()
 end, { desc = '[T]oggle [Z]en Mode' })
 
 -- =====================================================================
--- Search
+-- Search and Sort
 -- =====================================================================
-set('n', '<leader>sh', function()
-  Snacks.picker.help()
-end, { desc = '[S]earch [H]elp' })
-
-set('n', '<leader>sk', function()
-  Snacks.picker.keymaps()
-end, { desc = '[S]earch [K]eymaps' })
-
-set('n', '<leader>sr', function()
-  Snacks.picker.registers()
-end, { desc = '[S]earch [R]egisters' })
-
 set('n', '<leader>sf', function()
   Snacks.picker.files()
 end, { desc = '[S]earch [F]iles' })
-
 set('n', '<leader>ss', function()
   Snacks.picker.smart()
 end, { desc = '[S]earch [S]mart Files' })
-
 set('n', '<leader>sg', function()
   Snacks.picker.grep()
 end, { desc = '[S]earch [G]rep' })
-
 set('n', '<leader>su', function()
   Snacks.picker.undo()
 end, { desc = '[S]earch [U]ndo History' })
 
-set('n', '<leader>/', function()
-  Snacks.picker.grep_buffers()
-end, { desc = '[S]earch using grep in open buffers' })
+-- Sorting (Normal)
+set('n', '<leader>ss', '<cmd>%!sort<cr>', { desc = '[S]ort [S]entire file' })
+set('n', '<leader>sS', '<cmd>%!sort -u<cr>', { desc = '[S]ort [S]entire file (Unique)' })
 
-set('n', '<leader>sd', function()
-  Snacks.picker.diagnostics()
-end, { desc = '[S]earch [D]iagnostics' })
+-- Sorting (Visual)
+set('v', '<leader>ss', ':sort<cr>', { desc = '[S]ort [S]election' })
+set('v', '<leader>sS', ':sort u<cr>', { desc = '[S]ort [S]election (Unique)' })
 
-set('n', '<leader>sD', function()
-  Snacks.picker.diagnostics_buffer()
-end, { desc = '[S]earch Buffer [D]iagnostics' })
-
-set('n', '<leader>:', function()
-  Snacks.picker.command_history()
-end, { desc = '[S]earch Command History' })
-
-set('n', '<leader>sa', function()
-  Snacks.picker.autocmds()
-end, { desc = '[S]earch [A]utocmds' })
-
-set('n', '<leader>sc', function()
-  Snacks.picker.commands()
-end, { desc = '[S]earch [C]ommands' })
-
---- =====================================================================
--- Neorg
--- =====================================================================
-set('n', '<leader>on', '<Cmd>Neorg<CR>', { desc = '[O]pen [N]eorg' })
+-- Replace
+set('n', '<leader>sr', ':%s/\\<<C-r><C-w>\\>/', { desc = '[S]earch and [R]eplace word' })
 
 -- =====================================================================
 -- Buffers
 -- =====================================================================
-set('n', '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', { desc = '[B]uffer Toggle [P]in' })
-set('n', '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', { desc = '[B]uffer Delete Non-[P]inned Buffers' })
-set('n', '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', { desc = '[B]uffer Delete [O]thers' })
-set('n', '<leader>br', '<Cmd>BufferLineCloseRight<CR>', { desc = '[B]uffer Delete to the [R]ight' })
-set('n', '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', { desc = '[B]uffer Delete to the [L]eft' })
+set('n', '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', { desc = '[B]uffer Pin' })
+set('n', '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', { desc = '[B]uffer Delete Others' })
 set('n', '<S-h>', '<Cmd>BufferLineCyclePrev<CR>', { desc = 'Prev Buffer' })
 set('n', '<S-l>', '<Cmd>BufferLineCycleNext<CR>', { desc = 'Next Buffer' })
 
 -- =====================================================================
--- Git
+-- Inspect & Hardware
 -- =====================================================================
-set('n', '<leader>lg', function()
-  Snacks.lazygit()
-end, { desc = 'Open [L]azy [G]it' })
-
-set('n', '<leader>gs', function()
-  Snacks.picker.git_status()
-end, { desc = 'Search [G]it [S]atus' })
-
-set('n', '<leader>fg', function()
-  Snacks.picker.git_files()
-end, { desc = '[F]ind [G]it Files' })
-
-set('n', '<leader>gb', function()
-  Snacks.picker.git_branches()
-end, { desc = 'Search [G]it [B]ranches' })
-
-set('n', '<leader>gl', function()
-  Snacks.picker.git_log()
-end, { desc = 'Search [G]it [L]og' })
-
-set('n', '<leader>gf', function()
-  Snacks.picker.git_log_file()
-end, { desc = 'Search [G]it log for current [F]ile' })
+set('n', '<leader>ii', '<cmd>r !ip -brief addr<cr>', { desc = '[I]nspect [I]nterfaces' })
+set('n', '<leader>id', '<cmd>r !df -h /<cr>', { desc = '[I]nspect [D]isk usage' })
+set('n', '<leader>hx', '<cmd>!chmod +x %<cr>', { desc = '[H]arden: Make Executable' })
+set('n', '<leader>hm', '<cmd>r !free -h<cr>', { desc = '[H]ardware: Memory' })
 
 -- =====================================================================
--- LSP
+-- Utils (System Tools)
 -- =====================================================================
-set('n', '<leader>gd', function()
-  Snacks.picker.lsp_definitions()
-end, { desc = '[G]oto [D]efinition' })
+set('n', '<leader>ud', '<cmd>r !date +\\%F<cr>', { desc = '[U]tils Insert [D]ate' })
+set('n', '<leader>ut', '<cmd>r !date +\\%T<cr>', { desc = '[U]tils Insert [T]ime' })
+set('n', '<leader>uc', '<cmd>.!bc<cr>', { desc = '[U]tils [C]alculate Line' })
+set('n', '<leader>uh', '<cmd>r !hostname<cr>', { desc = '[U]tils Insert [H]ostname' })
+set('n', '<leader>ui', "<cmd>r !hostname -i | awk '{print $1}'<cr>", { desc = '[U]tils Insert [I]P Address' })
+set('n', '<leader>us', '<cmd>%s/\\s\\+$//e<cr>', { desc = '[U]tils Strip Whitespace' })
+set('n', '<leader>un', '<cmd>vnew | setlocal buftype= buflisted<cr>', { desc = '[U]tils [N]ew Scratch' })
+set('n', '<leader>up', '<cmd>let @+ = expand("%:p")<cr><cmd>echo "Path copied: " . expand("%:p")<cr>', { desc = '[U]tils Copy Path' })
 
-set('n', '<leader>gD', function()
-  Snacks.picker.lsp_declarations()
-end, { desc = '[G]oto [D]eclaration' })
+-- Smart Save for Scratch Buffers
+set('n', '<leader>uS', function()
+  local buf_name = vim.api.nvim_buf_get_name(0)
+  if buf_name == '' then
+    vim.api.nvim_feedkeys(':saveas ' .. vim.fn.expand '%:p:h' .. '/', 'n', false)
+  else
+    vim.cmd 'w'
+  end
+end, { desc = '[U]tils [S]ave Scratch' })
 
-set('n', '<leader>gr', function()
-  Snacks.picker.lsp_references()
-end, { desc = '[G]oto [R]eference' })
-
-set('n', '<leader>gI', function()
-  Snacks.picker.lsp_implementations()
-end, { desc = '[G]oto [I]mplementation' })
-
-set('n', '<leader>gt', function()
-  Snacks.picker.lsp_type_definitions()
-end, { desc = '[G]oto [T]ype Definitions' })
-
--- =====================================================================
--- Check
--- =====================================================================
-set('n', '<leader>ct', function()
-  Snacks.picker.todo_comments()
-end, { desc = '[C]heck [T]odo' })
-
-set('n', '<leader>cd', '<cmd>Trouble diagnostics toggle<cr>', { desc = '[C]heck [D]iagnostics' })
-
-set('n', '<leader>cm', '<Cmd>Mason<CR>', { desc = '[C]heck [M]ason' })
+-- Data Manipulation (Visual Mode)
+set('v', '<leader>uf', ':!column -t<cr>', { desc = '[U]tils [F]ormat Table' })
+set('v', '<leader>uj', ':!jq .<cr>', { desc = '[U]tils JSON Format' })
+set('v', '<leader>ue', ':!base64<cr>', { desc = '[U]tils Base64 Encode' })
+set('v', '<leader>ud', ':!base64 -d<cr>', { desc = '[U]tils Base64 Decode' })
+set('v', '<leader>uC', ':!sed "s/\\<./\\U&/g"<cr>', { desc = '[U]tils Title Case' })
+set('v', '<leader>ul', ':!tr "[:upper:]" "[:lower:]"<cr>', { desc = '[U]tils Lowercase' })
+set('v', '<leader>uu', ':!tr "[:lower:]" "[:upper:]"<cr>', { desc = '[U]tils Uppercase' })
 
 -- =====================================================================
--- export
+-- Export
 -- =====================================================================
-set('n', '<leader>mp', function() -- Using <leader>mp for Markdown to PDF
+set('n', '<leader>mp', function()
   local current_file_path = vim.api.nvim_buf_get_name(0)
-
   if current_file_path == '' or not current_file_path:match '%.md$' then
-    vim.notify('Cannot export: Current buffer is not a saved Markdown (.md) file.', vim.log.levels.WARN)
+    vim.notify('Not a saved Markdown file.', vim.log.levels.WARN)
     return
   end
-
-  local output_pdf_root_name = vim.fn.fnamemodify(current_file_path, ':r')
-  local output_pdf_path = output_pdf_root_name .. '.pdf'
-
-  local escaped_input_path = vim.fn.fnameescape(current_file_path)
-  local escaped_output_path = vim.fn.fnameescape(output_pdf_path)
-
-  local command_to_execute = 'md_to_pdf ' .. escaped_input_path .. ' ' .. escaped_output_path
-
-  -- For debugging: use 'vertical terminal ' (shows output in a split window)
-  -- vim.cmd('vertical terminal ' .. command_to_execute)
-  vim.cmd('!' .. command_to_execute)
-
-  vim.notify('Attempting to export ' .. current_file_path .. ' to ' .. output_pdf_path .. '...', vim.log.levels.INFO)
-end, { desc = 'Export [M]arkdown to [P]DF' })
+  local output_pdf_path = vim.fn.fnamemodify(current_file_path, ':r') .. '.pdf'
+  vim.cmd('!' .. 'md_to_pdf ' .. vim.fn.fnameescape(current_file_path) .. ' ' .. vim.fn.fnameescape(output_pdf_path))
+end, { desc = 'Export Markdown to PDF' })
