@@ -19,8 +19,7 @@ alias bbd='brew bundle dump --describe -f'
 # Pacman alias
 # -------------------------------------------------------------------
 alias execute_order_66="sudo pacman -Syu; and sudo aide --update; and sudo mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz"
-alias pacl="pacman -Rs $(pacman -Qdtq)"
-alias pacc="pacman -Rs $(pacman -Qdtq)"
+#alias pacl="pacman -Rs $(pacman -Qdtq)"
 
 # -------------------------------------------------------------------
 # Program alias
