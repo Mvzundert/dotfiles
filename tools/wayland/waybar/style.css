@@ -1,0 +1,134 @@
+/* --- Color Definitions --- */
+@define-color critical #ff0000;
+@define-color warning  #f3f809;
+@define-color alert    #df3320;
+@define-color fgcolor  #ffffff;
+@define-color bgcolor  #222436;
+
+@define-color accent1  #ff7a93; /* Pink   - Active Ghost */
+@define-color accent2  #b9f27c; /* Green  - Focused Pacman / Caffeine */
+@define-color accent3  #ff9e64; /* Orange - Memory / Network / Hover */
+@define-color accent4  #bb9af7; /* Purple - Audio */
+@define-color accent5  #7da6ff; /* Blue   - Battery / Disk / Tray Icon */
+@define-color accent6  #0db9d7; /* Cyan   - Temperature */
+
+/* --- General Reset --- */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    min-height: 0;
+    font-size: 100%;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+    padding: 1px 5px;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0.6);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 10px;
+}
+
+window#waybar.hidden {
+    opacity: 0.1;
+}
+
+tooltip {
+    background: #1e1e2e;
+    opacity: 0.9;
+    border-radius: 10px;
+    border: 2px solid #11111b;
+}
+
+tooltip label {
+    color: #ffffff;
+}
+
+/* --- Workspaces (Sway Logic) --- */
+#workspaces button {
+    background-color: transparent;
+    color: #4c566a; /* Inactive Pellet */
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0 8px;
+    border-radius: 9px;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+/* Current Focused Workspace (Pacman) */
+#workspaces button.focused {
+    color: @accent2;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Occupied but not focused (Ghost) */
+#workspaces button.active,
+#workspaces button.visible {
+    color: @accent1;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: @accent3;
+}
+
+/* --- Modules Styling --- */
+#clock { color: @accent2; }
+#cpu { color: @accent1; }
+#memory { color: @accent3; }
+#network, #network.speed { color: @accent3; }
+#network.disconnected { color: @alert; }
+#temperature { color: @accent6; }
+#disk { color: @accent5; }
+#battery { color: @accent5; }
+#wireplumber, #pulseaudio { color: @accent4; }
+#custom-power { color: @alert; padding-right: 10px; }
+#custom-caffeine { color: @accent2; padding: 0 10px; }
+#custom-tray-icon { color: @accent5; padding-right: 5px; }
+#window { color: #ffffff; padding-left: 10px; }
+
+/* --- Drawer & Group Styling --- */
+#group-tray-drawer,
+#group-stats-drawer,
+#group-audio {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+/* Child spacing within Drawers */
+.tray-child,
+.stats-child {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+/* --- Special States --- */
+#temperature.critical {
+    background-color: @critical;
+}
+
+#battery.critical:not(.charging) {
+    color: @critical;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(255, 0, 0, 0.5);
+        color: #ffffff;
+    }
+}
+
+#tray {
+    padding: 0 8px;
+}

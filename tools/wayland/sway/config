@@ -1,0 +1,38 @@
+### --- Includes ---
+include ~/.config/sway/definitions.conf
+include ~/.config/sway/windowrules.conf
+include ~/.config/sway/keybinds.conf
+
+### --- Output & Input ---
+output DP-1 res 1920x1080@144Hz pos 0 0
+
+input "type:keyboard" {
+    xkb_layout us
+}
+
+### --- Aesthetics ---
+default_border pixel 2
+default_floating_border pixel 2
+smart_gaps on
+gaps inner 5
+gaps outer 0
+
+# IMPORTANT: Disable the built-in swaybar so Waybar can take over
+bar {
+    swaybar_command /usr/bin/true
+}
+
+### --- Startup (The Rest of your Hyprland folder logic) ---
+exec_always {
+    # Waybar (using your sway-specific symlink)
+    waybar -c ~/.config/waybar/waybar_sway -s ~/.config/waybar/style.css
+
+    # SWWW Wallpaper
+    swww-daemon
+
+    # Notifications (Dunst works perfectly on Sway)
+    dunst
+}
+
+# Polkit & Auth
+exec /usr/lib/polkit-kde-authentication-agent-1
