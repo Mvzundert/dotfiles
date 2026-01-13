@@ -1,0 +1,76 @@
+# --- PROFILE 1: Home (Triple Monitor Setup) ---
+# Physical Layout: [eDP-1 (Left)] -> [BK729P2 (Center)] -> [6L729P2 (Right)]
+profile {
+    # Laptop
+    output eDP-1 enable mode 2560x1600 position 0,0
+
+    # Dell Monitor (Middle) - BK729P2
+    output "Dell Inc. DELL P2419HC BK729P2" enable mode 1920x1080 position 2560,0
+
+    # Dell Monitor (Right) - 6L729P2
+    output "Dell Inc. DELL P2419HC 6L729P2" enable mode 1920x1080 position 4480,0
+
+    # Workspace Assignments (Using full identifiers for stability)
+
+    # Middle
+    exec swaymsg workspace 1 output "'Dell Inc. DELL P2419HC BK729P2'"
+    exec swaymsg workspace 2 output "'Dell Inc. DELL P2419HC BK729P2'"
+    exec swaymsg workspace 3 output "'Dell Inc. DELL P2419HC BK729P2'"
+    exec swaymsg workspace 4 output "'Dell Inc. DELL P2419HC BK729P2'"
+    exec swaymsg workspace 5 output "'Dell Inc. DELL P2419HC BK729P2'"
+
+    # Right
+    exec swaymsg workspace 6 output "'Dell Inc. DELL P2419HC 6L729P2'"
+    exec swaymsg workspace 7 output "'Dell Inc. DELL P2419HC 6L729P2'"
+    exec swaymsg workspace 8 output "'Dell Inc. DELL P2419HC 6L729P2'"
+
+    # Left (Laptop)
+    exec swaymsg workspace 9 output eDP-1
+}
+
+# --- PROFILE 2: Office (Laptop + LG UltraFine) ---
+profile {
+    output eDP-1 enable mode 2560x1600 position 0,0
+
+    # Office Monitor (1440p)
+    # Note: Replace "LG Electronics LG UltraFine" with the exact string 
+    # from 'swaymsg -t get_outputs' when you are at the office.
+    output "LG Electronics LG UltraFine" enable mode 2560x1440 position 2560,0
+
+    exec swaymsg workspace 1 output "'LG Electronics LG UltraFine'"
+    exec swaymsg workspace 2 output "'LG Electronics LG UltraFine'"
+    exec swaymsg workspace 3 output "'LG Electronics LG UltraFine'"
+    exec swaymsg workspace 4 output "'LG Electronics LG UltraFine'"
+    exec swaymsg workspace 5 output "'LG Electronics LG UltraFine'"
+    exec swaymsg workspace 6 output eDP-1 
+    exec swaymsg workspace 7 output eDP-1
+    exec swaymsg workspace 8 output eDP-1
+    exec swaymsg workspace 9 output eDP-1
+}
+
+# --- PROFILE 3: Traveling (Laptop Only) ---
+profile {
+    output eDP-1 enable mode 2560x1600 position 0,0
+
+    # Move all workspaces to the laptop
+    exec swaymsg workspace 1 output eDP-1
+    exec swaymsg workspace 2 output eDP-1
+    exec swaymsg workspace 3 output eDP-1
+    exec swaymsg workspace 4 output eDP-1
+    exec swaymsg workspace 5 output eDP-1
+    exec swaymsg workspace 6 output eDP-1
+    exec swaymsg workspace 7 output eDP-1
+    exec swaymsg workspace 8 output eDP-1
+    exec swaymsg workspace 9 output eDP-1
+}
+
+# --- PROFILE 4: Presentation Mode (Extended) ---
+# This matches when ANY unknown monitor is plugged in.
+profile {
+    output eDP-1 enable mode 2560x1600 position 0,0
+    output * enable position 2560,0
+
+    # Put Workspace 1 on the Projector, Workspace 9 on Laptop
+    exec swaymsg workspace 1 output *
+    exec swaymsg workspace 9 output eDP-1
+}
