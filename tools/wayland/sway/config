@@ -19,7 +19,7 @@ bar {
     swaybar_command /usr/bin/true
 }
 
-### --- Startup (The Rest of your Hyprland folder logic) ---
+### --- Startup ---
 exec_always {
     # Waybar (using your sway-specific symlink)
     waybar -c ~/.config/waybar/waybar_sway -s ~/.config/waybar/style.css
