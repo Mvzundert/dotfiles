@@ -2,7 +2,6 @@
 include ~/.config/sway/definitions.conf
 include ~/.config/sway/windowrules.conf
 include ~/.config/sway/keybinds.conf
-include ~/.config/sway/monitors.conf
 
 input "type:keyboard" {
     xkb_layout us
