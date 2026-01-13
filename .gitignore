@@ -13,6 +13,7 @@ nvim/plugged
 nvim/.netrwhist
 nvim/lazy-lock.json
 tools/wayland/hypr/monitors.conf
+tools/wayland/sway/monitors.conf
 tools/scripts/current_wallpaper.jpg
 tools/tui/ghostty/fonts
 tools/multiplex/tmux/plugins

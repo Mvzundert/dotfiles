@@ -2,9 +2,7 @@
 include ~/.config/sway/definitions.conf
 include ~/.config/sway/windowrules.conf
 include ~/.config/sway/keybinds.conf
-
-### --- Output & Input ---
-output DP-1 res 1920x1080@144Hz pos 0 0
+include ~/.config/sway/monitors.conf
 
 input "type:keyboard" {
     xkb_layout us
