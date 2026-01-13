@@ -2,7 +2,7 @@
 
 # --- Configuration ---
 DIR="/home/marzun/Pictures/wallpapers/Marske"
-SYMLINK_PATH="$HOME/.config/hypr/current_wallpaper.jpg"
+SYMLINK_PATH="$HOME/.config/scripts/current_wallpaper.jpg"
 TIMEOUT=2000 # Time in milliseconds (2 seconds)
 
 if [ ! -d "$DIR" ]; then
@@ -10,10 +10,20 @@ if [ ! -d "$DIR" ]; then
     exit 1
 fi
 
-# --- 1. Get List of Monitors ---
-MONITORS=$(hyprctl monitors -j | jq -r '.[] | .name')
-if [ -z "$MONITORS" ]; then
-    MONITORS=$(hyprctl monitors | grep "Monitor" | awk '{print $2}')
+# --- 1. Detect Compositor by Command Availability ---
+if hyprctl monitors >/dev/null 2>&1; then
+    # We are in Hyprland
+    MONITORS=$(hyprctl monitors -j | jq -r '.[] | .name')
+    if [ -z "$MONITORS" ]; then
+        MONITORS=$(hyprctl monitors | grep "Monitor" | awk '{print $2}')
+    fi
+elif swaymsg -t get_outputs >/dev/null 2>&1; then
+    # We are in Sway
+    MONITORS=$(swaymsg -t get_outputs | jq -r '.[] | .name')
+else
+    # Fallback/Error
+    [ -x "$(command -v dunstify)" ] && dunstify -u critical -t $TIMEOUT "Wallpaper Error" "No active Wayland compositor (Hyprland/Sway) detected"
+    exit 1
 fi
 
 # --- 2. Logic: Same vs Different ---
