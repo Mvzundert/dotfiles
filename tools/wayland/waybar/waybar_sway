@@ -11,8 +11,7 @@
     "height": 50,
 
     "modules-left": [
-        "group/tray-drawer",
-        "sway/window"
+        "group/task-drawer"
     ],
     "modules-center": [
         "sway/workspaces"
@@ -25,25 +24,36 @@
         "custom/power"
     ],
 
-    /* --- Drawer: Tray --- */
-    "group/tray-drawer": {
+    "group/task-drawer": {
         "orientation": "horizontal",
         "drawer": {
             "transition-duration": 500,
-            "children-class": "tray-child",
+            "children-class": "task-child",
             "transition-left-to-right": true
         },
         "modules": [
-            "custom/tray-icon",
+            "custom/task-icon",
+            "wlr/taskbar",
             "tray"
         ]
     },
-    "custom/tray-icon": {
-        "format": "󱊔",
+
+    "custom/task-icon": {
+        "format": "󱗼",
         "tooltip": false
     },
 
-    /* --- Drawer: System Stats --- */
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "xwaylandvideobridge"
+        ]
+    },
+
     "group/stats-drawer": {
         "orientation": "horizontal",
         "drawer": {
@@ -101,7 +111,6 @@
         "format-icons": { "focused": "󰮯 ", "active": "󰊠 ", "default": "󰊠 " }
     },
 
-    "sway/window": { "format": "{title}", "max-length": 30 },
     "tray": { "icon-size": 20, "spacing": 5 },
     "clock": { "format": "{:%H:%M}", "format-alt": "{:%H:%M  %d %B}" },
 
