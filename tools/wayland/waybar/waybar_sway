@@ -88,7 +88,7 @@
     },
     "wireplumber": {
         "format": "{icon} {volume}%",
-        "on-click": "pavucontrol",
+        "on-click": "pwvucontrol",
         "format-icons": { "default": ["", "", "󰕾", ""] }
     },
     "wireplumber#microphone": { "format": " {volume}%" },
