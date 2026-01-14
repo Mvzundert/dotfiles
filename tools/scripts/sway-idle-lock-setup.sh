@@ -20,7 +20,7 @@ mkdir -p "$SCRIPT_DIR"
 # 3. Create the Idle Management Script (Caffeine Toggle)
 # This includes the logic to detect the compositor and the timers.
 echo "Creating idle toggle script..."
-cat <<'EOF' >"$SCRIPT_DIR/idle_manager.sh"
+cat <<'EOF' >"$SCRIPT_DIR/idle.sh"
 #!/bin/bash
 
 # Configuration
@@ -55,25 +55,16 @@ fi
 pkill -RTMIN+10 waybar
 EOF
 
-# 4. Create a "Lock Now" shortcut script
-echo "Creating lock script..."
-cat <<EOF >"$SCRIPT_DIR/lock_now.sh"
-#!/bin/bash
-swaylock --image "$WALLPAPER" --scaling fill --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --show-failed-attempts
-EOF
-
 # 5. Set Permissions
 echo "Setting permissions..."
 chmod +x "$SCRIPT_DIR/idle_manager.sh"
-chmod +x "$SCRIPT_DIR/lock_now.sh"
 chown -R "$USER_NAME:$USER_NAME" "$CONFIG_DIR"
 
 # 6. Reminder for Sway Config
 echo "-------------------------------------------------------"
 echo "Setup Complete!"
 echo "To auto-start the idle manager, add this to your sway config:"
-echo "exec $SCRIPT_DIR/idle_manager.sh"
+echo "exec $SCRIPT_DIR/idle.sh"
 echo ""
-echo "To bind a lock key (e.g., Win+L):"
-echo "bindsym Mod4+l exec $SCRIPT_DIR/lock_now.sh"
 echo "-------------------------------------------------------"
+echo "To bind a lock key (e.g., Win+L):"
