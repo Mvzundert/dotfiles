@@ -28,6 +28,7 @@ exec {
     nm-applet
     /usr/lib/polkit-kde-authentication-agent-1
     /usr/bin/gnome-keyring-daemon --start --components=secrets
+    autotiling
 }
 
 ### --- Startup (Always refresh on reload) ---

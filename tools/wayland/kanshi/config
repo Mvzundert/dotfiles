@@ -72,3 +72,8 @@ profile {
     exec swaymsg workspace 1 output *
     exec swaymsg workspace 9 output eDP-1
 }
+
+# The "Wildcard" Fallback (matches any single connected monitor)
+profile {
+    output * enable
+}
