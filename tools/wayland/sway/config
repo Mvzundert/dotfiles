@@ -19,34 +19,28 @@ bar {
     swaybar_command /usr/bin/true
 }
 
-### --- Startup ---
-exec_always {
-    # Waybar: Kill old instance first to prevent doubling
-    waybar -c ~/.config/waybar/waybar_sway -s ~/.config/waybar/style.css
-
-    # SWWW Wallpaper: Ensure only one daemon runs
+### --- Startup (One-time) ---
+# Background services that don't need to restart on reload
+exec {
     swww-daemon
-
-    # Notifications: Kill and restart to refresh config
-    dunst
-
-    /usr/bin/gnome-keyring-daemon --start --components=secrets
-    
-    # Clipboard manager: Ensure only one instance
-     cb
-
-    # Udiskie: Ensure only one instance
-     udiskie
-
-    # Network Applet: Kill and restart to prevent multiple icons
-     nm-applet
-
-    # Kanshi: Handles monitor profiles
-     kanshi
-
-    # Always start the keyring
+    cb
+    udiskie
+    nm-applet
+    /usr/lib/polkit-kde-authentication-agent-1
     /usr/bin/gnome-keyring-daemon --start --components=secrets
 }
 
-# Polkit & Auth
-exec /usr/lib/polkit-kde-authentication-agent-1
+### --- Startup (Always refresh on reload) ---
+# We wrap these in 'sh -c' to ensure the semicolon logic works 100% of the time.
+# The '|| true' ensures that even if nothing is killed, the app still starts.
+
+exec_always {
+    # Waybar
+    exec sh -c 'pkill waybar || true; waybar -c ~/.config/waybar/waybar_sway -s ~/.config/waybar/style.css'
+
+    # Notifications
+    exec sh -c 'pkill dunst || true; dunst'
+
+    # Kanshi
+    exec sh -c 'pkill kanshi || true; kanshi'
+}
