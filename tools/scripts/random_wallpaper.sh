@@ -3,6 +3,7 @@
 # --- Configuration ---
 DIR="/home/marzun/Pictures/wallpapers/Marske"
 SYMLINK_PATH="$HOME/.config/scripts/current_wallpaper.jpg"
+SDDM_SYMLINK="/usr/share/backgrounds/system/sddm_link.jpg"
 TIMEOUT=2000 # Time in milliseconds (2 seconds)
 
 if [ ! -d "$DIR" ]; then
@@ -45,7 +46,11 @@ if [ "$1" == "--same" ]; then
         fi
     done
 
+    # Update Symlinks
     ln -sf "$RANDOM_PIC" "$SYMLINK_PATH"
+    # Update system link for SDDM (requires root if not already set, but symlink target change is fine)
+    ln -sf "$SYMLINK_PATH" "$SDDM_SYMLINK"
+    chmod 644 "$RANDOM_PIC"
 else
     # Pick a DIFFERENT picture for EACH monitor
     for MONITOR in $MONITORS; do
@@ -63,6 +68,9 @@ else
                 "$FILE_NAME"
         fi
 
+        # We link the LAST monitor's wallpaper as the lockscreen/SDDM background
         ln -sf "$RANDOM_PIC" "$SYMLINK_PATH"
+        ln -sf "$SYMLINK_PATH" "$SDDM_SYMLINK"
+        chmod 644 "$RANDOM_PIC"
     done
 fi
