@@ -22,7 +22,6 @@ bar {
 ### --- Startup (One-time) ---
 # Background services that don't need to restart on reload
 exec {
-    swww-daemon
     cb
     udiskie
     nm-applet
@@ -44,4 +43,6 @@ exec_always {
 
     # Kanshi
     exec sh -c 'pkill kanshi || true; kanshi'
+
+    swww-daemon
 }
