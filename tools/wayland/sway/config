@@ -22,27 +22,27 @@ bar {
 ### --- Startup ---
 exec_always {
     # Waybar: Kill old instance first to prevent doubling
-    pidof waybar && killall waybar; waybar -c ~/.config/waybar/waybar_sway -s ~/.config/waybar/style.css
+    waybar -c ~/.config/waybar/waybar_sway -s ~/.config/waybar/style.css
 
     # SWWW Wallpaper: Ensure only one daemon runs
-    pidof swww-daemon || swww-daemon
+    swww-daemon
 
     # Notifications: Kill and restart to refresh config
-    killall dunst; dunst
+    dunst
 
     /usr/bin/gnome-keyring-daemon --start --components=secrets
     
     # Clipboard manager: Ensure only one instance
-    killall cb; cb
+     cb
 
     # Udiskie: Ensure only one instance
-    killall udiskie; udiskie
+     udiskie
 
     # Network Applet: Kill and restart to prevent multiple icons
-    killall nm-applet; nm-applet
+     nm-applet
 
     # Kanshi: Handles monitor profiles
-    killall kanshi; kanshi
+     kanshi
 
     # Always start the keyring
     /usr/bin/gnome-keyring-daemon --start --components=secrets

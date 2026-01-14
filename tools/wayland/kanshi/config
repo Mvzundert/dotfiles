@@ -33,15 +33,14 @@ profile {
     output eDP-1 enable mode 2560x1600 position 0,0
 
     # Office Monitor (1440p)
-    # Note: Replace "LG Electronics LG UltraFine" with the exact string 
-    # from 'swaymsg -t get_outputs' when you are at the office.
-    output "LG Electronics LG UltraFine" enable mode 2560x1440 position 2560,0
+    output DP-2 enable mode 2560x1440@60Hz position 2560,0
 
-    exec swaymsg workspace 1 output "'LG Electronics LG UltraFine'"
-    exec swaymsg workspace 2 output "'LG Electronics LG UltraFine'"
-    exec swaymsg workspace 3 output "'LG Electronics LG UltraFine'"
-    exec swaymsg workspace 4 output "'LG Electronics LG UltraFine'"
-    exec swaymsg workspace 5 output "'LG Electronics LG UltraFine'"
+    exec swaymsg workspace 1 output DP-2
+    exec swaymsg workspace 2 output DP-2 
+    exec swaymsg workspace 3 output DP-2 
+    exec swaymsg workspace 4 output DP-2 
+    exec swaymsg workspace 5 output DP-2 
+
     exec swaymsg workspace 6 output eDP-1 
     exec swaymsg workspace 7 output eDP-1
     exec swaymsg workspace 8 output eDP-1
