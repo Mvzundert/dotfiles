@@ -11,7 +11,6 @@ profile {
     output "Dell Inc. DELL P2419HC 6L729P2" enable mode 1920x1080 position 4480,0
 
     # Workspace Assignments (Using full identifiers for stability)
-
     # Middle
     exec swaymsg workspace 1 output "'Dell Inc. DELL P2419HC BK729P2'"
     exec swaymsg workspace 2 output "'Dell Inc. DELL P2419HC BK729P2'"
