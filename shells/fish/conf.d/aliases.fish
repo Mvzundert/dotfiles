@@ -12,6 +12,9 @@ alias sshs='ssh-search'
 alias sshed='cat ~/.ssh/id_ed25519.pub'
 alias sshid='cat ~/.ssh/id_rsa.pub'
 
+# -------------------------------------------------------------------
+# Brew alias
+# -------------------------------------------------------------------
 alias buuc='brew update && brew upgrade && brew cleanup'
 alias bbd='brew bundle dump --describe -f'
 
@@ -21,6 +24,20 @@ alias bbd='brew bundle dump --describe -f'
 alias execute_order_66="sudo pacman -Syu; and sudo aide --update; and sudo mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz"
 #alias pacl="pacman -Rs $(pacman -Qdtq)"
 
+# -------------------------------------------------------------------
+# Sway alias
+# -------------------------------------------------------------------
+# List workspaces and their monitors
+alias swp="swaymsg -t get_workspaces | jq -r '.[] | \"Workspace \(.name) is on \(.output)\"'"
+
+# List all open windows with their workspace and app_id/class
+alias sww="swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | \"[\(.workspace)] \(.name) (ID: \(.app_id // .window_properties.class))\"'"
+
+# List monitor details (name, resolution, focus)
+alias swo="swaymsg -t get_outputs | jq -r '.[] | \"\(.name): \(.rect.width)x\(.rect.height) (Focused: \(.focused))\"'"
+
+# Quickly reload sway configuration
+alias swr="swaymsg reload"
 # -------------------------------------------------------------------
 # Program alias
 # -------------------------------------------------------------------
