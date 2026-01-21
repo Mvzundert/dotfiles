@@ -15,6 +15,7 @@ nvim/lazy-lock.json
 tools/wayland/hypr/monitors.conf
 tools/wayland/sway/monitors.conf
 tools/scripts/current_wallpaper.jpg
+tools/wayland/cosmic/com.system76.CosmicPortal/v1/screenshot
 tools/tui/ghostty/fonts
 tools/multiplex/tmux/plugins
 shells/fish/fish_variables
