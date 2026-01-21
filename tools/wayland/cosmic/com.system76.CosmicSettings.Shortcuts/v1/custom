@@ -1,0 +1,141 @@
+{
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "4",
+    ): System(Screenshot),
+    (
+        modifiers: [
+            Super,
+        ],
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "space",
+    ): System(Launcher),
+    (
+        modifiers: [],
+        key: "XF86TouchpadToggle",
+    ): Disable,
+    (
+        modifiers: [],
+        key: "XF86AudioMute",
+    ): Disable,
+    (
+        modifiers: [],
+        key: "XF86MonBrightnessDown",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "2",
+    ): System(BrightnessUp),
+    (
+        modifiers: [],
+        key: "Print",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "e",
+    ): System(HomeFolder),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "m",
+    ): System(Mute),
+    (
+        modifiers: [],
+        key: "XF86MonBrightnessUp",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "q",
+    ): System(LockScreen),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "F11",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Escape",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "n",
+    ): System(MuteMic),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "slash",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "XF86TouchpadToggle",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "XF86MonBrightnessDown",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "1",
+    ): System(BrightnessDown),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Fullscreen,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+    ): System(Terminal),
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "backslash",
+    ): System(TouchpadToggle),
+    (
+        modifiers: [],
+        key: "XF86AudioMicMute",
+    ): Disable,
+}
