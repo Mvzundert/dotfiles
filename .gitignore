@@ -43,7 +43,7 @@ tools/wayland/cosmic/com.system76.CosmicPortal/v1/screenshot
 tools/wayland/cosmic/com.system76.CosmicNotifications/v1/do_not_disturb
 tools/wayland/cosmic/com.system76.CosmicNotifications/v1/max_notifications
 tools/wayland/cosmic/com.system76.CosmicNotifications/v1/max_per_app
-tools/wayland/cosmic/com.system76.CosmicNotifications/v1/max_timeout_log
+tools/wayland/cosmic/com.system76.CosmicNotifications/v1/max_timeout_low
 tools/wayland/cosmic/com.system76.CosmicNotifications/v1/max_timeout_normal
 tools/wayland/cosmic/com.system76.CosmicNotifications/v1/max_timeout_urgent
 
