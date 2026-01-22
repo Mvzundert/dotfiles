@@ -40,7 +40,7 @@ tools/wayland/cosmic/xdg-desktop-portal-cosmic/
 tools/wayland/cosmic/com.system76.CosmicPortal/v1/screenshot
 
 # Ignore dynamic notification state but KEEP the folder for 'anchor'
-tools/wayland/cosmic/com.system76.CosmicNotifications/v1/do_not_distrub
+tools/wayland/cosmic/com.system76.CosmicNotifications/v1/do_not_disturb
 tools/wayland/cosmic/com.system76.CosmicNotifications/v1/max_notifications
 tools/wayland/cosmic/com.system76.CosmicNotifications/v1/max_per_app
 tools/wayland/cosmic/com.system76.CosmicNotifications/v1/max_timeout_log
