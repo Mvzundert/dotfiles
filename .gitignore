@@ -1,7 +1,6 @@
 .DS_Store
 tmux/custom/*.local
 
-
 # --- ZSH ignores ---
 zsh/load.zsh
 zsh/custom/
@@ -14,6 +13,10 @@ zsh/plugins/zsh-syntax-highlighting
 # --- System ignores ---
 .idea
 tools/tui/ghostty/fonts
+tools/scripts/current_wallpaper.jpg
+tools/tui/ghostty/fonts
+tools/multiplex/tmux/plugins
+shells/fish/fish_variables
 
 # --- (n)vim ignores ---
 nvim/.netrwhist
@@ -27,42 +30,22 @@ tools/wayland/hypr/monitors.conf
 # --- Sway ignores ---
 tools/wayland/sway/monitors.conf
 
-tools/scripts/current_wallpaper.jpg
-tools/tui/ghostty/fonts
-tools/multiplex/tmux/plugins
-shells/fish/fish_variables
+# --- Cosmic Ignores ---
 
-# --- Cosmic ignores ---
-
-# --- Dynamic State (Ignore these) ---
-# Ignore the current light/dark flag (true/false)
+# Ignore current session/runtime states
 tools/wayland/cosmic/com.system76.CosmicTheme.Mode/
-
-# Ignore the current Do Not Disturb state
-tools/wayland/cosmic/com.system76.CosmicSettings.Notifications/
-
-# Ignore dynamic window rules and active workspace states
 tools/wayland/cosmic/com.system76.CosmicSettings.WindowRules/
-
-# --- DYNAMIC THEME & NOTIFICATIONS ---
-# Ignore the true/false flag for dark mode
-tools/wayland/cosmic/com.system76.CosmicTheme.Mode/
-
-# Ignore DND toggles and active notification counts
-tools/wayland/cosmic/com.system76.CosmicSettings.Notifications/
-
-# --- RUNTIME SESSION STATE ---
-# Ignore which workspace is currently active/focused
 tools/wayland/cosmic/com.system76.CosmicAppletWorkspaces/
-# Ignore last used screenshot regions
-xdg-desktop-portal-cosmic/
-
-# Ignore active window tiling exceptions/temp rules
-tools/wayland/cosmic/com.system76.CosmicSettings.WindowRules/
-
-# Ignore screenshot preference
+tools/wayland/cosmic/xdg-desktop-portal-cosmic/
 tools/wayland/cosmic/com.system76.CosmicPortal/v1/screenshot
 
-# --- FILE MANAGER STATE ---
-# Ignore what tabs you currently have open
+# Ignore dynamic notification state but KEEP the folder for 'anchor'
+tools/wayland/cosmic/com.system76.CosmicNotifications/v1/dnd
+tools/wayland/cosmic/com.system76.CosmicNotifications/v1/queue
+
+# Ignore File Manager session data
 tools/wayland/cosmic/com.system76.CosmicFiles/*/tab.conf
+
+# Ignore generic locks and temps
+tools/wayland/cosmic/*.lock
+tools/wayland/cosmic/*.tmp
