@@ -18,8 +18,21 @@ end
 # =============================================================================
 # Set environment variables
 set -gx EDITOR nvim
+
+# Set the primary language to English UTF-8
 set -gx LANG en_US.UTF-8
-set -gx LC_ALL en_US.UTF-8
+
+# IMPORTANT: We do NOT set LC_ALL here because it overrides LC_TIME.
+# If it was set previously, we unexport it.
+set -e LC_ALL
+
+# Set specific formatting to Dutch (nl_NL) for 24h time and European dates
+set -gx LC_TIME nl_NL.UTF-8
+set -gx LC_NUMERIC nl_NL.UTF-8
+set -gx LC_MONETARY nl_NL.UTF-8
+set -gx LC_PAPER nl_NL.UTF-8
+set -gx LC_MEASUREMENT nl_NL.UTF-8
+
 set -Ux COMPOSER_MEMORY_LIMIT -1 # Remove composer memory limit
 set -Ux HOMEBREW_NO_ENV_HINTS 1
 
