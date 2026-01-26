@@ -4,6 +4,6 @@
     layout: "us",
     variant: "",
     options: Some("terminate:ctrl_alt_bksp"),
-    repeat_delay: 600,
-    repeat_rate: 25,
+    repeat_delay: 300,
+    repeat_rate: 35,
 )
