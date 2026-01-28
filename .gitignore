@@ -54,3 +54,5 @@ tools/wayland/cosmic/com.system76.CosmicFiles/*/tab.conf
 tools/wayland/cosmic/*.lock
 tools/wayland/cosmic/*.tmp
 tools/wayland/cosmic/com.system76.CosmicIdle/v1
+tools/wayland/cosmic/com.system76.CosmicBackground/v1
+tools/wayland/cosmic/com.system76.CosmicSettings.Wallpaper/v1
