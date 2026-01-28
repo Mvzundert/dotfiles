@@ -53,3 +53,4 @@ tools/wayland/cosmic/com.system76.CosmicFiles/*/tab.conf
 # Ignore generic locks and temps
 tools/wayland/cosmic/*.lock
 tools/wayland/cosmic/*.tmp
+tools/wayland/cosmic/com.system76.CosmicIdle/v1
