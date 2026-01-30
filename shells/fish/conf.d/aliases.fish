@@ -218,7 +218,6 @@ alias hb="hugo build -d public"
 # Python 2 and Pip installed for legacy stuff.
 # -------------------------------------------------------------------
 alias python="python3"
-alias pip="pip3"
 
 # -------------------------------------------------------------------
 # Some default commands
