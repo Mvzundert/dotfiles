@@ -74,12 +74,6 @@ brew "eza"
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# OpenType text shaping engine
-brew "harfbuzz"
-# VP8/VP9 video codec
-brew "libvpx"
-# Play, record, convert, and stream audio and video
-brew "ffmpeg"
 # Fast web fuzzer written in Go
 brew "ffuf"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -94,6 +88,8 @@ brew "fzf"
 brew "gcc"
 # GitHub command-line tool
 brew "gh"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
 # Conversion library
@@ -142,6 +138,8 @@ brew "jq"
 brew "lazygit"
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2@1.7"
+# VP8/VP9 video codec
+brew "libvpx"
 # YAML Parser
 brew "libyaml"
 # Curses-based tool for viewing and analyzing log files
@@ -175,9 +173,9 @@ brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@8.1"
 # General-purpose scripting language
-brew "php@8.2", restart_service: :changed
+brew "php@8.2", restart_service: :changed, link: true
 # General-purpose scripting language
-brew "php@8.3", restart_service: :changed, link: true
+brew "php@8.3", restart_service: :changed
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
@@ -238,8 +236,6 @@ brew "zmap"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
-# Linux cross compilers based on musl libc
-brew "filosottile/musl-cross/musl-cross"
 # A simple terminal UI for docker, written in Go
 brew "jesseduffield/lazydocker/lazydocker"
 # Smart terminal session manager
@@ -283,6 +279,8 @@ cask "keycastr"
 cask "keymapp"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
+# Open-source, self-hosted Slack-alternative
+cask "mattermost"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # VPN client for secure internet access and private browsing
