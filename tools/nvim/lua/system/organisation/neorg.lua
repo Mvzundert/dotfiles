@@ -13,7 +13,6 @@ return {
         ['core.summary'] = {},
         ['core.export'] = {},
         ['core.integrations.treesitter'] = {},
-        ['core.integrations.nvim-cmp'] = {},
 
         -- We use our own keybinds
         ['core.keybinds'] = {
