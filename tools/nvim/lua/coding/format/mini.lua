@@ -1,6 +1,11 @@
 return {
   'echasnovski/mini.nvim',
   config = function()
+    -- Icons (The slim replacement for nvim-web-devicons)
+    require('mini.icons').setup()
+    -- work with mini.icons without needing nvim-web-devicons installed.
+    MiniIcons.mock_nvim_web_devicons()
+
     -- Highlight the current word under the cursor
     require('mini.cursorword').setup()
 
@@ -19,6 +24,9 @@ return {
     --  - yinq - [Y]ank [I]nside [N]ext [']quote
     --  - ci'  - [C]hange [I]nside [']quote
     require('mini.ai').setup { n_lines = 500 }
+
+    -- Add this inside your existing mini.lua config function
+    require('mini.statusline').setup { set_static_role = true }
 
     -- Move code around
     require('mini.move').setup {
