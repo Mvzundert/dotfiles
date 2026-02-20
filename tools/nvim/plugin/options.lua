@@ -106,3 +106,9 @@ if vim.fn.has 'nvim-0.9.0' == 1 then
 end
 
 opt.hlsearch = true
+
+-- Native EditorConfig (replaces vim-sleuth)
+vim.g.editorconfig = true
+
+-- Enable better native completion behavior
+opt.completeopt = 'menu,menuone,noselect'
