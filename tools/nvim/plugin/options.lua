@@ -78,7 +78,6 @@ opt.formatoptions = 'jcroqlnt' -- tcqj
 opt.grepformat = '%f:%l:%c:%m'
 opt.grepprg = 'rg --vimgrep'
 opt.ignorecase = true -- Ignore case
-opt.laststatus = 0
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize' }

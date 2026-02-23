@@ -25,7 +25,7 @@ return {
     --  - ci'  - [C]hange [I]nside [']quote
     require('mini.ai').setup { n_lines = 500 }
 
-    -- Add this inside your existing mini.lua config function
+    -- Simple and easy statusline
     require('mini.statusline').setup { set_static_role = true }
 
     -- Move code around
@@ -44,5 +44,7 @@ return {
         reindent_linewise = true,
       },
     }
+
+    vim.opt.laststatus = 3
   end,
 }
