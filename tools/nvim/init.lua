@@ -62,6 +62,7 @@ require('lazy').setup({
   -- Load the System plugins
   { import = 'system.organisation' },
   { import = 'system.typing' },
+  { import = 'system.mini' },
 
   -- Load the Looks and Feels
   { import = 'ui.filetree' },
