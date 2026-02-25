@@ -152,11 +152,8 @@ if test -d "$HOME/go/bin"
 end
 
 # Init rbenv to make sure it gets used
-if test -d "$HOME/.rbenv/bin"
-    add_to_path "$HOME/.rbenv/bin"
-    if type -q rbenv
-        status --is-interactive; and rbenv init - --no-rehash fish | source
-    end
+if type -q rbenv
+    status --is-interactive; and rbenv init - --no-rehash fish | source
 end
 
 # Init phpenv to make sure it gets used
