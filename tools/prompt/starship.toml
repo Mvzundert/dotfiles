@@ -135,7 +135,7 @@ discharging_symbol = '💦 '
 zsh_indicator = '🐚'
 fish_indicator = '🐟'
 style = 'bold purple'
-disabled = false
+disabled = true
 
 [docker_context]
 symbol = "🐳"
