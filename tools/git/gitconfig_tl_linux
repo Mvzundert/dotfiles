@@ -2,8 +2,8 @@
 	defaultBranch = master
 [user]
 	name = Marius van Zundert
-	email = marius.vanzundert@cerberos.dev
-	signingkey = marius.vanzundert@cerberos.dev
+	email = mvanzundert@tilaa.com
+	signingkey = mvanzundert@tilaa.com
 [core]
 	editor = vim
 	pager = delta
