@@ -60,7 +60,6 @@ require('lazy').setup({
   { import = 'coding.todo' },
 
   -- Load the System plugins
-  { import = 'system.organisation' },
   { import = 'system.typing' },
   { import = 'system.mini' },
 

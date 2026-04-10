@@ -15,8 +15,6 @@ return {
       'markdown',
       'vim',
       'vimdoc',
-      'norg',
-      'norg_meta',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
