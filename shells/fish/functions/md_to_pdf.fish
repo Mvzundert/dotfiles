@@ -8,7 +8,7 @@ function md_to_pdf
     # Check for pandoc and xelatex
     if command -v pandoc >/dev/null 2>&1
         # Perform the pandoc conversion
-        pandoc $argv[1] -o $argv[2] 
+        pandoc $argv[1] -o $argv[2] --pdf-engine=xelatex -V geometry:"margin=1in"
         echo "Converted $argv[1] to $argv[2]"
     end
 end
