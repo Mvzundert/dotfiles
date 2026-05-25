@@ -33,5 +33,20 @@ return {
       '<cmd>Trouble qflist toggle<cr>',
       desc = 'Quickfix List (Trouble)',
     },
+    {
+      '<leader>xl',
+      '<cmd>Trouble loclist toggle<cr>',
+      desc = 'Location List (Trouble)',
+    },
+    {
+      '<leader>xq',
+      '<cmd>Trouble qflist toggle<cr>',
+      desc = 'Quickfix List (Trouble)',
+    },
+    {
+      '<leader>xr',
+      '<cmd>Trouble lsp_references toggle<cr>',
+      desc = 'LSP References (Trouble)',
+    },
   },
 }
