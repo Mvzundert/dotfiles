@@ -1,134 +1,93 @@
 return {
-  { -- LSP Configuration & Plugins
+  {
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for Neovim
       'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-      -- blink.cmp is now providing the capabilities
       'Saghen/blink.cmp',
-
-      -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-      -- used for completion, annotations and signatures of Neovim apis
-      { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+        group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
         callback = function(event)
-          -- In this case, we create a function that lets us more easily define mappings specific
-          -- for LSP related items. It sets the mode, buffer and description for us each time.
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          -- Rename the variable under your cursor.
-          --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>rn', vim.lsp.buf.rename, 'Rename')
+          map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
+          map('gD', vim.lsp.buf.declaration, 'Goto Declaration')
 
-          -- Execute a code action, usually your cursor needs to be on top of an error
-          -- or a suggestion from your LSP for this to activate.
-          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
-          -- Opens a popup that displays documentation about the word under your cursor
-          --  See `:help K` for why this keymap.
-          map('K', vim.lsp.buf.hover, 'Hover Documentation')
-
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
-          --  For example, in C this would take you to the header.
-          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-
-          -- The following two autocommands are used to highlight references of the
-          -- word under your cursor when your cursor rests there for a little while.
-          --    See `:help CursorHold` for information about when this is executed
-          --
-          -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
               callback = vim.lsp.buf.document_highlight,
             })
-
             vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
               buffer = event.buf,
               callback = vim.lsp.buf.clear_references,
             })
           end
+
+          vim.lsp.inline_completion.enable()
         end,
       })
 
-      -- Blink.cmp integration: 
-      -- We initialize standard capabilities and then merge them with blink's
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
-
-      local servers = {
-        gopls = {},
-        rust_analyzer = {},
-        intelephense = {
-          filetypes = { 'php', 'blade', 'php_only' },
-          settings = {
-            intelephense = {
-              filetypes = { 'php', 'blade', 'php_only' },
-              files = {
-                associations = { '*.php', '*.blade.php' }, -- Associating .blade.php files as well
-                maxSize = 5000000,
-              },
-              diagnostics = {
-                enable = true,
-              },
-            },
-          },
-        },
-
-        lua_ls = {
-          -- cmd = {...},
-          -- filetypes = { ...},
-          -- capabilities = {},
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
-      }
-
-      -- Ensure the servers and tools above are installed
-      require('mason').setup()
-
-      vim.keymap.set('n', '<leader>cm', '<cmd>Mason<CR>')
-
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'lua-language-server',
-        'dot-language-server',
-        'blade-formatter',
-        'markdownlint',
-        'html-lsp',
-        'shfmt',
-        'stylua',
-        'taplo',
+      vim.lsp.config('*', {
+        capabilities = require('blink.cmp').get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()),
       })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-      require('mason-lspconfig').setup {
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above.
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
+      vim.lsp.config['intelephense'] = {
+        filetypes = { 'php', 'blade', 'php_only' },
+        settings = {
+          intelephense = {
+            files = { associations = { '*.php', '*.blade.php' }, maxSize = 5000000 },
+            diagnostics = { enable = true },
+          },
         },
       }
+
+      vim.lsp.config['lua_ls'] = {
+        settings = {
+          Lua = {
+            completion = { callSnippet = 'Replace' },
+          },
+        },
+      }
+
+      vim.lsp.enable({
+        'bashls',
+        'basedpyright',
+        'gopls',
+        'intelephense',
+        'lua_ls',
+        'ruby_lsp',
+        'rust_analyzer',
+      })
+
+      require('mason').setup()
+      vim.keymap.set('n', '<leader>cm', '<cmd>Mason<CR>')
+      require('mason-tool-installer').setup({
+        ensure_installed = {
+          'bash-language-server',
+          'basedpyright',
+          'blade-formatter',
+          'dot-language-server',
+          'gopls',
+          'html-lsp',
+          'intelephense',
+          'lua-language-server',
+          'markdownlint',
+          'rubocop',
+          'ruby-lsp',
+          'ruff',
+          'rust-analyzer',
+          'shfmt',
+          'stylua',
+          'taplo',
+        },
+      })
     end,
   },
 }

@@ -21,6 +21,8 @@ return { -- Autoformat
       php = { 'pint' },
       blade = { 'blade-formatter', 'rustywind' },
       rust = { 'rustfmt' },
+      ruby = { 'rubocop' },
+      python = { 'ruff' },
     },
     formatters = {
       pint = {

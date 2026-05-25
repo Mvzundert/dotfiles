@@ -3,7 +3,6 @@ return {
     'saghen/blink.cmp',
     dependencies = 'rafamadriz/friendly-snippets',
     version = '*', -- Use release tags for stability
-    event = 'InsertEnter',
 
     opts = {
       -- 'default' for mappings, but we'll customize to match your cmp config
@@ -45,7 +44,6 @@ return {
 
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
-        -- If you still use Neorg, blink handles it via LSP or community providers
       },
 
       -- Use native Neovim snippets (Available in 0.10+)
