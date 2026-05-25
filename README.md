@@ -26,39 +26,110 @@ warranty nor technical support.
 
 Long story short, I'm just coding for the love of coding!!
 
-# DotFiles:
+# DotFiles
 
-My most recent setup of the dotfiles I use. Since more people are actively using
-the same setup and because I want to be able to recreate it on new machines I've created an installer.
+My personal dotfiles, managed across macOS and Linux. Installer available at `./tools/install/install.sh`.
 
-Feel free to use this as you see fit, install the entire thing or just grab stuff from all the seperate configs
-Just realize you'll need to manage all dependencies yourself when grabbing stuff without the full installer.
+> **Note:** You'll need to manage dependencies yourself if you cherry-pick configs without running the full installer.
 
 # Shells
 
-## ZSH
-Opiniated config because Oh-My-Zsh is too slow and bloated for my taste. 
-I started building this and never looked back, does contain some functions and aliasess that could be deprecated.
+## Fish (primary)
+Opinionated Fish config with Starship prompt, zoxide navigation, fnm Node management, fzf integration, and per-OS key bindings. Config lives in `shells/fish/`.
 
-## Fish
-Opiniated config because I was experimenting with it, most of ZSH functions and aliases are also available in Fish.
+## ZSH (legacy)
+Minimal ZSH setup, kept for reference. Config lives in `shells/zsh/`.
 
-# Tmux:
-I use tmux as my terminal multiplexer, it's a great tool to manage multiple terminal windows and panes. 
-I also use sesh to manage my tmux sessions, which get super powered by fzf.
+# Terminal Emulators
+
+## Kitty (primary)
+GPU-accelerated terminal with Tokyo Night theme. Per-OS settings for font size and opacity:
+- **macOS**: font_size 20, opacity 1.0
+- **Linux**: font_size 14, opacity 0.9
+
+Config lives in `tools/tui/kitty/`.
+
+## Ghostty
+Alternative terminal config. Lives in `tools/tui/ghostty/`.
+
+## Others
+Configs for Alacritty (`tools/tui/alacritty/`) and WezTerm (`tools/tui/wezterm/`) are also available.
+
+# Tmux
+
+Terminal multiplexer with TPM plugin manager, vim-style navigation, fzf session switching, and sesh integration.
+
+Key commands:
+- `prefix + z`: zoom in on current pane (toggle)
+- `prefix + ,`: rename current window
+- `prefix + R`: Reload tmux configuration
+- `prefix + 1-9`: go to window
+- `prefix + n`: next window
+- `prefix + p`: previous window
+- `prefix + q`: close pane
+- `prefix + Q`: close window (confirmation)
+
+Config lives in `tools/multiplex/tmux/`.
 
 # Neovim
 
-NeoVim gets installed when on OSX using brew after that we set the config in
-~/.config/nvim
+Config lives in `tools/nvim/`. Built with lazy.nvim, includes LSP via mason, Treesitter, blink.cmp, snacks.nvim, and Tokyo Night theme.
 
-# Usefull tmux commands
+# Tools
 
-- `prefix + z`: zoom in on current pane (again to switch back).
-- `prefix + ,`: rename current window.
-- `prefix + R`: Reload tmux configuration.
-- `prefix + 1`: go to first window.
-- `prefix + n`: go to next window.
-- `prefix + p`: go to previous window.
-- `prefix + q`: close pane.
-- `prefix + Q`: close window (confirmation).
+## Window Managers (Linux)
+- **Hyprland** — `tools/wayland/hypr/`
+- **Sway** — `tools/wayland/sway/`
+- **Cosmic** — `tools/wayland/cosmic/`
+- **Waybar** — `tools/wayland/waybar/`
+
+Each WM has its own keybinds, window rules, and startup configs.
+
+## Scripts
+Handy utilities in `tools/scripts/`:
+- `idle.sh` — Caffeine toggle (supports Hyprland & Sway)
+- `powermenu.sh` — Power menu for Wayland sessions
+- `any2pdf.sh` — Convert any file to PDF
+- `random_wallpaper.sh` — Wallpaper rotation
+
+## Brewfile
+macOS Homebrew packages in `tools/homebrew/Brewfile` (328+ formulae and casks).
+
+## Starship Prompt
+Cross-shell prompt config in `tools/prompt/starship.nf.toml`.
+
+## Git Configs
+Per-machine git configurations in `tools/git/` (husband, work, etc.).
+
+## Eza Themes
+14 theme files for the modern `ls` replacement in `tools/eza/themes/`.
+
+## Arch Linux
+Package lists and setup scripts for Arch Linux in `tools/arch/` (both official and AUR packages).
+
+## Other Tools
+- Bat — `tools/bat/config`
+- Fastfetch — `tools/tui/fastfetch/config.jsonc`
+- Zed — `tools/zed/settings.json`
+- SSH helpers — `tools/ssh/`
+- Doom Emacs (archival) — `tools/doom-emacs/`
+
+# Prerequisites
+
+- Git
+- Fish shell
+- Kitty terminal (or Ghostty)
+- Neovim 0.12+
+- Starship prompt
+- Homebrew (macOS)
+- Nerd Font (JetBrainsMono Nerd Font recommended)
+
+# Usage
+
+Run the installer to symlink configs:
+
+```bash
+./tools/install/install.sh
+```
+
+Or symlink individual configs manually to `~/.config/`.
