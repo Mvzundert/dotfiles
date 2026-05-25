@@ -99,7 +99,7 @@ macOS Homebrew packages in `tools/homebrew/Brewfile` (328+ formulae and casks).
 Cross-shell prompt config in `tools/prompt/starship.nf.toml`.
 
 ## Git Configs
-Per-machine git configurations in `tools/git/` (husband, work, etc.).
+Per-machine git configurations in `tools/git/` (private, work, etc.).
 
 ## Eza Themes
 14 theme files for the modern `ls` replacement in `tools/eza/themes/`.
