@@ -68,7 +68,6 @@ opt.inccommand = 'split'
 opt.scrolloff = 10
 
 opt.autowrite = true -- Enable auto write
-opt.completeopt = 'menu,menuone,noselect'
 opt.conceallevel = 0 -- Hide * markup for bold and italic
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
@@ -77,9 +76,10 @@ opt.expandtab = true -- Use spaces instead of tabs
 opt.formatoptions = 'jcroqlnt' -- tcqj
 opt.grepformat = '%f:%l:%c:%m'
 opt.grepprg = 'rg --vimgrep'
-opt.ignorecase = true -- Ignore case
+opt.laststatus = 3 -- Global statusline
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
+opt.pumborder = 'rounded' -- Popup menu border (Neovim 0.12+)
 opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize' }
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 4 -- Size of an indent
@@ -87,7 +87,6 @@ opt.tabstop = 4
 opt.softtabstop = 4
 opt.shortmess:append { W = true, I = true, c = true }
 opt.sidescrolloff = 8 -- Columns of context
-opt.smartcase = true -- Don't ignore case with capitals
 opt.smartindent = true -- Insert indents automatically
 opt.spelllang = { 'en' }
 opt.termguicolors = true -- True color support
@@ -109,5 +108,4 @@ opt.hlsearch = true
 -- Native EditorConfig (replaces vim-sleuth)
 vim.g.editorconfig = true
 
--- Enable better native completion behavior
 opt.completeopt = 'menu,menuone,noselect'

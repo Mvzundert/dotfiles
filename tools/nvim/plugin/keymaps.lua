@@ -85,12 +85,8 @@ end, { desc = '[P]review local keymaps' })
 
 -- =====================================================================
 -- Diagnostics (Trouble) - On X
+--   xx, xX, xl, xq, xr are defined in lua/ui/snacks/trouble.lua
 -- =====================================================================
-set('n', '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', { desc = '[X] Diagnostics [D]ocument' })
-set('n', '<leader>xX', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', { desc = '[X] Diagnostics [W]orkspace' })
-set('n', '<leader>xl', '<cmd>Trouble loclist toggle<cr>', { desc = '[X] Diagnostics [L]oclist' })
-set('n', '<leader>xq', '<cmd>Trouble qflist toggle<cr>', { desc = '[X] Diagnostics [Q]uickfix' })
-set('n', '<leader>xr', '<cmd>Trouble lsp_references toggle<cr>', { desc = '[X] Diagnostics [R]eferences' })
 
 -- =====================================================================
 -- Navigation & Better Indent
@@ -111,9 +107,7 @@ end, { desc = '[-] Open Oil' })
 set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 set('n', '<leader>qa', '<cmd>qa<cr>', { desc = '[Q]uit [A]ll' })
 set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
-set('n', '<leader>e', function()
-  Snacks.explorer()
-end, { desc = '[E]xplorer' })
+-- <leader>e is defined in lua/ui/snacks/snacks.lua
 
 -- =====================================================================
 -- Toggles
