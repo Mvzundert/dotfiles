@@ -2,13 +2,10 @@
 tmux/custom/*.local
 
 # --- ZSH ignores ---
-zsh/load.zsh
-zsh/custom/
-zsh/plugins/fzf-tab
-zsh/plugins/zsh-autosuggestions
-zsh/plugins/zsh-syntax-highlighting
-!zsh/custom/.gitkeep
-!zsh/custom/custom_example
+shells/zsh/load.zsh
+shells/zsh/custom/
+!shells/zsh/custom/.gitkeep
+!shells/zsh/custom/custom_example
 
 # --- System ignores ---
 .idea

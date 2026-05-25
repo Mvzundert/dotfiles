@@ -45,10 +45,6 @@ for file in $MODULES/extract/*; do
     source "$file"
 done
 
-# source "$ZSH"/plugins/z.sh
-# shellcheck disable=SC1090
-source ~/code/dotfiles/shells/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # -------------------------------------------------------------------
 # Optional Modules
 # -------------------------------------------------------------------
@@ -163,14 +159,6 @@ if dotfiles::check "${LARAVEL}"; then
     # Laravel Modules
     # shellcheck disable=SC1090
     for file in $MODULES/development/laravel/*; do
-        source "$file"
-    done
-fi
-
-if dotfiles::check "${DRUPAL}"; then
-    # shellcheck disable=SC1090
-    # Drupal
-    for file in $MODULES/development/drupal/*; do
         source "$file"
     done
 fi
