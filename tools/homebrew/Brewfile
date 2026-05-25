@@ -1,4 +1,4 @@
-tap "adoptopenjdk/openjdk"
+tap "adoptium/temurin"
 tap "d12frosted/emacs-plus"
 tap "filosottile/musl-cross"
 tap "homebrew/cask"
