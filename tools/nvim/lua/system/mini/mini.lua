@@ -25,9 +25,6 @@ return {
     --  - ci'  - [C]hange [I]nside [']quote
     require('mini.ai').setup { n_lines = 500 }
 
-    -- Simple and easy statusline
-    require('mini.statusline').setup { set_static_role = true }
-
     -- Move code around
     require('mini.move').setup {
       mappings = {
@@ -44,7 +41,5 @@ return {
         reindent_linewise = true,
       },
     }
-
-    vim.opt.laststatus = 3
   end,
 }
