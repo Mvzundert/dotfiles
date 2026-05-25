@@ -6,7 +6,7 @@ alias reload='exec fish'
 # -------------------------------------------------------------------
 # Config
 # -------------------------------------------------------------------
-alias dotc="nvim ~/dotfiles/"
+alias dotc="nvim \$DOTFILES/"
 alias sshc="nvim ~/.ssh/config"
 alias sshs='ssh-search'
 alias sshed='cat ~/.ssh/id_ed25519.pub'
@@ -23,10 +23,7 @@ alias bbd='brew bundle dump --describe -f'
 # -------------------------------------------------------------------
 alias cat='bat'
 alias grep='rg'
-alias vi="nvim"
-alias vim="nvim"
-alias nano="nvim"
-alias emacs="nvim"
+
 
 # -------------------------------------------------------------------
 # Darwin only show and hide files
@@ -47,7 +44,9 @@ alias t='tmz'
 # -------------------------------------------------------------------
 # Misc alias
 # -------------------------------------------------------------------
-alias ytmp3="youtube-dl -x --audio-format mp3 $1"
+function ytmp3
+    yt-dlp -x --audio-format mp3 $argv
+end
 # Grep for Password from lastpass then add it to clipboard
 alias lpc="grep Password | cut -d ':' -f2- | tr -d '[:cntrl:]\n\r ' | wl-copy"
 alias mirror='rev'

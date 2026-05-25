@@ -20,6 +20,12 @@ end
 # Verification (optional, you can remove this after testing)
 # echo "Dotfiles root set to: $DOTFILES"
 
+# Set platform variable for conditional configs (used by Kitty, etc.)
+set -gx KITTY_PLATFORM (uname)
+if status is-login
+    launchctl setenv KITTY_PLATFORM $KITTY_PLATFORM
+end
+
 # Only run the font size script if the terminal is Ghostty
 if test "$TERM_PROGRAM" = "ghostty" -o "$TERM" = "xterm-ghostty"
     if test -f $DOTFILES/tools/tui/ghostty/scripts/set_font_size.sh
@@ -62,7 +68,7 @@ end
 
 # Start ssh-agent if not already running
 if not set -q SSH_AUTH_SOCK
-    eval (ssh-agent -c) > /dev/null
+    ssh-agent -c | source > /dev/null
 end
 
 # Start keychain for your specific SSH key
@@ -111,7 +117,7 @@ add_to_path "/usr/local/bin"
 add_to_path "$HOME/.local/bin"
 add_to_path "/usr/local/sbin"
 add_to_path "/usr/sbin"
-add_to_path "/.local/bin"
+add_to_path "$HOME/.local/bin"
 
 # Initialize OPAM if its init file exists
 if test -r "$HOME/.opam/opam-init/init.fish"
@@ -172,70 +178,4 @@ if type -q rustup
     set -gx MANPATH $local_man $rust_man $MANPATH ""
 end
 
-# =============================================================================
-# Initialize zoxide
-if type -q zoxide
-    zoxide init fish | source
-end
 
-# =============================================================================
-# Utility functions for zoxide
-function __zoxide_pwd
-    builtin pwd -L
-end
-
-if ! builtin functions --query __zoxide_cd_internal
-    string replace --regex -- '^function cd\s' 'function __zoxide_cd_internal ' <$__fish_data_dir/functions/cd.fish | source
-end
-
-function __zoxide_cd
-    if set -q __zoxide_loop
-        builtin echo "zoxide: infinite loop detected"
-        return 1
-    end
-    __zoxide_loop=1 __zoxide_cd_internal $argv
-    _zoxide_chpwd_hook 
-end
-
-function __zoxide_hook --on-variable PWD
-    test -z "$fish_private_mode"
-    and type -q zoxide
-    and command zoxide add -- (__zoxide_pwd)
-end
-
-function __zoxide_z
-    set -l argc (builtin count $argv)
-    if test $argc -eq 0
-        __zoxide_cd $HOME
-    else if test "$argv" = -
-        __zoxide_cd -
-    else if test $argc -eq 1 -a -d $argv[1]
-        __zoxide_cd $argv[1]
-    else if test $argc -eq 2 -a $argv[1] = --
-        __zoxide_cd -- $argv[2]
-    else
-        set -l result (command zoxide query --exclude (__zoxide_pwd) -- $argv)
-        and __zoxide_cd $result
-    end
-end
-
-function __zoxide_z_complete
-    set -l tokens (builtin commandline --current-process --tokenize)
-    set -l curr_tokens (builtin commandline --cut-at-cursor --current-process --tokenize)
-
-    if test (builtin count $tokens) -le 2 -a (builtin count $curr_tokens) -eq 1
-        complete --do-complete "'' "(builtin commandline --cut-at-cursor --current-token) | string match --regex -- '.*/$'
-    else if test (builtin count $tokens) -eq (builtin count $curr_tokens)
-        set -l query $tokens[2..-1]
-        set -l result (command zoxide query --exclude (__zoxide_pwd) --interactive -- $query)
-        and __zoxide_cd $result
-        and builtin commandline --function cancel-commandline repaint
-    end
-end
-
-complete --command __zoxide_z --no-files --arguments '(__zoxide_z_complete)'
-
-function __zoxide_zi
-    set -l result (command zoxide query --interactive -- $argv)
-    and __zoxide_cd $result
-end
