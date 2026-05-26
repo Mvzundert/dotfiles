@@ -1,16 +1,12 @@
 #!/bin/bash
 
-# A script to create symbolic links for configuration files.
-# This is useful for managing dotfiles in a Git repository.
-#
-# Usage: ./install_config.sh
+# Creates symbolic links for all config files under ~/.config.
 #
 # NOTE: This script will overwrite existing files or symlinks in your ~/.config directory.
 
 # --- Configuration ---
-# Set the directory where your configuration files (dotfiles) are stored.
-# This should be the path to your cloned Git repository.
-DOTFILES_DIR="$HOME/code/dotfiles/tools"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+DOTFILES_DIR="$(cd "$SCRIPT_DIR/.." && pwd)/tools"
 
 # Set the destination directory where the symlinks will be created.
 CONFIG_DIR="$HOME/.config"
@@ -28,7 +24,7 @@ echo "Creating symbolic links from $DOTFILES_DIR to $CONFIG_DIR..."
 
 # Define an array of files and directories to link.
 # Add the names of the files and folders you want to link from the DOTFILES_DIR.
-# Example: ( "nvim" "tmux" "alacritty" )
+# Example: ( "nvim" "bat" "wayland/hypr" )
 FILES_TO_LINK=(
     "nvim"
     "bat"
@@ -37,10 +33,10 @@ FILES_TO_LINK=(
     "tui/fastfetch"
     "prompt/starship.toml"
     "git/lazygit"
-    "hyprland/hypr"
-    "hyprland/rofi"
-    "hyprland/waybar"
-    "hyprland/dunst"
+    "wayland/hypr"
+    "wayland/wofi"
+    "wayland/waybar"
+    "wayland/dunst"
 )
 
 # Loop through the defined list of files and directories

@@ -6,109 +6,116 @@ echo "++++++++++ Starting installer.... +++++"
 echo "+++++++++++++++++++++++++++++++++++++++"
 echo " "
 
-export DOTFILES=$HOME/.dotfiles
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+DOTFILES="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
-if [[ -d ~/code ]]; then
-	export CODE_DIR=~/code
-fi
+echo "Dotfiles repo at: $DOTFILES"
 
 # =======================================
 # ========= OS dependencies =============
 # =======================================
-if [ "$(uname)" == "linux-gnu" ]; then
-	echo "\n\nRunning on Linux"
-	source apt.sh
+if [ "$(uname)" == "Linux" ]; then
+	echo "Running on Linux"
+	if command -v pacman &>/dev/null; then
+		echo "Arch Linux detected, installing packages..."
+		bash "$DOTFILES/tools/arch/install_packages.sh" install 2>/dev/null \
+			|| echo "Package install skipped (run tools/arch/install_packages.sh manually)"
+	else
+		echo "Non-Arch Linux — skipping package manager setup."
+		echo "Install dependencies manually, then re-run for config symlinks."
+	fi
 fi
 
 if [ "$(uname)" == "Darwin" ]; then
-	echo "\n\nRunning on OSX"
-	source brew.sh
-	source osx.sh
+	echo "Running on macOS"
+	source "$SCRIPT_DIR/brew.sh"
+	source "$SCRIPT_DIR/osx.sh"
 fi
 
 echo "Initializing submodule(s)"
 git submodule update --init --recursive
 
-#=======================================
-#========= Dotfiles +===================
-#=======================================
-DIR="$HOME/code/dotfiles"
+mkdir -p "$HOME/.config"
 
-if [ ! -d $DIR ]; then
-	echo "set symlink for dotfiles"
-	ln -s $CODE_DIR/dotfiles $HOME/.dotfiles
+#=======================================
+#========= Dotfiles symlink ============
+#=======================================
+if [ ! -L "$HOME/.dotfiles" ]; then
+	echo "Linking ~/.dotfiles -> $DOTFILES"
+	ln -s "$DOTFILES" "$HOME/.dotfiles"
+else
+	echo "~/.dotfiles already linked — skipping"
+fi
+
+#=======================================
+#========= Fish ========================
+#=======================================
+FISH_DIR="$HOME/.config/fish"
+if [ ! -L "$FISH_DIR" ]; then
+	[ -d "$FISH_DIR" ] && mv "$FISH_DIR" "$HOME/.config/fish.bak"
+	echo "Symlinking Fish config"
+	ln -s "$DOTFILES/shells/fish" "$FISH_DIR"
+else
+	echo "Fish config already linked — skipping"
 fi
 
 #=======================================
 #========= ZSHRC =======================
 #=======================================
 FILE="$HOME/.zshrc"
-
-if [ -f $FILE ]; then
-	#  echo "File $FILE exists."
-	echo "zshrc file was already installed...skipping"
+if [ -f "$FILE" ] && [ ! -L "$FILE" ]; then
+	mv "$FILE" "$FILE.bak"
+fi
+if [ ! -L "$FILE" ]; then
+	echo "Symlinking .zshrc"
+	ln -s "$DOTFILES/shells/zsh/.zshrc" "$FILE"
 else
-	#  echo "$FILE File created"
-	echo "zshrc file has been installed"
-	# Symlink the .zshrc file that makes sure the config works
-	ln -s $DOTFILES/shells/zsh/.zshrc $HOME
+	echo ".zshrc already linked — skipping"
 fi
 
 #=======================================
 #========= Neovim ======================
 #=======================================
-DIR="$HOME/.config/nvim"
-
-if
-	[ ! -d $DIR ]
-	echo "NeoVim has been installed...skipping"
-then
-	echo "NeoVim symlinked"
-	ln -s $DOTFILES/tools/nvim/ $HOME/.config/
+NVIM_DIR="$HOME/.config/nvim"
+if [ ! -L "$NVIM_DIR" ]; then
+	[ -d "$NVIM_DIR" ] && mv "$NVIM_DIR" "$HOME/.config/nvim.bak"
+	echo "Symlinking Neovim config"
+	ln -s "$DOTFILES/tools/nvim" "$NVIM_DIR"
+else
+	echo "Neovim config already linked — skipping"
 fi
 
 #=======================================
-#========= Starship Conf ===============
+#========= Starship ====================
 #=======================================
-FILE="$HOME/.config/starship.toml"
-
-if [ -f $FILE ]; then
-	#  echo "File $FILE exists."
-	echo "Starship was already installed....skipping"
+STARSHIP_FILE="$HOME/.config/starship.toml"
+if [ ! -L "$STARSHIP_FILE" ]; then
+	[ -f "$STARSHIP_FILE" ] && mv "$STARSHIP_FILE" "$STARSHIP_FILE.bak"
+	echo "Symlinking Starship config"
+	ln -s "$DOTFILES/tools/prompt/starship.toml" "$STARSHIP_FILE"
 else
-	echo "Starship has been installed."
-	# Symlink the .tmux.conf file that makes sure the config works
-	ln -s $DOTFILES/tools/prompt/starship_nf.toml $HOME/.config/starship.toml
+	echo "Starship config already linked — skipping"
 fi
 
 #=======================================
-#========= TMUX  TPM ===================
+#========= Tmux + TPM ==================
 #=======================================
-DIR="$HOME/.tmux/plugins/tpm"
-
-# Check if the tmux dir is emtpy (it should be)
-if [ "$(ls -A $DIR)" ]; then
-	# if we have TPM already we skip it.
-	echo "TPM has been installed...skipping"
+TPM_DIR="$HOME/.tmux/plugins/tpm"
+if [ ! -d "$TPM_DIR" ]; then
+	echo "Installing Tmux Plugin Manager (TPM)"
+	mkdir -p "$(dirname "$TPM_DIR")"
+	git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
 else
-	# if we don't have TPM we install it.
-	echo "TPM has been installed"
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	echo "TPM already installed — skipping"
 fi
 
-#=======================================
-#========= TMUX Conf ===================
-#=======================================
-FILE="$HOME/.tmux.conf"
-
-if [ -f $FILE ]; then
-	#  echo "File $FILE exists."
-	echo "Tmux.conf was already installed....skipping"
+TMUX_FILE="$HOME/.tmux.conf"
+if [ ! -L "$TMUX_FILE" ]; then
+	[ -f "$TMUX_FILE" ] && mv "$TMUX_FILE" "$TMUX_FILE.bak"
+	echo "Symlinking .tmux.conf"
+	ln -s "$DOTFILES/tools/multiplex/tmux/.tmux.conf" "$TMUX_FILE"
 else
-	#  echo "$FILE File created"
-	echo "Tmux.conf has been installed."
-	# Symlink the .tmux.conf file that makes sure the config works
-	ln -s $DOTFILES/tools/multiplex/tmux/.tmux.conf $HOME
+	echo ".tmux.conf already linked — skipping"
 fi
 
 echo '________          __    _____.__.__                 '
@@ -117,6 +124,3 @@ echo ' |    |  \ /  _ \   __\   __\|  |  | _/ __ \ /  ___/'
 echo ' |    `   (  (_) )  |  |  |  |  |  |_\  ___/ \___ \ '
 echo '/_______  /\____/|__|  |__|  |__|____/\____) ______)'
 echo '.... have been installed!'
-echo ''
-echo ''
-echo 'Please look over the ~dotfiles/zsh/config, tmux.conf  and ~/.vim folders to select plugins, themes, and options.'
