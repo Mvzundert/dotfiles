@@ -1,91 +1,51 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set Neovim's default shell to Fish
 vim.o.shell = 'fish'
-
--- Tell Fish to act as a login shell and execute commands.
--- This ensures it sources your ~/.config/fish/config.fish
 vim.o.shellcmdflag = '-lc'
 
--- [[ Install `lazy.nvim` plugin manager ]]
---    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
-  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  vim.fn.system {
-    'git',
-    'clone',
-    '--filter=blob:none',
-    '--branch=stable',
-    lazyrepo,
-    lazypath,
-  }
-end
-
--- Create temporary cache directory for phpactor, each session gets its own
 vim.env.XDG_CACHE_HOME = '/tmp/phpactor-cache-' .. tostring(vim.fn.getpid())
 
----@diagnostic disable-next-line: undefined-field
-vim.opt.rtp:prepend(lazypath)
+vim.pack.add({
+  { src = 'https://github.com/saghen/blink.cmp', name = 'blink.cmp' },
+  { src = 'https://github.com/rafamadriz/friendly-snippets', name = 'friendly-snippets' },
+  { src = 'https://github.com/stevearc/conform.nvim', name = 'conform.nvim' },
+  { src = 'https://github.com/laytan/cloak.nvim', name = 'cloak.nvim' },
+  { src = 'https://github.com/OXY2DEV/markview.nvim', name = 'markview.nvim' },
+  { src = 'https://github.com/lewis6991/gitsigns.nvim', name = 'gitsigns.nvim' },
+  { src = 'https://github.com/neovim/nvim-lspconfig', name = 'nvim-lspconfig' },
+  { src = 'https://github.com/williamboman/mason.nvim', name = 'mason.nvim' },
+  { src = 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim', name = 'mason-tool-installer.nvim' },
+  { src = 'https://github.com/echasnovski/mini.nvim', name = 'mini.nvim' },
+  { src = 'https://github.com/echasnovski/mini.bufremove', name = 'mini.bufremove' },
+  { src = 'https://github.com/nvzone/typr', name = 'typr' },
+  { src = 'https://github.com/nvzone/volt', name = 'volt' },
+  { src = 'https://github.com/stevearc/oil.nvim', name = 'oil.nvim' },
+  { src = 'https://github.com/akinsho/bufferline.nvim', name = 'bufferline.nvim' },
+  { src = 'https://github.com/folke/noice.nvim', name = 'noice.nvim' },
+  { src = 'https://github.com/MunifTanjim/nui.nvim', name = 'nui.nvim' },
+  { src = 'https://github.com/folke/which-key.nvim', name = 'which-key.nvim' },
+  { src = 'https://github.com/folke/snacks.nvim', name = 'snacks.nvim' },
+  { src = 'https://github.com/folke/trouble.nvim', name = 'trouble.nvim' },
+  { src = 'https://github.com/nvim-lua/plenary.nvim', name = 'plenary.nvim' },
+  { src = 'https://github.com/folke/todo-comments.nvim', name = 'todo-comments.nvim' },
+  { src = 'https://github.com/folke/tokyonight.nvim', name = 'tokyonight.nvim' },
+}, { confirm = false })
 
--- [[ Configure and install plugins ]]
-require('lazy').setup({
-  {},
-  install = { colorscheme = { 'kanagawa' } },
-  transparent = true,
-  -- automatically check for plugin updates
-  checker = { enabled = true },
-  performance = {
-    rtp = {
-      -- disable some rtp plugins
-      disabled_plugins = {
-        'gzip',
-        'matchit',
-        'matchparen',
-        'netrwPlugin',
-        'tarPlugin',
-        'tohtml',
-        'tutor',
-        'zipPlugin',
-      },
-    },
-  },
-
-  -- load the coding plugins
-  { import = 'coding.cmp' },
-  { import = 'coding.format' },
-  { import = 'coding.git' },
-  { import = 'coding.lsp' },
-  { import = 'coding.todo' },
-
-  -- Load the System plugins
-  { import = 'system.typing' },
-  { import = 'system.mini' },
-
-  -- Load the Looks and Feels
-  { import = 'ui.filetree' },
-  { import = 'ui.menu' },
-  { import = 'ui.snacks' },
-  { import = 'ui.themes' },
-}, {
-  ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
-  },
-})
+require('coding.cmp.blink')
+require('coding.format.autoformat')
+require('coding.format.cloak')
+require('coding.format.markdown')
+require('coding.git.gitsigns')
+require('coding.lsp.lsp')
+require('coding.lsp.treesitter')
+require('coding.todo.todo-comments')
+require('system.mini.mini')
+require('system.typing.typr')
+require('ui.filetree.oil')
+require('ui.menu.buffers')
+require('ui.menu.noice')
+require('ui.menu.whichkey')
+require('ui.snacks.snacks')
+require('ui.snacks.trouble')
+require('ui.themes.tokyonight')
