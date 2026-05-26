@@ -1,0 +1,20 @@
+# --- Example kanshi config ---
+# Copy this file to `config` and replace with your monitor identifiers.
+# Run `swaymsg -t get_outputs` or `hyprctl monitors` to find your monitor names.
+
+# Single monitor (laptop)
+profile {
+    output eDP-1 enable mode 1920x1080@60Hz position 0,0
+}
+
+# Laptop + external monitor
+profile {
+    output eDP-1 enable mode 1920x1080@60Hz position 0,0
+    output "CHANGEME_MONITOR_ID" enable mode 2560x1440@60Hz position 1920,0
+}
+
+# External monitor only (laptop closed)
+profile {
+    output eDP-1 disable
+    output "CHANGEME_EXTERNAL_ID" enable mode 2560x1440@60Hz position 0,0
+}

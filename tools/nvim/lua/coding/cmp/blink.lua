@@ -34,9 +34,7 @@ require('blink.cmp').setup {
     nerd_font_variant = 'mono',
   },
 
-  fuzzy = {
-    prebuilt_binaries = { download = false },
-  },
+  fuzzy = { implementation = 'lua' },
 
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer' },

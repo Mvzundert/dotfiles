@@ -21,11 +21,18 @@ nvim/plugged
 nvim/lazy-lock.json
 .netrwhist
 
+# --- Git configs (personal — use .example files) ---
+tools/git/gitconfig_marzun
+tools/git/gitconfig_crb
+tools/git/gitconfig_crb_linux
+tools/git/gitconfig_tl_linux
+
 # --- Hypr ignores ---
 tools/wayland/hypr/monitors.conf
 
-# --- Sway ignores ---
+# --- Sway / Kanshi ignores ---
 tools/wayland/sway/monitors.conf
+tools/wayland/kanshi/config
 
 # --- Cosmic Ignores ---
 
