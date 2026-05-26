@@ -7,7 +7,14 @@ export LC_ALL=en_US.UTF-8
 # -------------------------------------------------------------------
 # Set dotfile paths for easier editing.
 # -------------------------------------------------------------------
-export DOTFILES=$HOME/code/dotfiles
+# Detect dotfiles root from the .zshrc symlink location, fallback to known path
+if [[ ! -d "$DOTFILES" && -L "$HOME/.zshrc" ]]; then
+    local target="$(readlink "$HOME/.zshrc")"
+    [[ "$target" != /* ]] && target="$(dirname "$HOME/.zshrc")/$target"
+    DOTFILES="$(cd "$(dirname "$target")/../.." && pwd -P)"
+fi
+: ${DOTFILES:=$HOME/code/dotfiles}
+export DOTFILES
 export ZSH=$DOTFILES/shells/zsh
 export MODULES=$ZSH/modules
 

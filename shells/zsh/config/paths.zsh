@@ -133,7 +133,7 @@ fi
 # -------------------------------------------------------------------
 # Init OPAM if we can find it. 
 # -------------------------------------------------------------------
-OPAM_BIN="$home/.opam/opam-init/init.zsh"
+OPAM_BIN="$HOME/.opam/opam-init/init.zsh"
 
 if [[ -r $OPAM_BIN ]]; then
     source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
