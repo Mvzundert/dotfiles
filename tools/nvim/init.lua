@@ -13,7 +13,6 @@ vim.pack.add({
   { src = 'https://github.com/laytan/cloak.nvim', name = 'cloak.nvim' },
   { src = 'https://github.com/OXY2DEV/markview.nvim', name = 'markview.nvim' },
   { src = 'https://github.com/lewis6991/gitsigns.nvim', name = 'gitsigns.nvim' },
-  { src = 'https://github.com/neovim/nvim-lspconfig', name = 'nvim-lspconfig' },
   { src = 'https://github.com/williamboman/mason.nvim', name = 'mason.nvim' },
   { src = 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim', name = 'mason-tool-installer.nvim' },
   { src = 'https://github.com/echasnovski/mini.nvim', name = 'mini.nvim' },
@@ -31,21 +30,3 @@ vim.pack.add({
   { src = 'https://github.com/folke/todo-comments.nvim', name = 'todo-comments.nvim' },
   { src = 'https://github.com/folke/tokyonight.nvim', name = 'tokyonight.nvim' },
 }, { confirm = false })
-
-require('coding.cmp.blink')
-require('coding.format.autoformat')
-require('coding.format.cloak')
-require('coding.format.markdown')
-require('coding.git.gitsigns')
-require('coding.lsp.lsp')
-require('coding.lsp.treesitter')
-require('coding.todo.todo-comments')
-require('system.mini.mini')
-require('system.typing.typr')
-require('ui.filetree.oil')
-require('ui.menu.buffers')
-require('ui.menu.noice')
-require('ui.menu.whichkey')
-require('ui.snacks.snacks')
-require('ui.snacks.trouble')
-require('ui.themes.tokyonight')
