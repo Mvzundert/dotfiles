@@ -55,6 +55,9 @@ Alternative terminal config. Lives in `tools/tui/ghostty/`.
 ## Others
 Configs for Alacritty (`tools/tui/alacritty/`) and WezTerm (`tools/tui/wezterm/`) are also available.
 
+## Fastfetch
+System info fetch, custom config at `tools/tui/fastfetch/config.jsonc`.
+
 # Tmux
 
 Terminal multiplexer with TPM plugin manager, vim-style navigation, fzf session switching, and sesh integration.
@@ -73,46 +76,50 @@ Config lives in `tools/multiplex/tmux/`.
 
 # Neovim
 
-Config lives in `tools/nvim/`. Built with lazy.nvim, includes LSP via mason, Treesitter, blink.cmp, snacks.nvim, and Tokyo Night theme.
+Config lives in `tools/nvim/`. Uses Neovim 0.12+ native features:
+- **Plugin manager**: `vim.pack.add()` (replaces lazy.nvim)
+- **LSP**: `vim.lsp.config()` / `vim.lsp.enable()` with mason for binary management
+- **Treesitter**: native `vim.treesitter.ensure_installed`
+- **Inline completion**: native `vim.lsp.inline_completion.enable()`
+- **Plugins**: blink.cmp (completion), conform.nvim (format), snacks.nvim (picker/zen/terminal), gitsigns.nvim, noice.nvim, which-key.nvim, bufferline.nvim, oil.nvim, trouble.nvim, todo-comments.nvim, markview.nvim, cloak.nvim, mini.nvim, friendly-snippets, tokyonight.nvim (theme)
 
 # Tools
 
 ## Window Managers (Linux)
-- **Hyprland** — `tools/wayland/hypr/`
-- **Sway** — `tools/wayland/sway/`
-- **Cosmic** — `tools/wayland/cosmic/`
-- **Waybar** — `tools/wayland/waybar/`
-
-Each WM has its own keybinds, window rules, and startup configs.
+- **Hyprland** — `tools/wayland/hypr/` — compositor with Hypridle/Hyprlock, wofi launcher, dunst notifications
+- **Sway** — `tools/wayland/sway/` — i3-compatible Wayland compositor
+- **Cosmic** — `tools/wayland/cosmic/` — COSMIC desktop environment config
+- **Waybar** — `tools/wayland/waybar/` — status bar (shared across WMs)
+- **Kanshi** — `tools/wayland/kanshi/` — multi-monitor profiles (Home/Office/Traveling/Presentation)
 
 ## Scripts
 Handy utilities in `tools/scripts/`:
 - `idle.sh` — Caffeine toggle (supports Hyprland & Sway)
 - `powermenu.sh` — Power menu for Wayland sessions
 - `any2pdf.sh` — Convert any file to PDF
-- `random_wallpaper.sh` — Wallpaper rotation
+- `random_wallpaper.sh` — Wallpaper rotation via swww
+- `cosmic-clip.sh` — COSMIC clipboard helper + systemd service
+- `laptoplid.sh` — Laptop lid action handler
+- `sddm-setup.sh` — SDDM display manager setup
 
-## Brewfile
-macOS Homebrew packages in `tools/homebrew/Brewfile` (328+ formulae and casks).
-
-## Starship Prompt
-Cross-shell prompt config in `tools/prompt/starship.nf.toml`.
-
-## Git Configs
-Per-machine git configurations in `tools/git/` (private, work, etc.).
-
-## Eza Themes
-14 theme files for the modern `ls` replacement in `tools/eza/themes/`.
+## macOS
+- **Homebrew**: `tools/homebrew/Brewfile` (328+ formulae and casks)
 
 ## Arch Linux
-Package lists and setup scripts for Arch Linux in `tools/arch/` (both official and AUR packages).
+- **Package lists**: `tools/arch/{official,aur}_pkglist.txt`
+- **Setup scripts**: `full_system_setup.sh`, `install_packages.sh`, `install_config.sh`, `audit_arch.sh`
+- **Pacman config**: `tools/arch/pacman.conf`
+
+## Cross-Shell Prompt
+Starship prompt at `tools/prompt/starship.toml` — git status, 9+ language modules, Docker context, hostname/LAN IP (SSH only).
 
 ## Other Tools
-- Bat — `tools/bat/config`
-- Fastfetch — `tools/tui/fastfetch/config.jsonc`
-- Zed — `tools/zed/settings.json`
-- SSH helpers — `tools/ssh/`
-- Doom Emacs (archival) — `tools/doom-emacs/`
+- **Bat** — `tools/bat/config` (Dracula theme)
+- **Eza** — 14 theme files in `tools/eza/themes/`
+- **Zed** — `tools/zed/settings.json`
+- **SSH helpers** — `tools/ssh/` (minimal remote configs)
+- **Doom Emacs** (archival) — `tools/doom-emacs/`
+- **StyLua** — `tools/nvim/.stylua.toml`
 
 # Prerequisites
 
@@ -123,6 +130,7 @@ Package lists and setup scripts for Arch Linux in `tools/arch/` (both official a
 - Starship prompt
 - Homebrew (macOS)
 - Nerd Font (JetBrainsMono Nerd Font recommended)
+- swww (wallpaper engine, Linux)
 
 # Usage
 
