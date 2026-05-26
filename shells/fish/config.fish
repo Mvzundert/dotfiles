@@ -61,11 +61,13 @@ set -gx LANG en_US.UTF-8
 set -e LC_ALL
 
 # Set specific formatting to Dutch (nl_NL) for 24h time and European dates
-set -gx LC_TIME nl_NL.UTF-8
-set -gx LC_NUMERIC nl_NL.UTF-8
-set -gx LC_MONETARY nl_NL.UTF-8
-set -gx LC_PAPER nl_NL.UTF-8
-set -gx LC_MEASUREMENT nl_NL.UTF-8
+if string match -q -- "nl_NL.UTF-8" (locale -a 2>/dev/null | string join \n)
+    set -gx LC_TIME nl_NL.UTF-8
+    set -gx LC_NUMERIC nl_NL.UTF-8
+    set -gx LC_MONETARY nl_NL.UTF-8
+    set -gx LC_PAPER nl_NL.UTF-8
+    set -gx LC_MEASUREMENT nl_NL.UTF-8
+end
 
 set -Ux COMPOSER_MEMORY_LIMIT -1 # Remove composer memory limit
 set -Ux HOMEBREW_NO_ENV_HINTS 1
@@ -88,10 +90,11 @@ if status is-interactive
         if not set -q SSH_AUTH_SOCK
             set -gx SSH_AUTH_SOCK (launchctl getenv SSH_AUTH_SOCK)
         end
-        ssh-add --apple-use-keychain ~/.ssh/id_ed25519 >/dev/null 2>&1
+        test -f ~/.ssh/id_ed25519 && ssh-add --apple-use-keychain ~/.ssh/id_ed25519 >/dev/null 2>&1
 
     else if test "$os_type" = "Linux"
         if type -q keychain
+            and test -f ~/.ssh/id_ed25519
             keychain --eval --quiet id_ed25519 | source
         end
     end
