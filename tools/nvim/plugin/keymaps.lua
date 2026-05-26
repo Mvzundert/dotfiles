@@ -113,7 +113,6 @@ set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 -- Toggles
 -- =====================================================================
 set('n', '<leader>tc', '<cmd>CloakToggle<cr>', { desc = '[T]oggle Cloak' })
-set('n', '<leader>th', '<Cmd>Hardtime toggle<CR>', { desc = '[T]oggle [H]ardtime' })
 set('n', '<leader>tb', function()
   require('gitsigns').toggle_current_line_blame()
 end, { desc = '[T]oggle Git Blame' })
@@ -208,7 +207,6 @@ set('v', '<leader>uu', ':!tr "[:lower:]" "[:upper:]"<cr>', { desc = '[U]tils Upp
 -- =====================================================================
 -- Export & Organisation
 -- =====================================================================
-set('n', '<leader>on', '<Cmd>Neorg<CR>', { desc = '[O]pen [N]eorg' })
 set('n', '<leader>mp', function()
   local current_file_path = vim.api.nvim_buf_get_name(0)
   if current_file_path == '' or not current_file_path:match '%.md$' then
