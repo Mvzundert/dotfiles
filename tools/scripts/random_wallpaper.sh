@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # --- Configuration ---
-DIR="/home/marzun/Pictures/wallpapers/Marske"
+DIR="$HOME/Pictures/wallpapers/Marske"
 SYMLINK_PATH="$HOME/.config/scripts/current_wallpaper.jpg"
 TIMEOUT=2000 # Time in milliseconds (2 seconds)
 
