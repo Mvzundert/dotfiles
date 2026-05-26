@@ -1,0 +1,40 @@
+[init]
+	defaultBranch = master
+[user]
+	name = YOUR_NAME
+	email = YOUR_EMAIL
+	signingkey = YOUR_GPG_KEY_ID
+[core]
+	editor = vim
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[color]
+	ui = true
+# macOS credential helper (uncomment for macOS):
+; [credential]
+; 	helper = osxkeychain
+# Linux credential helper (uncomment for Linux):
+; [credential]
+; 	helper = /usr/lib/git-core/git-credential-libsecret
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+	sort = -version:refname
+[gpg]
+	program = gpg
+[advice]
+	skippedCherryPicks = false
+[delta]
+	side-by-side = true
+	line-numbers = true
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true

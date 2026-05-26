@@ -21,15 +21,21 @@ alias bbd='brew bundle dump --describe -f'
 # -------------------------------------------------------------------
 # Program alias
 # -------------------------------------------------------------------
-alias cat='bat'
-alias grep='rg'
+if type -q bat
+    alias cat='bat'
+end
+if type -q rg
+    alias grep='rg'
+end
 
 
 # -------------------------------------------------------------------
 # Darwin only show and hide files
 # -------------------------------------------------------------------
-alias showFiles "defaults write com.apple.finder AppleShowAllFiles YES; and killall Finder"
-alias hideFiles "defaults write com.apple.finder AppleShowAllFiles NO; and killall Finder"
+if test (uname) = Darwin
+    alias showFiles "defaults write com.apple.finder AppleShowAllFiles YES; and killall Finder"
+    alias hideFiles "defaults write com.apple.finder AppleShowAllFiles NO; and killall Finder"
+end
 
 # -------------------------------------------------------------------
 # System
@@ -105,7 +111,9 @@ alias cda="composer dump-autoload"
 # -------------------------------------------------------------------
 # Docker
 # -------------------------------------------------------------------
-alias dockers='open -a Docker'
+if test (uname) = Darwin
+    alias dockers='open -a Docker'
+end
 alias dcrm='docker rm $(docker ps -a -q)'
 alias dcirm='docker rmi $(docker images -q)'
 alias dcw='docker compose exec workspace bash'
