@@ -59,10 +59,8 @@ set -g @t-fzf-prompt '🛸 '
 # show zoxide results by default
 set -g @t-fzf-default-results 'zoxide'
 
-# Set term for 256 colors
-# Can't do xterm-256colors b/c tmux really
-# really really wants "screen"
-set -g default-terminal "screen-256color"
+# Set term for 256 colors with modern key support
+set -g default-terminal "tmux-256color"
 
 # Enable 24 bit true colors
-set -ga terminal-overrides ',xterm-256color:Tc'
+set -ga terminal-overrides ',*:Tc'
