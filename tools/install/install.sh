@@ -86,6 +86,18 @@ else
 fi
 
 #=======================================
+#========= Kitty =======================
+#=======================================
+KITTY_DIR="$HOME/.config/kitty"
+if [ ! -L "$KITTY_DIR" ]; then
+	[ -d "$KITTY_DIR" ] && mv "$KITTY_DIR" "$HOME/.config/kitty.bak"
+	echo "Symlinking Kitty config"
+	ln -s "$DOTFILES/tools/tui/kitty" "$KITTY_DIR"
+else
+	echo "Kitty config already linked — skipping"
+fi
+
+#=======================================
 #========= Starship ====================
 #=======================================
 STARSHIP_FILE="$HOME/.config/starship.toml"
