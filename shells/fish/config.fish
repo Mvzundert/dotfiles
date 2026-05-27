@@ -131,6 +131,9 @@ add_to_path "$HOME/.local/bin"
 add_to_path "/usr/local/sbin"
 add_to_path "/usr/sbin"
 
+# Add dotfiles scripts to PATH
+add_to_path "$DOTFILES/tools/scripts"
+
 # Init zoxide for directory jumping
 if type -q zoxide
     zoxide init fish | source
