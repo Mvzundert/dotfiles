@@ -28,9 +28,11 @@ if status is-login
         # macOS specific environment sharing
         launchctl setenv KITTY_PLATFORM $KITTY_PLATFORM
     else if test $KITTY_PLATFORM = "Linux"
-        # Linux (Fedora/Arch) specific environment sharing for systemd user sessions
-        if type -q systemctl
-            systemctl --user import-environment KITTY_PLATFORM
+        # Only run systemctl on the actual host, never inside a distrobox container
+        if not set -q DISTROBOX_ENTER_PATH
+            if type -q systemctl
+                systemctl --user import-environment KITTY_PLATFORM
+            end
         end
     end
 end
@@ -100,7 +102,6 @@ if status is-interactive
     end
 end
 
-# =============================================================================
 # Function to add a directory to PATH if it exists and isn't already in PATH
 function add_to_path
     if test -d $argv[1]
@@ -131,8 +132,10 @@ add_to_path "/usr/local/sbin"
 add_to_path "/usr/sbin"
 add_to_path "$HOME/.local/bin"
 
-# zoxide host binary on Fedora Atomic
-add_to_path "/run/host/usr/bin"
+if not set -q DISTROBOX_ENTER_PATH
+    # zoxide host binary on Fedora Atomic
+    add_to_path "/run/host/usr/bin"
+end
 
 # Init zoxide for directory jumping
 if type -q zoxide
@@ -197,5 +200,3 @@ if type -q rustup
     set -l local_man "$HOME/.local/share/man"
     set -gx MANPATH $local_man $rust_man $MANPATH ""
 end
-
-
