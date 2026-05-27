@@ -8,11 +8,13 @@ abbr -a lg lazygit
 abbr -a ag search_abbr_alias
 
 
-# --- Wireguard Abbreviations ---
-abbr -a wgu sudo systemctl start wg-quick@wg0
-abbr -a wgd sudo systemctl stop wg-quick@wg0
-abbr -a wgs sudo systemctl status wg-quick@wg0
-abbr -a wgi sudo wg show wg0
+# --- Wireguard Abbreviations (host only) ---
+if not set -q DISTROBOX_ENTER_PATH
+    abbr -a wgu sudo systemctl start wg-quick@wg0
+    abbr -a wgd sudo systemctl stop wg-quick@wg0
+    abbr -a wgs sudo systemctl status wg-quick@wg0
+    abbr -a wgi sudo wg show wg0
+end
 
 # --- Navigation Abbreviations ---
 abbr -a .. 'cd ..'
