@@ -8,7 +8,7 @@ function dev-run --description 'Run a development command transparently inside t
     set -l cmd_args $argv[2..-1]
 
     # Check if we are running on Linux (Fedora Atomic)
-    if test "$KITTY_PLATFORM" = "Linux"
+    if test "$HOST_OS" = "Linux"
         if type -q distrobox
             distrobox enter dev -- $argv
         else

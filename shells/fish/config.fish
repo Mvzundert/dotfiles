@@ -17,18 +17,18 @@ else
     set -gx DOTFILES $HOME/code/dotfiles
 end
 
-# Set platform variable for conditional configs (used by Kitty, etc.)
-set -gx KITTY_PLATFORM (uname)
+# Set platform variable for conditional configs
+set -gx HOST_OS (uname)
 
 if status is-login
-    if test $KITTY_PLATFORM = "Darwin"
+    if test $HOST_OS = "Darwin"
         # macOS specific environment sharing
-        launchctl setenv KITTY_PLATFORM $KITTY_PLATFORM
-    else if test $KITTY_PLATFORM = "Linux"
+        launchctl setenv HOST_OS $HOST_OS
+    else if test $HOST_OS = "Linux"
         # Only run systemctl on the actual host, never inside a distrobox container
         if not test -d /run/host
             if type -q systemctl
-                systemctl --user import-environment KITTY_PLATFORM
+                systemctl --user import-environment HOST_OS
             end
         end
     end

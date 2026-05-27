@@ -1,6 +1,6 @@
 function rustup --description 'Handle rustup natively on macOS and protect the Linux container stack'
     # Check if we are running on Linux (Fedora Atomic)
-    if test "$KITTY_PLATFORM" = "Linux"
+    if test "$HOST_OS" = "Linux"
         echo "Note: On Fedora Atomic, Rust is managed natively inside your 'dev' container via DNF."
         echo "To update your container toolchain, update your distrobox package layer."
         echo ""

@@ -1,5 +1,5 @@
 function opencode --description 'Cross-platform OpenCode AI agent execution wrapper'
-    if test "$KITTY_PLATFORM" = "Linux"
+    if test "$HOST_OS" = "Linux"
         if type -q distrobox
             if test (count $argv) -eq 0
                 # Call standalone without dangling empty strings
