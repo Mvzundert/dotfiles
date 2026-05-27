@@ -17,9 +17,6 @@ else
     set -gx DOTFILES $HOME/code/dotfiles
 end
 
-# Verification (optional, you can remove this after testing)
-# echo "Dotfiles root set to: $DOTFILES"
-
 # Set platform variable for conditional configs (used by Kitty, etc.)
 set -gx KITTY_PLATFORM (uname)
 
@@ -29,7 +26,7 @@ if status is-login
         launchctl setenv KITTY_PLATFORM $KITTY_PLATFORM
     else if test $KITTY_PLATFORM = "Linux"
         # Only run systemctl on the actual host, never inside a distrobox container
-        if not set -q DISTROBOX_ENTER_PATH
+        if not test -d /run/host
             if type -q systemctl
                 systemctl --user import-environment KITTY_PLATFORM
             end
@@ -53,6 +50,9 @@ for file in ~/.config/fish/functions/*.fish
 end
 
 # =============================================================================
+# HARD RESET: Sanitize and filter out the bad path inherited from the host environment
+set -gx PATH (string match -v "/run/host/usr/bin" $PATH)
+
 # Set environment variables
 set -gx EDITOR nvim
 
@@ -102,11 +102,11 @@ if status is-interactive
     end
 end
 
-# Function to add a directory to PATH if it exists and isn't already in PATH
+# Function to add a directory to PATH securely
 function add_to_path
     if test -d $argv[1]
         if not contains $argv[1] $PATH
-            set -gx PATH $argv[1] $PATH
+            set -gx PATH $PATH $argv[1]
         end
     end
 end
@@ -123,19 +123,13 @@ if type -q php
     set -g __fish_current_php_version (get_active_php_version)
 end
 
-# Add common bin directories to PATH
+# Add common bin directories to PATH safely (Appends to back, preserves priorities)
 add_to_path "$HOME/bin"
 add_to_path "/usr/bin"
 add_to_path "/usr/local/bin"
 add_to_path "$HOME/.local/bin"
 add_to_path "/usr/local/sbin"
 add_to_path "/usr/sbin"
-add_to_path "$HOME/.local/bin"
-
-if not set -q DISTROBOX_ENTER_PATH
-    # zoxide host binary on Fedora Atomic
-    add_to_path "/run/host/usr/bin"
-end
 
 # Init zoxide for directory jumping
 if type -q zoxide
