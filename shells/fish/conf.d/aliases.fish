@@ -66,7 +66,6 @@ alias fucking="sudo"
 alias please="sudo"
 alias love="echo 'not war?'"
 alias war="echo 'not love?'"
-alias execute_order_66="sudo pacman -Syu"
 alias coffee="echo 'Error: Heat death of the universe imminent. Please refill beans.'"
 alias never="echo 'Gonna give you up...'"
 
