@@ -10,6 +10,7 @@ shells/zsh/custom/
 # --- System ignores ---
 .idea
 tools/tui/ghostty/fonts
+tools/tui/kitty/platform.conf
 tools/scripts/current_wallpaper.jpg
 tools/tui/ghostty/fonts
 tools/multiplex/tmux/plugins

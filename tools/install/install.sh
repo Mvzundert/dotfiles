@@ -97,6 +97,15 @@ else
 	echo "Kitty config already linked — skipping"
 fi
 
+# Create OS-specific platform config symlink
+PLATFORM_LINK="$DOTFILES/tools/tui/kitty/platform.conf"
+if [ "$(uname)" == "Linux" ]; then
+	ln -sf "platform-Linux.conf" "$PLATFORM_LINK"
+elif [ "$(uname)" == "Darwin" ]; then
+	ln -sf "platform-Darwin.conf" "$PLATFORM_LINK"
+fi
+echo "Platform config -> $(readlink "$PLATFORM_LINK")"
+
 #=======================================
 #========= Starship ====================
 #=======================================
