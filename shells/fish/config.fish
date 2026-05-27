@@ -186,11 +186,3 @@ if test -d "$HOME/.phpenv/bin"
         eval "$(phpenv init -)"
     end
 end
-
-# Rust Manpage Logic
-if type -q rustup
-    set -l rust_bin (dirname (rustup which rustc))
-    set -l rust_man (realpath "$rust_bin/../share/man")
-    set -l local_man "$HOME/.local/share/man"
-    set -gx MANPATH $local_man $rust_man $MANPATH ""
-end
