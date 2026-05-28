@@ -63,3 +63,4 @@ tools/wayland/cosmic/com.system76.CosmicBackground/v1
 tools/wayland/cosmic/com.system76.CosmicSettings.Wallpaper/v1
 tools/wayland/cosmic/com.system76.CosmicFiles/v1
 /tools/arch/arch_migration_audit.txt
+tools/nvim/nvim-pack-lock.json
