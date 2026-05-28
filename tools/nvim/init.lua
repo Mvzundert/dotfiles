@@ -29,4 +29,5 @@ vim.pack.add({
   { src = 'https://github.com/nvim-lua/plenary.nvim', name = 'plenary.nvim' },
   { src = 'https://github.com/folke/todo-comments.nvim', name = 'todo-comments.nvim' },
   { src = 'https://github.com/folke/tokyonight.nvim', name = 'tokyonight.nvim' },
+  { src = 'https://github.com/kevinhwang91/nvim-hlslens', name = 'nvim-hlslens' },
 }, { confirm = false })
