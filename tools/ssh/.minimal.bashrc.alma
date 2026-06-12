@@ -46,7 +46,7 @@ alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 
-alias ll='ls -all'
+alias ll='ls -hall'
 alias la='ls -A'
 alias l='ls -CF'
 alias reload=". ~/.bashrc"
