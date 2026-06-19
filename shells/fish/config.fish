@@ -14,7 +14,7 @@ if test -n "$git_root"
     set -gx DOTFILES $git_root
 else
     # Fallback to your known path just in case
-    set -gx DOTFILES $HOME/code/dotfiles
+    set -gx DOTFILES $HOME/Systems/dotfiles
 end
 
 # Set platform variable for conditional configs
