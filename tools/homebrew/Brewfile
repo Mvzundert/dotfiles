@@ -1,6 +1,6 @@
-tap "adoptium/temurin"
+tap "adoptopenjdk/openjdk"
 tap "d12frosted/emacs-plus"
-tap "filosottile/musl-cross"
+tap "filosottile/musl-cross", "https://github.com/FiloSottile/homebrew-musl-cross"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "jeffreywildman/virt-manager"
@@ -11,19 +11,22 @@ tap "neovim/neovim"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
 tap "rbenv/tap"
+tap "rfidresearchgroup/proxmark3"
 tap "romkatv/powerlevel10k"
-tap "sergiobenitez/osxct"
+tap "sergiobenitez/osxct", "https://github.com/SergioBenitez/homebrew-osxct"
 tap "shivammathur/php"
 tap "stripe/stripe-cli"
 tap "symfony-cli/tap"
 tap "tursodatabase/tap"
 tap "wpscanteam/tap"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # Library for command-line editing
 brew "readline"
 # Next-generation aircrack with lots of new features
 brew "aircrack-ng"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -36,8 +39,6 @@ brew "bat"
 brew "btop"
 # Freely available high-quality data compressor
 brew "bzip2"
-# Perl compatible regular expressions library with a new API
-brew "pcre2"
 # Statistics utility to count lines of code
 brew "cloc"
 # Cross-platform make
@@ -70,6 +71,8 @@ brew "exiftool"
 brew "exploitdb"
 # Modern, maintained replacement for ls
 brew "eza"
+# Powerful, lightweight programming language
+brew "lua"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
@@ -92,12 +95,12 @@ brew "gh"
 brew "harfbuzz"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
-# Conversion library
-brew "libiconv"
 # Distributed revision control system
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Quickly rewrite git repository history
+brew "git-filter-repo", link: false
 # Command-line option parsing utility
 brew "gnu-getopt"
 # GNU implementation of the famous stream editor
@@ -116,12 +119,6 @@ brew "pkgconf"
 brew "gobject-introspection"
 # Directory/file & DNS busting tool written in Go
 brew "gobuster"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# JavaScript Task Runner
-brew "grunt-cli"
-# Command-line utility for Gulp
-brew "gulp-cli"
 # Apache HTTP server
 brew "httpd"
 # Configurable static site generator
@@ -138,12 +135,16 @@ brew "jq"
 brew "lazygit"
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2@1.7"
+# Conversion library
+brew "libiconv"
 # VP8/VP9 video codec
 brew "libvpx"
 # YAML Parser
 brew "libyaml"
 # Curses-based tool for viewing and analyzing log files
 brew "lnav"
+# Just-In-Time Compiler (JIT) for the Lua programming language
+brew "luajit"
 # Package manager for the Lua programming language
 brew "luarocks"
 # Simple tool to make locally trusted development certificates
@@ -160,26 +161,32 @@ brew "netcat"
 brew "nikto"
 # Port scanning utility for large networks
 brew "nmap"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
 # Command-line Git information tool
 brew "onefetch"
-# OCaml package manager
-brew "opam"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
-# Tool to automatically fix PHP coding standards issues
-brew "php-cs-fixer"
 # General-purpose scripting language
 brew "php@8.1"
 # General-purpose scripting language
-brew "php@8.2", restart_service: :changed, link: true
+brew "php@8.2", restart_service: :changed
 # General-purpose scripting language
-brew "php@8.3", restart_service: :changed
+brew "php@8.3", restart_service: :changed, link: true
+# General-purpose scripting language (legacy projects)
+brew "php@7.4"
 # PHP Static Analysis Tool
 brew "phpstan"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Object-relational database system
 brew "postgresql@14", restart_service: :changed
 # Hook preloader
@@ -190,14 +197,12 @@ brew "python@3.10"
 brew "python@3.11"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
-# Cross-platform application and UI framework
-brew "qt"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
 # Ruby version manager
 brew "rbenv"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
-brew "ruby"
+brew "ruby", link: false
 # Rust toolchain installer
 brew "rustup"
 # Penetration testing for SQL injection and database servers
@@ -218,6 +223,8 @@ brew "watchman"
 brew "weechat"
 # Internet file retriever
 brew "wget"
+# Tools for the WireGuard secure network tunnel
+brew "wireguard-tools"
 # Command-line interface for WordPress
 brew "wp-cli"
 # Bash completion for Wpcli
@@ -236,21 +243,18 @@ brew "zmap"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
-# A simple terminal UI for docker, written in Go
-brew "jesseduffield/lazydocker/lazydocker"
-# Smart terminal session manager
-brew "joshmedeski/sesh/sesh"
-# Cryptography and SSL/TLS Toolkit
-brew "rbenv/tap/openssl@1.1"
-# x86_64 Linux GNU Toolchain
-brew "sergiobenitez/osxct/x86_64-unknown-linux-gnu"
-# General-purpose scripting language
-brew "shivammathur/php/php@7.4"
-# Stripe CLI utility
-brew "stripe/stripe-cli/stripe"
-# Symfony CLI helps Symfony developers manage projects, from local code to remote infrastructure
-brew "symfony-cli/tap/symfony-cli"
-brew "tursodatabase/tap/turso"
+# Session manager for tmux
+brew "sesh"
+# SQL database for the edge
+brew "sqld"
+# Platform to manage, backup, and restore databases
+brew "turso"
+# RFID research tool
+brew "proxmark3"
+# Stripe CLI
+brew "stripe"
+# Symfony CLI
+brew "symfony-cli"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
@@ -265,34 +269,42 @@ cask "docker-desktop"
 cask "epic-games"
 # Collaborative team software
 cask "figma"
+# Web browser
+cask "firefox"
 cask "font-hack-nerd-font"
+cask "font-ipafont"
+cask "font-m-plus-1"
 cask "font-monaspace"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # HTTP and GraphQL Client
 cask "insomnia"
-# JetBrains tools manager
-cask "jetbrains-toolbox"
 # Open-source keystroke visualiser
 cask "keycastr"
 # ZSA keyboard firmware flasher
 cask "keymapp"
+# GPU-based terminal emulator
+cask "kitty"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
-# Open-source, self-hosted Slack-alternative
-cask "mattermost"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
-# VPN client for secure internet access and private browsing
-cask "nordvpn"
 # Open-source software for live streaming and screen recording
 cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# AI coding agent desktop client
+cask "opencode-desktop"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
-# Administration and development platform for PostgreSQL
-cask "pgadmin4"
+# Client for Proton Drive
+cask "proton-drive"
+# Client for Proton Mail and Proton Calendar
+cask "proton-mail"
+# Desktop client for Proton Pass
+cask "proton-pass"
+# VPN client focusing on security
+cask "protonvpn"
 # Imaging utility to install operating systems to a microSD card
 cask "raspberry-pi-imager"
 # MySQL/MariaDB database management
@@ -319,10 +331,11 @@ cask "whatsapp"
 cask "wireshark-app"
 # Multiplayer code editor
 cask "zed"
-# Gecko based web browser
-cask "zen"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "github.com/goreleaser/goreleaser/v2"
 cargo "cargo-leptos"
 cargo "cross"
 cargo "speedtest-rs"
 cargo "tokei"
 cargo "trunk"
+npm "corepack"
