@@ -3,14 +3,8 @@ gui:
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-author-color
   authorColors: {}
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-branch-color
+  branchColors: {}
   branchColorPatterns: {}
-  # Custom icons for filenames and file extensions
-  # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-files-icon--color
-  customIcons:
-    # Map of filenames to icon properties (icon and color)
-    filenames: {}
-    # Map of file extensions (including the dot) to icon properties (icon and color)
-    extensions: {}
   # The number of lines you scroll by when scrolling the main window
   scrollHeight: 2
   # If true, allow scrolling past the bottom of the content in the main window
@@ -64,6 +58,8 @@ gui:
   # Format used when displaying time if the time is less than 24 hours ago.
   # Uses Go's time format syntax: https://pkg.go.dev/time#Time.Format
   shortTimeFormat: 3:04PM
+  # Show icons. Requires nerdFontsVersion to be set.
+  showIcons: false
   # Config relating to colors and styles.
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#color-attributes
   theme:
@@ -184,18 +180,18 @@ gui:
 # Config relating to git
 git:
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
-  pagers:
-    - # Value of the --color arg in the git diff command. Some pagers want this to be set to 'always' and some want it set to 'never'
-      colorArg: always
-      # e.g.
-      # diff-so-fancy
-      # delta --dark --paging=never
-      # ydiff -p cat -s --wrap --width={{columnWidth}}
-      pager: "delta --dark --paging=never"
-      # If true, Lazygit will use whatever pager is specified in `$GIT_PAGER`, `$PAGER`, or your *git config*. If the pager ends with something like ` | less` we will strip that part out, because less doesn't play nice with our rendering approach. If the custom pager uses less under the hood, that will also break rendering (hence the `--paging=never` flag for the `delta` pager).
-      useConfig: false
-      # e.g. 'difft --color=always'
-      externalDiffCommand: ""
+  paging:
+    # Value of the --color arg in the git diff command. Some pagers want this to be set to 'always' and some want it set to 'never'
+    colorArg: always
+    # e.g.
+    # diff-so-fancy
+    # delta --dark --paging=never
+    # ydiff -p cat -s --wrap --width={{columnWidth}}
+    pager: "delta --dark --paging=never"
+    # If true, Lazygit will use whatever pager is specified in `$GIT_PAGER`, `$PAGER`, or your *git config*. If the pager ends with something like ` | less` we will strip that part out, because less doesn't play nice with our rendering approach. If the custom pager uses less under the hood, that will also break rendering (hence the `--paging=never` flag for the `delta` pager).
+    useConfig: false
+    # e.g. 'difft --color=always'
+    externalDiffCommand: ""
   # Config relating to committing
   commit:
     # If true, pass '--signoff' flag when committing
@@ -222,9 +218,6 @@ git:
   autoFetch: true
   # If true, periodically refresh files and submodules
   autoRefresh: true
-  # If not "none", lazygit will automatically forward branches to their upstream after fetching. Applies to branches that are not the currently checked out branch, and only to those that are strictly behind their upstream (as opposed to diverged).
-  # Possible values: 'none' | 'onlyMainBranches' | 'allBranches'
-  autoForwardBranches: none
   # If true, pass the --all arg to git fetch
   fetchAll: true
   # If true, lazygit will automatically stage files that used to have merge
@@ -234,7 +227,7 @@ git:
   autoStageResolvedConflicts: true
   # Command used when displaying the current branch git log in the main window
   branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
-  # Commands used to display git log of all branches in the main window, they will be cycled in order of appearance (array of strings)
+  # Commands used to display git log of all branches in the main window. Lazygit cycles through these.
   allBranchesLogCmds: []
   # If true, do not spawn a separate process when using GPG
   overrideGpg: false
@@ -251,6 +244,12 @@ git:
   parseEmoji: false
   # Config for showing the log in the commits view
   log:
+    # Commit ordering.
+    # One of: 'topo-order' (default) | 'date-order' | 'author-date-order'
+    order: topo-order
+    # Whether to show the git graph.
+    # One of: 'always' (default) | 'never' | 'when-maximised'
+    showGraph: always
     # displays the whole git graph by default in the commits view (equivalent to passing the `--all` argument to `git log`)
     showWholeGraph: true
   # When copying commit hashes to the clipboard, truncate them to this
@@ -274,37 +273,6 @@ refresher:
 confirmOnQuit: false
 # If true, exit Lazygit when the user presses escape in a context where there is nothing to cancel/close
 quitOnTopLevelReturn: true
-# Config relating to things outside of Lazygit like how files are opened, copying to clipboard, etc
-os:
-  # Command for editing a file. Should contain "{{filename}}".
-  edit: ""
-  # Command for editing a file at a given line number. Should contain
-  # "{{filename}}", and may optionally contain "{{line}}".
-  editAtLine: ""
-  # Same as EditAtLine, except that the command needs to wait until the
-  # window is closed.
-  editAtLineAndWait: ""
-  # Whether lazygit suspends until an edit process returns
-  editInTerminal: false
-  # For opening a directory in an editor
-  openDirInEditor: ""
-  # A built-in preset that sets all of the above settings. Supported presets
-  # are defined in the getPreset function in editor_presets.go.
-  editPreset: ""
-  # Command for opening a file, as if the file is double-clicked. Should
-  # contain "{{filename}}", but doesn't support "{{line}}".
-  open: ""
-  # Command for opening a link. Should contain "{{link}}".
-  openLink: ""
-  # CopyToClipboardCmd is the command for copying to clipboard.
-  # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-command-for-copying-to-and-pasting-from-clipboard
-  copyToClipboardCmd: ""
-  # ReadFromClipboardCmd is the command for reading the clipboard.
-  # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-command-for-copying-to-and-pasting-from-clipboard
-  readFromClipboardCmd: ""
-  # A shell startup file containing shell aliases or shell functions. This will be sourced before running any shell commands, so that shell functions are available in the `:` command prompt or even in custom commands.
-  # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#using-aliases-or-functions-in-shell-commands
-  shellFunctionsFile: ""
 # If true, don't display introductory popups upon opening Lazygit.
 disableStartupPopups: false
 # User-configured commands that can be invoked from within Lazygit
@@ -355,7 +323,6 @@ keybinding:
       - "3"
       - "4"
       - "5"
-    focusMainView: "0"
     nextMatch: "n"
     prevMatch: "N"
     startSearch: /
@@ -421,7 +388,7 @@ keybinding:
     viewResetOptions: D
     fetch: f
     toggleTreeView: '`'
-    openMergeOptions: M
+    openMergeTool: M
     openStatusFilter: <c-b>
     copyFileInfoToClipboard: "y"
     collapseAll: '-'
@@ -435,7 +402,6 @@ keybinding:
     rebaseBranch: r
     renameBranch: R
     mergeIntoCurrentBranch: M
-    moveCommitsToNewBranch: "N"
     viewGitFlowOptions: i
     fastForward: f
     createTag: T
@@ -464,12 +430,12 @@ keybinding:
     markCommitAsBaseForRebase: B
     tagCommit: T
     checkoutCommit: <space>
+    resetCherryPick: <c-R>
     copyCommitAttributeToClipboard: "y"
     openLogMenu: <c-l>
     openInBrowser: o
     viewBisectOptions: b
     startInteractiveRebase: i
-    selectCommitsOfCurrentBranch: '*'
   amendAttribute:
     resetAuthor: a
     setAuthor: A
@@ -489,3 +455,4 @@ keybinding:
     bulkMenu: b
   commitMessage:
     commitMenu: <c-o>
+sidePanelWidth: 0.1234
