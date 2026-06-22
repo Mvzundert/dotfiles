@@ -29,7 +29,44 @@ vim.lsp.config('*', {
   capabilities = require('blink.cmp').get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()),
 })
 
+-- Explicit server configs: ensures vim.lsp.enable() knows how to launch each one
+-- regardless of Neovim's built-in server list (future-proof across versions)
+
+vim.lsp.config['bashls'] = {
+  cmd = { 'bash-language-server', 'start' },
+  filetypes = { 'sh', 'bash', 'zsh' },
+  single_file_support = true,
+}
+
+vim.lsp.config['pyright'] = {
+  cmd = { 'pyright-langserver', '--stdio' },
+  filetypes = { 'python' },
+  root_markers = { '.git', 'pyproject.toml', 'setup.py', 'setup.cfg' },
+  single_file_support = true,
+}
+
+vim.lsp.config['gopls'] = {
+  cmd = { 'gopls' },
+  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+  root_markers = { 'go.mod', 'go.work', '.git' },
+  single_file_support = true,
+}
+
+vim.lsp.config['rust_analyzer'] = {
+  cmd = { 'rust-analyzer' },
+  filetypes = { 'rust' },
+  root_markers = { 'Cargo.toml', '.git' },
+}
+
+vim.lsp.config['ruby_lsp'] = {
+  cmd = { 'ruby-lsp' },
+  filetypes = { 'ruby' },
+  root_markers = { 'Gemfile', '.git' },
+  single_file_support = true,
+}
+
 vim.lsp.config['intelephense'] = {
+  cmd = { 'intelephense', '--stdio' },
   filetypes = { 'php', 'blade', 'php_only' },
   settings = {
     intelephense = {
@@ -49,7 +86,7 @@ vim.lsp.config['lua_ls'] = {
 
 vim.lsp.enable({
   'bashls',
-  'basedpyright',
+  'pyright',
   'gopls',
   'intelephense',
   'lua_ls',
@@ -62,7 +99,7 @@ vim.keymap.set('n', '<leader>cm', '<cmd>Mason<CR>')
 require('mason-tool-installer').setup {
   ensure_installed = {
     { 'bash-language-server', condition = function() return vim.fn.executable 'node' == 1 end },
-    { 'basedpyright', condition = function() return vim.fn.executable 'python3' == 1 end },
+    { 'pyright', condition = function() return vim.fn.executable 'python3' == 1 end },
     { 'blade-formatter', condition = function() return vim.fn.executable 'node' == 1 end },
     { 'dot-language-server', condition = function() return vim.fn.executable 'node' == 1 end },
     'gopls',
@@ -70,8 +107,6 @@ require('mason-tool-installer').setup {
     { 'intelephense', condition = function() return vim.fn.executable 'node' == 1 end },
     'lua-language-server',
     { 'markdownlint', condition = function() return vim.fn.executable 'node' == 1 end },
-    { 'rubocop', condition = function() return vim.fn.executable 'ruby' == 1 end },
-    { 'ruby-lsp', condition = function() return vim.fn.executable 'ruby' == 1 end },
     'ruff',
     'rust-analyzer',
     'shfmt',
