@@ -1,3 +1,5 @@
+require('luasnip').setup {}
+
 require('blink.cmp').setup {
   keymap = {
     preset = 'none',
@@ -11,22 +13,8 @@ require('blink.cmp').setup {
     ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
     ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
 
-    ['<Tab>'] = {
-      function(cmp)
-        if cmp.is_visible() then
-          return cmp.select_next()
-        end
-      end,
-      'fallback',
-    },
-    ['<S-Tab>'] = {
-      function(cmp)
-        if cmp.is_visible() then
-          return cmp.select_prev()
-        end
-      end,
-      'fallback',
-    },
+    ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
+    ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
   },
 
   appearance = {
@@ -40,7 +28,7 @@ require('blink.cmp').setup {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
 
-  snippets = { preset = 'default' },
+  snippets = { preset = 'luasnip' },
 
   completion = {
     menu = { border = 'rounded' },

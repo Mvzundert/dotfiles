@@ -19,13 +19,20 @@ cmd [[
 
 -- Configure diagnostics
 diagnostic.config {
+  severity_sort = true,
   float = {
     focusable = false,
     style = 'minimal',
     border = 'rounded',
-    source = 'always',
+    source = 'if_many',
     header = '',
     prefix = '',
+  },
+  virtual_text = true,
+  jump = {
+    on_jump = function(_, bufnr)
+      diagnostic.open_float { bufnr = bufnr, scope = 'cursor', focus = false }
+    end,
   },
 }
 

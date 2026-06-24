@@ -9,6 +9,7 @@ vim.env.XDG_CACHE_HOME = '/tmp/phpactor-cache-' .. tostring(vim.fn.getpid())
 vim.pack.add({
   { src = 'https://github.com/saghen/blink.cmp', name = 'blink.cmp' },
   { src = 'https://github.com/rafamadriz/friendly-snippets', name = 'friendly-snippets' },
+  { src = 'https://github.com/L3MON4D3/LuaSnip', name = 'LuaSnip', version = vim.version.range '2.*' },
   { src = 'https://github.com/stevearc/conform.nvim', name = 'conform.nvim' },
   { src = 'https://github.com/laytan/cloak.nvim', name = 'cloak.nvim' },
   { src = 'https://github.com/OXY2DEV/markview.nvim', name = 'markview.nvim' },

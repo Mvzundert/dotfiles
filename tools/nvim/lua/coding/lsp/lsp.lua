@@ -5,6 +5,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
+    map('gd', vim.lsp.buf.definition, 'Goto Definition')
+    map('gr', vim.lsp.buf.references, 'Goto References')
+    map('K', vim.lsp.buf.hover, 'Hover Documentation')
+    map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
+    map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
     map('<leader>rn', vim.lsp.buf.rename, 'Rename')
     map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
     map('gD', vim.lsp.buf.declaration, 'Goto Declaration')
