@@ -15,4 +15,7 @@ require('ui.menu.whichkey')
 require('ui.menu.hlslens')
 require('ui.snacks.snacks')
 require('ui.snacks.trouble')
+-- Available themes: gruvbox (active), doom-one, tokyonight
+require('ui.themes.gruvbox')
+require('ui.themes.doom-one')
 require('ui.themes.tokyonight')

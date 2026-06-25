@@ -30,6 +30,8 @@ vim.pack.add({
   { src = 'https://github.com/nvim-lua/plenary.nvim', name = 'plenary.nvim' },
   { src = 'https://github.com/folke/todo-comments.nvim', name = 'todo-comments.nvim' },
   { src = 'https://github.com/folke/tokyonight.nvim', name = 'tokyonight.nvim' },
+  { src = 'https://github.com/ellisonleao/gruvbox.nvim', name = 'gruvbox.nvim' },
+  { src = 'https://github.com/NTBBloodbath/doom-one.nvim', name = 'doom-one.nvim' },
   { src = 'https://github.com/kevinhwang91/nvim-hlslens', name = 'nvim-hlslens' },
   { src = 'https://github.com/tjdevries/present.nvim', name = 'present.nvim' },
 }, { confirm = false })

@@ -5,8 +5,7 @@ local api = vim.api
 local diagnostic = vim.diagnostic
 local set = vim.keymap.set
 
--- cmd.colorscheme 'vague'
-cmd.colorscheme 'tokyonight'
+dofile(vim.fn.stdpath('config') .. '/current-theme.lua')
 
 cmd.hi 'Comment gui=none'
 
