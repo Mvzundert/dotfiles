@@ -145,3 +145,41 @@ echo ' |    |  \ /  _ \   __\   __\|  |  | _/ __ \ /  ___/'
 echo ' |    `   (  (_) )  |  |  |  |  |  |_\  ___/ \___ \ '
 echo '/_______  /\____/|__|  |__|  |__|____/\____) ______)'
 echo '.... have been installed!'
+
+#=======================================
+#========= Theme defaults ==============
+#=======================================
+echo ""
+echo "Setting up theme defaults..."
+
+THEME_KITTY="$DOTFILES/tools/tui/kitty"
+if [ ! -f "$THEME_KITTY/current-theme.conf" ]; then
+    cp "$THEME_KITTY/tokyonight.conf" "$THEME_KITTY/current-theme.conf"
+    echo "Kitty: created default current-theme.conf (tokyo night)"
+else
+    echo "Kitty: current-theme.conf already exists — skipping"
+fi
+
+THEME_NVIM="$DOTFILES/tools/nvim"
+if [ ! -f "$THEME_NVIM/current-theme.lua" ]; then
+    echo "vim.cmd.colorscheme 'tokyonight'" > "$THEME_NVIM/current-theme.lua"
+    echo "Neovim: created default current-theme.lua (tokyonight)"
+else
+    echo "Neovim: current-theme.lua already exists — skipping"
+fi
+
+THEME_FISH="$DOTFILES/shells/fish/conf.d/theme_bat.fish"
+if [ ! -f "$THEME_FISH" ]; then
+    printf 'set -gx BAT_THEME "Dracula"\n' > "$THEME_FISH"
+    echo "Fish: created default theme_bat.fish (Dracula)"
+else
+    echo "Fish: theme_bat.fish already exists — skipping"
+fi
+
+THEME_DOOM="$DOTFILES/tools/doom-emacs"
+if [ ! -f "$THEME_DOOM/current-theme.el" ]; then
+    printf "(setq doom-theme 'doom-tokyo-night)\n" > "$THEME_DOOM/current-theme.el"
+    echo "Doom Emacs: created default current-theme.el (doom-tokyo-night)"
+else
+    echo "Doom Emacs: current-theme.el already exists — skipping"
+fi

@@ -11,6 +11,7 @@ function theme --description "Switch dotfiles theme (kitty, nvim, bat, doom-emac
     set -l script "$DOTFILES/tools/scripts/theme-switch.sh"
     if test -f "$script"
         bash "$script" $argv[1]
+        test -f ~/.config/fish/conf.d/theme_bat.fish && source ~/.config/fish/conf.d/theme_bat.fish
     else
         echo "Error: $script not found"
         return 1

@@ -3,7 +3,6 @@ set -euo pipefail
 
 KITTY_DIR="$HOME/.config/kitty"
 NVIM_DIR="$HOME/.config/nvim"
-BAT_CONFIG="$HOME/.config/bat/config"
 DOOM_CONFIG_DIR="$HOME/.config/doom"
 
 # -------------------------------------------------------------------
@@ -13,16 +12,6 @@ usage() {
     echo "Usage: theme-switch.sh <theme>"
     echo "  themes: gruvbox | doom-one | tokyonight"
     exit 1
-}
-
-# Cross-platform in-place sed
-ised() {
-    local expr="$1" file="$2"
-    if sed --version &>/dev/null 2>&1; then
-        sed -i "$expr" "$file"       # GNU sed (Linux)
-    else
-        sed -i '' "$expr" "$file"    # BSD sed (macOS)
-    fi
 }
 
 # -------------------------------------------------------------------
@@ -39,6 +28,11 @@ echo "==> Switching everything to $THEME …"
 # Kitty — terminal emulator
 # -------------------------------------------------------------------
 kitty_switch() {
+    if [[ ! -d "$KITTY_DIR" ]]; then
+        echo "   kitty: config dir not found, skipping"
+        return
+    fi
+
     local kitty_theme="$1"
     case "$1" in
         gruvbox) kitty_theme="gruvbox-dark" ;;
@@ -65,6 +59,11 @@ kitty_switch() {
 # -------------------------------------------------------------------
 nvim_switch() {
     local theme_file="$NVIM_DIR/current-theme.lua"
+    if [[ ! -d "$NVIM_DIR" ]]; then
+        echo "   nvim: config dir not found, skipping"
+        return
+    fi
+
     local nvim_colorscheme
 
     case "$1" in
@@ -87,12 +86,6 @@ nvim_switch() {
 # Bat — syntax highlighter
 # -------------------------------------------------------------------
 bat_switch() {
-    local config="$BAT_CONFIG"
-    if [[ ! -f "$config" ]]; then
-        echo "   bat: config not found, skipping"
-        return
-    fi
-
     local bat_theme
     case "$1" in
         gruvbox)   bat_theme="gruvbox" ;;
@@ -100,17 +93,23 @@ bat_switch() {
         tokyonight) bat_theme="Dracula" ;;
     esac
 
-    ised "s/^--theme=.*/--theme=\"$bat_theme\"/" "$config"
-    echo "   bat: theme -> $bat_theme"
+    local fish_conf_dir="${XDG_CONFIG_HOME:-$HOME/.config}/fish/conf.d"
+    if [[ ! -d "$fish_conf_dir" ]]; then
+        echo "   bat: fish conf.d not found, skipping"
+        return
+    fi
+
+    printf 'set -gx BAT_THEME "%s"\n' "$bat_theme" > "$fish_conf_dir/theme_bat.fish"
+    echo "   bat: theme -> $bat_theme (via BAT_THEME env var)"
 }
 
 # -------------------------------------------------------------------
 # Doom Emacs
 # -------------------------------------------------------------------
 doom_switch() {
-    local config="$DOOM_CONFIG_DIR/config.el"
-    if [[ ! -f "$config" ]]; then
-        echo "   doom-emacs: config not found, skipping"
+    local doom_theme_file="$DOOM_CONFIG_DIR/current-theme.el"
+    if [[ ! -d "$DOOM_CONFIG_DIR" ]]; then
+        echo "   doom-emacs: config dir not found, skipping"
         return
     fi
 
@@ -121,7 +120,7 @@ doom_switch() {
         tokyonight) doom_theme="doom-tokyo-night" ;;
     esac
 
-    ised "s/(setq doom-theme '[^)]*'/(setq doom-theme '$doom_theme'/" "$config"
+    printf "(setq doom-theme '%s)\n" "$doom_theme" > "$doom_theme_file"
     echo "   doom-emacs: theme -> $doom_theme"
 }
 

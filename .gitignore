@@ -64,3 +64,9 @@ tools/wayland/cosmic/com.system76.CosmicSettings.Wallpaper/v1
 tools/wayland/cosmic/com.system76.CosmicFiles/v1
 /tools/arch/arch_migration_audit.txt
 tools/nvim/nvim-pack-lock.json
+
+# --- Theme state files (switched at runtime, not version-controlled) ---
+tools/tui/kitty/current-theme.conf
+tools/nvim/current-theme.lua
+tools/doom-emacs/current-theme.el
+shells/fish/conf.d/theme_bat.fish
