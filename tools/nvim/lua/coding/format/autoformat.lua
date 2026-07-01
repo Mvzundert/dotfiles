@@ -40,14 +40,10 @@ require('conform').setup {
           })[1]
         end
         local project_config = find_pint_config()
-        local default_config = vim.fn.expand '~/code/cerberos/internal/coding_standards/pint/pint.json'
         local args = { filename }
         if project_config then
           table.insert(args, 1, '--config')
           table.insert(args, 2, project_config)
-        else
-          table.insert(args, 1, '--config')
-          table.insert(args, 2, default_config)
         end
         return args
       end,
