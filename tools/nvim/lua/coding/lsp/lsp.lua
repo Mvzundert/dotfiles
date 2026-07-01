@@ -39,7 +39,7 @@ vim.lsp.config('*', {
 
 vim.lsp.config['bashls'] = {
   cmd = { 'bash-language-server', 'start' },
-  filetypes = { 'sh', 'bash', 'zsh' },
+  filetypes = { 'sh', 'bash', 'zsh', 'fish' },
   single_file_support = true,
 }
 
@@ -70,6 +70,20 @@ vim.lsp.config['ruby_lsp'] = {
   single_file_support = true,
 }
 
+vim.lsp.config['dockerls'] = {
+  cmd = { 'docker-langserver', '--stdio' },
+  filetypes = { 'dockerfile' },
+  root_markers = { 'Dockerfile', '.git' },
+  single_file_support = true,
+}
+
+vim.lsp.config['marksman'] = {
+  cmd = { 'marksman' },
+  filetypes = { 'markdown' },
+  root_markers = { '.git' },
+  single_file_support = true,
+}
+
 vim.lsp.config['intelephense'] = {
   cmd = { 'intelephense', '--stdio' },
   filetypes = { 'php', 'blade', 'php_only' },
@@ -81,7 +95,20 @@ vim.lsp.config['intelephense'] = {
   },
 }
 
+vim.lsp.config['lexical'] = {
+  cmd = { 'lexical' },
+  filetypes = { 'elixir', 'eex', 'heex' },
+  root_markers = { 'mix.exs', '.git' },
+}
+
+vim.lsp.config['erlang_ls'] = {
+  cmd = { 'erlang_ls' },
+  filetypes = { 'erlang' },
+  root_markers = { 'rebar.config', '.git' },
+}
+
 vim.lsp.config['lua_ls'] = {
+  cmd = { 'lua-language-server' },
   settings = {
     Lua = {
       completion = { callSnippet = 'Replace' },
@@ -91,10 +118,13 @@ vim.lsp.config['lua_ls'] = {
 
 vim.lsp.enable({
   'bashls',
-  'pyright',
+  'dockerls',
   'gopls',
   'intelephense',
+  'lexical',
   'lua_ls',
+  'marksman',
+  'pyright',
   'ruby_lsp',
   'rust_analyzer',
 })
@@ -106,12 +136,15 @@ require('mason-tool-installer').setup {
     { 'bash-language-server', condition = function() return vim.fn.executable 'node' == 1 end },
     { 'pyright', condition = function() return vim.fn.executable 'python3' == 1 end },
     { 'blade-formatter', condition = function() return vim.fn.executable 'node' == 1 end },
+    { 'dockerfile-language-server', condition = function() return vim.fn.executable 'node' == 1 end },
     { 'dot-language-server', condition = function() return vim.fn.executable 'node' == 1 end },
     'gopls',
     { 'html-lsp', condition = function() return vim.fn.executable 'node' == 1 end },
     { 'intelephense', condition = function() return vim.fn.executable 'node' == 1 end },
+    'lexical',
     'lua-language-server',
     { 'markdownlint', condition = function() return vim.fn.executable 'node' == 1 end },
+    'marksman',
     'ruff',
     'rust-analyzer',
     'shfmt',
