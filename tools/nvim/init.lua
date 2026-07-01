@@ -1,10 +1,11 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.o.shell = 'fish'
+vim.o.shell = vim.fn.executable('fish') == 1 and 'fish' or vim.env.SHELL
 vim.o.shellcmdflag = '-lc'
 
-vim.env.XDG_CACHE_HOME = '/tmp/phpactor-cache-' .. tostring(vim.fn.getpid())
+vim.opt.exrc = true
+vim.opt.secure = true
 
 vim.pack.add({
   { src = 'https://github.com/saghen/blink.cmp', name = 'blink.cmp' },
