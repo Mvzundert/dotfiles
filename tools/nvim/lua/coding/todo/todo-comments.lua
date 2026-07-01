@@ -41,7 +41,7 @@ require('todo-comments').setup {
     test = { 'Identifier', '#FF00FF' },
   },
   search = {
-    command = 'rg',
+    command = vim.fn.executable('rg') == 1 and 'rg' or 'grep',
     args = {
       '--color=never',
       '--no-heading',
