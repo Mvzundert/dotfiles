@@ -30,6 +30,34 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- Auto-trust phpactor project configs so per-project .phpactor.json is loaded
+-- without requiring `phpactor config:trust` each time.
+do
+  local trust_file = vim.fs.normalize(vim.fn.stdpath('data') .. '/../phpactor/trust.json')
+
+  local function ensure_phpactor_trust(root)
+    local ok, data = pcall(vim.json.decode, table.concat(vim.fn.readfile(trust_file), '\n'))
+    local trusts = ok and type(data) == 'table' and data or {}
+    if not trusts[root] then
+      trusts[root] = vim.json.decode('true')
+      vim.fn.writefile({ vim.json.encode(trusts) }, trust_file)
+    end
+  end
+
+  vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+    pattern = { '*.php', '*.blade.php' },
+    group = vim.api.nvim_create_augroup('phpactor-trust', { clear = true }),
+    callback = function()
+      local root = vim.fs.root(0, { '.phpactor.json', 'composer.json', '.git' })
+      if root then
+        ensure_phpactor_trust(root)
+      end
+    end,
+  })
+end
+
+require('mason').setup()
+
 vim.lsp.config('*', {
   capabilities = require('blink.cmp').get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()),
 })
@@ -84,9 +112,18 @@ vim.lsp.config['marksman'] = {
   single_file_support = true,
 }
 
+vim.lsp.config['phpactor'] = {
+  cmd = { 'phpactor', 'language-server' },
+  filetypes = { 'php', 'blade' },
+  root_markers = { 'composer.json', '.git' },
+  cmd_env = {
+    XDG_CACHE_HOME = '/tmp/phpactor-cache-' .. vim.fn.getpid(),
+  },
+}
+
 vim.lsp.config['intelephense'] = {
   cmd = { 'intelephense', '--stdio' },
-  filetypes = { 'php', 'blade', 'php_only' },
+  filetypes = {},
   settings = {
     intelephense = {
       files = { associations = { '*.php', '*.blade.php' }, maxSize = 5000000 },
@@ -109,6 +146,7 @@ vim.lsp.config['erlang_ls'] = {
 
 vim.lsp.config['lua_ls'] = {
   cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
   settings = {
     Lua = {
       completion = { callSnippet = 'Replace' },
@@ -120,7 +158,7 @@ vim.lsp.enable({
   'bashls',
   'dockerls',
   'gopls',
-  'intelephense',
+  'phpactor',
   'lexical',
   'lua_ls',
   'marksman',
@@ -129,7 +167,6 @@ vim.lsp.enable({
   'rust_analyzer',
 })
 
-require('mason').setup()
 vim.keymap.set('n', '<leader>cm', '<cmd>Mason<CR>')
 require('mason-tool-installer').setup {
   ensure_installed = {
