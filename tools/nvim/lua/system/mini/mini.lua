@@ -3,8 +3,6 @@ MiniIcons.mock_nvim_web_devicons()
 
 require('mini.cursorword').setup()
 
-require('mini.indentscope').setup()
-
 require('mini.surround').setup()
 
 require('mini.ai').setup { n_lines = 500 }
