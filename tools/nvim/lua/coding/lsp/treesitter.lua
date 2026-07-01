@@ -1,14 +1,12 @@
-vim.treesitter.ensure_installed = {
-  'bash',
-  'php',
-  'python',
-  'ruby',
-  'rust',
-  'go',
-  'javascript',
-  'lua',
-  'luadoc',
-  'markdown',
-  'vim',
-  'vimdoc',
-}
+vim.cmd.packadd('nvim-treesitter')
+
+local ok, _ = pcall(function()
+  require('nvim-treesitter.config').setup({
+    highlight = { enable = true },
+    indent = { enable = true },
+  })
+end)
+
+if not ok then
+  vim.notify('nvim-treesitter not yet installed. Restart after vim.pack.add() downloads it.', vim.log.levels.WARN)
+end
