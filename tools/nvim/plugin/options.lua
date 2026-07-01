@@ -29,7 +29,7 @@ opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-opt.clipboard = 'unnamedplus'
+opt.clipboard = (vim.fn.has('mac') == 1 or vim.fn.executable('wl-copy') == 1 or vim.fn.executable('xclip') == 1) and 'unnamedplus' or ''
 
 -- Enable break indent
 opt.breakindent = true
@@ -75,7 +75,7 @@ opt.colorcolumn = '180'
 opt.expandtab = true -- Use spaces instead of tabs
 opt.formatoptions = 'jcroqlnt' -- tcqj
 opt.grepformat = '%f:%l:%c:%m'
-opt.grepprg = 'rg --vimgrep'
+opt.grepprg = vim.fn.executable('rg') == 1 and 'rg --vimgrep' or 'grep -rn'
 opt.laststatus = 3 -- Global statusline
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
