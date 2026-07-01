@@ -17,6 +17,9 @@ require('conform').setup {
     rust = { 'rustfmt' },
     ruby = { 'rubocop' },
     python = { 'ruff' },
+    elixir = { 'mix' },
+    heex = { 'mix' },
+    eex = { 'mix' },
   },
   formatters = {
     pint = {

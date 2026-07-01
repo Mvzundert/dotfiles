@@ -25,6 +25,7 @@ vim.pack.add({
   { src = 'https://github.com/folke/noice.nvim', name = 'noice.nvim' },
   { src = 'https://github.com/MunifTanjim/nui.nvim', name = 'nui.nvim' },
   { src = 'https://github.com/folke/which-key.nvim', name = 'which-key.nvim' },
+  { src = 'https://github.com/nvim-treesitter/nvim-treesitter', name = 'nvim-treesitter' },
   { src = 'https://github.com/folke/snacks.nvim', name = 'snacks.nvim' },
   { src = 'https://github.com/folke/trouble.nvim', name = 'trouble.nvim' },
   { src = 'https://github.com/nvim-lua/plenary.nvim', name = 'plenary.nvim' },
