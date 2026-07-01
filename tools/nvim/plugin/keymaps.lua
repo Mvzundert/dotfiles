@@ -56,6 +56,20 @@ set('n', '<leader>gr', vim.lsp.buf.references, { desc = '[G]oto [R]eferences' })
 -- =====================================================================
 -- Code and Check
 -- =====================================================================
+set('n', '<leader>ci', function()
+  local clients = vim.lsp.get_clients({ bufnr = 0 })
+  if #clients == 0 then
+    vim.notify('No LSP clients attached', vim.log.levels.WARN, { title = 'LSP' })
+    return
+  end
+  local info = vim.tbl_map(function(c)
+    local status = c.status or 'started'
+    local root = vim.fn.fnamemodify(c.config.root_dir or '', ':t') or ''
+    return ('%s (%s)  %s'):format(c.name, status, root)
+  end, clients)
+  vim.notify(table.concat(info, '\n'), 'info', { title = 'LSP Clients', timeout = 3000 })
+end, { desc = '[C]ode [I]nfo' })
+
 set('n', '<leader>ct', function()
   Snacks.picker.todo_comments()
 end, { desc = '[C]heck [T]odo Comments' })
@@ -180,7 +194,13 @@ set('n', '<leader>hx', '<cmd>!chmod +x %<cr>', { desc = '[H]arden: Make Executab
 -- =====================================================================
 set('n', '<leader>ud', '<cmd>r !date +\\%F<cr>', { desc = '[U]tils Insert [D]ate' })
 set('n', '<leader>ut', '<cmd>r !date +\\%T<cr>', { desc = '[U]tils Insert [T]ime' })
-set('n', '<leader>uc', '<cmd>.!bc<cr>', { desc = '[U]tils [C]alculate Line' })
+set('n', '<leader>uc', function()
+  if vim.fn.executable('bc') == 0 then
+    vim.notify('bc not found — install bc or use awk', vim.log.levels.WARN)
+    return
+  end
+  vim.cmd '.!bc'
+end, { desc = '[U]tils [C]alculate Line' })
 set('n', '<leader>us', '<cmd>%s/\\s\\+$//e<cr>', { desc = '[U]tils Strip Whitespace' })
 set('n', '<leader>un', '<cmd>vnew | setlocal buftype= buflisted<cr>', { desc = '[U]tils [N]ew Scratch' })
 set('n', '<leader>up', '<cmd>let @+ = expand("%:p")<cr><cmd>echo "Path copied: " . expand("%:p")<cr>', { desc = '[U]tils Copy Path' })
@@ -197,10 +217,17 @@ end, { desc = '[U]tils [S]ave Scratch' })
 
 -- Data Manipulation (Visual Mode)
 set('v', '<leader>uf', ':!column -t<cr>', { desc = '[U]tils [F]ormat Table' })
-set('v', '<leader>uj', ':!jq .<cr>', { desc = '[U]tils JSON Format' })
+set('v', '<leader>uj', function()
+  if vim.fn.executable('jq') == 0 then
+    vim.notify('jq not found', vim.log.levels.WARN)
+    return
+  end
+  vim.cmd "normal! gv"
+  vim.cmd ":'<,'>!jq ."
+end, { desc = '[U]tils JSON Format' })
 set('v', '<leader>ue', ':!base64<cr>', { desc = '[U]tils Base64 Encode' })
 set('v', '<leader>ud', ':!base64 -d<cr>', { desc = '[U]tils Base64 Decode' })
-set('v', '<leader>uC', ':!sed "s/\\<./\\U&/g"<cr>', { desc = '[U]tils Title Case' })
+set('v', '<leader>uC', ':!perl -pe "s/\\b(.)/\\U$1/g"<cr>', { desc = '[U]tils Title Case' })
 set('v', '<leader>ul', ':!tr "[:upper:]" "[:lower:]"<cr>', { desc = '[U]tils Lowercase' })
 set('v', '<leader>uu', ':!tr "[:lower:]" "[:upper:]"<cr>', { desc = '[U]tils Uppercase' })
 
@@ -215,5 +242,9 @@ set('n', '<leader>mp', function()
   end
   local output_pdf_path = vim.fn.fnamemodify(current_file_path, ':r') .. '.pdf'
   -- vim.cmd('MarkdownPreview')
+  if vim.fn.executable('md_to_pdf') == 0 then
+    vim.notify('md_to_pdf not found', vim.log.levels.WARN)
+    return
+  end
   vim.cmd('!' .. 'md_to_pdf ' .. vim.fn.fnameescape(current_file_path) .. ' ' .. vim.fn.fnameescape(output_pdf_path))
 end, { desc = 'Export Markdown to PDF' })
