@@ -1,17 +1,9 @@
-function opencode --description 'Cross-platform OpenCode AI agent execution wrapper'
-    if test "$HOST_OS" = "Linux"
-        if type -q distrobox
-            if test (count $argv) -eq 0
-                # Call standalone without dangling empty strings
-                distrobox enter ai -- bash -c 'eval "$HOME/.npm-global/bin/opencode"'
-            else
-                # Safely escape and pass through all extra arguments
-                distrobox enter ai -- bash -c "eval \"\$HOME/.npm-global/bin/opencode $argv\""
-            end
-        else
-            command opencode $argv
-        end
+function opencode --description "Cross-platform OpenCode AI agent execution wrapper"
+    if test "$HOST_OS" = "Linux"; and test -x "$HOME/.local/bin/opencode"
+        # On Fedora Atomic, run the clean binary exported by distrobox
+        "$HOME/.local/bin/opencode" $argv
     else
+        # On macOS (or fallback), run the natively installed binary
         command opencode $argv
     end
 end
