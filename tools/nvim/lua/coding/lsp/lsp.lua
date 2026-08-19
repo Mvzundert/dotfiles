@@ -74,8 +74,25 @@ vim.lsp.config['bashls'] = {
 vim.lsp.config['pyright'] = {
   cmd = { 'pyright-langserver', '--stdio' },
   filetypes = { 'python' },
-  root_markers = { '.git', 'pyproject.toml', 'setup.py', 'setup.cfg' },
+  root_markers = {
+    'pyrightconfig.json',
+    'pyproject.toml',
+    'setup.py',
+    'setup.cfg',
+    'requirements.txt',
+    '.venv',
+    '.git',
+  },
   single_file_support = true,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = 'workspace',
+      },
+    },
+  },
 }
 
 vim.lsp.config['gopls'] = {
