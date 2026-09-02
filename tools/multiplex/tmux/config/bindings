@@ -49,16 +49,10 @@ bind-key -n C-S-l resize-pane -R 5
 bind-key 'T' run-shell "fish -c 'tmz'"
 
 unbind w
-bind w display-popup -E -w "90%" -h "90%" "\
+bind w display-popup -E -w "20%" -h "30%" "\
   tmux list-sessions -F '#{session_name} ' |\
   sed '/^\s*$/d' |\
-  fzf --reverse --header 'jump-to-session' --exit-0 --preview='
-    tmux list-windows -t {1} -F \"#{window_index}: #{window_name}\" | while read -l line
-      set pane_index (echo $line | cut -d\":\" -f1)
-      set prefix (echo $line | cut -d\":\" -f2)
-      tmux capture-pane -peJ -t {1}:$pane_index | sed \"s/^/$prefix: /\"
-    end
-  ' |\
+  fzf --reverse --header 'jump-to-session' --exit-0 |\
   xargs tmux switch-client -t"
 
 # Open lazygit in a new window
