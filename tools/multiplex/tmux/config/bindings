@@ -49,7 +49,7 @@ bind-key -n C-S-l resize-pane -R 5
 bind-key 'T' run-shell "fish -c 'tmz'"
 
 unbind w
-bind w display-popup -E -w "20%" -h "30%" "\
+bind w display-popup -E -w "50%" -h "50%" "\
   tmux list-sessions -F '#{session_name} ' |\
   sed '/^\s*$/d' |\
   fzf --reverse --header 'jump-to-session' --exit-0 |\
