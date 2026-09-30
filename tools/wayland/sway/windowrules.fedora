@@ -1,0 +1,13 @@
+### --- Window Rules ---
+# Keep these lightweight and compatible with the standard Fedora Sway config.
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [title="File Operation Progress"] floating enable
+
+# Fedora Sway uses lxqt-policykit by default; this rule still helps if the
+# KDE agent is installed via rpm-ostree.
+for_window [app_id="org.kde.polkit-kde-authentication-agent-1"] floating enable
+for_window [app_id="blueman-manager"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable

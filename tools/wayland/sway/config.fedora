@@ -1,0 +1,68 @@
+### Fedora Sway Atomic safe user configuration
+#
+# Purpose: A minimal, non-destructive overlay that works with the default
+# Fedora Sway Atomic setup (sway-config-fedora). It avoids duplicating
+# services that Fedora already starts (Waybar, swayidle, PolicyKit,
+# XDG autostart) and avoids Arch-only packages/commands (swaylock-effects,
+# swww, autotiling).
+#
+# Installation:
+#   mkdir -p ~/.config/sway
+#   ln -s /path/to/this/repo/tools/wayland/sway/config.fedora ~/.config/sway/config
+#   # Keep your other overlays in ~/.config/sway/config.d/
+#
+# If you want to override Fedora defaults, place files in
+# ~/.config/sway/config.d/ with the SAME names as those in
+# /usr/share/sway/config.d/.
+#
+# Validate before reloading:
+#   sway --validate --verbose
+
+### --- Includes ---
+include ~/.config/sway/definitions.fedora
+include ~/.config/sway/windowrules.fedora
+include ~/.config/sway/keybinds.fedora
+
+### --- Input ---
+input "type:keyboard" {
+    xkb_layout us
+}
+
+### --- Aesthetics ---
+default_border pixel 2
+default_floating_border pixel 2
+smart_gaps on
+gaps inner 5
+gaps outer 0
+
+# Fedora's default config already starts Waybar via /usr/share/sway/config.d/90-bar.conf.
+# If you want to use your own Waybar config instead, create:
+#   ~/.config/sway/config.d/90-bar.conf
+# ...or simply disable the bar here and start Waybar yourself below.
+bar {
+    swaybar_command /usr/bin/true
+}
+
+### --- Startup (one-time only) ---
+# Only start user-specific services that Fedora does NOT already start.
+# Do NOT duplicate nm-applet, PolicyKit, kanshi, waybar, or swayidle here.
+exec {
+    # Clipboard history daemon. Requires: cliphist, wl-clipboard
+    sh -c 'command -v cliphist >/dev/null 2>&1 && wl-paste --type text --watch cliphist store'
+    sh -c 'command -v cliphist >/dev/null 2>&1 && wl-paste --type image --watch cliphist store'
+
+    # Optional: secret service integration for browsers/Flatpaks.
+    sh -c 'command -v gnome-keyring-daemon >/dev/null 2>&1 && /usr/bin/gnome-keyring-daemon --start --components=secrets'
+
+    # Optional: mount helper. Only start if installed.
+    sh -c 'command -v udiskie >/dev/null 2>&1 && udiskie'
+}
+
+### --- Startup (refreshed on reload) ---
+# Keep this section minimal. Waybar/Kanshi/Dunst are intentionally left out
+# because Fedora's default configuration starts them.
+exec_always {
+    # Make sure the Wayland environment is exported to systemd/D-Bus.
+    dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+    systemctl --user import-environment WAYLAND_DISPLAY XDG_RUNTIME_DIR
+}

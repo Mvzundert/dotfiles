@@ -1,0 +1,15 @@
+# Variables for the Fedora Sway Atomic safe configuration
+
+set $mod Mod4
+set $terminal kitty
+set $browser firefox
+set $fileManager thunar
+set $menu wofi --show drun
+
+set $powermenu ~/.config/scripts/powermenu.fedora
+set $ss_dir ~/Pictures/Screenshots
+
+# Import environment for D-Bus/Wayland (needed for cliphist and Flatpak apps).
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec dbus-update-activation-environment --all
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_RUNTIME_DIR

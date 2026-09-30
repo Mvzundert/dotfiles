@@ -1,0 +1,51 @@
+#!/bin/bash
+# Wallpaper helper for Fedora Sway Atomic.
+# Expects wallpapers in $HOME/Pictures/wallpapers/Marske.
+# If swww is unavailable, the script exits cleanly without errors.
+
+DIR="$HOME/Pictures/wallpapers/Marske"
+SYMLINK_PATH="$HOME/.config/scripts/current_wallpaper.jpg"
+TIMEOUT=2000
+
+if [ ! -d "$DIR" ]; then
+    command -v dunstify >/dev/null 2>&1 && dunstify -u critical -t "$TIMEOUT" "Wallpaper Error" "Directory $DIR not found"
+    exit 1
+fi
+
+if ! command -v swww >/dev/null 2>&1; then
+    command -v dunstify >/dev/null 2>&1 && dunstify -u low -t "$TIMEOUT" "Wallpaper" "swww is not installed"
+    exit 1
+fi
+
+MONITORS=$(swaymsg -t get_outputs | jq -r '.[] | .name')
+
+if [ -z "$MONITORS" ]; then
+    command -v dunstify >/dev/null 2>&1 && dunstify -u critical -t "$TIMEOUT" "Wallpaper Error" "No Sway outputs detected"
+    exit 1
+fi
+
+pick_wallpaper() {
+    find "$DIR" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" -o -name "*.gif" \) | shuf -n 1
+}
+
+if [ "$1" == "--same" ]; then
+    RANDOM_PIC=$(pick_wallpaper)
+    [ -z "$RANDOM_PIC" ] && exit 1
+    for MONITOR in $MONITORS; do
+        swww img "$RANDOM_PIC" --outputs "$MONITOR" --transition-type random --transition-step 90 --transition-duration 1.2
+    done
+    ln -sf "$RANDOM_PIC" "$SYMLINK_PATH"
+    chmod 644 "$RANDOM_PIC"
+else
+    for MONITOR in $MONITORS; do
+        RANDOM_PIC=$(pick_wallpaper)
+        [ -z "$RANDOM_PIC" ] && continue
+        swww img "$RANDOM_PIC" --outputs "$MONITOR" --transition-type random --transition-step 90 --transition-duration 1.2
+        ln -sf "$RANDOM_PIC" "$SYMLINK_PATH"
+        chmod 644 "$RANDOM_PIC"
+    done
+fi
+
+if command -v dunstify >/dev/null 2>&1; then
+    dunstify -a "System" -i "$SYMLINK_PATH" -t "$TIMEOUT" "Wallpaper Updated" "Lockscreen synced"
+fi

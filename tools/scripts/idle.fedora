@@ -1,0 +1,42 @@
+#!/bin/bash
+# Caffeine toggle for Fedora Sway Atomic.
+# Uses standard swayidle; no Hyprland-specific logic.
+
+TEST_MODE=false
+WALLPAPER="$HOME/.config/scripts/current_wallpaper.jpg"
+
+LOCK_CMD="swaylock --image $WALLPAPER --clock --indicator --show-failed-attempts --daemonize"
+
+if [ "$TEST_MODE" = true ]; then
+    TIME_LOCK=5
+    TIME_DIM=10
+else
+    TIME_LOCK=120
+    TIME_DIM=300
+fi
+
+if ! command -v swayidle >/dev/null 2>&1; then
+    echo "swayidle is not installed" >&2
+    exit 1
+fi
+
+if pgrep -x swayidle >/dev/null; then
+    # Caffeine ON
+    pkill -x swayidle
+    brightnessctl set 100% 2>/dev/null || true
+else
+    # Caffeine OFF
+    if [ -f "$WALLPAPER" ]; then
+        swayidle -w \
+            timeout "$TIME_LOCK" "$LOCK_CMD" \
+            timeout "$TIME_DIM" 'brightnessctl set 10%' resume 'brightnessctl set 100%' \
+            before-sleep "$LOCK_CMD" &
+    else
+        swayidle -w \
+            timeout "$TIME_LOCK" "swaylock --clock --indicator --show-failed-attempts --daemonize" \
+            timeout "$TIME_DIM" 'brightnessctl set 10%' resume 'brightnessctl set 100%' \
+            before-sleep "swaylock --clock --indicator --show-failed-attempts --daemonize" &
+    fi
+fi
+
+pkill -RTMIN+10 waybar

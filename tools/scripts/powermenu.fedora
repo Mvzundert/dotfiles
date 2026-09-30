@@ -1,0 +1,32 @@
+#!/bin/bash
+# Power menu for Fedora Sway Atomic.
+# Uses standard swaylock and systemctl; does not require hyprland/hyprlock.
+
+options="Lock\nReboot\nShutdown\nSuspend\nLogout"
+selected_option=$(echo -e "$options" | wofi --show dmenu --prompt "Power Menu" --insensitive --sort-method=no-sort)
+
+case "$selected_option" in
+"Shutdown")
+    systemctl poweroff
+    ;;
+"Reboot")
+    systemctl reboot
+    ;;
+"Lock")
+    lockimg=~/.config/scripts/current_wallpaper.jpg
+    if [ -f "$lockimg" ]; then
+        swaylock -i "$lockimg" --clock --indicator --show-failed-attempts
+    else
+        swaylock --clock --indicator --show-failed-attempts
+    fi
+    ;;
+"Suspend")
+    systemctl suspend
+    ;;
+"Logout")
+    swaymsg exit
+    ;;
+*)
+    exit 0
+    ;;
+esac
