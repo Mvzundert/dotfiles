@@ -32,8 +32,12 @@ if [ "$(uname)" == "Darwin" ]; then
 	source "$SCRIPT_DIR/osx.sh"
 fi
 
-echo "Initializing submodule(s)"
-git submodule update --init --recursive
+if [ -f "$DOTFILES/.gitmodules" ]; then
+	echo "Initializing submodule(s)"
+	git submodule update --init --recursive
+else
+	echo "No submodules configured — skipping"
+fi
 
 mkdir -p "$HOME/.config"
 
