@@ -44,11 +44,6 @@ end
 # Disable welcome message
 set -g fish_greeting ""
 
-# Load custom functions
-for file in ~/.config/fish/functions/*.fish
-    source $file
-end
-
 # =============================================================================
 # HARD RESET: Sanitize and filter out the bad path inherited from the host environment
 set -gx PATH (string match -v "/run/host/usr/bin" $PATH)
@@ -71,21 +66,20 @@ if string match -q -- "nl_NL.UTF-8" (locale -a 2>/dev/null | string join \n)
     set -gx LC_MEASUREMENT nl_NL.UTF-8
 end
 
-set -Ux COMPOSER_MEMORY_LIMIT -1 # Remove composer memory limit
-set -Ux HOMEBREW_NO_ENV_HINTS 1
+set -q COMPOSER_MEMORY_LIMIT; or set -Ux COMPOSER_MEMORY_LIMIT -1 # Remove composer memory limit
+set -q HOMEBREW_NO_ENV_HINTS; or set -Ux HOMEBREW_NO_ENV_HINTS 1
 
 # use fnm to switch node versions - Only if fnm is installed
 if type -q fnm
     fnm env --use-on-cd | source
 end
 
-# Start ssh-agent if not already running
-if not set -q SSH_AUTH_SOCK
-    ssh-agent -c | source > /dev/null
-end
-
-# Start keychain for your specific SSH key
+# Start ssh-agent / keychain only in interactive shells
 if status is-interactive
+    if not set -q SSH_AUTH_SOCK
+        ssh-agent -c | source > /dev/null
+    end
+
     set -l os_type (uname)
 
     if test "$os_type" = "Darwin"
@@ -109,18 +103,6 @@ function add_to_path
             set -gx PATH $PATH $argv[1]
         end
     end
-end
-
-# Function to safely get the current major.minor PHP version
-function get_active_php_version
-    if type -q php
-        php -r 'echo PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION;' 2>/dev/null
-    end
-end
-
-# Set the global cache variable when the shell loads if PHP exists
-if type -q php
-    set -g __fish_current_php_version (get_active_php_version)
 end
 
 # Add common bin directories to PATH safely (Appends to back, preserves priorities)
