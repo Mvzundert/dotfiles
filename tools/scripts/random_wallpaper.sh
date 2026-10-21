@@ -13,7 +13,7 @@ fi
 # --- 1. Detect Compositor ---
 if hyprctl monitors >/dev/null 2>&1; then
     MONITORS=$(hyprctl monitors -j | jq -r '.[] | .name')
-    [ -z "$MONITORS" ] && MONITORS=$(hyprctl monitors | grep "Monitor" | awk '{print $2}')
+    [ -z "$MONITORS" ] && MONITORS=$(hyprctl monitors | awk '/Monitor/ {print $2}')
 elif swaymsg -t get_outputs >/dev/null 2>&1; then
     MONITORS=$(swaymsg -t get_outputs | jq -r '.[] | .name')
 else

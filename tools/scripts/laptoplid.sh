@@ -9,7 +9,7 @@ LOG_FILE="/tmp/hyprland_lid_log.txt"
 
 # Check current lid state via /proc/acpi/button/lid/LID0/state
 # 'grep -q' checks if the string is present and exits with 0 (true) or 1 (false)
-LID_STATE=$(cat /proc/acpi/button/lid/LID0/state | grep -i open)
+LID_STATE=$(grep -i open /proc/acpi/button/lid/LID0/state)
 
 # Get the current status of the monitor from hyprctl (0 for disabled, 1 for enabled)
 MON_STATUS=$(hyprctl monitors | grep "$LAPTOP_MONITOR" -A 4 | grep "Monitor $LAPTOP_MONITOR" -A 4 | grep "disabled" | wc -l)

@@ -54,10 +54,6 @@ AUTOROTATE="None"
 
 # Paper standards. PAPERSIZE is actually used to
 PAPERNAME=a4
-
-#
-# Paper standards. PAPERSIZE is actually used to
-PAPERNAME=a4
 PAPERSIZE=2970x2100
 
 # Levels of verbosity: 0-3
