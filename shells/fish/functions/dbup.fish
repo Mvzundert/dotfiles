@@ -11,8 +11,3 @@ function dbup
         end
     end
 end
-
-function dbdown
-    pkill -f "ssh -fN tunnel-"
-    echo "🛑 All database tunnels closed."
-end
