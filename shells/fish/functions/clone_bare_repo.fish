@@ -81,7 +81,7 @@ function clone_bare_repo
         return 0
     end
 
-    trap cleanup SIGINT SIGTERM EXIT
+    trap cleanup SIGINT SIGTERM
 
     parse_params $argv
     setup_colors

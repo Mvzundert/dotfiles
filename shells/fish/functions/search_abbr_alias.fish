@@ -1,4 +1,4 @@
-function search_abbr_alias
+function search_abbr_alias --description "Interactively search abbreviations, aliases, and functions"
     set choice (echo -e "Abbreviations\nAliases\nFunctions" | fzf --prompt="Select: " --height=10 --border --reverse)
 
     switch $choice

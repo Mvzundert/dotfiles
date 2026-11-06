@@ -1,6 +1,11 @@
-function rmf
+function rmf --description "Remove directories, prompting if they are not empty"
     if not set -q argv[1]
-        echo "Usage: rmrf <directory> [directory...]"
+        echo "Usage: rmf <directory> [directory...]"
+        return 1
+    end
+
+    if not command -q fd
+        echo "Error: fd is required but not installed." >&2
         return 1
     end
 
@@ -13,7 +18,7 @@ function rmf
         end
 
         # Use fd to check if directory has contents (including hidden files)
-        if test -n (fd --hidden --no-ignore --min-depth 1 --max-depth 1 . "$directory" -1)
+        if fd --hidden --no-ignore --min-depth 1 --max-depth 1 . "$directory" -1 | string length -q
             if test "$delete_all" = true
                 rm -rf "$directory"
                 echo "Deleted '$directory'"

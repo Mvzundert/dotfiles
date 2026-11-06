@@ -1,4 +1,4 @@
-function art
+function art --description "Run the Laravel artisan command from anywhere in a project"
     # Find the Laravel root directory
     set -l root_dir (git rev-parse --show-toplevel 2>/dev/null || echo "")
 

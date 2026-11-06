@@ -1,4 +1,4 @@
-function view
+function view --description "Open files in nvim read-only mode"
     if test (count $argv) -eq 0
         # If no arguments, just open nvim normally
         nvim

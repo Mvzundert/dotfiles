@@ -1,7 +1,7 @@
-function watch
+function watch --description "Run the project's dev watcher based on the detected package manager"
     set -l has_npm (test -f package.json; and echo true)
     set -l has_yarn (test -f yarn.lock; and echo true)
-    set -l has_bun (test -f bun.lockb; and echo true)
+    set -l has_bun (test -f bun.lockb -o -f bun.lock; and echo true)
     set -l has_deno (test -f deno.json -o -f deno.jsonc; and echo true)
 
     if test "$has_bun" = "true"

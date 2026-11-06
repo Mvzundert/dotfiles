@@ -1,4 +1,4 @@
-function extract
+function extract --description "Extract various archive formats"
     if test (count $argv) -ne 1
         echo "Usage: extract <file>"
         return 1

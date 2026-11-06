@@ -1,4 +1,4 @@
-function build
+function build --description "Install/build project dependencies for detected project types"
     set -l install_mode ""
     set -l has_composer (test -f composer.json; and echo true)
     set -l has_npm (test -f package.json; and echo true)
@@ -151,6 +151,11 @@ function build
         case "cmake"
             test "$has_cmake" = "true"; and cmake . && make
         case "fresh"
+            read -P "This will delete vendor, node_modules, target, .venv, _build, zig-out, and build directories. Continue? [y/N] " -l confirm
+            if not string match -qi y -- $confirm
+                echo "Aborted."
+                return 1
+            end
             clean
             test "$has_composer" = "true"; and composer install
             test "$has_npm" = "true"; and npm install

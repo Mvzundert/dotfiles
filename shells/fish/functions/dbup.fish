@@ -1,4 +1,4 @@
-function dbup
+function dbup --description "Open SSH tunnels for all tunnel-* hosts in ~/.ssh/conf.d/tunnels"
     # Find all hosts starting with 'tunnel-' in your tunnels file
     set -l tunnel_hosts (grep -i "^Host tunnel-" ~/.ssh/conf.d/tunnels | awk '{print $2}')
 

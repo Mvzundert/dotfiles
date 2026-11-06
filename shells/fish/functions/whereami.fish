@@ -1,9 +1,16 @@
-function whereami
+function whereami --description "Display a themed message about the current system"
+    set -l msg
     if test (uname) = "Darwin"
-        echo "🍎 You are on the MacBook. Shiny, isn't it?" | lolcat
+        set msg "🍎 You are on the MacBook. Shiny, isn't it?"
     else if test -f /etc/arch-release
-        echo "🏔️ You are on the Arch Desktop. Living on the edge!" | lolcat
+        set msg "🏔️ You are on the Arch Desktop. Living on the edge!"
     else
-        echo "🌌 I'm not sure where we are, but the shell is nice." | lolcat
+        set msg "🌌 I'm not sure where we are, but the shell is nice."
+    end
+
+    if command -q lolcat
+        echo "$msg" | lolcat
+    else
+        echo "$msg"
     end
 end

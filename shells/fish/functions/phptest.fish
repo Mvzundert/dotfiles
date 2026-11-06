@@ -1,4 +1,4 @@
-function phptest
+function phptest --description "Run PHP tests with Pest, ParaTest, or PHPUnit"
     set -l vendor_dir "vendor"
 
     # Check if vendor directory exists
