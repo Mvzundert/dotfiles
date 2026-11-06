@@ -100,21 +100,20 @@ end
 function add_to_path
     if test -d $argv[1]
         if not contains $argv[1] $PATH
-            set -gx PATH $PATH $argv[1]
+            set -gx PATH $argv[1] $PATH
         end
     end
 end
 
-# Add common bin directories to PATH safely (Appends to back, preserves priorities)
-add_to_path "$HOME/bin"
-add_to_path "/usr/bin"
-add_to_path "/usr/local/bin"
-add_to_path "$HOME/.local/bin"
-add_to_path "/usr/local/sbin"
-add_to_path "/usr/sbin"
-
-# Add dotfiles scripts to PATH
+# Add common bin directories to PATH safely (Prepends to front for security)
+# Call order is reversed so the final priority matches the listed order.
 add_to_path "$DOTFILES/tools/scripts"
+add_to_path "/usr/sbin"
+add_to_path "/usr/local/sbin"
+add_to_path "$HOME/.local/bin"
+add_to_path "/usr/local/bin"
+add_to_path "/usr/bin"
+add_to_path "$HOME/bin"
 
 # Init zoxide for directory jumping
 if type -q zoxide
@@ -168,6 +167,6 @@ end
 if test -d "$HOME/.phpenv/bin"
     add_to_path "$HOME/.phpenv/bin"
     if type -q phpenv
-        eval "$(phpenv init -)"
+        phpenv init - | source
     end
 end
