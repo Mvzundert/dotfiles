@@ -14,11 +14,13 @@ function tmz --description "Attach or create a tmux session from a zoxide direct
     if command -q fzf-tmux
         set selected_directory (zoxide query -l | fzf-tmux -p 90%,90% \
             --no-sort --ansi --border-label ' zoxide ' --prompt '⚡ ' \
-            --header 'Select a directory to attach or create a session.')
+            --header 'Select a directory to attach or create a session.' \
+            --color 'bg:-1,bg+:-1,fg+:#bb9af7')
     else
         set selected_directory (zoxide query -l | fzf \
             --no-sort --ansi --border --border-label ' zoxide ' --prompt '⚡ ' \
-            --header 'Select a directory to attach or create a session.')
+            --header 'Select a directory to attach or create a session.' \
+            --color 'bg:-1,bg+:-1,fg+:#bb9af7')
     end
 
     # If the user cancels, exit gracefully
