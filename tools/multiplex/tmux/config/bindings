@@ -49,10 +49,10 @@ bind-key -n C-S-l resize-pane -R 5
 bind-key 'T' run-shell "fish -c 'tmz'"
 
 unbind w
-bind w display-popup -E -w "50%" -h "50%" "\
+bind w display-popup -S 'bg=default,fg=default' -E -w "50%" -h "50%" "\
   tmux list-sessions -F '#{session_name} ' |\
   sed '/^\s*$/d' |\
-  fzf --reverse --header 'jump-to-session' --exit-0 |\
+  fzf --reverse --header 'jump-to-session' --exit-0 --color 'bg:-1,bg+:-1,fg+:#bb9af7' |\
   xargs tmux switch-client -t"
 
 # Open lazygit in a new window
