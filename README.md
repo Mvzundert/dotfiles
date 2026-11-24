@@ -34,11 +34,8 @@ My personal dotfiles, managed across macOS and Linux. Installer available at `./
 
 # Shells
 
-## Fish (primary)
+## Fish
 Opinionated Fish config with Starship prompt, zoxide navigation, fnm Node management, fzf integration, and per-OS key bindings. Config lives in `shells/fish/`.
-
-## ZSH (legacy)
-Minimal ZSH setup, kept for reference. Config lives in `shells/zsh/`.
 
 # Terminal Emulators
 
@@ -60,7 +57,7 @@ System info fetch, custom config at `tools/tui/fastfetch/config.jsonc`.
 
 # Tmux
 
-Terminal multiplexer with TPM plugin manager, vim-style navigation, fzf session switching, and sesh integration.
+Terminal multiplexer with TPM plugin manager, vim-style navigation, and fzf session switching.
 
 Key commands:
 - `prefix + z`: zoom in on current pane (toggle)
@@ -86,11 +83,17 @@ Config lives in `tools/nvim/`. Uses Neovim 0.12+ native features:
 # Tools
 
 ## Window Managers (Linux)
-- **Hyprland** — `tools/wayland/hypr/` — compositor with Hypridle/Hyprlock, wofi launcher, dunst notifications
+- **Hyprland** — `tools/wayland/hypr/` — compositor with Hypridle/Hyprlock
 - **Sway** — `tools/wayland/sway/` — i3-compatible Wayland compositor
 - **Cosmic** — `tools/wayland/cosmic/` — COSMIC desktop environment config
+
+## Wayland Utilities
 - **Waybar** — `tools/wayland/waybar/` — status bar (shared across WMs)
+- **Wofi** — `tools/wayland/wofi/` — application launcher
+- **Dunst** — `tools/wayland/dunst/` — notification daemon
 - **Kanshi** — `tools/wayland/kanshi/` — multi-monitor profiles (Home/Office/Traveling/Presentation)
+- **Applications** — `tools/wayland/applications/` — desktop entries and app overrides
+- **Services** — `tools/wayland/services/` — systemd user service files
 
 ## Scripts
 Handy utilities in `tools/scripts/`:
@@ -101,6 +104,9 @@ Handy utilities in `tools/scripts/`:
 - `cosmic-clip.sh` — COSMIC clipboard helper + systemd service
 - `laptoplid.sh` — Laptop lid action handler
 - `sddm-setup.sh` — SDDM display manager setup
+- `theme-switch.sh` — Switch between light/dark themes
+- `install-treesitter-parsers.sh` — Install Neovim Treesitter parsers
+- `*.fedora` variants — Fedora-specific versions of `idle`, `powermenu`, and `random_wallpaper`
 
 ## macOS
 - **Homebrew**: `tools/homebrew/Brewfile` (328+ formulae and casks)
@@ -110,13 +116,15 @@ Handy utilities in `tools/scripts/`:
 - **Setup scripts**: `full_system_setup.sh`, `install_packages.sh`, `install_config.sh`, `audit_arch.sh`
 - **Pacman config**: `tools/arch/pacman.conf`
 
-## Cross-Shell Prompt
+## Containers
+- **Distrobox** — `tools/distrobox/distrobox.ini` — container definitions for development boxes
+
+## Prompt
 Starship prompt at `tools/prompt/starship.toml` — git status, 9+ language modules, Docker context, hostname/LAN IP (SSH only).
 
 ## Other Tools
 - **Bat** — `tools/bat/config` (Dracula theme)
 - **Eza** — 14 theme files in `tools/eza/themes/`
-- **Zed** — `tools/zed/settings.json`
 - **SSH helpers** — `tools/ssh/` (minimal remote configs)
 - **Doom Emacs** (archival) — `tools/doom-emacs/`
 - **StyLua** — `tools/nvim/.stylua.toml`
@@ -131,6 +139,12 @@ Starship prompt at `tools/prompt/starship.toml` — git status, 9+ language modu
 - Homebrew (macOS)
 - Nerd Font (JetBrainsMono Nerd Font recommended)
 - swww (wallpaper engine, Linux)
+
+# Installer
+
+The entry point is `tools/install/install.sh`. It symlinks the configs in this repo to the appropriate locations under `~/.config/` (and other expected paths). Platform-specific helpers live alongside it:
+- `tools/install/osx.sh` — macOS-specific setup
+- `tools/install/brew.sh` — Homebrew bundle handling
 
 # Usage
 
